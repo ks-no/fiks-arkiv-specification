@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/dokumentfil/hent/v2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+           targetNamespace="http://www.arkivverket.no/standarder/noark5/dokumentfil/hent/v2"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+               schemaLocation="./metadatakatalog.xsd"/>
+
+    <xs:element name="dokumentfilHent" type="dokumentfilHent"/>
+
+    <xs:complexType name="dokumentfilHent">
+        <xs:sequence>
+            <xs:element name="dokumentfilNoekkel" type="dokumentfilNoekkel"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentfilNoekkel">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

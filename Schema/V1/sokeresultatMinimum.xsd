@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"
+           xmlns:arkivstruktur="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/minimum/v1" elementFormDefault="qualified">
+    <xs:import namespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/minimum/v1" schemaLocation="arkivstrukturMinimum.xsd"/>
+    
+    <xs:element name="sokeresultatMinimum" type="sokeresultatMinimum"/>
+    
+    <xs:complexType name="sokeresultatMinimum">
+        <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
+            <xs:element name="meldingId" type="xs:string"/>
+            <xs:element name="svarPaMeldingId" type="xs:string"/>
+            <xs:element name="tidspunkt" type="xs:dateTime"/>
+            <xs:element name="take" type="xs:int"/>
+            <xs:element name="skip" type="xs:int"/>
+            <xs:element name="count" type="xs:int"/>
+            <xs:element name="resultattype" type="resultatTypeMinimum"/>
+            <xs:element name="resultatListe" type="resultatListeMinimum"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="resultatTypeMinimum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="saksmappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="journalpost"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="resultatListeMinimum">
+        <xs:sequence>
+            <xs:element name="resultatMinimum" type="resultatMinimum" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resultatMinimum">
+        <xs:choice>
+            <xs:element name="mappe" type="arkivstruktur:mappeMinimum"/>
+            <xs:element name="saksmappe" type="arkivstruktur:saksmappeMinimum"/>
+            <xs:element name="registrering" type="arkivstruktur:registreringMinimum"/>
+            <xs:element name="journalpost" type="arkivstruktur:journalpostMinimum"/>
+            <xs:element name="dokumentbeskrivelse" type="arkivstruktur:dokumentbeskrivelseMinimum"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>
+
