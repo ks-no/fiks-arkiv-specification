@@ -44,7 +44,9 @@ pipeline {
       }
     }
     stage('Change directory'){
-      sh 'cd dotnet'
+      steps{
+        sh 'cd dotnet'
+      }
     }
     stage('Copy xsd files'){
       steps {
@@ -109,28 +111,28 @@ pipeline {
         }
       }
     }
-    stage('Push to nuget.org') {
-      when {
-        anyOf {
-          expression { params.isRelease }
-        }
-        beforeAgent true
-      }
-      environment {
-        NUGET_ACCESS_KEY = credentials('ks-nuget-api-key')
-        NUGET_PUSH_REPO = 'https://api.nuget.org/v3/index.json'
-      }
-      steps {
-        unstash(name: 'nuget')
-        unstash(name: 'nuget-symbols')
-        sh 'dotnet nuget push */**/$Configuration/*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO'
-      }
-      post {
-        success {
-          deleteDir()
-        }
-      }
-    }
+    // stage('Push to nuget.org') {
+    //   when {
+    //     anyOf {
+    //       expression { params.isRelease }
+    //     }
+    //     beforeAgent true
+    //   }
+    //   environment {
+    //     NUGET_ACCESS_KEY = credentials('ks-nuget-api-key')
+    //     NUGET_PUSH_REPO = 'https://api.nuget.org/v3/index.json'
+    //   }
+    //   steps {
+    //     unstash(name: 'nuget')
+    //     unstash(name: 'nuget-symbols')
+    //     sh 'dotnet nuget push */**/$Configuration/*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO'
+    //   }
+    //   post {
+    //     success {
+    //       deleteDir()
+    //     }
+    //   }
+    // }
     stage('Set next version and push') {
       when {
         allOf {
