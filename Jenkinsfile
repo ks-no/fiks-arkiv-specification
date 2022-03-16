@@ -54,6 +54,7 @@ pipeline {
     }
     
     stage('Dotnet build - linux') {
+      dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
       environment {
         NUGET_HTTP_CACHE_PATH = "${env.WORKSPACE + '@tmp/cache'}"
         NUGET_CONF = credentials('nuget-config')
@@ -72,7 +73,6 @@ pipeline {
           }
       }
       stages {
-        dir('dotnet/KS.Fiks.Arkiv.Models'){
         stage('Build') {
           steps {
             sh 'mkdir -p /.nuget/NuGet'
@@ -105,12 +105,12 @@ pipeline {
           }                      
         }
       }
-      }
       post {
         always {
           deleteDir()
         }
       }
+    }
     }
     // stage('Push to nuget.org') {
     //   when {
