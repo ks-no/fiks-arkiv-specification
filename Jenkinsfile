@@ -30,13 +30,13 @@ pipeline {
               env.VERSION_SUFFIX = ""
               env.BUILD_SUFFIX = ""
               env.FULL_VERSION = env.CURRENT_VERSION
-              env.Configuration = 'Release'
+              env.CONFIGURATION = 'Release'
             } else {
               def timestamp = getTimestamp()
               env.VERSION_SUFFIX = "build.${timestamp}"
               env.BUILD_SUFFIX = "--version-suffix ${env.VERSION_SUFFIX}"
               env.FULL_VERSION = "${CURRENT_VERSION}-${env.VERSION_SUFFIX}"
-              env.Configuration = 'Debug'
+              env.CONFIGURATION = 'Debug'
             }
             sh 'printenv'
         }
@@ -184,9 +184,11 @@ def incrementVersion(versionString) {
 }
 
 def versionPattern() {
+  println('version pattern')
   return java.util.regex.Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)(.*)?")
 }
 
 def getTimestamp() {
+  println('timestamp')
   return java.time.OffsetDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS"))
 }
