@@ -36,8 +36,6 @@ pipeline {
         dir('dotnet') {
           sh 'cp -r ../Schema/V1 KS.Fiks.Arkiv.Models/Schema'
           sh 'cp -r ../Schema/V1 KS.Fiks.Arkiv.XsdModelGenerator/Schema'
-          sh 'ls -l KS.Fiks.Arkiv.XsdModelGenerator'
-          sh 'ls -l KS.Fiks.Arkiv.Models/Schema'
         }
       }
     }
@@ -55,63 +53,65 @@ pipeline {
       }
     }
     
-    // stage('Dotnet build - linux') {
-    //   environment {
-    //     NUGET_HTTP_CACHE_PATH = "${env.WORKSPACE + '@tmp/cache'}"
-    //     NUGET_CONF = credentials('nuget-config')
-    //     CODE_SIGN_CERT = credentials('ks-codesign-combo')
-    //     CODE_SIGN_KEY = credentials('ks-codesign-combo-passwd')
-    //     TIMESTAMP_URL = 'http://timestamp.digicert.com'
-    //     NUGET_ACCESS_KEY = credentials('artifactory-token-based')
-    //     NUGET_PUSH_REPO = 'https://artifactory.fiks.ks.no/artifactory/api/nuget/nuget-all'      
-    //     TMPDIR = "${env.PWD + '\\tmpdir'}"
-    //     MSBUILDDEBUGPATH = "${env.TMPDIR}"   
-    //   }
-    //   agent {
-    //       docker {
-    //         image "docker-all.artifactory.fiks.ks.no/dotnet/sdk:6.0"
-    //         args '-v $HOME/.nuget:/.nuget -v $HOME/.dotnet:/.dotnet'
-    //       }
-    //   }
-    //   stages {
-    //     stage('Build') {
-    //       steps {
-    //         sh 'mkdir -p /.nuget/NuGet'
-    //         sh 'cp -f $NUGET_CONF ~/.nuget/NuGet/NuGet.Config'
-    //         sh 'dotnet --version'
-    //         sh 'dotnet restore --verbosity detailed --configfile ${NUGET_CONF}'
-    //         sh 'dotnet build --no-restore -c $Configuration $BUILD_SUFFIX'
-    //       }
-    //       post {
-    //         success {
-    //           recordIssues enabledForFailure: true, tools: [msBuild()]
-    //         }
-    //       }
-    //     }
-    //     stage('Sign package') {
-    //       steps {
-    //         sh script: 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
-    //       }
-    //       post {
-    //         success {
-    //           archiveArtifacts artifacts: '*/**/$env:Configuration/*.nupkg', fingerprint: true
-    //           stash(name: 'nuget', includes: '**/$env:Configuration/*.nupkg')
-    //           stash(name: 'nuget-symbols', includes: '**/$env:Configuration/*.snupkg', allowEmpty: true)
-    //         }
-    //       }
-    //     }
-    //     stage('Push to Artifactory') {
-    //       steps {
-    //           sh script: 'dotnet nuget push */**/$Configuration*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO', label: 'Push artifact(s) to Artifactory'
-    //       }                      
-    //     }
-    //   }
-    //   post {
-    //     always {
-    //       deleteDir()
-    //     }
-    //   }
-    // }
+    stage('Dotnet build - linux') {
+      environment {
+        NUGET_HTTP_CACHE_PATH = "${env.WORKSPACE + '@tmp/cache'}"
+        NUGET_CONF = credentials('nuget-config')
+        CODE_SIGN_CERT = credentials('ks-codesign-combo')
+        CODE_SIGN_KEY = credentials('ks-codesign-combo-passwd')
+        TIMESTAMP_URL = 'http://timestamp.digicert.com'
+        NUGET_ACCESS_KEY = credentials('artifactory-token-based')
+        NUGET_PUSH_REPO = 'https://artifactory.fiks.ks.no/artifactory/api/nuget/nuget-all'      
+        TMPDIR = "${env.PWD + '\\tmpdir'}"
+        MSBUILDDEBUGPATH = "${env.TMPDIR}"   
+      }
+      agent {
+          docker {
+            image "docker-all.artifactory.fiks.ks.no/dotnet/sdk:6.0"
+            args '-v $HOME/.nuget:/.nuget -v $HOME/.dotnet:/.dotnet'
+          }
+      }
+      stages {
+        dir('dotnet/KS.Fiks.Arkiv.Models'){
+        stage('Build') {
+          steps {
+            sh 'mkdir -p /.nuget/NuGet'
+            sh 'cp -f $NUGET_CONF ~/.nuget/NuGet/NuGet.Config'
+            sh 'dotnet --version'
+            sh 'dotnet restore --verbosity detailed --configfile ${NUGET_CONF}'
+            sh 'dotnet build --no-restore -c $Configuration $BUILD_SUFFIX'
+          }
+          post {
+            success {
+              recordIssues enabledForFailure: true, tools: [msBuild()]
+            }
+          }
+        }
+        stage('Sign package') {
+          steps {
+            sh script: 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
+          }
+          post {
+            success {
+              archiveArtifacts artifacts: '*/**/$env:Configuration/*.nupkg', fingerprint: true
+              stash(name: 'nuget', includes: '**/$env:Configuration/*.nupkg')
+              stash(name: 'nuget-symbols', includes: '**/$env:Configuration/*.snupkg', allowEmpty: true)
+            }
+          }
+        }
+        stage('Push to Artifactory') {
+          steps {
+              sh script: 'dotnet nuget push */**/$Configuration*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO', label: 'Push artifact(s) to Artifactory'
+          }                      
+        }
+      }
+      }
+      post {
+        always {
+          deleteDir()
+        }
+      }
+    }
     // stage('Push to nuget.org') {
     //   when {
     //     anyOf {
