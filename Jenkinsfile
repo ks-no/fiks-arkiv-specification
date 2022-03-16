@@ -1,75 +1,60 @@
-#!/usr/bin/groovy
-
-def call(body) {
-    config = [:]
-
-    if (body != null) {
-        body.resolveStrategy = Closure.DELEGATE_FIRST
-        body.delegate = config
-        body()
-    }
-
 pipeline {
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '50', artifactNumToKeepStr: '50'))
-    disableConcurrentBuilds()
-    timeout(time: 60, unit: 'MINUTES')
-    timestamps ()
-  }
-  agent any
-  parameters {
-    booleanParam(name: 'isRelease', defaultValue: false, description: 'Skal prosjektet releases? Alle andre parametere ignoreres ved snapshot-bygg.')
-    string(name: "specifiedVersion", defaultValue: "", description: "Hva er det nye versjonsnummeret (X.X.X)? Som default releases snapshot-versjonen")
-    text(name: "releaseNotes", defaultValue: "Ingen endringer utført", description: "Hva er endret i denne releasen?")
-    text(name: "securityReview", defaultValue: "Endringene har ingen sikkerhetskonsekvenser", description: "Har endringene sikkerhetsmessige konsekvenser, og hvilke tiltak er i så fall iverksatt?")
-    string(name: "reviewer", defaultValue: "Endringene krever ikke review", description: "Hvem har gjort review?")
-  }
-  stages {
-    stage('Initialize') {
-      steps {
-        script {
-            wrap([$class: 'BuildUser']) {
-                env.user = sh ( script: 'echo "${BUILD_USER}"', returnStdout: true).trim()
+    agent any
+    parameters {
+        booleanParam(defaultValue: false, description: 'Skal branch deployes til dev?', name: 'deployBranchToDev')
+        booleanParam(defaultValue: false, description: 'Skal prosjektet releases?', name: 'isRelease')
+        string(name: "specifiedVersion", defaultValue: "", description: "Hva er det nye versjonsnummeret (X.X.X)? Som default releases snapshot-versjonen")
+        text(name: "releaseNotes", defaultValue: "Ingen endringer utført", description: "Hva er endret i denne releasen?")
+        text(name: "securityReview", defaultValue: "Endringene har ingen sikkerhetskonsekvenser", description: "Har endringene sikkerhetsmessige konsekvenser, og hvilke tiltak er i så fall iverksatt?")
+        string(name: "reviewer", defaultValue: "Endringene krever ikke review", description: "Hvem har gjort review?")
+    }
+    stages {
+        stage('Initialize') {
+            steps {
+                script {
+                    env.GIT_SHA = sh(returnStdout: true, script: 'git rev-parse HEAD').substring(0, 7)
+                    env.REPO_NAME = scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
+                    env.CURRENT_VERSION = findVersionSuffix()
+                    env.NEXT_VERSION = params.specifiedVersion == "" ? incrementVersion(env.CURRENT_VERSION) : params.specifiedVersion
+                    if(params.isRelease) {
+                      env.VERSION_SUFFIX = ""
+                      env.BUILD_SUFFIX = ""
+                      env.FULL_VERSION = env.CURRENT_VERSION
+                    } else {
+                      def timestamp = getTimestamp()
+                      env.VERSION_SUFFIX = "build.${timestamp}"
+                      env.BUILD_SUFFIX = "--version-suffix ${env.VERSION_SUFFIX}"
+                      env.FULL_VERSION = "${CURRENT_VERSION}-${env.VERSION_SUFFIX}"
+                    }
+                    print("Listing all environment variables:")
+                    sh 'printenv'
+                }
             }
-            env.GIT_SHA = sh(returnStdout: true, script: 'git rev-parse HEAD').substring(0, 7)
-            env.REPO_NAME = scm.getUserRemoteConfigs()[0].getUrl().tokenize('/').last().split("\\.")[0]
-            env.CURRENT_VERSION = findVersionSuffix()
-            env.NEXT_VERSION = params.specifiedVersion == "" ? incrementVersion(env.CURRENT_VERSION) : params.specifiedVersion
-            if(params.isRelease) {
-              env.VERSION_SUFFIX = ""
-              env.BUILD_SUFFIX = ""
-              env.FULL_VERSION = env.CURRENT_VERSION
-              env.CONFIGURATION = "Release"
-            } else {
-              def timestamp = getTimestamp()
-              env.VERSION_SUFFIX = "build.${timestamp}"
-              env.BUILD_SUFFIX = "--version-suffix ${env.VERSION_SUFFIX}"
-              env.FULL_VERSION = "${CURRENT_VERSION}-${env.VERSION_SUFFIX}"
-              env.CONFIGURATION = "Debug"
-            }
-            sh 'printenv'
         }
-        println("repo: ${env.REPO_NAME}, config: ${config}")
-      }
-    }
-
-    stage('print'){
+    stage('Copy xsd files'){
       steps {
-        sh 'echo hi'
+        dir('dotnet') {
+          sh 'cp -r ../Schema/V1 KS.Fiks.Arkiv.Models/Schema'
+          sh 'cp -r ../Schema/V1 KS.Fiks.Arkiv.XsdModelGenerator/Schema'
+          sh 'ls -l KS.Fiks.Arkiv.XsdModelGenerator'
+          sh 'ls -l KS.Fiks.Arkiv.Models/Schema'
+        }
       }
     }
-  }
-}
-    // stage('Change directory'){
-    //   steps {
-    //     sh 'cd dotnet'
-    //   }
-    // }
-    // stage('Copy xsd files'){
-    //   steps {
-    //     sh 'GenerateModels.sh'
-    //   }
-    // }
+    stage('Generate models'){
+      agent {
+          docker {
+            image "docker-all.artifactory.fiks.ks.no/dotnet/sdk:6.0"
+            args '-v $HOME/.nuget:/.nuget -v $HOME/.dotnet:/.dotnet'
+          }
+      }
+      steps {
+        dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
+           sh 'dotnet run'
+        }
+      }
+    }
+    
     // stage('Dotnet build - linux') {
     //   environment {
     //     NUGET_HTTP_CACHE_PATH = "${env.WORKSPACE + '@tmp/cache'}"
@@ -177,8 +162,9 @@ pipeline {
   //   }
 //   }
 // }
+  }
+ }
 
-}
 def findVersionSuffix() {
   def findCommand = $/find -name "**\KS.Fiks.Arkiv.Models.csproj" -exec xpath '{}' '/Project/PropertyGroup/VersionPrefix/text()' \;/$
 
