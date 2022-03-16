@@ -88,7 +88,7 @@ pipeline {
         }
         stage('Sign package') {
           steps {
-            sh 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
+            sh script: 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
           }
           post {
             success {
@@ -100,7 +100,7 @@ pipeline {
         }
         stage('Push to Artifactory') {
           steps {
-              sh 'dotnet nuget push */**/$Configuration*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO', label: 'Push artifact(s) to Artifactory'
+              sh script: 'dotnet nuget push */**/$Configuration*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO', label: 'Push artifact(s) to Artifactory'
           }                      
         }
       }
