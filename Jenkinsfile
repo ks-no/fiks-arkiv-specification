@@ -1,5 +1,14 @@
 #!/usr/bin/groovy
 
+def call(body) {
+    config = [:]
+
+    if (body != null) {
+        body.resolveStrategy = Closure.DELEGATE_FIRST
+        body.delegate = config
+        body()
+    }
+
 pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '50', artifactNumToKeepStr: '50'))
@@ -30,86 +39,94 @@ pipeline {
               env.VERSION_SUFFIX = ""
               env.BUILD_SUFFIX = ""
               env.FULL_VERSION = env.CURRENT_VERSION
-              env.CONFIGURATION = 'Release'
+              env.CONFIGURATION = "Release"
             } else {
               def timestamp = getTimestamp()
               env.VERSION_SUFFIX = "build.${timestamp}"
               env.BUILD_SUFFIX = "--version-suffix ${env.VERSION_SUFFIX}"
               env.FULL_VERSION = "${CURRENT_VERSION}-${env.VERSION_SUFFIX}"
-              env.CONFIGURATION = 'Debug'
+              env.CONFIGURATION = "Debug"
             }
             sh 'printenv'
         }
         println("repo: ${env.REPO_NAME}, config: ${config}")
       }
     }
-    stage('Change directory'){
-      steps{
-        sh 'cd dotnet'
-      }
-    }
-    stage('Copy xsd files'){
+
+    stage('print'){
       steps {
-        sh 'GenerateModels.sh'
+        sh 'echo hi'
       }
     }
-    stage('Dotnet build - linux') {
-      environment {
-        NUGET_HTTP_CACHE_PATH = "${env.WORKSPACE + '@tmp/cache'}"
-        NUGET_CONF = credentials('nuget-config')
-        CODE_SIGN_CERT = credentials('ks-codesign-combo')
-        CODE_SIGN_KEY = credentials('ks-codesign-combo-passwd')
-        TIMESTAMP_URL = 'http://timestamp.digicert.com'
-        NUGET_ACCESS_KEY = credentials('artifactory-token-based')
-        NUGET_PUSH_REPO = 'https://artifactory.fiks.ks.no/artifactory/api/nuget/nuget-all'      
-        TMPDIR = "${env.PWD + '\\tmpdir'}"
-        MSBUILDDEBUGPATH = "${env.TMPDIR}"   
-      }
-      agent {
-          docker {
-            image "docker-all.artifactory.fiks.ks.no/dotnet/sdk:6.0"
-            args '-v $HOME/.nuget:/.nuget -v $HOME/.dotnet:/.dotnet'
-          }
-      }
-      stages {
-        stage('Build') {
-          steps {
-            sh 'mkdir -p /.nuget/NuGet'
-            sh 'cp -f $NUGET_CONF ~/.nuget/NuGet/NuGet.Config'
-            sh 'dotnet --version'
-            sh 'dotnet restore --verbosity detailed --configfile ${NUGET_CONF}'
-            sh 'dotnet build --no-restore -c $Configuration $BUILD_SUFFIX'
-          }
-          post {
-            success {
-              recordIssues enabledForFailure: true, tools: [msBuild()]
-            }
-          }
-        }
-        stage('Sign package') {
-          steps {
-            sh script: 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
-          }
-          post {
-            success {
-              archiveArtifacts artifacts: '*/**/$env:Configuration/*.nupkg', fingerprint: true
-              stash(name: 'nuget', includes: '**/$env:Configuration/*.nupkg')
-              stash(name: 'nuget-symbols', includes: '**/$env:Configuration/*.snupkg', allowEmpty: true)
-            }
-          }
-        }
-        stage('Push to Artifactory') {
-          steps {
-              sh script: 'dotnet nuget push */**/$Configuration*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO', label: 'Push artifact(s) to Artifactory'
-          }                      
-        }
-      }
-      post {
-        always {
-          deleteDir()
-        }
-      }
-    }
+  }
+}
+    // stage('Change directory'){
+    //   steps {
+    //     sh 'cd dotnet'
+    //   }
+    // }
+    // stage('Copy xsd files'){
+    //   steps {
+    //     sh 'GenerateModels.sh'
+    //   }
+    // }
+    // stage('Dotnet build - linux') {
+    //   environment {
+    //     NUGET_HTTP_CACHE_PATH = "${env.WORKSPACE + '@tmp/cache'}"
+    //     NUGET_CONF = credentials('nuget-config')
+    //     CODE_SIGN_CERT = credentials('ks-codesign-combo')
+    //     CODE_SIGN_KEY = credentials('ks-codesign-combo-passwd')
+    //     TIMESTAMP_URL = 'http://timestamp.digicert.com'
+    //     NUGET_ACCESS_KEY = credentials('artifactory-token-based')
+    //     NUGET_PUSH_REPO = 'https://artifactory.fiks.ks.no/artifactory/api/nuget/nuget-all'      
+    //     TMPDIR = "${env.PWD + '\\tmpdir'}"
+    //     MSBUILDDEBUGPATH = "${env.TMPDIR}"   
+    //   }
+    //   agent {
+    //       docker {
+    //         image "docker-all.artifactory.fiks.ks.no/dotnet/sdk:6.0"
+    //         args '-v $HOME/.nuget:/.nuget -v $HOME/.dotnet:/.dotnet'
+    //       }
+    //   }
+    //   stages {
+    //     stage('Build') {
+    //       steps {
+    //         sh 'mkdir -p /.nuget/NuGet'
+    //         sh 'cp -f $NUGET_CONF ~/.nuget/NuGet/NuGet.Config'
+    //         sh 'dotnet --version'
+    //         sh 'dotnet restore --verbosity detailed --configfile ${NUGET_CONF}'
+    //         sh 'dotnet build --no-restore -c $Configuration $BUILD_SUFFIX'
+    //       }
+    //       post {
+    //         success {
+    //           recordIssues enabledForFailure: true, tools: [msBuild()]
+    //         }
+    //       }
+    //     }
+    //     stage('Sign package') {
+    //       steps {
+    //         sh script: 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
+    //       }
+    //       post {
+    //         success {
+    //           archiveArtifacts artifacts: '*/**/$env:Configuration/*.nupkg', fingerprint: true
+    //           stash(name: 'nuget', includes: '**/$env:Configuration/*.nupkg')
+    //           stash(name: 'nuget-symbols', includes: '**/$env:Configuration/*.snupkg', allowEmpty: true)
+    //         }
+    //       }
+    //     }
+    //     stage('Push to Artifactory') {
+    //       steps {
+    //           sh script: 'dotnet nuget push */**/$Configuration*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO', label: 'Push artifact(s) to Artifactory'
+    //       }                      
+    //     }
+    //   }
+    //   post {
+    //     always {
+    //       deleteDir()
+    //     }
+    //   }
+    // }
     // stage('Push to nuget.org') {
     //   when {
     //     anyOf {
@@ -132,33 +149,35 @@ pipeline {
     //     }
     //   }
     // }
-    stage('Set next version and push') {
-      when {
-        allOf {
-          expression { params.isRelease }
-          expression { return env.NEXT_VERSION }
-          expression { return env.CURRENT_VERSION }
-        }
-      }
-      steps {
-        gitCheckout(env.BRANCH_NAME)
-        gitTag(isRelease, env.CURRENT_VERSION)
-        prepareDotNetNoBuild(env.NEXT_VERSION)
-        gitPush()
-        script {
-          currentBuild.description = "${env.user} released version ${env.CURRENT_VERSION}"
-        }
-        withCredentials([usernamePassword(credentialsId: 'Github-token-login', passwordVariable: 'GITHUB_KEY', usernameVariable: 'USERNAME')]) {
-            sh "~/.local/bin/http --ignore-stdin -a ${USERNAME}:${GITHUB_KEY} POST https://api.github.com/repos/ks-no/${env.REPO_NAME}/releases tag_name=\"${env.CURRENT_VERSION}\" body=\"Release utført av ${env.user}\n\n## Endringer:\n${params.releaseNotes}\n\n ## Sikkerhetsvurdering: \n${params.securityReview} \n\n ## Review: \n${params.reviewer == 'Endringene krever ikke review' ? params.reviewer : "Review gjort av ${params.reviewer}"}\""
-        }
-      }
-    }              
-  }
-  post {
-    always {
-      deleteDir()
-    }
-  }
+  //   stage('Set next version and push') {
+  //     when {
+  //       allOf {
+  //         expression { params.isRelease }
+  //         expression { return env.NEXT_VERSION }
+  //         expression { return env.CURRENT_VERSION }
+  //       }
+  //     }
+  //     steps {
+  //       gitCheckout(env.BRANCH_NAME)
+  //       gitTag(isRelease, env.CURRENT_VERSION)
+  //       prepareDotNetNoBuild(env.NEXT_VERSION)
+  //       gitPush()
+  //       script {
+  //         currentBuild.description = "${env.user} released version ${env.CURRENT_VERSION}"
+  //       }
+  //       withCredentials([usernamePassword(credentialsId: 'Github-token-login', passwordVariable: 'GITHUB_KEY', usernameVariable: 'USERNAME')]) {
+  //           sh "~/.local/bin/http --ignore-stdin -a ${USERNAME}:${GITHUB_KEY} POST https://api.github.com/repos/ks-no/${env.REPO_NAME}/releases tag_name=\"${env.CURRENT_VERSION}\" body=\"Release utført av ${env.user}\n\n## Endringer:\n${params.releaseNotes}\n\n ## Sikkerhetsvurdering: \n${params.securityReview} \n\n ## Review: \n${params.reviewer == 'Endringene krever ikke review' ? params.reviewer : "Review gjort av ${params.reviewer}"}\""
+  //       }
+  //     }
+  //   }              
+  // }
+  // post {
+  //   always {
+  //     deleteDir()
+  //   }
+//   }
+// }
+
 }
 def findVersionSuffix() {
   def findCommand = $/find -name "**\KS.Fiks.Arkiv.Models.csproj" -exec xpath '{}' '/Project/PropertyGroup/VersionPrefix/text()' \;/$
