@@ -36,6 +36,7 @@ pipeline {
         dir('dotnet') {
           sh 'cp -r ../Schema/V1 KS.Fiks.Arkiv.Models/Schema'
           sh 'cp -r ../Schema/V1 KS.Fiks.Arkiv.XsdModelGenerator/Schema'
+          sh 'ls -l KS.Fiks.Arkiv.XsdModelGenerator/Schema'
         }
       }
     }
@@ -48,13 +49,13 @@ pipeline {
       }
       steps {
         dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
+           sh 'ls -l'
            sh 'dotnet run'
         }
       }
     }
     
     stage('Dotnet build - linux') {
-      dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
       environment {
         NUGET_HTTP_CACHE_PATH = "${env.WORKSPACE + '@tmp/cache'}"
         NUGET_CONF = credentials('nuget-config')
@@ -74,13 +75,15 @@ pipeline {
       }
       stages {
         stage('Build') {
+          
           steps {
+            dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
             sh 'mkdir -p /.nuget/NuGet'
             sh 'cp -f $NUGET_CONF ~/.nuget/NuGet/NuGet.Config'
             sh 'dotnet --version'
             sh 'dotnet restore --verbosity detailed --configfile ${NUGET_CONF}'
             sh 'dotnet build --no-restore -c $Configuration $BUILD_SUFFIX'
-          }
+          }}
           post {
             success {
               recordIssues enabledForFailure: true, tools: [msBuild()]
@@ -89,20 +92,23 @@ pipeline {
         }
         stage('Sign package') {
           steps {
+            dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
             sh script: 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
-          }
+          }}
           post {
             success {
+              dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
               archiveArtifacts artifacts: '*/**/$env:Configuration/*.nupkg', fingerprint: true
               stash(name: 'nuget', includes: '**/$env:Configuration/*.nupkg')
               stash(name: 'nuget-symbols', includes: '**/$env:Configuration/*.snupkg', allowEmpty: true)
-            }
+            }}
           }
         }
         stage('Push to Artifactory') {
           steps {
+            dir('dotnet/KS.Fiks.Arkiv.XsdModelGenerator'){
               sh script: 'dotnet nuget push */**/$Configuration*.nupkg -k $env:NUGET_ACCESS_KEY -s $env:NUGET_PUSH_REPO', label: 'Push artifact(s) to Artifactory'
-          }                      
+          }     }                 
         }
       }
       post {
@@ -110,7 +116,6 @@ pipeline {
           deleteDir()
         }
       }
-    }
     }
     // stage('Push to nuget.org') {
     //   when {
