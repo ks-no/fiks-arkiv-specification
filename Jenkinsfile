@@ -61,8 +61,7 @@ pipeline {
         CODE_SIGN_KEY = credentials('ks-codesign-combo-passwd')
         TIMESTAMP_URL = 'http://timestamp.digicert.com'
         NUGET_ACCESS_KEY = credentials('artifactory-token-based')
-        NUGET_PUSH_REPO = 'https://artifactory.fiks.ks.no/artifactory/api/nuget/nuget-all'
-        NUGET_CONF = credentials('nuget-config')        
+        NUGET_PUSH_REPO = 'https://artifactory.fiks.ks.no/artifactory/api/nuget/nuget-all'      
         TMPDIR = "${env.PWD + '\\tmpdir'}"
         MSBUILDDEBUGPATH = "${env.TMPDIR}"   
       }
@@ -89,13 +88,13 @@ pipeline {
         }
         stage('Sign package') {
           steps {
-            sh 'nuget sign */**/$Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
+            sh 'nuget sign */**/$env:Configuration/*.nupkg -Timestamper $env:TIMESTAMP_URL -CertificatePath $env:CODE_SIGN_CERT -CertificatePassword $env:CODE_SIGN_KEY', label: "Sign artifact with the KS certificate"
           }
           post {
             success {
-              archiveArtifacts artifacts: '*/**/$Configuration/*.nupkg', fingerprint: true
-              stash(name: 'nuget', includes: '**/$Configuration/*.nupkg')
-              stash(name: 'nuget-symbols', includes: '**/$Configuration/*.snupkg', allowEmpty: true)
+              archiveArtifacts artifacts: '*/**/$env:Configuration/*.nupkg', fingerprint: true
+              stash(name: 'nuget', includes: '**/$env:Configuration/*.nupkg')
+              stash(name: 'nuget-symbols', includes: '**/$env:Configuration/*.snupkg', allowEmpty: true)
             }
           }
         }
