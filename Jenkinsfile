@@ -161,7 +161,7 @@ pipeline {
   }
 }
 def findVersionSuffix() {
-  def findCommand = $/find -name "**\KS.FIks.Arkiv.Models.csproj" -exec xpath '{}' '/Project/PropertyGroup/VersionPrefix/text()' \;/$
+  def findCommand = $/find -name "**\KS.Fiks.Arkiv.Models.csproj" -exec xpath '{}' '/Project/PropertyGroup/VersionPrefix/text()' \;/$
 
   def version = sh(script: findCommand, returnStdout: true, label: 'Lookup current version from csproj files').trim().split('\n').find {
     return it.trim().matches(versionPattern())
