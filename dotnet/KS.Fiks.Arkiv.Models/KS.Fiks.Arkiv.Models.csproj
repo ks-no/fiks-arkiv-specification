@@ -3,17 +3,16 @@
         <TargetFramework>net6.0</TargetFramework>
         <Title>KS.Fiks.Arkiv.Models</Title>
         <Authors>KS - Kommunesektorens Organisasjon</Authors>
-        
         <Copyright>KS - Kommunesektorens Organisasjon</Copyright>
-        <Company>KS - Kommunesektorens Organisasjon</Company>        
-       
+        <Company>KS - Kommunesektorens Organisasjon</Company>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageIcon>KS.png</PackageIcon>
-        <RepositoryUrl>https://github.com/ks-no/ks-fiks-arkiv-specification</RepositoryUrl>
+        <RepositoryUrl>https://github.com/ks-no/fiks-arkiv-specification</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>FIKS</PackageTags>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <VersionPrefix>0.0.1</VersionPrefix>
     </PropertyGroup>
 
     <ItemGroup>
