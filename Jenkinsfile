@@ -43,7 +43,7 @@ pipeline {
     stage('Generate models'){
       agent {
           docker {
-            image "docker-all.artifactory.fiks.ks.no/dotnet/sdk:6.0"
+            image "docker-all.artifactory.fiks.ks.no/dotnet/sdk:5.0"
             args '-v $HOME/.nuget:/.nuget -v $HOME/.dotnet:/.dotnet'
           }
       }
