@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ("build") {
             steps {
-                build job: '../../fiks-arkiv-client-java/job/main'
+                build job: '/KS/fiks-arkiv-client-java/main'
             }
         }
     }
