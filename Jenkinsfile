@@ -6,7 +6,10 @@ pipeline {
                 build job: '/KS/fiks-arkiv-client-java/main'
             }
         }
-        stage ('dotnet'){
+        stage ('dotnet') {
+          when {
+            branch 'main'
+          }
           steps {
             build job: '/KS/fiks-arkiv-models-dotnet/main'
           }
