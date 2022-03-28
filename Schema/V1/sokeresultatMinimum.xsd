@@ -46,5 +46,6 @@
             <xs:element name="dokumentbeskrivelse" type="arkivstruktur:dokumentbeskrivelseMinimum"/>
         </xs:choice>
     </xs:complexType>
+
 </xs:schema>
 

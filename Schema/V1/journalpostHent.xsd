@@ -21,8 +21,8 @@
 			 Klarer vi å beskrive det at man trenger bare 1 av alternativene? -->
 			<xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
-			<xs:element name="responsType" type="responsType" minOccurs="1" maxOccurs="1" default="minimum"/>
-			<xs:element name="inkluder" type="inkluder" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="responsType" type="responsType" default="minimum"/>
+			<xs:element name="inkluder" type="inkluder" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 
@@ -57,4 +57,5 @@
 			<xs:element name="noekkel" type = "n5mdk:noekkel"/>
 		</xs:sequence>
 	</xs:complexType>
+	
 </xs:schema>
