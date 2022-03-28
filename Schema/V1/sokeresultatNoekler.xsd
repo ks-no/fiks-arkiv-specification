@@ -46,5 +46,6 @@
             <xs:element name="dokumentbeskrivelse" type="arkivstruktur:dokumentbeskrivelseNoekler"/>
         </xs:choice>
     </xs:complexType>
+
 </xs:schema>
 

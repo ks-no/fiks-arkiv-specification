@@ -237,142 +237,157 @@
 
   <!-- M050-M079: Status -->
 
-  <xs:simpleType name="arkivstatus">
+  <xs:complexType name="arkivstatus">
     <xs:annotation>
       <xs:documentation>M050</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="arkivdelstatus">
+  <xs:complexType name="arkivdelstatus">
     <xs:annotation>
       <xs:documentation>M051</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="saksstatus">
+  <xs:complexType name="saksstatus">
     <xs:annotation>
       <xs:documentation>M052</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="journalstatus">
+  <xs:complexType name="journalstatus">
     <xs:annotation>
       <xs:documentation>M053</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="dokumentstatus">
+  <xs:complexType name="dokumentstatus">
     <xs:annotation>
       <xs:documentation>M054</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="moeteregistreringsstatus">
+  <xs:complexType name="moeteregistreringsstatus">
     <xs:annotation>
       <xs:documentation>M055</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="presedensStatus">
+  <xs:complexType name="presedensStatus">
     <xs:annotation>
       <xs:documentation>M056</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <!-- M080-M099:	Typer -->
 
-  <xs:simpleType name="journalposttype">
+  <xs:complexType name="journalposttype">
     <xs:annotation>
       <xs:documentation>M082</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="dokumenttype">
+  <xs:complexType name="dokumenttype">
     <xs:annotation>
       <xs:documentation>M083</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="merknadstype">
+  <xs:complexType name="merknadstype">
     <xs:annotation>
       <xs:documentation>M084</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="moeteregistreringstype">
+  <xs:complexType name="moeteregistreringstype">
     <xs:annotation>
       <xs:documentation>M085</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="klassifikasjonstype">
+  <xs:complexType name="klassifikasjonstype">
     <xs:annotation>
       <xs:documentation>M086</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="korrespondanseparttype">
+  <xs:complexType name="korrespondanseparttype">
     <xs:annotation>
       <xs:documentation>M087</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="moetesakstype">
+  <xs:complexType name="moetesakstype">
     <xs:annotation>
       <xs:documentation>M088</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="slettingstype">
+  <xs:complexType name="slettingstype">
     <xs:annotation>
       <xs:documentation>M089</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <!-- M100-M199:	Datoer -->
 
@@ -525,14 +540,15 @@
     <xs:restriction base="ID"/>
   </xs:simpleType>
 
-  <xs:simpleType name="tilknyttetRegistreringSom">
+  <xs:complexType name="tilknyttetRegistreringSom">
     <xs:annotation>
       <xs:documentation>M217</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="referanseDokumentfil">
     <xs:annotation>
@@ -580,14 +596,15 @@
 
   <!-- M300-M369: Arkiv- og saksbehandlingsfunksjonalitet -->
 
-  <xs:simpleType name="dokumentmedium">
+  <xs:complexType name="dokumentmedium">
     <xs:annotation>
       <xs:documentation>M300</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="oppbevaringssted">
     <xs:annotation>
@@ -607,14 +624,15 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="partRolle">
+  <xs:complexType name="partRolle">
     <xs:annotation>
       <xs:documentation>M303</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="antallVedlegg">
     <xs:annotation>
@@ -733,14 +751,15 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="moetedeltakerFunksjon">
+  <xs:complexType name="moetedeltakerFunksjon">
     <xs:annotation>
       <xs:documentation>M373</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <!-- M400-M449:	Korrespondanse -->
 
@@ -818,14 +837,15 @@
 
   <!-- M450-M499:	Bevaring og kassasjon -->
 
-  <xs:simpleType name="kassasjonsvedtak">
+  <xs:complexType name="kassasjonsvedtak">
     <xs:annotation>
       <xs:documentation>M450</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="bevaringstid">
     <xs:annotation>
@@ -851,15 +871,16 @@
   </xs:simpleType>
 
   <!-- M500-M579: Skjerming og gradering -->
-
-  <xs:simpleType name="tilgangsrestriksjon">
+  <!--TODO tilsvarer dette tilgangskategori? -->
+  <xs:complexType name="tilgangsrestriksjon">
     <xs:annotation>
       <xs:documentation>M500</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="skjermingshjemmel">
     <xs:annotation>
@@ -870,23 +891,25 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="skjermingMetadata">
+  <xs:complexType name="skjermingMetadata">
     <xs:annotation>
       <xs:documentation>M502</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="skjermingDokument">
+  <xs:complexType name="skjermingDokument">
     <xs:annotation>
       <xs:documentation>M503</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="skjermingsvarighet">
     <xs:annotation>
@@ -902,32 +925,36 @@
     <xs:restriction base="xs:date"/>
   </xs:simpleType>
 
-  <xs:simpleType name="grad">
+  <!-- er dette tilsvarende Graderingskode i dokumentasjon? -->
+  <xs:complexType name="grad">
     <xs:annotation>
       <xs:documentation>M506</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="elektroniskSignaturSikkerhetsnivaa">
+  <xs:complexType name="elektroniskSignaturSikkerhetsnivaa">
     <xs:annotation>
       <xs:documentation>M507</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="elektroniskSignaturVerifisert">
+  <xs:complexType name="elektroniskSignaturVerifisert">
     <xs:annotation>
       <xs:documentation>M508</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <!-- M580-M599:	Brukeradministrasjon og administrativ oppbygning -->
 
@@ -1106,14 +1133,15 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="avskrivningsmaate">
+  <xs:complexType name="avskrivningsmaate">
     <xs:annotation>
       <xs:documentation>M619</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="tilknyttetDato">
     <xs:annotation>
@@ -1236,14 +1264,15 @@
     <xs:restriction base="xs:dateTime"/>
   </xs:simpleType>
 
-  <xs:simpleType name="flytStatus">
+  <xs:complexType name="flytStatus">
     <xs:annotation>
       <xs:documentation>M663</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="flytMerknad">
     <xs:annotation>
@@ -1319,23 +1348,25 @@
 
   <!-- M700-M799: Tekniske metadata -->
 
-  <xs:simpleType name="variantformat">
+  <xs:complexType name="variantformat">
     <xs:annotation>
       <xs:documentation>M700</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="format">
+  <xs:complexType name="format">
     <xs:annotation>
       <xs:documentation>M701</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="formatDetaljer">
     <xs:annotation>
@@ -1629,4 +1660,13 @@
     </xs:restriction>  
   </xs:simpleType>
 
+  <xs:complexType name="kode">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="verdi" type="xs:string"/>
+      <xs:element name="beskrivelse" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>
