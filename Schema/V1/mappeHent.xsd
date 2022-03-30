@@ -8,6 +8,8 @@
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
                schemaLocation="./metadatakatalog.xsd"/>
 
+    <xs:include schemaLocation="./arkivstruktur.xsd"/>
+
     <xs:element name="mappeHent" type="mappeHent"/>
 
     <xs:complexType name="mappeHent">
@@ -51,10 +53,4 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:complexType name="eksternNoekkel">
-        <xs:sequence>
-            <xs:element name="fagsystem" type="n5mdk:fagsystem"/>
-            <xs:element name="noekkel" type="n5mdk:noekkel"/>
-        </xs:sequence>
-    </xs:complexType>
 </xs:schema>

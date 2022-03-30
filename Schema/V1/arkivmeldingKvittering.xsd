@@ -7,6 +7,8 @@
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
                schemaLocation="./metadatakatalog.xsd"/>
 
+    <xs:include schemaLocation="./arkivstruktur.xsd"/>
+
     <xs:element name="arkivmeldingKvittering" type="arkivmeldingKvittering"/>
 
     <xs:complexType name="arkivmeldingKvittering">
@@ -91,19 +93,5 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="dokumentobjekt">
-        <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
-            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
-            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="eksternNoekkel">
-        <xs:sequence>
-            <xs:element name="fagsystem" type="n5mdk:fagsystem"/>
-            <xs:element name="noekkel" type="n5mdk:noekkel"/>
-        </xs:sequence>
-    </xs:complexType>
 
 </xs:schema>
