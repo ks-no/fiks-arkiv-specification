@@ -14,7 +14,7 @@
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
                schemaLocation="metadatakatalog.xsd"/>
 
-    <xs:include schemaLocation="./arkivstruktur.xsd"/>
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur" schemaLocation="./arkivstruktur.xsd"/>
 
     <xs:complexType name="mappeNoekler">
         <xs:sequence>
