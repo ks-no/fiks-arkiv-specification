@@ -2,6 +2,7 @@
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+           xmlns:a="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            targetNamespace="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
            elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
@@ -19,8 +20,8 @@
             <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:element name="antallFiler" type="xs:int"/>
             <xs:choice>
-                <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="mappe" type="a:mappe" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="registrering" type="a:registrering" minOccurs="0" maxOccurs="unbounded"/>
             </xs:choice>
         </xs:sequence>
     </xs:complexType>

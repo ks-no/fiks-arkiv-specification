@@ -3,6 +3,7 @@
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/mappe/hent/v2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+           xmlns:a="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            targetNamespace="http://www.arkivverket.no/standarder/noark5/mappe/hent/v2"
            elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
@@ -18,7 +19,7 @@
 			Eller kan man ikke garantere at den er unik?-->
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="a:eksternNoekkel" minOccurs="0"/>
             <!-- Er det enten referanseEksternNoekkel eller mappeID som kan identifisere en unik mappe?
 			Klarer vi å beskrive det at man trenger bare 1 av 2? -->
             <xs:element name="responsType" type="responsType" default="minimum"/>

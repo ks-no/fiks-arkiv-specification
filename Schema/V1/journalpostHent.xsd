@@ -2,6 +2,7 @@
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/journalpost/hent/v2"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+    xmlns:a="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
 	targetNamespace="http://www.arkivverket.no/standarder/noark5/journalpost/hent/v2"
 	elementFormDefault="qualified">
 	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
@@ -21,7 +22,7 @@
 			<xs:element name="journalpostnummer" type="n5mdk:journalpostnummer" minOccurs="0"/>
 			<!-- Er det enten referanseEksternNoekkel eller registreringsID eller de 3 overliggende feltene som kan identifisere en unik journalpost?
 			 Klarer vi å beskrive det at man trenger bare 1 av alternativene? -->
-			<xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="referanseEksternNoekkel" type="a:eksternNoekkel" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
 			<xs:element name="responsType" type="responsType" default="minimum"/>
 			<xs:element name="inkluder" type="inkluder" minOccurs="0"/>

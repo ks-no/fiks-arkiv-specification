@@ -2,6 +2,7 @@
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/arkivmeldingkvittering/v2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+           xmlns:a="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            targetNamespace="http://www.arkivverket.no/standarder/noark5/arkivmeldingkvittering/v2"
            elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
@@ -33,7 +34,7 @@
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
             <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="a:eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0"
@@ -64,7 +65,7 @@
             <xs:element name="dokumentbeskrivelseKvittering" type="dokumentbeskrivelseKvittering" minOccurs="0"
                         maxOccurs="unbounded"/>
             <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="a:eksternNoekkel" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -89,7 +90,7 @@
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
-            <xs:element name="dokumentobjekt" type="dokumentobjekt" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="dokumentobjekt" type="a:dokumentobjekt" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
