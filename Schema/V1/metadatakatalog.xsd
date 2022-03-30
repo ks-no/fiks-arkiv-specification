@@ -1665,8 +1665,8 @@
       <xs:documentation>M4..</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="verdi" type="xs:string"/>
-      <xs:element name="beskrivelse" type="xs:string"/>
+      <xs:element name="kode" type="xs:string"/>
+      <xs:element name="beskrivelse" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
