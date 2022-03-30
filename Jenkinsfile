@@ -7,11 +7,8 @@ pipeline {
             }
         }
         stage ('dotnet') {
-          when {
-            branch 'main'
-          }
           steps {
-            build job: '/KS/fiks-arkiv-models-dotnet/main'
+            build job: '/KS/fiks-arkiv-models-dotnet/main', parameters: [[$class: 'StringParameterValue', name:'triggerbranch', value: env.BRANCH_NAME]]
           }
         }
     }
