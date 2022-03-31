@@ -2,9 +2,13 @@
 <xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/sok/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:a="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+           xmlns:arkivstrukturMinimum="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/minimum/v1"
+           xmlns:an="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1"
            targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sok/v1" elementFormDefault="qualified">
 
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur" schemaLocation="./arkivstruktur.xsd"/>
+    <xs:import namespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/minimum/v1" schemaLocation="./arkivstrukturMinimum.xsd"/>
+    <xs:import namespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1" schemaLocation="./arkivstrukturNoekler.xsd"/>
     <xs:element name="sok" type="sok"/>
 
     <xs:complexType name="sok">
@@ -222,6 +226,132 @@
             <xs:enumeration value="journalpost.journalpostnummer"/>
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:element name="sokeresultat" type="sokeresultat"/>
+
+    <xs:complexType name="sokeresultat">
+        <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
+            <xs:element name="meldingId" type="xs:string"/>
+            <xs:element name="svarPaMeldingId" type="xs:string"/>
+            <xs:element name="tidspunkt" type="xs:dateTime"/>
+            <xs:element name="take" type="xs:int"/>
+            <xs:element name="skip" type="xs:int"/>
+            <xs:element name="count" type="xs:int"/>
+            <xs:element name="resultattype" type="resultatType"/>
+            <xs:element name="resultatListe" type="resultatListe"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="resultatType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="saksmappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="journalpost"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="resultatListe">
+        <xs:sequence>
+            <xs:element name="resultat" type="resultat" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resultat">
+        <xs:choice>
+            <xs:element name="mappe" type="a:mappe"/>
+            <xs:element name="saksmappe" type="a:saksmappe"/>
+            <xs:element name="registrering" type="a:registrering"/>
+            <xs:element name="journalpost" type="a:journalpost"/>
+            <xs:element name="dokumentbeskrivelse" type="a:dokumentbeskrivelse"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:element name="sokeresultatNoekler" type="sokeresultatNoekler"/>
+
+    <xs:complexType name="sokeresultatNoekler">
+        <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
+            <xs:element name="meldingId" type="xs:string"/>
+            <xs:element name="svarPaMeldingId" type="xs:string"/>
+            <xs:element name="tidspunkt" type="xs:dateTime"/>
+            <xs:element name="take" type="xs:int"/>
+            <xs:element name="skip" type="xs:int"/>
+            <xs:element name="count" type="xs:int"/>
+            <xs:element name="resultattype" type="resultatTypeNoekler"/>
+            <xs:element name="resultatListe" type="resultatListeNoekler"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="resultatTypeNoekler">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="saksmappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="journalpost"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="resultatListeNoekler">
+        <xs:sequence>
+            <xs:element name="resultatNoekler" type="resultatNoekler" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resultatNoekler">
+        <xs:choice>
+            <xs:element name="mappe" type="an:mappeNoekler"/>
+            <xs:element name="saksmappe" type="an:saksmappeNoekler"/>
+            <xs:element name="registrering" type="an:registreringNoekler"/>
+            <xs:element name="journalpost" type="an:journalpostNoekler"/>
+            <xs:element name="dokumentbeskrivelse" type="an:dokumentbeskrivelseNoekler"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:element name="sokeresultatMinimum" type="sokeresultatMinimum"/>
+
+    <xs:complexType name="sokeresultatMinimum">
+        <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
+            <xs:element name="meldingId" type="xs:string"/>
+            <xs:element name="svarPaMeldingId" type="xs:string"/>
+            <xs:element name="tidspunkt" type="xs:dateTime"/>
+            <xs:element name="take" type="xs:int"/>
+            <xs:element name="skip" type="xs:int"/>
+            <xs:element name="count" type="xs:int"/>
+            <xs:element name="resultattype" type="resultatTypeMinimum"/>
+            <xs:element name="resultatListe" type="resultatListeMinimum"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="resultatTypeMinimum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="saksmappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="journalpost"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="resultatListeMinimum">
+        <xs:sequence>
+            <xs:element name="resultatMinimum" type="resultatMinimum" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resultatMinimum">
+        <xs:choice>
+            <xs:element name="mappe" type="arkivstrukturMinimum:mappeMinimum"/>
+            <xs:element name="saksmappe" type="arkivstrukturMinimum:saksmappeMinimum"/>
+            <xs:element name="registrering" type="arkivstrukturMinimum:registreringMinimum"/>
+            <xs:element name="journalpost" type="arkivstrukturMinimum:journalpostMinimum"/>
+            <xs:element name="dokumentbeskrivelse" type="arkivstrukturMinimum:dokumentbeskrivelseMinimum"/>
+        </xs:choice>
+    </xs:complexType>
 
 </xs:schema>
 
