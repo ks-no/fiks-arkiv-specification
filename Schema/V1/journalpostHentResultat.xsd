@@ -4,8 +4,8 @@
     xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
 	targetNamespace="http://www.arkivverket.no/standarder/noark5/journalpost/hent/resultat/v2"
 	elementFormDefault="qualified">
-	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
-	schemaLocation="./arkivmelding.xsd"/>
+	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+			   schemaLocation="./arkivstruktur.xsd"/>
 
 	<xs:element name="journalpostHentResultat" type="journalpostHentResultat"/>
 

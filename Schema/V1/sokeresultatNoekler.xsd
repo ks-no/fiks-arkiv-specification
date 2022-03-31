@@ -4,6 +4,7 @@
            targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"
            xmlns:arkivstruktur="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1" elementFormDefault="qualified">
     <xs:import namespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1" schemaLocation="arkivstrukturNoekler.xsd"/>
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur" schemaLocation="./arkivstruktur.xsd"/>
     
     <xs:element name="sokeresultatNoekler" type="sokeresultatNoekler"/>
     

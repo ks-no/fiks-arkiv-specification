@@ -8,6 +8,7 @@
            elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2" schemaLocation="./metadatakatalog.xsd"/>
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2" schemaLocation="./arkivmelding.xsd"/>
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur" schemaLocation="./arkivstruktur.xsd"/>
     
     <xs:element name="arkivmeldingOppdatering" type="arkivmeldingOppdatering"/>
 
