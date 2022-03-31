@@ -634,5 +634,24 @@
             <xs:element name="verifisertAv" type="n5mdk:verifisertAv"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:simpleType name="inkluder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+            <xs:enumeration value="avskrivning"/>
+            <xs:enumeration value="dokumentflyt"/>
+            <xs:enumeration value="dokumentobjekt"/>
+        </xs:restriction>
+    </xs:simpleType>
     
 </xs:schema>

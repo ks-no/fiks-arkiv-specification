@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/sok/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:a="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sok/v1" elementFormDefault="qualified">
 
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur" schemaLocation="./arkivstruktur.xsd"/>
     <xs:element name="sok" type="sok"/>
 
     <xs:complexType name="sok">
@@ -15,7 +17,7 @@
             <xs:element name="respons" type="respons"/>
             <xs:element name="parameter" type="parameter" maxOccurs="unbounded"/>
             <xs:element name="responsType" type="responsType" default="minimum"/>
-            <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
+            <xs:element name="inkluder" type="a:inkluder" minOccurs="0"/>
             <xs:element name="sortering" type="sortering" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
@@ -201,25 +203,6 @@
             <xs:enumeration value="noekler"/>
             <xs:enumeration value="minimum"/>
             <xs:enumeration value="utvidet"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="inkluder">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="mappe"/>
-            <xs:enumeration value="registrering"/>
-            <xs:enumeration value="klasse"/>
-            <xs:enumeration value="noekkelord"/>
-            <xs:enumeration value="kryssreferanse"/>
-            <xs:enumeration value="part"/>
-            <xs:enumeration value="merknad"/>
-            <xs:enumeration value="presedens"/>
-            <xs:enumeration value="moetedeltaker"/>
-            <xs:enumeration value="dokumentbeskrivelse"/>
-            <xs:enumeration value="korrespondansepart"/>
-            <xs:enumeration value="avskrivning"/>
-            <xs:enumeration value="dokumentflyt"/>
-            <xs:enumeration value="dokumentobjekt"/>
         </xs:restriction>
     </xs:simpleType>
 
