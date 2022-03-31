@@ -24,18 +24,10 @@
 			 Klarer vi å beskrive det at man trenger bare 1 av alternativene? -->
 			<xs:element name="referanseEksternNoekkel" type="a:eksternNoekkel" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
-			<xs:element name="responsType" type="responsType" default="minimum"/>
+			<xs:element name="responsType" type="a:responsType" default="minimum"/>
 			<xs:element name="inkluder" type="inkluder" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-
-	<xs:simpleType name="responsType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="noekler"/> 
-			<xs:enumeration value="minimum"/>
-			<xs:enumeration value="utvidet"/>
-		</xs:restriction>
-	</xs:simpleType>
 
 	<xs:simpleType name="inkluder">
 		<xs:restriction base="xs:string">

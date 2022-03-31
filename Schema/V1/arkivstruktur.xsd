@@ -653,5 +653,12 @@
             <xs:enumeration value="dokumentobjekt"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
+    <xs:simpleType name="responsType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="noekler"/>
+            <xs:enumeration value="minimum"/>
+            <xs:enumeration value="utvidet"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
