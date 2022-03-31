@@ -2,7 +2,7 @@
 <xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:arkivstruktur="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1"
-           targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"elementFormDefault="qualified">
+           targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1" elementFormDefault="qualified">
 
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur" schemaLocation="./arkivstruktur.xsd"/>
     
