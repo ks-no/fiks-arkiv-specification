@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:arkivstruktur="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/minimum/v1"
+           xmlns:arkivstrukturMinimum="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/minimum/v1"
            targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1" elementFormDefault="qualified">
 
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur" schemaLocation="./arkivstruktur.xsd"/>
+    <xs:import namespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/minimum/v1" schemaLocation="./arkivstrukturMinimum.xsd"/>
     
     <xs:element name="sokeresultatMinimum" type="sokeresultatMinimum"/>
     
@@ -40,11 +40,11 @@
 
     <xs:complexType name="resultatMinimum">
         <xs:choice>
-            <xs:element name="mappe" type="arkivstruktur:mappeMinimum"/>
-            <xs:element name="saksmappe" type="arkivstruktur:saksmappeMinimum"/>
-            <xs:element name="registrering" type="arkivstruktur:registreringMinimum"/>
-            <xs:element name="journalpost" type="arkivstruktur:journalpostMinimum"/>
-            <xs:element name="dokumentbeskrivelse" type="arkivstruktur:dokumentbeskrivelseMinimum"/>
+            <xs:element name="mappe" type="arkivstrukturMinimum:mappeMinimum"/>
+            <xs:element name="saksmappe" type="arkivstrukturMinimum:saksmappeMinimum"/>
+            <xs:element name="registrering" type="arkivstrukturMinimum:registreringMinimum"/>
+            <xs:element name="journalpost" type="arkivstrukturMinimum:journalpostMinimum"/>
+            <xs:element name="dokumentbeskrivelse" type="arkivstrukturMinimum:dokumentbeskrivelseMinimum"/>
         </xs:choice>
     </xs:complexType>
 
