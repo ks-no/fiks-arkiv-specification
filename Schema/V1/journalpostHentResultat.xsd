@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/journalpost/hent/resultat/v2"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:arkivmelding="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
+    xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
 	targetNamespace="http://www.arkivverket.no/standarder/noark5/journalpost/hent/resultat/v2"
 	elementFormDefault="qualified">
 	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
@@ -11,7 +11,7 @@
 
 	<xs:complexType name="journalpostHentResultat">
 		<xs:sequence>
-			<xs:element name="journalpost" type="arkivmelding:journalpost"/>
+			<xs:element name="journalpost" type="arkivstruktur:journalpost"/>
 		</xs:sequence>
 	</xs:complexType>
 	
