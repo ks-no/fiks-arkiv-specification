@@ -60,7 +60,7 @@
             <!-- Dersom ren registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
             <xs:choice minOccurs="0">
                 <xs:element name="referanseForelderMappe" type="n5mdk:systemID"/>
-                <xs:element name="referanseArkivdel" type="n5mdk:referanseArkivdel"/>
+                <xs:element name="arkivdel" type="n5mdk:kode"/>
             </xs:choice>
             <xs:element name="dokumentbeskrivelse" type="dokumentbeskrivelseNoekler" minOccurs="0"
                         maxOccurs="unbounded"/>
