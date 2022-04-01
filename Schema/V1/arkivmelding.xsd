@@ -30,7 +30,7 @@
         <xs:complexContent>
             <xs:extension base="arkivstruktur:saksmappe">
                 <xs:sequence>
-                    <xs:element name="matrikkelnummer" type="arkivstruktur:matrikkelnummer" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="matrikkelnummer" type="matrikkelnummer" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="byggident" type="byggident" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="planident" type="planident" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="punkt" type="punkt" minOccurs="0" maxOccurs="unbounded"/>
