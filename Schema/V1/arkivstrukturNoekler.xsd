@@ -2,6 +2,7 @@
 <xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+           xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            targetNamespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1"
            elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0">
 
@@ -13,6 +14,8 @@
 
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
                schemaLocation="metadatakatalog.xsd"/>
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+               schemaLocation="./arkivstruktur.xsd"/>
 
     <xs:complexType name="mappeNoekler">
         <xs:sequence>
@@ -24,7 +27,7 @@
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
             <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
             <xs:element name="part" type="partNoekler" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappe" type="mappeNoekler" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registrering" type="registreringNoekler" minOccurs="0" maxOccurs="unbounded"/>
@@ -65,7 +68,7 @@
             <xs:element name="dokumentbeskrivelse" type="dokumentbeskrivelseNoekler" minOccurs="0"
                         maxOccurs="unbounded"/>
             <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel"/>
+            <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -96,13 +99,6 @@
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="eksternNoekkel">
-        <xs:sequence>
-            <xs:element name="fagsystem" type="n5mdk:fagsystem"/>
-            <xs:element name="noekkel" type="n5mdk:noekkel"/>
         </xs:sequence>
     </xs:complexType>
 

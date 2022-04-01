@@ -1,0 +1,41 @@
+@startuml
+object arkivmelding.xsd
+object arkivmeldingKvittering.xsd
+object arkivmeldingOppdatering.xsd
+object arkivstruktur.xsd
+object arkivstrukturMinimum.xsd
+object metadatakatalog.xsd
+object arkivstrukturNoekler.xsd
+object dokumentfilHent.xsd
+object journalpostHent.xsd
+object journalpostHentResultat.xsd
+object mappeHent.xsd
+object mappeHentResultat.xsd
+object sok.xsd
+object sokeresultatMinimum.xsd
+object sokeresultatNoekler.xsd
+object sokeresultatUtvidet.xsd
+
+
+arkivmelding.xsd --> arkivstruktur.xsd
+arkivmelding.xsd --> metadatakatalog.xsd
+arkivmeldingKvittering.xsd --> arkivstruktur.xsd
+arkivmeldingKvittering.xsd --> metadatakatalog.xsd
+arkivmeldingOppdatering.xsd --> arkivstruktur.xsd
+arkivmeldingOppdatering.xsd --> arkivmelding.xsd
+arkivmeldingOppdatering.xsd --> metadatakatalog.xsd
+arkivstruktur.xsd --> metadatakatalog.xsd
+arkivstrukturMinimum.xsd --> metadatakatalog.xsd
+arkivstrukturNoekler.xsd --> arkivstruktur.xsd
+arkivstrukturNoekler.xsd --> metadatakatalog.xsd
+dokumentfilHent.xsd --> metadatakatalog.xsd
+journalpostHent.xsd --> arkivstruktur.xsd
+journalpostHent.xsd --> metadatakatalog.xsd
+mappeHent.xsd --> arkivstruktur.xsd
+mappeHent.xsd --> metadatakatalog.xsd
+mappeHentResultat.xsd --> arkivstruktur.xsd
+sokeresultatMinimum.xsd --> arkivstruktur.xsd
+sokeresultatNoekler.xsd --> arkivstruktur.xsd
+sokeresultatUtvidet.xsd --> arkivstruktur.xsd
+
+@enduml
