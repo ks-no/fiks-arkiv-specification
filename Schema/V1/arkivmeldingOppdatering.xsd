@@ -2,11 +2,14 @@
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/arkivmeldingoppdatering/v2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+           xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            xmlns:arkivmelding="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
            targetNamespace="http://www.arkivverket.no/standarder/noark5/arkivmeldingoppdatering/v2"
            elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2" schemaLocation="./metadatakatalog.xsd"/>
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2" schemaLocation="./arkivmelding.xsd"/>
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+               schemaLocation="./arkivstruktur.xsd"/>
     
     <xs:element name="arkivmeldingOppdatering" type="arkivmeldingOppdatering"/>
 
@@ -25,7 +28,7 @@
         <xs:sequence>
             <xs:choice>
                 <xs:element name="systemID" type="n5mdk:systemID"/>
-                <xs:element name="referanseEksternNoekkel" type="arkivmelding:eksternNoekkel"/>
+                <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel"/>
             </xs:choice>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
@@ -78,7 +81,7 @@
         <xs:sequence>
             <xs:element name="oppdatering" type="partOppdatering" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="slett" type="partSlett" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="ny" type="arkivmelding:part" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ny" type="arkivstruktur:part" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -114,11 +117,11 @@
         <xs:sequence>
             <xs:choice>
                 <xs:element name="systemID" type="n5mdk:systemID"/>
-                <xs:element name="referanseEksternNoekkel" type="arkivmelding:eksternNoekkel"/>
+                <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel"/>
             </xs:choice>
             <xs:element name="partOppdatering" type="partOppdateringer" minOccurs="0"/>
-            <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
-            <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
+            <xs:element name="skjerming" type="arkivstruktur:skjerming" minOccurs="0"/>
+            <xs:element name="gradering" type="arkivstruktur:gradering" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -140,7 +143,7 @@
         <xs:sequence>
             <xs:element name="oppdatering" type="korrespondansepartOppdatering" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="slett" type="korrespondansepartSlett" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="ny" type="arkivmelding:korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ny" type="arkivstruktur:korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -179,7 +182,7 @@
         <xs:sequence>
             <xs:element name="oppdatering" type="merknadOppdatering" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="slett" type="merknadSlett" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="ny" type="arkivmelding:merknad" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ny" type="arkivstruktur:merknad" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -204,7 +207,7 @@
         <xs:sequence>
             <xs:element name="oppdatering" type="klassifikasjonOppdatering" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="slett" type="klassifikasjonSlett" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="ny" type="arkivmelding:klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ny" type="arkivstruktur:klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
