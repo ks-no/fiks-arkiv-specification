@@ -33,6 +33,7 @@ journalpostHent.xsd --> arkivstruktur.xsd
 journalpostHent.xsd --> metadatakatalog.xsd
 mappeHent.xsd --> arkivstruktur.xsd
 mappeHent.xsd --> metadatakatalog.xsd
+sok.xsd --> arkivstruktur.xsd
 mappeHentResultat.xsd --> arkivstruktur.xsd
 sokeresultatMinimum.xsd --> arkivstruktur.xsd
 sokeresultatNoekler.xsd --> arkivstruktur.xsd
