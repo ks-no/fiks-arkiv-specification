@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/sok/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sok/v1" elementFormDefault="qualified">
 
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+               schemaLocation="./arkivstruktur.xsd"/>
     <xs:element name="sok" type="sok"/>
 
     <xs:complexType name="sok">
@@ -14,7 +17,7 @@
             <xs:element name="skip" type="xs:int"/>
             <xs:element name="respons" type="respons"/>
             <xs:element name="parameter" type="parameter" maxOccurs="unbounded"/>
-            <xs:element name="responsType" type="responsType" default="minimum"/>
+            <xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
             <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
             <xs:element name="sortering" type="sortering" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -193,14 +196,6 @@
             <xs:enumeration value="registrering"/>
             <xs:enumeration value="journalpost"/>
             <xs:enumeration value="dokumentbeskrivelse"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="responsType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="noekler"/>
-            <xs:enumeration value="minimum"/>
-            <xs:enumeration value="utvidet"/>
         </xs:restriction>
     </xs:simpleType>
 
