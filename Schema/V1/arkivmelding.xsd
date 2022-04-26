@@ -20,7 +20,7 @@
             <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:element name="antallFiler" type="xs:int"/>
             <xs:choice>
-                <xs:element name="mappe" type="arkivstruktur:mappe" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
             </xs:choice>
         </xs:sequence>
