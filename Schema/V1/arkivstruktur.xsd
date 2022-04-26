@@ -164,29 +164,30 @@
 
     <xs:complexType name="mappe">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <!-- ReferanseForelderMappe gir mulighet for putte en mappe inn under en eksisterende mappe -->
-            <xs:element name="ReferanseForeldermappe" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="mappeID" type="n5mdk:mappeID"/>
+<!--            TODO Skal denne være med? Fra arkivmelding.xsd mappe-->
+<!--            <xs:element name="ReferanseForeldermappe" type="n5mdk:systemID" minOccurs="0"/>-->
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="noekkelord" type="n5mdk:noekkelord" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="dokumentmedium" type="n5mdk:dokumentmedium" minOccurs="0"/>
             <xs:element name="oppbevaringssted" type="n5mdk:oppbevaringssted" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
-            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
-            <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
-            <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
+            <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato"/>
+            <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv"/>
             <xs:element name="referanseArkivdel" type="n5mdk:referanseArkivdel" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="merknad" type="merknad" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="kassasjon" type="kassasjon" minOccurs="0"/>
             <xs:element name="skjerming" type="skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="gradering" minOccurs="0"/>
-            <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+<!--            TODO Skal denne være med? Fra arkivmelding.xsd mappe-->
+<!--            <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>--> 
             <!-- Tillater mapper uten forekomster av (under)mappe og registrering -->
             <xs:choice>
                 <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
@@ -199,11 +200,11 @@
         <xs:complexContent>
             <xs:extension base="mappe">
                 <xs:sequence>
-                    <xs:element name="saksaar" type="n5mdk:saksaar" minOccurs="0"/>
-                    <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" minOccurs="0"/>
-                    <xs:element name="saksdato" type="n5mdk:saksdato" minOccurs="0"/>
-                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet" minOccurs="0"/>
-                    <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig" minOccurs="0"/>
+                    <xs:element name="saksaar" type="n5mdk:saksaar"/>
+                    <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer"/>
+                    <xs:element name="saksdato" type="n5mdk:saksdato"/>
+                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet"/>
+                    <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig"/>
                     <xs:element name="journalenhet" type="n5mdk:journalenhet" minOccurs="0"/>
                     <xs:element name="saksstatus" type="n5mdk:saksstatus"/>
                     <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
