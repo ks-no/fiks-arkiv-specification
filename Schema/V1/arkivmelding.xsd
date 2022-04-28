@@ -142,6 +142,24 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="arkivnotat">
+        <xs:complexContent>
+            <xs:extension base="registrering">
+                <xs:sequence>
+                    <xs:element name="dokumentetsDato" type="n5mdk:dokumentetsDato" minOccurs="0"/>
+                    <xs:element name="mottattDato" type="n5mdk:mottattDato" minOccurs="0"/>
+                    <xs:element name="sendtDato" type="n5mdk:sendtDato" minOccurs="0"/>
+                    <xs:element name="forfallsdato" type="n5mdk:forfallsdato" minOccurs="0"/>
+                    <xs:element name="offentlighetsvurdertDato" type="n5mdk:offentlighetsvurdertDato" minOccurs="0"/>
+                    <xs:element name="antallVedlegg" type="n5mdk:antallVedlegg" minOccurs="0"/>
+                    <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
+                    <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
+                    <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="dokumentbeskrivelse">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
