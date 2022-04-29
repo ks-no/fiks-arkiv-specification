@@ -193,7 +193,7 @@
                     <xs:element name="antallVedlegg" type="n5mdk:antallVedlegg" minOccurs="0"/>
                     <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
                     <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
-                    <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="dokumentflyt" type="arkivstruktur:dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
