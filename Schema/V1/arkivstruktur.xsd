@@ -185,7 +185,7 @@
             <xs:element name="kassasjon" type="kassasjon" minOccurs="0"/>
             <xs:element name="skjerming" type="skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="gradering" minOccurs="0"/>
-            <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>- 
+            <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
