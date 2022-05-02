@@ -282,7 +282,7 @@
             <!-- Dersom en registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
             <xs:choice minOccurs="0">
                 <xs:element name="referanseForelderMappe" type="n5mdk:systemID"/>
-                <xs:element name="referanseArkivdel" type="n5mdk:referanseArkivdel"/>
+                <xs:element name="arkivdel" type="n5mdk:kode"/>
             </xs:choice>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kassasjon" type="kassasjon" minOccurs="0"/>
