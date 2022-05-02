@@ -3,10 +3,13 @@
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/mappe/hent/v2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+           xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
            targetNamespace="http://www.arkivverket.no/standarder/noark5/mappe/hent/v2"
            elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
                schemaLocation="./metadatakatalog.xsd"/>
+    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+               schemaLocation="./arkivstruktur.xsd"/>
 
     <xs:element name="mappeHent" type="mappeHent"/>
 
@@ -16,45 +19,13 @@
 			Eller kan man ikke garantere at den er unik?-->
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
             <!-- Er det enten referanseEksternNoekkel eller mappeID som kan identifisere en unik mappe?
 			Klarer vi å beskrive det at man trenger bare 1 av 2? -->
-            <xs:element name="responsType" type="responsType" default="minimum"/>
-            <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
+            <xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
+            <xs:element name="inkluder" type="arkivstruktur:inkluder" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="responsType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="noekler"/>
-            <xs:enumeration value="minimum"/>
-            <xs:enumeration value="utvidet"/>
-        </xs:restriction>
-    </xs:simpleType>
 
-    <xs:simpleType name="inkluder">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="mappe"/>
-            <xs:enumeration value="registrering"/>
-            <xs:enumeration value="klasse"/>
-            <xs:enumeration value="noekkelord"/>
-            <xs:enumeration value="kryssreferanse"/>
-            <xs:enumeration value="part"/>
-            <xs:enumeration value="merknad"/>
-            <xs:enumeration value="presedens"/>
-            <xs:enumeration value="moetedeltaker"/>
-            <xs:enumeration value="dokumentbeskrivelse"/>
-            <xs:enumeration value="korrespondansepart"/>
-            <xs:enumeration value="avskrivning"/>
-            <xs:enumeration value="dokumentflyt"/>
-            <xs:enumeration value="dokumentobjekt"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:complexType name="eksternNoekkel">
-        <xs:sequence>
-            <xs:element name="fagsystem" type="n5mdk:fagsystem"/>
-            <xs:element name="noekkel" type="n5mdk:noekkel"/>
-        </xs:sequence>
-    </xs:complexType>
 </xs:schema>

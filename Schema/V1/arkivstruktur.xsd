@@ -166,6 +166,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="mappeID" type="n5mdk:mappeID"/>
+            <xs:element name="ReferanseForeldermappe" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -184,7 +185,8 @@
             <xs:element name="kassasjon" type="kassasjon" minOccurs="0"/>
             <xs:element name="skjerming" type="skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="gradering" minOccurs="0"/>
-            <!-- Tillater mapper uten forekomster av (under)mappe og registrering -->
+            <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>- 
+            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
@@ -211,6 +213,24 @@
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="eksternNoekkel">
+        <xs:sequence>
+            <xs:element name="fagsystem" type="n5mdk:fagsystem"/>
+            <xs:element name="noekkel" type="n5mdk:noekkel"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="klassifikasjon">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="klassifikasjonssystem" type="n5mdk:klassifikasjonssystem"/>
+            <xs:element name="klasseID" type="n5mdk:klasseID"/>
+            <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
+            <xs:element name="skjermetObjekt" type="n5mdk:skjermetObjekt" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="part">
@@ -259,7 +279,11 @@
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
             <xs:element name="arkivertDato" type="n5mdk:arkivertDato"/>
             <xs:element name="arkivertAv" type="n5mdk:arkivertAv"/>
-            <xs:element name="arkivdel" type="n5mdk:kode" minOccurs="0"/>
+            <!-- Dersom en registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
+            <xs:choice minOccurs="0">
+                <xs:element name="referanseForelderMappe" type="n5mdk:systemID"/>
+                <xs:element name="referanseArkivdel" type="n5mdk:referanseArkivdel"/>
+            </xs:choice>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kassasjon" type="kassasjon" minOccurs="0"/>
             <xs:element name="skjerming" type="skjerming" minOccurs="0"/>
@@ -278,6 +302,8 @@
             <xs:element name="merknad" type="merknad" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="korrespondansepart" type="korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -416,7 +442,9 @@
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer"/>
             <xs:element name="variantformat" type="n5mdk:variantformat"/>
+            <xs:element name="filnavn" type="xs:string"/>
             <xs:element name="format" type="n5mdk:format"/>
+            <xs:element name="mimeType" type="xs:string" minOccurs="0"/>
             <xs:element name="formatDetaljer" type="n5mdk:formatDetaljer" minOccurs="0"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
@@ -445,15 +473,19 @@
             <xs:element name="referanseTilKlasse" type="n5mdk:referanseTilKlasse" minOccurs="0"/>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering" minOccurs="0"/>
+            <xs:element name="referanseTilDokumentbeskrivelse" type="n5mdk:referanseTilDokumentbeskrivelse"
+                        minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="merknad">
         <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="merknadstekst" type="n5mdk:merknadstekst"/>
             <xs:element name="merknadstype" type="n5mdk:merknadstype" minOccurs="0"/>
             <xs:element name="merknadsdato" type="n5mdk:merknadsdato"/>
             <xs:element name="merknadRegistrertAv" type="n5mdk:merknadRegistrertAv"/>
+            <xs:element name="skjermetObjekt" type="n5mdk:skjermetObjekt" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -527,5 +559,31 @@
             <xs:element name="verifisertAv" type="n5mdk:verifisertAv"/>
         </xs:sequence>
     </xs:complexType>
-    
+
+    <xs:simpleType name="inkluder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+            <xs:enumeration value="avskrivning"/>
+            <xs:enumeration value="dokumentflyt"/>
+            <xs:enumeration value="dokumentobjekt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="responsType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="noekler"/>
+            <xs:enumeration value="minimum"/>
+            <xs:enumeration value="utvidet"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

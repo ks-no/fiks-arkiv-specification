@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/mappe/hent/resultat/v2"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   xmlns:arkivmelding="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
-	targetNamespace="http://www.arkivverket.no/standarder/noark5/mappe/hent/resultat/v2"
-	elementFormDefault="qualified">
-	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
-		   schemaLocation="./arkivmelding.xsd"/>
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   	xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+			targetNamespace="http://www.arkivverket.no/standarder/noark5/mappe/hent/resultat/v2"
+			elementFormDefault="qualified">
+	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+			   schemaLocation="./arkivstruktur.xsd"/>
 
 	<xs:element name="mappeHentResultat" type="mappeHentResultat"/>
 
 	<xs:complexType name="mappeHentResultat">
 		<xs:sequence>
-			<xs:element name="mappe" type="arkivmelding:mappe"/>
+			<xs:element name="mappe" type="arkivstruktur:mappe"/>
 		</xs:sequence>
 	</xs:complexType>
 	
