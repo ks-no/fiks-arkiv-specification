@@ -191,6 +191,7 @@
                 <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
             </xs:choice>
+            <xs:element name="mappetype" type="n5mdk:kode"/>
         </xs:sequence>
     </xs:complexType>
 

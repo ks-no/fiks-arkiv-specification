@@ -30,7 +30,6 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <!-- ReferanseForelderMappe gir mulighet for putte en mappe inn under en eksisterende mappe -->
             <xs:element name="ReferanseForeldermappe" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
@@ -56,6 +55,7 @@
                 <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
             </xs:choice>
+            <xs:element name="mappetype" type="n5mdk:kode" minOccurs="0"/> 
         </xs:sequence>
     </xs:complexType>
 
