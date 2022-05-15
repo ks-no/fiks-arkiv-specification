@@ -22,7 +22,6 @@
             <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
             <!-- Er det enten referanseEksternNoekkel eller mappeID som kan identifisere en unik mappe?
 			Klarer vi å beskrive det at man trenger bare 1 av 2? -->
-            <xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
             <xs:element name="inkluder" type="arkivstruktur:inkluder" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
