@@ -586,4 +586,12 @@
             <xs:enumeration value="utvidet"/>
         </xs:restriction>
     </xs:simpleType>
+    
+    <xs:complexType name="adresse">
+        <xs:sequence>
+            <xs:element name="adresse" type="n5mdk:postadresse" />
+            <xs:element name="postnummer" type="n5mdk:postnummer" />
+            <xs:element name="poststed" type="n5mdk:poststed" />
+        </xs:sequence>
+    </xs:complexType>
 </xs:schema>

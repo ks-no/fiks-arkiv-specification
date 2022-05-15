@@ -77,6 +77,7 @@
                     <xs:element name="byggident" type="byggident" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="planident" type="planident" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="punkt" type="punkt" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="adresse" type="arkivstruktur:adresse" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
