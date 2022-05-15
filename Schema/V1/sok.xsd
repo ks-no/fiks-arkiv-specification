@@ -97,6 +97,7 @@
             <xs:enumeration value="mappe.arkivdel"/>
             <xs:enumeration value="mappe.endretFoerDato"/>
             <xs:enumeration value="mappe.endretEtterDato"/>
+            <xs:enumeration value="mappe.mappetype"/>
 
             <xs:enumeration value="sak.saksdato"/>
             <xs:enumeration value="sak.saksaar"/>
