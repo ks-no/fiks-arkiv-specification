@@ -24,7 +24,6 @@
 			 Klarer vi å beskrive det at man trenger bare 1 av alternativene? -->
 			<xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
-			<xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
 			<xs:element name="inkluder" type="arkivstruktur:inkluder" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
