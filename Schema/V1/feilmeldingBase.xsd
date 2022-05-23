@@ -10,9 +10,9 @@
 	
 	<xs:complexType name="feilmeldingBase">
 		<xs:sequence>
-			<xs:element name="errorId" type="n5mdk:ID" />
+			<xs:element name="feilId" type="n5mdk:ID" />
 			<xs:element name="feilmelding" type="xs:string" />
-			<xs:element name="correlationId" type="n5mdk:ID" minOccurs="0"/>
+			<xs:element name="korrelasjonsid" type="n5mdk:ID" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 
