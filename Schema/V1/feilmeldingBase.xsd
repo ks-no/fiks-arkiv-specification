@@ -8,7 +8,7 @@
 	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
 			   schemaLocation="./metadatakatalog.xsd"/>
 	
-	<xs:complexType name="feilmeldingType">
+	<xs:complexType name="feilmeldingBase">
 		<xs:sequence>
 			<xs:element name="errorId" type="n5mdk:ID" />
 			<xs:element name="feilmelding" type="xs:string" />

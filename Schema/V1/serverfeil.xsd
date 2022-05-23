@@ -6,8 +6,8 @@
 			elementFormDefault="qualified">
 
 	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/feil/feilmelding/v2"
-			   schemaLocation="./feilmelding.xsd"/>
+			   schemaLocation="./feilmeldingBase.xsd"/>
 
-	<xs:element name="serverfeil" type="feilmelding:feilmeldingType" />
+	<xs:element name="serverfeil" type="feilmelding:feilmeldingBase" />
 
 </xs:schema>
