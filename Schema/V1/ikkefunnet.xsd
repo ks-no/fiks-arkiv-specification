@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/feil/ikkefunnet/v2"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:feilmelding="http://www.arkivverket.no/standarder/noark5/feil/feilmelding/v2"
+			targetNamespace="http://www.arkivverket.no/standarder/noark5/feil/ikkefunnet/v2"
+			elementFormDefault="qualified">
+
+	<xs:import namespace="http://www.arkivverket.no/standarder/noark5/feil/feilmelding/v2"
+			   schemaLocation="./feilmeldingBase.xsd"/>
+
+	<xs:element name="ikkefunnet" type="feilmelding:feilmeldingBase" />
+
+</xs:schema>
