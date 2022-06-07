@@ -6,7 +6,7 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding",
       "beskrivelse": "", 
       "harPayload": true,
-      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering"]
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering",
@@ -29,34 +29,86 @@
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.kvittering",
       "beskrivelse": "",
-      "harPayload": true,
+      "harPayload": false,
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent",
       "beskrivelse": "",
       "harPayload": true,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat"]
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.jounalpost.hent",
+      "beskrivelse": "",
+      "harPayload": true,
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.journalpost.hent.resultat"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.journalpost.resultat",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.journalpost.hent"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent",
+      "beskrivelse": "",
+      "harPayload": true,
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.dokumentfil.resultat",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok",
+      "beskrivelse": "",
+      "harPayload": true,
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet", "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum", "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fik.arkiv.v1.feilmelding.serverfeil",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fik.arkiv.v1.feilmelding.ikkefunnet",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent"]
     }
   ]
-}
-
-  // Innsyn Hent
-  public const string MappeHent = "no.ks.fiks.arkiv.v1.innsyn.mappe.hent";
-  public const string MappeHentResultat = "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat";
-  public const string JournalpostHent = "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent";
-  public const string JournalpostHentResultat = "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent.resultat";
-  public const string DokumentfilHent = "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent";
-  public const string DokumentfilHentResultat = "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat";
-
-  // Innsyn Søk
-  public const string Sok = "no.ks.fiks.arkiv.v1.innsyn.sok";
-  public const string SokResultatUtvidet = "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet";
-  public const string SokResultatMinimum = "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum";
-  public const string SokResultatNoekler = "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler";
-
-  // Feilmeldinger
-  public const string Ugyldigforespørsel = "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel";
-  public const string Serverfeil = "no.ks.fiks.arkiv.v1.feilmelding.serverfeil";
-  public const string Ikkefunnet = "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet";  
 }
