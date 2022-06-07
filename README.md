@@ -12,7 +12,7 @@ Se filen `Schema/V1/meldingstyper/meldingstyper.json` for hvilke meldingstyper s
 
 Skjemafilene ligger under `Schema/V1`  
 
-##### Avhengighet mellom schemas
+##### Avhengighet mellom skjemaer
 ![Avhengigheter mellom schemas](deps.png)
 
 ## Dokumentasjon
