@@ -8,7 +8,7 @@
 #### Meldingstyper
 Se filen `Schema/V1/meldingstyper/meldingstyper.json` for hvilke meldingstyper som finnes og hvordan de henger sammen.
 
-#### Schema
+#### Skjema
 
 Skjemafilene ligger under `Schema/V1`  
 
