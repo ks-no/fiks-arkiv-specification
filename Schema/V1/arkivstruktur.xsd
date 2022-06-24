@@ -208,8 +208,6 @@
                     <xs:element name="saksstatus" type="n5mdk:saksstatus"/>
                     <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
                     <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
-                    <xs:element name="referanseSekundaerKlassifikasjon" type="n5mdk:referanseSekundaerKlassifikasjon"
-                                minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
@@ -222,7 +220,6 @@
             <xs:element name="noekkel" type="n5mdk:noekkel"/>
         </xs:sequence>
     </xs:complexType>
-
 
     <xs:complexType name="klassifikasjon">
         <xs:sequence>
