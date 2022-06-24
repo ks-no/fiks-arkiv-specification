@@ -7,8 +7,6 @@
            elementFormDefault="qualified">
     <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
                schemaLocation="./metadatakatalog.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
-               schemaLocation="./arkivstruktur.xsd"/>
 
     <xs:element name="arkivmelding" type="arkivmelding"/>
 
@@ -291,13 +289,13 @@
     </xs:complexType>
 
     <xs:complexType name="avskrivning">
-        <xs:complexContent>
-            <xs:extension base="arkivstruktur:avskrivning">
-                <xs:sequence>
-                    <xs:element name="referanseAvskriverJournalpost" type="n5mdk:referanseAvskriverJournalpost" minOccurs="0"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
+        <xs:sequence>
+            <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
+            <xs:element name="avskrevetAv" type="n5mdk:avskrevetAv"/>
+            <xs:element name="avskrivningsmaate" type="n5mdk:avskrivningsmaate"/>
+            <xs:element name="referanseAvskrivesAvJournalpost" type="n5mdk:referanseAvskrivesAvJournalpost" minOccurs="0"/>
+            <xs:element name="referanseAvskriverJournalpost" type="n5mdk:referanseAvskriverJournalpost" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="hendelseslogg">
