@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/arkivmeldingoppdatering/v2"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmeldingoppdatering/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
-           xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
-           xmlns:arkivmelding="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2"
-           targetNamespace="http://www.arkivverket.no/standarder/noark5/arkivmeldingoppdatering/v2"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
+           xmlns:arkivmelding="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmeldingoppdatering/v1"
            elementFormDefault="qualified">
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2" schemaLocation="./metadatakatalog.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivmelding/v2" schemaLocation="./arkivmelding.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/v1" schemaLocation="./arkivmelding.xsd"/>
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
                schemaLocation="./arkivstruktur.xsd"/>
     
     <xs:element name="arkivmeldingOppdatering" type="arkivmeldingOppdatering"/>
