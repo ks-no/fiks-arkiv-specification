@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="hhttps://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/journalpost/hent/resultat/v1"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/journalpost/hent/resultat/v1"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		   	xmlns:arkivstruktur="hhttps://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
-			targetNamespace="hhttps://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/journalpost/hent/resultat/v1"
+		   	xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
+			targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/journalpost/hent/resultat/v1"
 			elementFormDefault="qualified">
-	<xs:import namespace="hhttps://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/v1"
+	<xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/v1"
 	schemaLocation="./arkivmelding.xsd"/>
-	<xs:import namespace="hhttps://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
+	<xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
 			   schemaLocation="./arkivstruktur.xsd"/>
 
 	<xs:element name="journalpostHentResultat" type="journalpostHentResultat"/>
