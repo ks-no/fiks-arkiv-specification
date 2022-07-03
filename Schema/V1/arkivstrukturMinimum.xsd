@@ -52,7 +52,7 @@
             <xs:element name="skjerming" type="skjermingMinimum" minOccurs="0"/>
             <xs:element name="gradering" type="graderingMinimum" minOccurs="0"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/> <!-- Kanskje? -->
+            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappe" type="mappeMinimum" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registrering" type="registreringMinimum" minOccurs="0" maxOccurs="unbounded"/>
