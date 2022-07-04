@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
-           xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
-           targetNamespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v1"
            elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0">
 
     <xs:annotation>
@@ -12,9 +12,9 @@
         <xs:documentation xml:lang="no">Hovedskjema - skjema for arkivstruktur for søkeresultat</xs:documentation>
     </xs:annotation>
 
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
                schemaLocation="metadatakatalog.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
                schemaLocation="./arkivstruktur.xsd"/>
 
     <xs:complexType name="mappeNoekler">

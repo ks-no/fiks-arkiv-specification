@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+  targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
   elementFormDefault="qualified" version="5.0">
 
   <!-- 
