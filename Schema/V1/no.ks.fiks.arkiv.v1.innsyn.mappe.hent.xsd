@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
-<xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/mappe/hent/v2"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/mappe/hent/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
-           xmlns:arkivstruktur="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
-           targetNamespace="http://www.arkivverket.no/standarder/noark5/mappe/hent/v2"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/mappe/hent/v1"
            elementFormDefault="qualified">
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
                schemaLocation="./metadatakatalog.xsd"/>
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
                schemaLocation="./arkivstruktur.xsd"/>
 
     <xs:element name="mappeHent" type="mappeHent"/>
@@ -22,9 +22,20 @@
             <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
             <!-- Er det enten referanseEksternNoekkel eller mappeID som kan identifisere en unik mappe?
 			Klarer vi å beskrive det at man trenger bare 1 av 2? -->
-            <xs:element name="inkluder" type="arkivstruktur:inkluder" minOccurs="0"/>
+            <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
+    <xs:simpleType name="inkluder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>

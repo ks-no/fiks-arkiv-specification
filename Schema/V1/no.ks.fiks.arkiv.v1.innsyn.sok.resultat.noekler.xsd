@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.ks.no/standarder/fiks/arkiv/sokeresultat/v1"
-           xmlns:arkivstruktur="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1" elementFormDefault="qualified">
-    <xs:import namespace="http://www.ks.no/standarder/fiks/arkiv/arkivstruktur/noekler/v1" schemaLocation="arkivstrukturNoekler.xsd"/>
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/v1"
+           xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v1" elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v1" schemaLocation="arkivstrukturNoekler.xsd"/>
     
     <xs:element name="sokeresultatNoekler" type="sokeresultatNoekler"/>
     

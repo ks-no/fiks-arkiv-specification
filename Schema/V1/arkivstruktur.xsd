@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:n5mdk="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
-           targetNamespace="http://www.arkivverket.no/standarder/noark5/arkivstruktur"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
            elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0">
 
     <!-- 
@@ -57,7 +57,7 @@
         <xs:documentation xml:lang="no">Hovedskjema - skjema for arkivstruktur</xs:documentation>
     </xs:annotation>
 
-    <xs:import namespace="http://www.arkivverket.no/standarder/noark5/metadatakatalog/v2"
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
                schemaLocation="metadatakatalog.xsd"/>
 
     <!-- Rotelementet -->
@@ -208,8 +208,6 @@
                     <xs:element name="saksstatus" type="n5mdk:saksstatus"/>
                     <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
                     <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
-                    <xs:element name="referanseSekundaerKlassifikasjon" type="n5mdk:referanseSekundaerKlassifikasjon"
-                                minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
@@ -222,7 +220,6 @@
             <xs:element name="noekkel" type="n5mdk:noekkel"/>
         </xs:sequence>
     </xs:complexType>
-
 
     <xs:complexType name="klassifikasjon">
         <xs:sequence>
@@ -559,25 +556,6 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="inkluder">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="mappe"/>
-            <xs:enumeration value="registrering"/>
-            <xs:enumeration value="klasse"/>
-            <xs:enumeration value="noekkelord"/>
-            <xs:enumeration value="kryssreferanse"/>
-            <xs:enumeration value="part"/>
-            <xs:enumeration value="merknad"/>
-            <xs:enumeration value="presedens"/>
-            <xs:enumeration value="moetedeltaker"/>
-            <xs:enumeration value="dokumentbeskrivelse"/>
-            <xs:enumeration value="korrespondansepart"/>
-            <xs:enumeration value="avskrivning"/>
-            <xs:enumeration value="dokumentflyt"/>
-            <xs:enumeration value="dokumentobjekt"/>
-        </xs:restriction>
-    </xs:simpleType>
-
     <xs:simpleType name="responsType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="noekler"/>
@@ -593,4 +571,5 @@
             <xs:element name="poststed" type="n5mdk:poststed" />
         </xs:sequence>
     </xs:complexType>
+
 </xs:schema>
