@@ -482,9 +482,9 @@
 
     <xs:complexType name="adresse">
         <xs:sequence>
-            <xs:element name="adresse" type="n5mdk:postadresse" />
-            <xs:element name="postnummer" type="n5mdk:postnummer" />
-            <xs:element name="poststed" type="n5mdk:poststed" />
+            <xs:element name="adresse" type="n5mdk:postadresse"/>
+            <xs:element name="postnummer" type="n5mdk:postnummer"/>
+            <xs:element name="poststed" type="n5mdk:poststed"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -509,7 +509,7 @@
         <xs:complexContent>
             <xs:extension base="saksnummer">
                 <xs:sequence>
-                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer" minOccurs="0"/>
+                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
