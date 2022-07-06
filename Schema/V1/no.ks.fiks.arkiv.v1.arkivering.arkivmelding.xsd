@@ -292,8 +292,8 @@
             <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
             <xs:element name="avskrevetAv" type="n5mdk:avskrevetAv"/>
             <xs:element name="avskrivningsmaate" type="n5mdk:avskrivningsmaate"/>
-            <xs:element name="referanseAvskrivesAvJournalpost" type="n5mdk:referanseAvskrivesAvJournalpost" minOccurs="0"/>
-            <xs:element name="referanseAvskriverJournalpost" type="n5mdk:referanseAvskriverJournalpost" minOccurs="0"/>
+            <xs:element name="referanseAvskrivesAvJournalpost" type="referanseJournalpost" minOccurs="0"/>
+            <xs:element name="referanseAvskriverJournalpost" type="referanseJournalpost" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -482,10 +482,37 @@
 
     <xs:complexType name="adresse">
         <xs:sequence>
-            <xs:element name="adresse" type="n5mdk:postadresse" />
-            <xs:element name="postnummer" type="n5mdk:postnummer" />
-            <xs:element name="poststed" type="n5mdk:poststed" />
+            <xs:element name="adresse" type="n5mdk:postadresse"/>
+            <xs:element name="postnummer" type="n5mdk:postnummer"/>
+            <xs:element name="poststed" type="n5mdk:poststed"/>
         </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="referanseJournalpost">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="journalnummer" type="journalnummer" minOccurs="0"/>
+            <xs:element name="saksJournalpostnummer" type="saksJournalpostnummer" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="journalnummer">
+        <xs:sequence>
+            <xs:element name="journalaar" type="n5mdk:journalaar"/>
+            <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="saksJournalpostnummer">
+        <xs:complexContent>
+            <xs:extension base="saksnummer">
+                <xs:sequence>
+                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
 
 </xs:schema>

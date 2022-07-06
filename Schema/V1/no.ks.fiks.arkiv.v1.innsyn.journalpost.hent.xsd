@@ -14,14 +14,10 @@
 	
 	<xs:complexType name="journalpostHent">
 		<xs:sequence>
-			<!-- hvis vi kan endre systemID til å være minOccurs="1" for returnert objekt i arkivmeldingKvittering så kan denne være alt man trenger? 
-			Eller kan man ikke garantere at den er unik?-->
 			<xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
 			<xs:element name="journalaar" type="n5mdk:journalaar" minOccurs="0"/>
 			<xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer" minOccurs="0"/>
 			<xs:element name="journalpostnummer" type="n5mdk:journalpostnummer" minOccurs="0"/>
-			<!-- Er det enten referanseEksternNoekkel eller registreringsID eller de 3 overliggende feltene som kan identifisere en unik journalpost?
-			 Klarer vi å beskrive det at man trenger bare 1 av alternativene? -->
 			<xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0" maxOccurs="1"/>
 			<xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
 			<xs:element name="inkluder" type="inkluder" minOccurs="0"/>
