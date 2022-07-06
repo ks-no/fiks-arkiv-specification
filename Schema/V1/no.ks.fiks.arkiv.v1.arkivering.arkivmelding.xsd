@@ -491,12 +491,28 @@
     <xs:complexType name="referanseJournalpost">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="journalaar" type="n5mdk:journalaar" minOccurs="0"/>
-            <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer" minOccurs="0"/>
-            <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer" minOccurs="0"/>
+            <xs:element name="journalnummer" type="journalnummer" minOccurs="0"/>
+            <xs:element name="saksJournalpostnummer" type="saksJournalpostnummer" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
             <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
         </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="journalnummer">
+        <xs:sequence>
+            <xs:element name="journalaar" type="n5mdk:journalaar"/>
+            <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="saksJournalpostnummer">
+        <xs:complexContent>
+            <xs:extension base="saksnummer">
+                <xs:sequence>
+                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
 
 </xs:schema>
