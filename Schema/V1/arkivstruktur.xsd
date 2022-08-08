@@ -336,6 +336,7 @@
     <xs:complexType name="korrespondansepart">
         <xs:sequence>
             <xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype"/>
+            <xs:element name="behandlingsansvarlig" type="xs:boolean"/>
             <xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn"/>
             <xs:element name="postadresse" type="n5mdk:postadresse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="postnummer" type="n5mdk:postnummer" minOccurs="0"/>
