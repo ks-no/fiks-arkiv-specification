@@ -266,7 +266,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype"/>
-            <xs:element name="behandlingsansvarlig" type="xs:boolean"/>
+            <xs:element name="erBehandlingsansvarlig" type="xs:boolean"/>
             <xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn"/>
             <xs:choice minOccurs="0">
                 <xs:element name="organisasjonid" minOccurs="0" type="n5mdk:organisasjonid"/>
