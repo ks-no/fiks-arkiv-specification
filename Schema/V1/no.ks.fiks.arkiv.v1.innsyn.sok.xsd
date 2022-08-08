@@ -190,15 +190,59 @@
     </xs:simpleType>
 
     <!-- The respons is strict, meaning that the result should return the exact type set here. E.g. when set to mappe it should only return mappe in resultList -->
-    <xs:simpleType name="respons">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="mappe"/>
-            <xs:enumeration value="saksmappe"/>
-            <xs:enumeration value="registrering"/>
-            <xs:enumeration value="journalpost"/>
-            <xs:enumeration value="dokumentbeskrivelse"/>
-        </xs:restriction>
-    </xs:simpleType>
+    <xs:complexType name="respons">
+        
+    </xs:complexType>
+
+    <xs:complexType name="mappeRespons">
+        <xs:complexContent>
+            <xs:extension base="respons">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="inkluderIMappe"/>
+                </xs:sequence> 
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="saksmappeRespons">
+        <xs:complexContent>
+            <xs:extension base="respons">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="inkluderISaksmappe"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="registreringRespons">
+        <xs:complexContent>
+            <xs:extension base="respons">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="inkluderIRegistrering"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostRespons">
+        <xs:complexContent>
+            <xs:extension base="respons">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="inkluderIJournalpost"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseRespons">
+        <xs:complexContent>
+            <xs:extension base="respons">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="inkluderIDokumentbeskrivelse"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
     <xs:simpleType name="inkluder">
         <xs:restriction base="xs:string">
@@ -212,6 +256,87 @@
             <xs:enumeration value="presedens"/>
             <xs:enumeration value="moetedeltaker"/>
             <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+            <xs:enumeration value="avskrivning"/>
+            <xs:enumeration value="dokumentflyt"/>
+            <xs:enumeration value="dokumentobjekt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="inkluderIMappe">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+            <xs:enumeration value="avskrivning"/>
+            <xs:enumeration value="dokumentflyt"/>
+            <xs:enumeration value="dokumentobjekt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="inkluderISaksmappe">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="registrering"/>
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+            <xs:enumeration value="avskrivning"/>
+            <xs:enumeration value="dokumentflyt"/>
+            <xs:enumeration value="dokumentobjekt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="inkluderIRegistrering">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+            <xs:enumeration value="avskrivning"/>
+            <xs:enumeration value="dokumentflyt"/>
+            <xs:enumeration value="dokumentobjekt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="inkluderIJournalpost">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+            <xs:enumeration value="avskrivning"/>
+            <xs:enumeration value="dokumentflyt"/>
+            <xs:enumeration value="dokumentobjekt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="inkluderIDokumentbeskrivelse">
+        <xs:restriction base="xs:string">
             <xs:enumeration value="korrespondansepart"/>
             <xs:enumeration value="avskrivning"/>
             <xs:enumeration value="dokumentflyt"/>
