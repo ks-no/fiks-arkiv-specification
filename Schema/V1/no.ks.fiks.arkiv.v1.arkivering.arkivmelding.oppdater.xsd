@@ -23,10 +23,7 @@
 
     <xs:complexType name="mappeOppdatering">
         <xs:sequence>
-            <xs:choice>
-                <xs:element name="systemID" type="n5mdk:systemID"/>
-                <xs:element name="referanseEksternNoekkel" type="arkivmelding:eksternNoekkel"/>
-            </xs:choice>
+            <xs:element name="referanseTilMappe" type="referanseTilMappe"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -300,6 +297,22 @@
     <xs:complexType name="planidentSlett">
         <xs:sequence>
             <xs:element name="planidentifikasjon" type="n5mdk:planidentifikasjon"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="referanseTilMappe">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
+            <xs:element name="saksnummer" type="saksnummer" minOccurs="0" />
+            <xs:element name="referanseEksternNoekkel" type="arkivmelding:eksternNoekkel" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="saksnummer">
+        <xs:sequence>
+            <xs:element name="saksaar" type="n5mdk:saksaar" />
+            <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" />
         </xs:sequence>
     </xs:complexType>
 
