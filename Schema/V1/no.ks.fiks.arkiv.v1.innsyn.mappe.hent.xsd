@@ -24,7 +24,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <xs:element name="saksnummer" type="saksnummer" />
+            <xs:element name="saksnummer" type="saksnummer" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
