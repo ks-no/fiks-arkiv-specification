@@ -274,11 +274,6 @@
             <xs:enumeration value="merknad"/>
             <xs:enumeration value="presedens"/>
             <xs:enumeration value="moetedeltaker"/>
-            <xs:enumeration value="dokumentbeskrivelse"/>
-            <xs:enumeration value="korrespondansepart"/>
-            <xs:enumeration value="avskrivning"/>
-            <xs:enumeration value="dokumentflyt"/>
-            <xs:enumeration value="dokumentobjekt"/>
         </xs:restriction>
     </xs:simpleType>
 
