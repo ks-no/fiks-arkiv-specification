@@ -519,19 +519,32 @@
     <xs:restriction base="ID"/>
   </xs:simpleType>
 
-  <xs:simpleType name="referanseTilMappe">
+  <xs:complexType name="referanseTilMappe">
     <xs:annotation>
       <xs:documentation>M210</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en systemID til en complexType som kan inneholde en eller flere identifikatorer</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="ID"/>
-  </xs:simpleType>
+    <xs:sequence>
+      <xs:element name="systemID" type="systemID" minOccurs="0"/>
+      <xs:element name="mappeID" type="mappeID" minOccurs="0"/>
+      <xs:element name="saksnummer" type="saksnummer" minOccurs="0"/>
+      <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
 
-  <xs:simpleType name="referanseTilRegistrering">
+  <xs:complexType name="referanseTilRegistrering">
     <xs:annotation>
       <xs:documentation>M212</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en systemID til en complexType som kan inneholde en eller flere identifikatorer</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="ID"/>
-  </xs:simpleType>
+    <xs:sequence>
+      <xs:element name="systemID" type="systemID" minOccurs="0"/>
+      <xs:element name="registreringsID" type="registreringsID" minOccurs="0"/>
+      <xs:element name="journalnummer" type="journalnummer" minOccurs="0"/>
+      <xs:element name="saksJournalpostnummer" type="saksJournalpostnummer" minOccurs="0"/>
+      <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:simpleType name="referanseAvskrivesAvJournalpost">
     <xs:annotation>
@@ -1668,5 +1681,36 @@
       <xs:element name="kode" type="xs:string"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0"/>
     </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saksnummer">
+    <xs:sequence>
+      <xs:element name="saksaar" type="saksaar" />
+      <xs:element name="sakssekvensnummer" type="sakssekvensnummer" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eksternNoekkel">
+    <xs:sequence>
+      <xs:element name="fagsystem" type="fagsystem"/>
+      <xs:element name="noekkel" type="noekkel"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="journalnummer">
+    <xs:sequence>
+      <xs:element name="journalaar" type="journalaar"/>
+      <xs:element name="journalsekvensnummer" type="journalsekvensnummer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saksJournalpostnummer">
+    <xs:complexContent>
+      <xs:extension base="saksnummer">
+        <xs:sequence>
+          <xs:element name="journalpostnummer" type="journalpostnummer"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 </xs:schema>

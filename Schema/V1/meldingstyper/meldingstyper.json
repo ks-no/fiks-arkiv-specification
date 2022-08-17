@@ -51,16 +51,16 @@
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent"]
     },
     {
-      "id": "no.ks.fiks.arkiv.v1.innsyn.jounalpost.hent",
+      "id": "no.ks.fiks.arkiv.v1.innsyn.registrering.hent",
       "beskrivelse": "",
       "harPayload": true,
-      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.journalpost.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
     },
     {
-      "id": "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent.resultat",
+      "id": "no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat",
       "beskrivelse": "",
       "harPayload": true,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.journalpost.hent"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.registrering.hent"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent",
@@ -102,19 +102,19 @@
       "id": "no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel",
       "beskrivelse": "",
       "harPayload": true,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.registrering.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.feilmelding.serverfeil",
       "beskrivelse": "",
       "harPayload": true,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.registrering.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet",
       "beskrivelse": "",
       "harPayload": true,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.journalpost.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.registrering.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent"]
     }
   ]
 }

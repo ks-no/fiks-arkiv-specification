@@ -29,6 +29,7 @@
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
             <xs:element name="partOppdatering" type="partOppdateringer" minOccurs="0"/>
+            <xs:element name="kryssreferanseOppdatering" type="kryssreferanseOppdateringer" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -45,6 +46,31 @@
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="kryssreferanseOppdateringer">
+        <xs:sequence>
+            <xs:element name="oppdatering" type="kryssreferanseOppdatering" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="slett" type="kryssreferanseSlett" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ny" type="arkivmelding:kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="kryssreferanseOppdatering">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="referanseTilKlasse" type="n5mdk:referanseTilKlasse" minOccurs="0"/>
+            <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
+            <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering" minOccurs="0"/>
+            <xs:element name="referanseTilDokumentbeskrivelse" type="n5mdk:referanseTilDokumentbeskrivelse"
+                        minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="kryssreferanseSlett">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="punktOppdateringer">
