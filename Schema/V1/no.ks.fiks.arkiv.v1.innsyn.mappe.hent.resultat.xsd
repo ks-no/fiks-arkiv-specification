@@ -11,7 +11,8 @@
 
 	<xs:complexType name="mappeHentResultat">
 		<xs:sequence>
-			<xs:element name="mappe" type="arkivstruktur:mappe"/>
+			<xs:element name="mappe" type="arkivstruktur:mappe" minOccurs="0"/>
+			<xs:element name="saksmappe" type="arkivstruktur:saksmappe" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	

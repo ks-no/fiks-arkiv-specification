@@ -175,8 +175,8 @@
             <xs:element name="oppbevaringssted" type="n5mdk:oppbevaringssted" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
-            <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato"/>
-            <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv"/>
+            <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
+            <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
             <xs:element name="arkivdel" type="n5mdk:kode" minOccurs="0"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
@@ -484,6 +484,7 @@
 
     <xs:complexType name="kryssreferanse">
         <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="referanseTilKlasse" type="n5mdk:referanseTilKlasse" minOccurs="0"/>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering" minOccurs="0"/>
