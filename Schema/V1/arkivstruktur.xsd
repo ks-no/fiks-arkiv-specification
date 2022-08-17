@@ -279,7 +279,7 @@
             <xs:element name="arkivertAv" type="n5mdk:arkivertAv"/>
             <!-- Dersom en registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
             <xs:choice minOccurs="0">
-                <xs:element name="referanseForelderMappe" type="referanseForelderMappe"/>
+                <xs:element name="referanseForelderMappe" type="n5mdk:referanseTilMappe"/>
                 <xs:element name="arkivdel" type="n5mdk:kode"/>
             </xs:choice>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
@@ -302,21 +302,6 @@
             <xs:element name="korrespondansepart" type="korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="referanseEksternNoekkel" type="eksternNoekkel"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="referanseForelderMappe">
-        <xs:choice>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
-            <xs:element name="saksnummer" type="saksnummer" minOccurs="0"/>
-        </xs:choice>
-    </xs:complexType>
-
-    <xs:complexType name="saksnummer">
-        <xs:sequence>
-            <xs:element name="saksaar" type="n5mdk:saksaar" />
-            <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" />
         </xs:sequence>
     </xs:complexType>
 
