@@ -46,7 +46,7 @@
             <xs:element name="skjerming" type="skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="gradering" minOccurs="0"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <!-- Tillater mapper uten forekomster av (under)mappe og registrering -->
             <xs:choice>
                 <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
@@ -148,7 +148,7 @@
             <xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="korrespondansepart" type="korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -375,23 +375,9 @@
     <xs:complexType name="referanseForelderMappe">
         <xs:choice>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
-            <xs:element name="saksnummer" type="saksnummer" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="saksnummer" type="n5mdk:saksnummer" minOccurs="0"/>
         </xs:choice>
-    </xs:complexType>
-
-    <xs:complexType name="saksnummer">
-        <xs:sequence>
-            <xs:element name="saksaar" type="n5mdk:saksaar" />
-            <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" />
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="eksternNoekkel">
-        <xs:sequence>
-            <xs:element name="fagsystem" type="n5mdk:fagsystem"/>
-            <xs:element name="noekkel" type="n5mdk:noekkel"/>
-        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="merknad">
@@ -492,28 +478,11 @@
     <xs:complexType name="referanseJournalpost">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="journalnummer" type="journalnummer" minOccurs="0"/>
-            <xs:element name="saksJournalpostnummer" type="saksJournalpostnummer" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="journalnummer" type="n5mdk:journalnummer" minOccurs="0"/>
+            <xs:element name="saksJournalpostnummer" type="n5mdk:saksJournalpostnummer" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0" maxOccurs="1"/>
             <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
         </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="journalnummer">
-        <xs:sequence>
-            <xs:element name="journalaar" type="n5mdk:journalaar"/>
-            <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="saksJournalpostnummer">
-        <xs:complexContent>
-            <xs:extension base="saksnummer">
-                <xs:sequence>
-                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"/>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
     </xs:complexType>
 
 </xs:schema>

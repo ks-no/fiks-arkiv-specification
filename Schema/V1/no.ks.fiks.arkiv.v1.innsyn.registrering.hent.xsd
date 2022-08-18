@@ -14,49 +14,8 @@
 	
 	<xs:complexType name="registreringHent">
 		<xs:sequence>
-			<xs:element name="referanseRegistrering" type="referanseRegistrering"/>
+			<xs:element name="referanseRegistrering" type="n5mdk:referanseTilRegistrering"/>
 			<xs:element name="inkluder" type="inkluder" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="referanseRegistrering">
-		<xs:sequence>
-			<xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-			<xs:element name="journalnummer" type="journalnummer" minOccurs="0"/>
-			<xs:element name="saksJournalpostnummer" type="saksJournalpostnummer" minOccurs="0"/>
-			<xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
-			<xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="saksnummer">
-		<xs:sequence>
-			<xs:element name="saksaar" type="n5mdk:saksaar" />
-			<xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" />
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="journalnummer">
-		<xs:sequence>
-			<xs:element name="journalaar" type="n5mdk:journalaar"/>
-			<xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"/>
-		</xs:sequence>
-	</xs:complexType>
-
-	<xs:complexType name="saksJournalpostnummer">
-		<xs:complexContent>
-			<xs:extension base="saksnummer">
-				<xs:sequence>
-					<xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"/>
-				</xs:sequence>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
-	<xs:complexType name="eksternNoekkel">
-		<xs:sequence>
-			<xs:element name="fagsystem" type="n5mdk:fagsystem"/>
-			<xs:element name="noekkel" type="n5mdk:noekkel"/>
 		</xs:sequence>
 	</xs:complexType>
 
