@@ -166,7 +166,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="mappeID" type="n5mdk:mappeID"/>
-            <xs:element name="ReferanseForeldermappe" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="ReferanseForeldermappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -279,7 +279,7 @@
             <xs:element name="arkivertAv" type="n5mdk:arkivertAv"/>
             <!-- Dersom en registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
             <xs:choice minOccurs="0">
-                <xs:element name="referanseForelderMappe" type="n5mdk:systemID"/>
+                <xs:element name="referanseForelderMappe" type="n5mdk:referanseTilMappe"/>
                 <xs:element name="arkivdel" type="n5mdk:kode"/>
             </xs:choice>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
