@@ -247,7 +247,6 @@
     <xs:simpleType name="inkluderIMappe">
         <xs:restriction base="xs:string">
             <xs:enumeration value="mappe"/>
-            <xs:enumeration value="registrering"/>
             <xs:enumeration value="noekkelord"/>
             <xs:enumeration value="kryssreferanse"/>
             <xs:enumeration value="part"/>
@@ -258,7 +257,6 @@
     <xs:simpleType name="inkluderISaksmappe">
         <xs:restriction base="xs:string">
             <xs:enumeration value="mappe"/>
-            <xs:enumeration value="registrering"/>
             <xs:enumeration value="noekkelord"/>
             <xs:enumeration value="kryssreferanse"/>
             <xs:enumeration value="part"/>
