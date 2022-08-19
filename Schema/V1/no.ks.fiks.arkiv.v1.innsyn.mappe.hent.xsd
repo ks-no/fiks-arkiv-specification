@@ -15,27 +15,11 @@
 
     <xs:complexType name="mappeHent">
         <xs:sequence>
-            <xs:element name="referanseMappe" type="referanseMappe"/>
+            <xs:element name="referanseMappe" type="n5mdk:referanseTilMappe"/>
             <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="referanseMappe">
-        <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <xs:element name="saksnummer" type="saksnummer" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="saksnummer">
-        <xs:sequence>
-            <xs:element name="saksaar" type="n5mdk:saksaar" />
-            <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" />
-        </xs:sequence>
-    </xs:complexType>
-    
     <xs:simpleType name="inkluder">
         <xs:restriction base="xs:string">
             <xs:enumeration value="merknad"/>
