@@ -29,8 +29,10 @@
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
-            <xs:element name="partOppdatering" type="partOppdateringer" minOccurs="0"/>
-            <xs:element name="kryssreferanseOppdatering" type="kryssreferanseOppdateringer" minOccurs="0"/>
+            <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
+            <xs:element name="kryssreferanseOppdateringer" type="kryssreferanseOppdateringer" minOccurs="0"/>
+            <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
+            <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -40,16 +42,15 @@
                 <xs:sequence>
                     <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig" minOccurs="0"/>
                     <xs:element name="saksstatus" type="n5mdk:saksstatus" minOccurs="0"/>
-                    <xs:element name="matrikkelnummerOppdatering" type="matrikkelnummerOppdateringer" minOccurs="0"/>
-                    <xs:element name="byggidentOppdatering" type="byggidentOppdateringer" minOccurs="0"/>
-                    <xs:element name="planidentOppdatering" type="planidentOppdateringer" minOccurs="0"/>
+                    <xs:element name="matrikkelnummerOppdateringer" type="matrikkelnummerOppdateringer" minOccurs="0"/>
+                    <xs:element name="byggidentOppdateringer" type="byggidentOppdateringer" minOccurs="0"/>
+                    <xs:element name="planidentOppdateringer" type="planidentOppdateringer" minOccurs="0"/>
                     <xs:element name="punkt" type="arkivmelding:punkt" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
 
-   
     <xs:complexType name="kryssreferanseOppdateringer">
         <xs:sequence>
             <xs:element name="oppdatering" type="kryssreferanseOppdatering" minOccurs="0" maxOccurs="unbounded"/>
@@ -157,16 +158,16 @@
                 <xs:element name="systemID" type="n5mdk:systemID"/>
                 <xs:element name="referanseEksternNoekkel" type="arkivmelding:eksternNoekkel"/>
             </xs:choice>
-            <xs:element name="partOppdatering" type="partOppdateringer" minOccurs="0"/>
+            <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
             <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
-            <xs:element name="merknad" type="merknadOppdateringer" minOccurs="0"/>
-            <xs:element name="korrespondansepart" type="korrespondansepartOppdateringer" minOccurs="0"/>
-            <xs:element name="klassifikasjon" type="klassifikasjonOppdateringer" minOccurs="0"/>
+            <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
+            <xs:element name="korrespondansepartOppdateringer" type="korrespondansepartOppdateringer" minOccurs="0"/>
+            <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
