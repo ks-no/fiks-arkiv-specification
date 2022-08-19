@@ -24,6 +24,7 @@
     <xs:complexType name="mappeOppdatering">
         <xs:sequence>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -38,16 +39,17 @@
             <xs:extension base="mappeOppdatering">
                 <xs:sequence>
                     <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig" minOccurs="0"/>
+                    <xs:element name="saksstatus" type="n5mdk:saksstatus" minOccurs="0"/>
                     <xs:element name="matrikkelnummerOppdatering" type="matrikkelnummerOppdateringer" minOccurs="0"/>
                     <xs:element name="byggidentOppdatering" type="byggidentOppdateringer" minOccurs="0"/>
                     <xs:element name="planidentOppdatering" type="planidentOppdateringer" minOccurs="0"/>
-                    <!-- Punkt har ikke systemID og en oppdatering her erstatter da eksisterende liste. Alternativt må det introduseres systemID på punkt for arkivmelding-->
                     <xs:element name="punkt" type="arkivmelding:punkt" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
+   
     <xs:complexType name="kryssreferanseOppdateringer">
         <xs:sequence>
             <xs:element name="oppdatering" type="kryssreferanseOppdatering" minOccurs="0" maxOccurs="unbounded"/>
