@@ -34,7 +34,7 @@
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
             <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0"
@@ -65,7 +65,7 @@
             <xs:element name="dokumentbeskrivelseKvittering" type="dokumentbeskrivelseKvittering" minOccurs="0"
                         maxOccurs="unbounded"/>
             <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="arkivstruktur:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
