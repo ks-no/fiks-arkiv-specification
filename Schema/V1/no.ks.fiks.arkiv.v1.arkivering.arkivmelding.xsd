@@ -82,7 +82,6 @@
 
     <xs:complexType name="klasse">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="klasseID" type="n5mdk:klasseID" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -106,7 +105,6 @@
 
     <xs:complexType name="klassifikasjonssystem">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="klassifikasjonstype" type="n5mdk:klassifikasjonstype" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -264,7 +262,7 @@
 
     <xs:complexType name="korrespondansepart">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID" minOccurs="0"/>
             <xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype"/>
             <xs:element name="erBehandlingsansvarlig" type="xs:boolean"/>
             <xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn"/>
@@ -305,13 +303,6 @@
             <xs:element name="hendelsestype" type="n5mdk:hendelsestype"/>
             <xs:element name="hendelsesdato" type="n5mdk:hendelsesdato"/>
             <xs:element name="utfortAv" type="n5mdk:utfortAv" minOccurs="0"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="AbstraktNasjonalidentifikatorType" abstract="true">
-        <xs:sequence>
-            <xs:element name="systemID" minOccurs="0" type="n5mdk:systemID"/>
-            <xs:element name="beskrivelse" minOccurs="0" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -382,7 +373,7 @@
 
     <xs:complexType name="merknad">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="merknadID" type="n5mdk:merknadID" minOccurs="0"/>
             <xs:element name="merknadstekst" type="n5mdk:merknadstekst"/>
             <xs:element name="merknadstype" type="n5mdk:merknadstype" minOccurs="0"/>
             <xs:element name="merknadsdato" type="n5mdk:merknadsdato"/>
@@ -423,7 +414,6 @@
 
     <xs:complexType name="klassifikasjon">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="klassifikasjonssystem" type="n5mdk:klassifikasjonssystem"/>
             <xs:element name="klasseID" type="n5mdk:klasseID"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
