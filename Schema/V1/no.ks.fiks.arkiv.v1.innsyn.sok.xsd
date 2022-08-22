@@ -18,7 +18,6 @@
             <xs:element name="respons" type="respons"/>
             <xs:element name="parameter" type="parameter" maxOccurs="unbounded"/>
             <xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
-            <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
             <xs:element name="sortering" type="sortering" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
