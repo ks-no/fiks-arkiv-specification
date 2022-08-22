@@ -197,7 +197,7 @@
 
     <xs:complexType name="dokumentbeskrivelse">
         <xs:sequence>
-            <xs:element name="dokumentbeskrivelseID" type="n5mdk:dokumentbeskrivelseID" minOccurs="0"/>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="dokumenttype" type="n5mdk:dokumenttype"/>
             <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>

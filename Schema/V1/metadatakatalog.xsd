@@ -112,15 +112,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="dokumentbeskrivelseID">
-    <xs:annotation>
-      <xs:documentation>M00...</xs:documentation><!-- TODO -->
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="korrespondansepartID">
     <xs:annotation>
       <xs:documentation>M00...</xs:documentation><!-- TODO -->
