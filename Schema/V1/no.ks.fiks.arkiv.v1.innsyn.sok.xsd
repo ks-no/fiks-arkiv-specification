@@ -197,7 +197,7 @@
         <xs:complexContent>
             <xs:extension base="respons">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="inkluderIMappe"/>
+                    <xs:element name="inkluder" type="inkluderIMappe" maxOccurs="unbounded"/>
                 </xs:sequence> 
             </xs:extension>
         </xs:complexContent>
@@ -207,7 +207,7 @@
         <xs:complexContent>
             <xs:extension base="respons">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="inkluderISaksmappe"/>
+                    <xs:element name="inkluder" type="inkluderISaksmappe" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -217,7 +217,7 @@
         <xs:complexContent>
             <xs:extension base="respons">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="inkluderIRegistrering"/>
+                    <xs:element name="inkluder" type="inkluderIRegistrering" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -227,7 +227,7 @@
         <xs:complexContent>
             <xs:extension base="respons">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="inkluderIJournalpost"/>
+                    <xs:element name="inkluder" type="inkluderIJournalpost" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -237,7 +237,7 @@
         <xs:complexContent>
             <xs:extension base="respons">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="inkluderIDokumentbeskrivelse"/>
+                    <xs:element name="inkluder" type="inkluderIDokumentbeskrivelse" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
