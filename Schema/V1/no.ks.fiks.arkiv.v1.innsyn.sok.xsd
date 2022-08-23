@@ -383,7 +383,7 @@
 
     <xs:complexType name="saksmappeSortering">
         <xs:sequence>
-            <xs:element name="felt" type="saksmappeSorteringsfelt"/>
+            <xs:element name="felt" type="mappeOgSaksmappeSorteringsfelt"/>
             <xs:element name="type" type="sorteringType"/>
         </xs:sequence>
     </xs:complexType>
@@ -397,7 +397,7 @@
 
     <xs:complexType name="journalpostSortering">
         <xs:sequence>
-            <xs:element name="felt" type="journalpostSorteringsfelt"/>
+            <xs:element name="felt" type="registreringOgJournalpostSorteringsfelt"/>
             <xs:element name="type" type="sorteringType"/>
         </xs:sequence>
     </xs:complexType>
@@ -428,6 +428,10 @@
         </xs:restriction>
     </xs:simpleType>
 
+    <xs:simpleType name="mappeOgSaksmappeSorteringsfelt">
+        <xs:union memberTypes="mappeSorteringsfelt saksmappeSorteringsfelt" />
+    </xs:simpleType>
+
     <xs:simpleType name="registreringSorteringsfelt">
         <xs:restriction base="xs:string">
             <xs:enumeration value="registreringOpprettetDato"/>
@@ -440,6 +444,10 @@
             <xs:enumeration value="journalpostJournalaar-journalsekvensnummer"/>
             <xs:enumeration value="journalpostJournalpostnummer"/>
         </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="registreringOgJournalpostSorteringsfelt">
+        <xs:union memberTypes="registreringSorteringsfelt journalpostSorteringsfelt" />
     </xs:simpleType>
 
     <xs:simpleType name="dokumentbeskrivelseSorteringsfelt">
