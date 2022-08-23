@@ -106,7 +106,7 @@
         <xs:complexContent>
             <xs:extension base="parameter">
                 <xs:sequence>
-                    <xs:element name="felt" type="saksmappeSorteringsfelt"/>
+                    <xs:element name="felt" type="saksmappeSokefelt"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -126,7 +126,7 @@
         <xs:complexContent>
             <xs:extension base="parameter">
                 <xs:sequence>
-                    <xs:element name="felt" type="journalpostSorteringsfelt"/>
+                    <xs:element name="felt" type="journalpostSokefelt"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
