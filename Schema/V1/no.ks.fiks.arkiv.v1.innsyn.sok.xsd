@@ -106,7 +106,7 @@
         <xs:complexContent>
             <xs:extension base="parameter">
                 <xs:sequence>
-                    <xs:element name="felt" type="mappeOgSaksmappeSokefelt"/>
+                    <xs:element name="felt" type="saksmappeSorteringsfelt"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -126,7 +126,7 @@
         <xs:complexContent>
             <xs:extension base="parameter">
                 <xs:sequence>
-                    <xs:element name="felt" type="registreringOgJournalpostSokefelt"/>
+                    <xs:element name="felt" type="journalpostSorteringsfelt"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -231,6 +231,34 @@
 
     <xs:simpleType name="saksmappeSokefelt">
         <xs:restriction base="xs:string">
+            <xs:enumeration value="mappeEksternId"/>
+            <xs:enumeration value="mappeTittel"/>
+            <xs:enumeration value="mappeOpprettetDato"/>
+            <xs:enumeration value="mappeBeskrivelse"/>
+            <xs:enumeration value="mappeNoekkelord"/>
+            <xs:enumeration value="mappeAvsluttetDato"/>
+            <xs:enumeration value="mappeArkivdel"/>
+            <xs:enumeration value="mappeEndretFoerDato"/>
+            <xs:enumeration value="mappeEndretEtterDato"/>
+            <xs:enumeration value="mappeMappetype"/>
+
+            <xs:enumeration value="mappeKlasseKlassifikasjonssystem"/>
+            <xs:enumeration value="mappeKlasseKlasseID"/>
+            <xs:enumeration value="mappeKlasseTittel"/>
+            <xs:enumeration value="mappeKlasseBeskrivelse"/>
+
+            <xs:enumeration value="mappePartPartNavn"/>
+            <xs:enumeration value="mappePartPartRolle"/>
+            <xs:enumeration value="mappePartPostadresse"/>
+            <xs:enumeration value="mappePartPostnummer"/>
+            <xs:enumeration value="mappePartPoststed"/>
+            <xs:enumeration value="mappePartEpostadresse"/>
+
+            <xs:enumeration value="mappeSkjermingTilgangsrestriksjon"/>
+            <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
+            <xs:enumeration value="mappeSkjermingSkjermingsvarighet"/>
+            <xs:enumeration value="mappeSkjermingSkjermingOpphoererDato"/>
+            
             <xs:enumeration value="sakSaksdato"/>
             <xs:enumeration value="sakSaksaar"/>
             <xs:enumeration value="sakSaksekvensnummer"/>
@@ -260,10 +288,6 @@
             <xs:enumeration value="sakPunktZ"/>
         </xs:restriction>
     </xs:simpleType>
-    
-    <xs:simpleType name="mappeOgSaksmappeSokefelt">
-        <xs:union memberTypes="mappeSokefelt saksmappeSokefelt" />
-    </xs:simpleType>
 
     <xs:simpleType name="registreringSokefelt">
         <xs:restriction base="xs:string">
@@ -291,6 +315,26 @@
     
     <xs:simpleType name="journalpostSokefelt">
         <xs:restriction base="xs:string">
+            <xs:enumeration value="registreringEksternId"/>
+            <xs:enumeration value="registreringOpprettetDato"/>
+            <xs:enumeration value="registreringTittel"/>
+            <xs:enumeration value="registreringAdministrativenhet"/>
+            <xs:enumeration value="registreringJournalpostansvarlig"/>
+            <xs:enumeration value="registreringEndretFoerDato"/>
+            <xs:enumeration value="registreringEndretEtterDato"/>
+
+            <xs:enumeration value="registreringPartPartNavn"/>
+            <xs:enumeration value="registreringPartPartRolle"/>
+            <xs:enumeration value="registreringPartPostadresse"/>
+            <xs:enumeration value="registreringPartPostnummer"/>
+            <xs:enumeration value="registreringPartPoststed"/>
+            <xs:enumeration value="registreringPartEpostadresse"/>
+
+            <xs:enumeration value="registreringSkjermingTilgangsrestriksjon"/>
+            <xs:enumeration value="registreringSkjermingSkjermingshjemmel"/>
+            <xs:enumeration value="registreringSkjermingSkjermingsvarighet"/>
+            <xs:enumeration value="registreringSkjermingSkjermingOpphoererDato"/>
+            
             <xs:enumeration value="journalpostJournalaar"/>
             <xs:enumeration value="journalpostJournalsekvensnummer"/>
             <xs:enumeration value="journalpostSaksaar"/>
@@ -302,10 +346,6 @@
             <xs:enumeration value="journalpostDokumentetsdato"/>
             <xs:enumeration value="journalpostForfallsdato"/>
         </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="registreringOgJournalpostSokefelt">
-        <xs:union memberTypes="registreringSokefelt journalpostSokefelt" />
     </xs:simpleType>
 
     <xs:simpleType name="dokumentbeskrivelseSokefelt">
@@ -383,7 +423,7 @@
 
     <xs:complexType name="saksmappeSortering">
         <xs:sequence>
-            <xs:element name="felt" type="mappeOgSaksmappeSorteringsfelt"/>
+            <xs:element name="felt" type="saksmappeSorteringsfelt"/>
             <xs:element name="type" type="sorteringType"/>
         </xs:sequence>
     </xs:complexType>
@@ -397,7 +437,7 @@
 
     <xs:complexType name="journalpostSortering">
         <xs:sequence>
-            <xs:element name="felt" type="registreringOgJournalpostSorteringsfelt"/>
+            <xs:element name="felt" type="journalpostSorteringsfelt"/>
             <xs:element name="type" type="sorteringType"/>
         </xs:sequence>
     </xs:complexType>
@@ -424,12 +464,9 @@
 
     <xs:simpleType name="saksmappeSorteringsfelt">
         <xs:restriction base="xs:string">
+            <xs:enumeration value="mappeOpprettetDato"/>
             <xs:enumeration value="sakSaksaar-saksekvensnummer"/>
         </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="mappeOgSaksmappeSorteringsfelt">
-        <xs:union memberTypes="mappeSorteringsfelt saksmappeSorteringsfelt" />
     </xs:simpleType>
 
     <xs:simpleType name="registreringSorteringsfelt">
@@ -440,14 +477,11 @@
 
     <xs:simpleType name="journalpostSorteringsfelt">
         <xs:restriction base="xs:string">
+            <xs:enumeration value="registreringOpprettetDato"/>
             <xs:enumeration value="journalpostJournaldato"/>
             <xs:enumeration value="journalpostJournalaar-journalsekvensnummer"/>
             <xs:enumeration value="journalpostJournalpostnummer"/>
         </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="registreringOgJournalpostSorteringsfelt">
-        <xs:union memberTypes="registreringSorteringsfelt journalpostSorteringsfelt" />
     </xs:simpleType>
 
     <xs:simpleType name="dokumentbeskrivelseSorteringsfelt">
