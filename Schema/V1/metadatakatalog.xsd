@@ -152,7 +152,7 @@
     <xs:annotation>
       <xs:documentation>M005</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="arkivskaperID">
@@ -168,7 +168,7 @@
     <xs:annotation>
       <xs:documentation>M007</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="moetenummer">
@@ -193,35 +193,35 @@
     <xs:annotation>
       <xs:documentation>M011</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="sakssekvensnummer">
     <xs:annotation>
       <xs:documentation>M012</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="journalaar">
     <xs:annotation>
       <xs:documentation>M013</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="journalsekvensnummer">
     <xs:annotation>
       <xs:documentation>M014</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="journalpostnummer">
     <xs:annotation>
       <xs:documentation>M015</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <!-- M020-M049: Kjernemetadata (jf. Dublin Core) -->
@@ -696,7 +696,7 @@
     <xs:annotation>
       <xs:documentation>M304</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="administrativEnhet">
@@ -909,7 +909,7 @@
     <xs:annotation>
       <xs:documentation>M451</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="kassasjonsdato">
@@ -973,7 +973,7 @@
     <xs:annotation>
       <xs:documentation>M504</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="skjermingOpphoererDato">
@@ -1124,7 +1124,7 @@
     <xs:annotation>
       <xs:documentation>M609</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer"/>
+    <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
   <xs:simpleType name="merknadsdato">
@@ -1457,7 +1457,7 @@
     <xs:annotation>
       <xs:documentation>M707</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer">
+    <xs:restriction base="xs:int">
       <xs:minInclusive value="0"/>
     </xs:restriction>
   </xs:simpleType>
@@ -1607,42 +1607,42 @@
     <xs:annotation>
       <xs:documentation>M3..</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer" />
+    <xs:restriction base="xs:int" />
   </xs:simpleType>
 
   <xs:simpleType name="bruksnummer">
     <xs:annotation>
       <xs:documentation>M3..</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer" />
+    <xs:restriction base="xs:int" />
   </xs:simpleType>
 
 <xs:simpleType name="festenummer">
     <xs:annotation>
       <xs:documentation>M3..</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer" />
+    <xs:restriction base="xs:int" />
   </xs:simpleType>
 
   <xs:simpleType name="seksjonsnummer">
     <xs:annotation>
       <xs:documentation>M3..</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer" />
+    <xs:restriction base="xs:int" />
   </xs:simpleType>
 
 <xs:simpleType name="bygningsnummer">
     <xs:annotation>
       <xs:documentation>M3..</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer" />
+    <xs:restriction base="xs:int" />
   </xs:simpleType>
 
   <xs:simpleType name="endringsloepenummer">
     <xs:annotation>
       <xs:documentation>M3..</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer" />
+    <xs:restriction base="xs:int" />
   </xs:simpleType>
 
 <xs:simpleType name="fylkesnummer">
