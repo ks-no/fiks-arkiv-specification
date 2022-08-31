@@ -316,10 +316,10 @@
                     <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
                     <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
                     <xs:element name="journalenhet" type="n5mdk:journalenhet" minOccurs="0"/>
-                    <xs:element name="avskrivning" type="avskrivning" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="elektroniskSignatur" type="elektroniskSignatur" minOccurs="0"/>
+                    <xs:element name="avskrevetDato" type="n5mdk:avskrevetDato"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -340,6 +340,7 @@
             <xs:element name="kontaktperson" type="n5mdk:kontaktperson" minOccurs="0"/>
             <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet" minOccurs="0"/>
             <xs:element name="saksbehandler" type="n5mdk:saksbehandler" minOccurs="0"/>
+            <xs:element name="avskrivning" type="avskrivning" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
