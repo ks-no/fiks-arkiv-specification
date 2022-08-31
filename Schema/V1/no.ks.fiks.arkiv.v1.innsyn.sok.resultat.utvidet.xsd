@@ -45,6 +45,7 @@
             <xs:element name="saksmappe" type="arkivstruktur:saksmappe"/>
             <xs:element name="registrering" type="arkivstruktur:registrering"/>
             <xs:element name="journalpost" type="arkivstruktur:journalpost"/>
+            <xs:element name="journalpostMedSaksmappe" type="arkivstruktur:journalpostMedSaksmappe"/>
             <xs:element name="dokumentbeskrivelse" type="arkivstruktur:dokumentbeskrivelse"/>
         </xs:choice>
     </xs:complexType>
