@@ -108,15 +108,8 @@
 
     <xs:complexType name="journalpostMedSaksmappeMinimum">
         <xs:complexContent>
-            <xs:extension base="registreringMinimum">
+            <xs:extension base="journalpostMinimum">
                 <xs:sequence>
-                    <xs:element name="journalaar" type="n5mdk:journalaar"/>
-                    <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"/>
-                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"/>
-                    <xs:element name="journalposttype" type="n5mdk:journalposttype"/>
-                    <xs:element name="journalstatus" type="n5mdk:journalstatus"/>
-                    <xs:element name="journaldato" type="n5mdk:journaldato"/>
-                    <xs:element name="dokumentetsDato" type="n5mdk:dokumentetsDato" minOccurs="0"/>
                     <xs:element name="saksaar" type="n5mdk:saksaar"/>
                     <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer"/>
                     <xs:element name="saksdato" type="n5mdk:saksdato"/>
