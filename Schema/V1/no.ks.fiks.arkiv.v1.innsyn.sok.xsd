@@ -152,7 +152,7 @@
             <xs:element name="intvalues" type="intvalues"/>
             <xs:element name="eksternId" type="eksternId"/>
             <xs:element name="klassifikasjonvalues" type="klassifikasjonvalues"/>
-            <xs:element name="punktBbox" type="bbox"/>
+            <xs:element name="bbox" type="bbox"/>
         </xs:choice>
     </xs:complexType>
 
@@ -287,11 +287,7 @@
             <xs:enumeration value="sakPartOrganisasjonsid"/>
             <xs:enumeration value="sakPartPersonid"/>
 
-            <xs:enumeration value="sakPunktX"/>
-            <xs:enumeration value="sakPunktY"/>
-            <xs:enumeration value="sakPunktZ"/>
-
-            <xs:enumeration value="sakPunktBbox"/>
+            <xs:enumeration value="sakBbox"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -371,6 +367,7 @@
 
     <xs:complexType name="bbox">
         <xs:sequence>
+            <xs:element name="koordinatsystem" type="n5mdk:koordinatsystem"/>
             <xs:element name="nedreVenstre" type="bboxKoordinater"/>
             <xs:element name="oevreHoeyre" type="bboxKoordinater"/>
         </xs:sequence>
