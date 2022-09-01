@@ -171,7 +171,7 @@
                     <xs:element name="journalenhet" type="n5mdk:journalenhet" minOccurs="0"/>
                     <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
-                    <xs:element name="avskrevetDato" type="n5mdk:avskrevetDato"/>
+                    <xs:element name="avskrevetDato" type="n5mdk:avskrivningsdato"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
