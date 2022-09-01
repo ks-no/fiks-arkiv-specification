@@ -15,23 +15,134 @@
             <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:element name="take" type="xs:int"/>
             <xs:element name="skip" type="xs:int"/>
-            <xs:element name="respons" type="respons"/>
-            <xs:element name="parameter" type="parameter" maxOccurs="unbounded"/>
-            <xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
-            <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
-            <xs:element name="sortering" type="sortering" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="sokdefinisjon" type="sokdefinisjon"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="parameter">
+    <xs:complexType name="sokdefinisjon" abstract="true">
         <xs:sequence>
-            <xs:element name="felt" type="sokFelt"/>
-            <xs:element name="operator" type="operatorType"/>
-            <xs:element name="parameterverdier" type="parameterverdier"/>
+            <xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="parameterverdier">
+    <xs:complexType name="mappeSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="mappeInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="parametere" type="mappeParameter" maxOccurs="unbounded"/>
+                    <xs:element name="sortering" type="mappeSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="saksmappeSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="saksmappeInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="parametere" type="saksmappeParameter" maxOccurs="unbounded"/>
+                    <xs:element name="sortering" type="saksmappeSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="registreringSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="registreringInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="parametere" type="registreringParameter" maxOccurs="unbounded"/>
+                    <xs:element name="sortering" type="registreringSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="journalpostInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="parametere" type="journalpostParameter" maxOccurs="unbounded"/>
+                    <xs:element name="sortering" type="journalpostSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="dokumentbeskrivelseInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="parametere" type="dokumentbeskrivelseParameter" maxOccurs="unbounded"/>
+                    <xs:element name="sortering" type="dokumentbeskrivelseSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="parameter" abstract="true">
+        <xs:sequence>
+            <xs:element name="operator" type="operatorType"/>
+            <xs:element name="sokVerdier" type="sokVerdier"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="mappeParameter">
+        <xs:complexContent>
+            <xs:extension base="parameter">
+                <xs:sequence>
+                    <xs:element name="felt" type="mappeSokefelt"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="saksmappeParameter">
+        <xs:complexContent>
+            <xs:extension base="parameter">
+                <xs:sequence>
+                    <xs:element name="felt" type="saksmappeSokefelt"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="registreringParameter">
+        <xs:complexContent>
+            <xs:extension base="parameter">
+                <xs:sequence>
+                    <xs:element name="felt" type="registreringSokefelt"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostParameter">
+        <xs:complexContent>
+            <xs:extension base="parameter">
+                <xs:sequence>
+                    <xs:element name="felt" type="journalpostSokefelt"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseParameter">
+        <xs:complexContent>
+            <xs:extension base="parameter">
+                <xs:sequence>
+                    <xs:element name="felt" type="dokumentbeskrivelseSokefelt"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="sokVerdier">
         <xs:choice minOccurs="0">
             <xs:element name="stringvalues" type="stringvalues"/>
             <xs:element name="datevalues" type="datevalues"/>
@@ -86,7 +197,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="sokFelt">
+    <xs:simpleType name="mappeSokefelt">
         <xs:restriction base="xs:string">
             <xs:enumeration value="mappeEksternId"/>
             <xs:enumeration value="mappeTittel"/>
@@ -98,13 +209,38 @@
             <xs:enumeration value="mappeEndretFoerDato"/>
             <xs:enumeration value="mappeEndretEtterDato"/>
             <xs:enumeration value="mappeMappetype"/>
+    
+            <xs:enumeration value="mappeKlasseKlassifikasjonssystem"/>
+            <xs:enumeration value="mappeKlasseKlasseID"/>
+            <xs:enumeration value="mappeKlasseTittel"/>
+            <xs:enumeration value="mappeKlasseBeskrivelse"/>
+    
+            <xs:enumeration value="mappePartPartNavn"/>
+            <xs:enumeration value="mappePartPartRolle"/>
+            <xs:enumeration value="mappePartPostadresse"/>
+            <xs:enumeration value="mappePartPostnummer"/>
+            <xs:enumeration value="mappePartPoststed"/>
+            <xs:enumeration value="mappePartEpostadresse"/>
+    
+            <xs:enumeration value="mappeSkjermingTilgangsrestriksjon"/>
+            <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
+            <xs:enumeration value="mappeSkjermingSkjermingsvarighet"/>
+            <xs:enumeration value="mappeSkjermingSkjermingOpphoererDato"/>
+        </xs:restriction>
+    </xs:simpleType>
 
-            <xs:enumeration value="sakSaksdato"/>
-            <xs:enumeration value="sakSaksaar"/>
-            <xs:enumeration value="sakSaksekvensnummer"/>
-            <xs:enumeration value="sakSaksstatus"/>
-            <xs:enumeration value="sakAdministrativenhet"/>
-            <xs:enumeration value="sakSaksansvarlig"/>
+    <xs:simpleType name="saksmappeSokefelt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappeEksternId"/>
+            <xs:enumeration value="mappeTittel"/>
+            <xs:enumeration value="mappeOpprettetDato"/>
+            <xs:enumeration value="mappeBeskrivelse"/>
+            <xs:enumeration value="mappeNoekkelord"/>
+            <xs:enumeration value="mappeAvsluttetDato"/>
+            <xs:enumeration value="mappeArkivdel"/>
+            <xs:enumeration value="mappeEndretFoerDato"/>
+            <xs:enumeration value="mappeEndretEtterDato"/>
+            <xs:enumeration value="mappeMappetype"/>
 
             <xs:enumeration value="mappeKlasseKlassifikasjonssystem"/>
             <xs:enumeration value="mappeKlasseKlasseID"/>
@@ -122,6 +258,13 @@
             <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="mappeSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="mappeSkjermingSkjermingOpphoererDato"/>
+            
+            <xs:enumeration value="sakSaksdato"/>
+            <xs:enumeration value="sakSaksaar"/>
+            <xs:enumeration value="sakSaksekvensnummer"/>
+            <xs:enumeration value="sakSaksstatus"/>
+            <xs:enumeration value="sakAdministrativenhet"/>
+            <xs:enumeration value="sakSaksansvarlig"/>
 
             <xs:enumeration value="sakMatrikkelnummerKommunenummer"/>
             <xs:enumeration value="sakMatrikkelnummerGaardsnummer"/>
@@ -143,7 +286,11 @@
             <xs:enumeration value="sakPunktX"/>
             <xs:enumeration value="sakPunktY"/>
             <xs:enumeration value="sakPunktZ"/>
+        </xs:restriction>
+    </xs:simpleType>
 
+    <xs:simpleType name="registreringSokefelt">
+        <xs:restriction base="xs:string">
             <xs:enumeration value="registreringEksternId"/>
             <xs:enumeration value="registreringOpprettetDato"/>
             <xs:enumeration value="registreringTittel"/>
@@ -163,7 +310,31 @@
             <xs:enumeration value="registreringSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="registreringSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="registreringSkjermingSkjermingOpphoererDato"/>
+        </xs:restriction>
+    </xs:simpleType>    
+    
+    <xs:simpleType name="journalpostSokefelt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="registreringEksternId"/>
+            <xs:enumeration value="registreringOpprettetDato"/>
+            <xs:enumeration value="registreringTittel"/>
+            <xs:enumeration value="registreringAdministrativenhet"/>
+            <xs:enumeration value="registreringJournalpostansvarlig"/>
+            <xs:enumeration value="registreringEndretFoerDato"/>
+            <xs:enumeration value="registreringEndretEtterDato"/>
 
+            <xs:enumeration value="registreringPartPartNavn"/>
+            <xs:enumeration value="registreringPartPartRolle"/>
+            <xs:enumeration value="registreringPartPostadresse"/>
+            <xs:enumeration value="registreringPartPostnummer"/>
+            <xs:enumeration value="registreringPartPoststed"/>
+            <xs:enumeration value="registreringPartEpostadresse"/>
+
+            <xs:enumeration value="registreringSkjermingTilgangsrestriksjon"/>
+            <xs:enumeration value="registreringSkjermingSkjermingshjemmel"/>
+            <xs:enumeration value="registreringSkjermingSkjermingsvarighet"/>
+            <xs:enumeration value="registreringSkjermingSkjermingOpphoererDato"/>
+            
             <xs:enumeration value="journalpostJournalaar"/>
             <xs:enumeration value="journalpostJournalsekvensnummer"/>
             <xs:enumeration value="journalpostSaksaar"/>
@@ -174,7 +345,11 @@
             <xs:enumeration value="journalpostJournaldato"/>
             <xs:enumeration value="journalpostDokumentetsdato"/>
             <xs:enumeration value="journalpostForfallsdato"/>
+        </xs:restriction>
+    </xs:simpleType>
 
+    <xs:simpleType name="dokumentbeskrivelseSokefelt">
+        <xs:restriction base="xs:string">
             <xs:enumeration value="dokumentbeskrivelseEksternId"/>
             <xs:enumeration value="dokumentbeskrivelseOpprettetDato"/>
             <xs:enumeration value="dokumentbeskrivelseTittel"/>
@@ -185,43 +360,91 @@
             <xs:enumeration value="dokumentbeskrivelseSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="dokumentbeskrivelseSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="dokumentbeskrivelseSkjermingSkjermingOpphoererDato"/>
-
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="mappeInkluder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappe"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- The respons is strict, meaning that the result should return the exact type set here. E.g. when set to mappe it should only return mappe in resultList -->
-    <xs:simpleType name="respons">
+    <xs:simpleType name="saksmappeInkluder">
         <xs:restriction base="xs:string">
             <xs:enumeration value="mappe"/>
-            <xs:enumeration value="saksmappe"/>
-            <xs:enumeration value="registrering"/>
-            <xs:enumeration value="journalpost"/>
-            <xs:enumeration value="dokumentbeskrivelse"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="inkluder">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="mappe"/>
-            <xs:enumeration value="registrering"/>
-            <xs:enumeration value="klasse"/>
             <xs:enumeration value="noekkelord"/>
             <xs:enumeration value="kryssreferanse"/>
             <xs:enumeration value="part"/>
             <xs:enumeration value="merknad"/>
             <xs:enumeration value="presedens"/>
-            <xs:enumeration value="moetedeltaker"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="registreringInkluder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="dokumentbeskrivelse"/>
+            <xs:enumeration value="korrespondansepart"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="journalpostInkluder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="merknad"/>
             <xs:enumeration value="dokumentbeskrivelse"/>
             <xs:enumeration value="korrespondansepart"/>
             <xs:enumeration value="avskrivning"/>
             <xs:enumeration value="dokumentflyt"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dokumentbeskrivelseInkluder">
+        <xs:restriction base="xs:string">
             <xs:enumeration value="dokumentobjekt"/>
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:complexType name="sortering">
+    <xs:complexType name="mappeSortering">
         <xs:sequence>
-            <xs:element name="felt" type="sorteringFelt"/>
+            <xs:element name="felt" type="mappeSorteringsfelt"/>
+            <xs:element name="type" type="sorteringType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="saksmappeSortering">
+        <xs:sequence>
+            <xs:element name="felt" type="saksmappeSorteringsfelt"/>
+            <xs:element name="type" type="sorteringType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="registreringSortering">
+        <xs:sequence>
+            <xs:element name="felt" type="registreringSorteringsfelt"/>
+            <xs:element name="type" type="sorteringType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostSortering">
+        <xs:sequence>
+            <xs:element name="felt" type="journalpostSorteringsfelt"/>
+            <xs:element name="type" type="sorteringType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseSortering">
+        <xs:sequence>
+            <xs:element name="felt" type="dokumentbeskrivelseSorteringsfelt"/>
             <xs:element name="type" type="sorteringType"/>
         </xs:sequence>
     </xs:complexType>
@@ -233,14 +456,37 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="sorteringFelt">
+    <xs:simpleType name="mappeSorteringsfelt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mappeOpprettetDato"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="saksmappeSorteringsfelt">
         <xs:restriction base="xs:string">
             <xs:enumeration value="mappeOpprettetDato"/>
             <xs:enumeration value="sakSaksaar-saksekvensnummer"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="registreringSorteringsfelt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="registreringOpprettetDato"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="journalpostSorteringsfelt">
+        <xs:restriction base="xs:string">
             <xs:enumeration value="registreringOpprettetDato"/>
             <xs:enumeration value="journalpostJournaldato"/>
             <xs:enumeration value="journalpostJournalaar-journalsekvensnummer"/>
             <xs:enumeration value="journalpostJournalpostnummer"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="dokumentbeskrivelseSorteringsfelt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="opprettetDato"/>
         </xs:restriction>
     </xs:simpleType>
 

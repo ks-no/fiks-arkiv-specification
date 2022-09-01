@@ -103,6 +103,51 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="klassifikasjonssystemID">
+    <xs:annotation>
+      <xs:documentation>M00...</xs:documentation><!-- TODO -->
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="korrespondansepartID">
+    <xs:annotation>
+      <xs:documentation>M00...</xs:documentation><!-- TODO -->
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="merknadID">
+    <xs:annotation>
+      <xs:documentation>M00...</xs:documentation><!-- TODO -->
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="klassifikasjonID">
+    <xs:annotation>
+      <xs:documentation>M00...</xs:documentation><!-- TODO -->
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="kryssreferanseID">
+    <xs:annotation>
+      <xs:documentation>M00...</xs:documentation><!-- TODO -->
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="versjonsnummer">
     <xs:annotation>
       <xs:documentation>M005</xs:documentation>

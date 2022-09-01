@@ -125,7 +125,7 @@
 
     <xs:complexType name="klassifikasjonssystem">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="klassifikasjonssystemID" type="n5mdk:klassifikasjonssystemID"/>
             <xs:element name="klassifikasjonstype" type="n5mdk:klassifikasjonstype" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -140,7 +140,6 @@
 
     <xs:complexType name="klasse">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="klasseID" type="n5mdk:klasseID"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -186,7 +185,7 @@
             <xs:element name="skjerming" type="skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="gradering" minOccurs="0"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
@@ -214,16 +213,9 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:complexType name="eksternNoekkel">
-        <xs:sequence>
-            <xs:element name="fagsystem" type="n5mdk:fagsystem"/>
-            <xs:element name="noekkel" type="n5mdk:noekkel"/>
-        </xs:sequence>
-    </xs:complexType>
-
     <xs:complexType name="klassifikasjon">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="klassifikasjonID" type="n5mdk:klassifikasjonID" minOccurs="0"/>
             <xs:element name="klassifikasjonssystem" type="n5mdk:klassifikasjonssystem"/>
             <xs:element name="klasseID" type="n5mdk:klasseID"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
@@ -301,7 +293,7 @@
             <xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="korrespondansepart" type="korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="eksternNoekkel"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -335,6 +327,7 @@
 
     <xs:complexType name="korrespondansepart">
         <xs:sequence>
+            <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID"/>
             <xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype"/>
             <xs:element name="erBehandlingsansvarlig" type="xs:boolean"/>
             <xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn"/>
@@ -469,7 +462,7 @@
 
     <xs:complexType name="kryssreferanse">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="kryssreferanseID" type="n5mdk:kryssreferanseID"/>
             <xs:element name="referanseTilKlasse" type="n5mdk:referanseTilKlasse" minOccurs="0"/>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering" minOccurs="0"/>
@@ -480,7 +473,7 @@
 
     <xs:complexType name="merknad">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="merknadID" type="n5mdk:merknadID" minOccurs="0"/>
             <xs:element name="merknadstekst" type="n5mdk:merknadstekst"/>
             <xs:element name="merknadstype" type="n5mdk:merknadstype" minOccurs="0"/>
             <xs:element name="merknadsdato" type="n5mdk:merknadsdato"/>
