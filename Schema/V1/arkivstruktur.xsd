@@ -216,7 +216,7 @@
     <xs:complexType name="klassifikasjon">
         <xs:sequence>
             <xs:element name="klassifikasjonID" type="n5mdk:klassifikasjonID" minOccurs="0"/>
-            <xs:element name="klassifikasjonssystem" type="n5mdk:klassifikasjonssystem"/>
+            <xs:element name="klassifikasjonssystemID" type="n5mdk:klassifikasjonssystemID"/>
             <xs:element name="klasseID" type="n5mdk:klasseID"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="skjermetObjekt" type="n5mdk:skjermetObjekt" minOccurs="0"/>
