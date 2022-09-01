@@ -325,6 +325,21 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="journalpostMedSaksmappe">
+        <xs:complexContent>
+            <xs:extension base="journalpost">
+                <xs:sequence>
+                    <xs:element name="saksaar" type="n5mdk:saksaar"/>
+                    <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer"/>
+                    <xs:element name="saksdato" type="n5mdk:saksdato"/>
+                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet"/>
+                    <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig"/>
+                    <xs:element name="saksstatus" type="n5mdk:saksstatus"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="korrespondansepart">
         <xs:sequence>
             <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID"/>

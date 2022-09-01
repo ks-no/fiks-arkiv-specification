@@ -29,6 +29,7 @@
             <xs:enumeration value="saksmappe"/>
             <xs:enumeration value="registrering"/>
             <xs:enumeration value="journalpost"/>
+            <xs:enumeration value="journalpostMedSaksmappe"/>
             <xs:enumeration value="dokumentbeskrivelse"/>
         </xs:restriction>
     </xs:simpleType>
@@ -45,6 +46,7 @@
             <xs:element name="saksmappe" type="arkivstruktur:saksmappe"/>
             <xs:element name="registrering" type="arkivstruktur:registrering"/>
             <xs:element name="journalpost" type="arkivstruktur:journalpost"/>
+            <xs:element name="journalpostMedSaksmappe" type="arkivstruktur:journalpostMedSaksmappe"/>
             <xs:element name="dokumentbeskrivelse" type="arkivstruktur:dokumentbeskrivelse"/>
         </xs:choice>
     </xs:complexType>
