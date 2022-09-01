@@ -24,7 +24,7 @@
 
     <xs:complexType name="sokdefinisjon" abstract="true">
         <xs:sequence>
-            <xs:element name="responsType" type="arkivstruktur:responsType" default="minimum"/>
+            <xs:element name="responstype" type="arkivstruktur:responstype" default="minimum"/>
         </xs:sequence>
     </xs:complexType>
 
