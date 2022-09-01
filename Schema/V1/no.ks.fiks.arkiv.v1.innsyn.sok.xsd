@@ -73,6 +73,18 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="journalpostMedSaksmappeSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="journalpostInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="parametere" type="journalpostParameter" maxOccurs="unbounded"/>
+                    <xs:element name="sortering" type="journalpostSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="dokumentbeskrivelseSokdefinisjon">
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
