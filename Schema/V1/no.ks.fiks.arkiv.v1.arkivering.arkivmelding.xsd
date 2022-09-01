@@ -168,9 +168,9 @@
                     <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
                     <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
                     <xs:element name="journalenhet" type="n5mdk:journalenhet" minOccurs="0"/>
-                    <xs:element name="avskrivning" type="avskrivning" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -282,6 +282,7 @@
             <xs:element name="personnavn" type="n5mdk:personnavn" minOccurs="0"/>
             <xs:element name="forsendelsesmaate" type="n5mdk:forsendelsesmaate" minOccurs="0"/>
             <xs:element name="deresReferanse" type="xs:string" minOccurs="0"/>
+            <xs:element name="avskrivning" type="avskrivning" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
