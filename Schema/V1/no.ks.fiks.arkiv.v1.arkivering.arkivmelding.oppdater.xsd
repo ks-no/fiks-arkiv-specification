@@ -17,7 +17,19 @@
             <xs:choice minOccurs="1" maxOccurs="1">
                 <xs:element name="mappeOppdateringer" type="mappeOppdatering" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registreringOppdateringer" type="registreringOppdatering" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="dokumentbeskrivelseOppdatering" type="dokumentbeskrivelseOppdatering" minOccurs="0" />
             </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseOppdatering">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" />
+            <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
+            <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
+            <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
+            <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
+            <xs:element name="dokumentobjekt" type="arkivmelding:dokumentobjekt" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
