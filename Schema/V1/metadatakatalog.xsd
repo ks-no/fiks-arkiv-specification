@@ -1526,7 +1526,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-<xs:simpleType name="personnavn">
+<xs:simpleType name="erPersonnavn">
     <xs:annotation>
       <xs:documentation>M5..</xs:documentation>
     </xs:annotation>

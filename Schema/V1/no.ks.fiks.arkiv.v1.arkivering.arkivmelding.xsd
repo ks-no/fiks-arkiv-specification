@@ -255,7 +255,7 @@
             <xs:element name="kontaktperson" type="n5mdk:kontaktperson" minOccurs="0"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
             <xs:element name="skjermetObjekt" type="n5mdk:skjermetObjekt" minOccurs="0"/>
-            <xs:element name="personnavn" type="n5mdk:personnavn" minOccurs="0"/>
+            <xs:element name="erPersonnavn" type="n5mdk:erPersonnavn" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -279,7 +279,7 @@
             <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet" minOccurs="0"/>
             <xs:element name="saksbehandler" type="n5mdk:saksbehandler" minOccurs="0"/>
             <xs:element name="skjermetObjekt" type="n5mdk:skjermetObjekt" minOccurs="0"/>
-            <xs:element name="personnavn" type="n5mdk:personnavn" minOccurs="0"/>
+            <xs:element name="erPersonnavn" type="n5mdk:erPersonnavn" minOccurs="0"/>
             <xs:element name="forsendelsesmaate" type="n5mdk:forsendelsesmaate" minOccurs="0"/>
             <xs:element name="deresReferanse" type="xs:string" minOccurs="0"/>
             <xs:element name="avskrivning" type="avskrivning" minOccurs="0" maxOccurs="unbounded"/>
