@@ -567,7 +567,7 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="responsType">
+    <xs:simpleType name="responstype">
         <xs:restriction base="xs:string">
             <xs:enumeration value="noekler"/>
             <xs:enumeration value="minimum"/>
