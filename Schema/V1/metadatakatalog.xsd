@@ -708,23 +708,25 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="saksansvarlig">
+  <xs:complexType name="saksansvarlig">
     <xs:annotation>
       <xs:documentation>M306</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="saksbehandler">
+  <xs:complexType name="saksbehandler">
     <xs:annotation>
       <xs:documentation>M307</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="journalenhet">
     <xs:annotation>
@@ -1043,14 +1045,15 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="administrativEnhetNavn">
+  <xs:complexType name="administrativEnhetNavn">
     <xs:annotation>
       <xs:documentation>M583</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="administrativEnhetsstatus">
     <xs:annotation>
