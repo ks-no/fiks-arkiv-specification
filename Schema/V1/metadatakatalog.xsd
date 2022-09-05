@@ -699,32 +699,35 @@
     <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
-  <xs:simpleType name="administrativEnhet">
+  <xs:complexType name="administrativEnhet">
     <xs:annotation>
       <xs:documentation>M305</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="identifikator"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="saksansvarlig">
+  <xs:complexType name="saksansvarlig">
     <xs:annotation>
       <xs:documentation>M306</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="identifikator"/>
+    </xs:complexContent>
+  </xs:complexType>
 
-  <xs:simpleType name="saksbehandler">
+  <xs:complexType name="saksbehandler">
     <xs:annotation>
       <xs:documentation>M307</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="identifikator"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="journalenhet">
     <xs:annotation>
@@ -1716,6 +1719,18 @@
     <xs:sequence>
       <xs:element name="kode" type="xs:string"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="identifikator">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="navn" type="xs:string" minOccurs="0"/>
+      <xs:element name="initialer" type="xs:string" minOccurs="0"/>
+      <xs:element name="epostadresse" type="epostadresse" minOccurs="0"/>
+      <xs:element name="kode" type="kode" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
