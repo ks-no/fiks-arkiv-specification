@@ -705,7 +705,7 @@
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="identifikator"/>
+      <xs:extension base="identifikatorer"/>
     </xs:complexContent>
   </xs:complexType>
 
@@ -715,7 +715,7 @@
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="identifikator"/>
+      <xs:extension base="identifikatorer"/>
     </xs:complexContent>
   </xs:complexType>
 
@@ -725,7 +725,7 @@
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="identifikator"/>
+      <xs:extension base="identifikatorer"/>
     </xs:complexContent>
   </xs:complexType>
 
@@ -1722,12 +1722,14 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="identifikator">
+  <xs:complexType name="identifikatorer">
     <xs:annotation>
       <xs:documentation>M4..</xs:documentation>
+      <xs:documentation>Inneholder forskjellige identifikatorer som "navn", "identifikator" (kan være fra annet system som f.eks. AD), "epostadresse" og "initialer", samt et kode element</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="navn" type="xs:string" minOccurs="0"/>
+      <xs:element name="identifikator" type="xs:string" minOccurs="0"/>
       <xs:element name="initialer" type="xs:string" minOccurs="0"/>
       <xs:element name="epostadresse" type="epostadresse" minOccurs="0"/>
       <xs:element name="kode" type="kode" minOccurs="0"/>
