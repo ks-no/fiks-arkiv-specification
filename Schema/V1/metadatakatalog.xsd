@@ -699,14 +699,15 @@
     <xs:restriction base="xs:integer"/>
   </xs:simpleType>
 
-  <xs:simpleType name="administrativEnhet">
+  <xs:complexType name="administrativEnhet">
     <xs:annotation>
       <xs:documentation>M305</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="identifikator"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:complexType name="saksansvarlig">
     <xs:annotation>
@@ -714,7 +715,7 @@
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="kode"/>
+      <xs:extension base="identifikator"/>
     </xs:complexContent>
   </xs:complexType>
 
@@ -724,7 +725,7 @@
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="kode"/>
+      <xs:extension base="identifikator"/>
     </xs:complexContent>
   </xs:complexType>
 
@@ -1045,15 +1046,14 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:complexType name="administrativEnhetNavn">
+  <xs:simpleType name="administrativEnhetNavn">
     <xs:annotation>
       <xs:documentation>M583</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="kode"/>
-    </xs:complexContent>
-  </xs:complexType>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="administrativEnhetsstatus">
     <xs:annotation>
@@ -1719,6 +1719,18 @@
     <xs:sequence>
       <xs:element name="kode" type="xs:string"/>
       <xs:element name="beskrivelse" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="identifikator">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="navn" type="xs:string" minOccurs="0"/>
+      <xs:element name="initialer" type="xs:string" minOccurs="0"/>
+      <xs:element name="epostadresse" type="epostadresse" minOccurs="0"/>
+      <xs:element name="kode" type="kode" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
