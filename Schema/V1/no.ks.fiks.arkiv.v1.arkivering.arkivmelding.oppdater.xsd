@@ -166,10 +166,8 @@
 
     <xs:complexType name="registreringOppdatering">
         <xs:sequence>
-            <xs:choice>
-                <xs:element name="systemID" type="n5mdk:systemID"/>
-                <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel"/>
-            </xs:choice>
+            <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
             <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
