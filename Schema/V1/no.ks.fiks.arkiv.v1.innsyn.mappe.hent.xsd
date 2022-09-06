@@ -15,7 +15,7 @@
 
     <xs:complexType name="mappeHent">
         <xs:sequence>
-            <xs:element name="referanseMappe" type="n5mdk:referanseTilMappe"/>
+            <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe"/>
             <xs:element name="inkluder" type="inkluder" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
