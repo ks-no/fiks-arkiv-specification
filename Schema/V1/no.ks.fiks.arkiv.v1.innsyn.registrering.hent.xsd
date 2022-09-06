@@ -14,7 +14,7 @@
 	
 	<xs:complexType name="registreringHent">
 		<xs:sequence>
-			<xs:element name="referanseRegistrering" type="n5mdk:referanseTilRegistrering"/>
+			<xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering"/>
 			<xs:element name="inkluder" type="inkluder" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
