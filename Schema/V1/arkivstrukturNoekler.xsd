@@ -18,7 +18,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <xs:element minOccurs="0" name="ReferanseForeldermappe" type="n5mdk:systemID"/>
+            <xs:element name="referanseForeldermappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:choice>
                 <xs:element name="mappe" type="mappeNoekler" minOccurs="0" maxOccurs="unbounded"/>
