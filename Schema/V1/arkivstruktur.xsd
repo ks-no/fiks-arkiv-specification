@@ -165,7 +165,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="mappeID" type="n5mdk:mappeID"/>
-            <xs:element name="ReferanseForeldermappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
+            <xs:element name="referanseForeldermappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
