@@ -18,12 +18,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <xs:element name="referanseForeldermappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
-            <xs:choice>
-                <xs:element name="mappe" type="mappeNoekler" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="registrering" type="registreringNoekler" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:choice>
         </xs:sequence>
     </xs:complexType>
 
@@ -46,12 +41,7 @@
     <xs:complexType name="registreringNoekler">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:choice minOccurs="0">
-                <xs:element name="referanseForelderMappe" type="n5mdk:referanseTilMappe"/>
-                <xs:element name="arkivdel" type="n5mdk:kode"/>
-            </xs:choice>
-            <xs:element name="dokumentbeskrivelse" type="dokumentbeskrivelseNoekler" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
