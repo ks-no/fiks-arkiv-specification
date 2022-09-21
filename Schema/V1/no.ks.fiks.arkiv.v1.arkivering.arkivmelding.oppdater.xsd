@@ -52,6 +52,7 @@
         <xs:complexContent>
             <xs:extension base="mappeOppdatering">
                 <xs:sequence>
+                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet" minOccurs="0"/>
                     <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig" minOccurs="0"/>
                     <xs:element name="saksstatus" type="n5mdk:saksstatus" minOccurs="0"/>
                     <xs:element name="matrikkelnummerOppdateringer" type="matrikkelnummerOppdateringer" minOccurs="0"/>
