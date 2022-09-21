@@ -27,7 +27,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
-            <xs:element name="referanseForeldermappe" type="referanseTilMappe" minOccurs="0"/>
+            <xs:element name="referanseForeldermappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
@@ -125,7 +125,7 @@
             <xs:element name="arkivertAv" type="n5mdk:arkivertAv" minOccurs="0"/>
             <!-- Dersom en registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
             <xs:choice minOccurs="0">
-                <xs:element name="referanseForelderMappe" type="referanseTilMappe"/>
+                <xs:element name="referanseForelderMappe" type="n5mdk:referanseTilMappe"/>
                 <xs:element name="arkivdel" type="n5mdk:kode"/>
             </xs:choice>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
@@ -291,8 +291,8 @@
             <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
             <xs:element name="avskrevetAv" type="n5mdk:avskrevetAv"/>
             <xs:element name="avskrivningsmaate" type="n5mdk:avskrivningsmaate"/>
-            <xs:element name="referanseAvskrivesAvJournalpost" type="referanseJournalpost" minOccurs="0"/>
-            <xs:element name="referanseAvskriverJournalpost" type="referanseJournalpost" minOccurs="0"/>
+            <xs:element name="referanseAvskrivesAvJournalpost" type="n5mdk:referanseTilJournalpost" minOccurs="0"/>
+            <xs:element name="referanseAvskriverJournalpost" type="n5mdk:referanseTilJournalpost" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -362,14 +362,6 @@
             <xs:pattern value="[A-Z]{2}"/>
         </xs:restriction>
     </xs:simpleType>
-
-    <xs:complexType name="referanseTilMappe">
-        <xs:choice>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="saksnummer" type="n5mdk:saksnummer" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
-        </xs:choice>
-    </xs:complexType>
 
     <xs:complexType name="merknad">
         <xs:sequence>
@@ -462,16 +454,6 @@
             <xs:element name="adresse" type="n5mdk:postadresse"/>
             <xs:element name="postnummer" type="n5mdk:postnummer"/>
             <xs:element name="poststed" type="n5mdk:poststed"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="referanseJournalpost">
-        <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="journalnummer" type="n5mdk:journalnummer" minOccurs="0"/>
-            <xs:element name="saksJournalpostnummer" type="n5mdk:saksJournalpostnummer" minOccurs="0"/>
-            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
