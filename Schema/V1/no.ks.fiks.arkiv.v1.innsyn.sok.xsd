@@ -32,7 +32,7 @@
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="mappeInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="inkluder" type="mappeInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="mappeParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="mappeSortering" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
@@ -44,7 +44,7 @@
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="saksmappeInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="inkluder" type="saksmappeInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="saksmappeParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="saksmappeSortering" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
@@ -56,7 +56,7 @@
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="registreringInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="inkluder" type="registreringInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="registreringParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="registreringSortering" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
@@ -68,7 +68,7 @@
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="journalpostInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="inkluder" type="journalpostInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="journalpostParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="journalpostSortering" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
@@ -80,7 +80,7 @@
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="journalpostInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="inkluder" type="journalpostInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="journalpostParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="journalpostSortering" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
@@ -92,7 +92,7 @@
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
                 <xs:sequence>
-                    <xs:element name="inkluder" type="dokumentbeskrivelseInkluder" maxOccurs="unbounded"/>
+                    <xs:element name="inkluder" type="dokumentbeskrivelseInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="dokumentbeskrivelseParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="dokumentbeskrivelseSortering" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
