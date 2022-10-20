@@ -222,8 +222,7 @@
             <xs:enumeration value="mappeNoekkelord"/>
             <xs:enumeration value="mappeAvsluttetDato"/>
             <xs:enumeration value="mappeArkivdel"/>
-            <xs:enumeration value="mappeEndretFoerDato"/>
-            <xs:enumeration value="mappeEndretEtterDato"/>
+            <xs:enumeration value="mappeEndretDato"/>
             <xs:enumeration value="mappeMappetype"/>
     
             <xs:enumeration value="mappeKlasseKlassifikasjonssystem"/>
@@ -254,8 +253,7 @@
             <xs:enumeration value="mappeNoekkelord"/>
             <xs:enumeration value="mappeAvsluttetDato"/>
             <xs:enumeration value="mappeArkivdel"/>
-            <xs:enumeration value="mappeEndretFoerDato"/>
-            <xs:enumeration value="mappeEndretEtterDato"/>
+            <xs:enumeration value="mappeEndretDato"/>
             <xs:enumeration value="mappeMappetype"/>
 
             <xs:enumeration value="mappeKlasseKlassifikasjonssystem"/>
@@ -310,8 +308,7 @@
             <xs:enumeration value="registreringTittel"/>
             <xs:enumeration value="registreringAdministrativenhet"/>
             <xs:enumeration value="registreringJournalpostansvarlig"/>
-            <xs:enumeration value="registreringEndretFoerDato"/>
-            <xs:enumeration value="registreringEndretEtterDato"/>
+            <xs:enumeration value="registreringEndretDato"/>
 
             <xs:enumeration value="registreringPartPartNavn"/>
             <xs:enumeration value="registreringPartPartRolle"/>
@@ -334,8 +331,7 @@
             <xs:enumeration value="registreringTittel"/>
             <xs:enumeration value="registreringAdministrativenhet"/>
             <xs:enumeration value="registreringJournalpostansvarlig"/>
-            <xs:enumeration value="registreringEndretFoerDato"/>
-            <xs:enumeration value="registreringEndretEtterDato"/>
+            <xs:enumeration value="registreringEndretDato"/>
 
             <xs:enumeration value="registreringPartPartNavn"/>
             <xs:enumeration value="registreringPartPartRolle"/>
