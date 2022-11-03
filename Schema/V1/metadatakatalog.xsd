@@ -1530,15 +1530,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="skjermetObjekt">
-    <xs:annotation>
-      <xs:documentation>M5..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="erSkjermet">
     <xs:annotation>
       <xs:documentation>M5..</xs:documentation>
