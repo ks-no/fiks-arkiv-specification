@@ -39,6 +39,17 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="mappeFritekstSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="mappeInkluder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="soketekst" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="saksmappeSokdefinisjon">
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
@@ -46,6 +57,17 @@
                     <xs:element name="inkluder" type="saksmappeInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="saksmappeParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="saksmappeSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="saksmappeFritekstSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="saksmappeInkluder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="soketekst" type="xs:string"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -63,6 +85,17 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="registreringFritekstSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="registreringInkluder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="soketekst" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="journalpostSokdefinisjon">
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
@@ -70,6 +103,17 @@
                     <xs:element name="inkluder" type="journalpostInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="journalpostParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="journalpostSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostFritekstSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="journalpostInkluder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="soketekst" type="xs:string"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -87,6 +131,17 @@
         </xs:complexContent>
     </xs:complexType>
 
+    <xs:complexType name="journalpostMedSaksmappeFritekstSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="journalpostInkluder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="soketekst" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
     <xs:complexType name="dokumentbeskrivelseSokdefinisjon">
         <xs:complexContent>
             <xs:extension base="sokdefinisjon">
@@ -94,6 +149,17 @@
                     <xs:element name="inkluder" type="dokumentbeskrivelseInkluder" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="parametere" type="dokumentbeskrivelseParameter" maxOccurs="unbounded"/>
                     <xs:element name="sortering" type="dokumentbeskrivelseSortering" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseFritekstSokdefinisjon">
+        <xs:complexContent>
+            <xs:extension base="sokdefinisjon">
+                <xs:sequence>
+                    <xs:element name="inkluder" type="dokumentbeskrivelseInkluder" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="soketekst" type="xs:string"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
