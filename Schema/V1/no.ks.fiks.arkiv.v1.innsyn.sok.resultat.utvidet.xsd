@@ -12,8 +12,6 @@
     <xs:complexType name="sokeresultat">
         <xs:sequence>
             <xs:element name="system" type="xs:string"/>
-            <xs:element name="meldingId" type="xs:string"/>
-            <xs:element name="svarPaMeldingId" type="xs:string"/>
             <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:element name="take" type="xs:int"/>
             <xs:element name="skip" type="xs:int"/>

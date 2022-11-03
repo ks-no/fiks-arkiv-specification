@@ -12,7 +12,6 @@
 
     <xs:complexType name="arkivmeldingOppdatering">
         <xs:sequence>
-            <xs:element name="meldingId" type="xs:string"/>
             <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:choice minOccurs="1" maxOccurs="1">
                 <xs:element name="mappeOppdateringer" type="mappeOppdatering" minOccurs="0" maxOccurs="unbounded"/>

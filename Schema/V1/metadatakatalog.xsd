@@ -594,10 +594,10 @@
   <xs:complexType name="referanseTilJournalpost">
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
+      <xs:element name="registreringsID" type="registreringsID" minOccurs="0"/>
       <xs:element name="journalnummer" type="journalnummer" minOccurs="0"/>
       <xs:element name="saksJournalpostnummer" type="saksJournalpostnummer" minOccurs="0"/>
       <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="registreringsID" type="registreringsID" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 

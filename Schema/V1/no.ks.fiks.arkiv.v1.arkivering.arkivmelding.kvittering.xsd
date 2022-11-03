@@ -12,7 +12,6 @@
     <xs:complexType name="arkivmeldingKvittering">
         <xs:sequence>
             <xs:element name="system" type="xs:string"/>
-            <xs:element name="meldingId" type="xs:string"/>
             <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:choice>
                 <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
