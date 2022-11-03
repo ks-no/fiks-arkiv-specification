@@ -1539,6 +1539,13 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="erSkjermet">
+    <xs:annotation>
+      <xs:documentation>M5..</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean"/>
+  </xs:simpleType>
+
 <xs:simpleType name="erPersonnavn">
     <xs:annotation>
       <xs:documentation>M5..</xs:documentation>
