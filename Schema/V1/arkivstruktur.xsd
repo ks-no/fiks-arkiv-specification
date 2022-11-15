@@ -492,8 +492,8 @@
             <xs:element name="merknadID" type="n5mdk:merknadID" minOccurs="0"/>
             <xs:element name="merknadstekst" type="n5mdk:merknadstekst"/>
             <xs:element name="merknadstype" type="n5mdk:merknadstype" minOccurs="0"/>
-            <xs:element name="merknadsdato" type="n5mdk:merknadsdato"/>
-            <xs:element name="merknadRegistrertAv" type="n5mdk:merknadRegistrertAv"/>
+            <xs:element name="merknadsdato" type="n5mdk:merknadsdato" minOccurs="0"/>
+            <xs:element name="merknadRegistrertAv" type="n5mdk:merknadRegistrertAv" minOccurs="0"/>
             <xs:element name="erSkjermet" type="n5mdk:erSkjermet" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
