@@ -16,6 +16,6 @@ Skjemafilene ligger under `Schema/V1`
 ![Avhengigheter mellom schemas](deps.png)
 
 ## Dokumentasjon
-For mer utfyllende dokumentasjon om protokollen kan man lese mer her: [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/).
+For mer utfyllende dokumentasjon om protokollen kan man lese mer på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
 
 
