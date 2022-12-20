@@ -156,7 +156,7 @@
                     <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer" minOccurs="0"/>
                     <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer" minOccurs="0"/>
                     <xs:element name="journalposttype" type="n5mdk:journalposttype"/>
-                    <xs:element name="journalstatus" type="n5mdk:journalstatus"/>
+                    <xs:element name="journalstatus" type="n5mdk:journalstatus" minOccurs="0"/>
                     <xs:element name="journaldato" type="n5mdk:journaldato" minOccurs="0"/>
                     <xs:element name="dokumentetsDato" type="n5mdk:dokumentetsDato" minOccurs="0"/>
                     <xs:element name="mottattDato" type="n5mdk:mottattDato" minOccurs="0"/>
@@ -197,7 +197,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
             <xs:element name="dokumenttype" type="n5mdk:dokumenttype"/>
-            <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus"/>
+            <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="forfatter" type="n5mdk:forfatter" minOccurs="0" maxOccurs="unbounded"/>
