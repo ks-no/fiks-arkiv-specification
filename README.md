@@ -22,7 +22,7 @@ For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https:
 I mappen Dokumentasjon ligger modeller og diagrammer, de fleste utarbeidet vha PlantUML.
 Kildekoden i PlantUML for modellene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
 
-#### [UseCases](Dokumentasjon/V1/UseCases)
+#### [Use cases](Dokumentasjon/V1/UseCases)
 
 
 

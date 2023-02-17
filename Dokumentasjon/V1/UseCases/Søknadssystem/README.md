@@ -1,4 +1,6 @@
-# UseCase: Søknadssystem
+# Søknadssystem
+
+*Dette er et foreløpig utkast*
 
 Kommunikasjon mellom søknadssytem og arkiv vha Fiks-Arkiv protokollen.
 
