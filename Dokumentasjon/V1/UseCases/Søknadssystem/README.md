@@ -11,7 +11,7 @@ Alle meldinger vil gå via Fiks-Protokoll.
 
 ![sekvensdiagram](meldingsutveksling-Eksempel_på_dialog_mellom_søknadssystem_og_arkivsystem__Fra_start_til_slutt.png)
 
-Forklaring fra diagram
+Forklaring til diagram
 
 *1) Arkivmelding som oppretter saksmappe i arkivet. 
 
