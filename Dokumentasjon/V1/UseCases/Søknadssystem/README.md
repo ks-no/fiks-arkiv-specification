@@ -4,6 +4,9 @@
 
 Kommunikasjon mellom søknadssytem og arkiv vha Fiks-Arkiv protokollen.
 
+Merk at Fiks-Protokoll/Fiks-IO er utelatt i modellen for å forenkle den. Den er meldingssystem som ligger mellom søknadssystem og arkivsystem.
+Alle meldinger vil gå via Fiks-Protokoll.
+
 ## Meldingsutveksling
 
 ![sekvensdiagram](meldingsutveksling-Eksempel_på_dialog_mellom_søknadssystem_og_arkivsystem__Fra_start_til_slutt.png)
