@@ -22,7 +22,7 @@ Forklaring fra diagram
 
 ### Arkivmelding
 
-#### Regel-felt
+#### Regel
 *Til vurdering i issue [her](https://github.com/ks-no/fiks-arkiv-specification/issues/81)*
 
 Feltet `<regel>` bestemmer hvilket regelsett som skal brukes for system som sender inn arkivmelding.
