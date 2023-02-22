@@ -1,15 +1,15 @@
-# Søknadssystem
+# Rekrutteringssystem
 
 *Dette er et foreløpig utkast*
 
-Kommunikasjon mellom søknadssytem og arkiv vha Fiks-Arkiv protokollen.
+Kommunikasjon mellom rekrutteringssystem og arkiv vha Fiks-Arkiv protokollen.
 
-Merk at Fiks-Protokoll/Fiks-IO er utelatt i modellen for å forenkle den. Den er meldingssystem som ligger mellom søknadssystem og arkivsystem.
+Merk at Fiks-Protokoll/Fiks-IO er utelatt i modellen for å forenkle den. Den er meldingssystem som ligger mellom rekrutteringssystem og arkivsystem.
 Alle meldinger vil gå via Fiks-Protokoll.
 
 ## Meldingsutveksling
 
-![sekvensdiagram](meldingsutveksling-Eksempel_på_dialog_mellom_søknadssystem_og_arkivsystem__Fra_start_til_slutt.png)
+![sekvensdiagram](meldingsutveksling.png)
 
 Forklaring til diagram
 
@@ -19,7 +19,7 @@ Forklaring til diagram
 
 *3) En endring blir gjort på en søknad eller prosessen som krever å bli arkivert. Oppdater melding for journalpost(er) eller saksmappe
 
-*4) Søknadsprosess er ferdig og avsluttes. Oppdater melding sendes for saksmappe og evt journalpost(er).  
+*4) Søknadsprosess er ferdig og avsluttes. Arkivmelding sendes for saksmappe og evt journalpost(er). I denne overføringen sendes følgende: Annonse, offentlig søkerliste, utvidet søkerliste, innstillingsvedtak og eventuelle notater og dokumenter som er vedlagt rekrutteringsprosjektet
 
 ## Meldingsdetaljer
 

@@ -5,7 +5,7 @@
 ## Diagrammer og modeller
 
 ### UseCases 
-[Søknadssystem](UseCases/Søknadssystem/README.md)
+[Rekrutteringssystem](UseCases/Rekrutteringssystem/README.md)
 
 
 
