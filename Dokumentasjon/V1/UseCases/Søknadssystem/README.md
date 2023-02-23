@@ -1,10 +1,10 @@
-# Rekrutteringssystem
+# Søknadssystem
 
 *Dette er et foreløpig utkast*
 
-Kommunikasjon mellom rekrutteringssystem og arkiv vha Fiks-Arkiv protokollen.
+Kommunikasjon mellom søknadssystem og arkiv vha Fiks-Arkiv protokollen.
 
-Merk at Fiks-Protokoll/Fiks-IO er utelatt i modellen for å forenkle den. Den er meldingssystem som ligger mellom rekrutteringssystem og arkivsystem.
+Merk at Fiks-Protokoll/Fiks-IO er utelatt i modellen for å forenkle den. Den er meldingssystem som ligger mellom søknadssystem og arkivsystem.
 Alle meldinger vil gå via Fiks-Protokoll.
 
 ## Meldingsutveksling
