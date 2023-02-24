@@ -145,7 +145,7 @@
             <xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="korrespondansepart" type="korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
