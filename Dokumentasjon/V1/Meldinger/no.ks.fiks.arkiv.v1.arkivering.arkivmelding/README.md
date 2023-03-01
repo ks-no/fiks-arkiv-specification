@@ -38,7 +38,7 @@ Tidspunkt for opprettelsen av arkivmeldingen hos avsender system.
 ### `antallFiler`
 #### Definisjon
 Totalt antall filer som følger med i arkivmeldingen.
-Dette feltet skal vise totalt antall vedlagte filer, ikke inklusiv arkivmelding.xml. Sender man bare en arkivmelding.xml uten vedlegg skal `antallFiler` være 0. 
+Dette feltet skal vise totalt antall vedlagte filer, ikke inklusiv arkivmelding.xml. Sender man bare en arkivmelding.xml uten hoveddoument eller vedlegg skal `antallFiler` være 0. 
 
 ### `mappe`
 #### Definisjon
