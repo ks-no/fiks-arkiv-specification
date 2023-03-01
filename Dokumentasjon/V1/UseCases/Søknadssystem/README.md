@@ -26,8 +26,6 @@ Forklaring til diagram
 ### Arkivmelding
 
 #### Regel
-*Til vurdering i issue [her](https://github.com/ks-no/fiks-arkiv-specification/issues/81)*
-
 Feltet `<regel>` bestemmer hvilket regelsett som skal brukes for system som sender inn arkivmelding.
 Referanse til regelsettet med  standardverdier ref gammelt skjemamottak.
 
