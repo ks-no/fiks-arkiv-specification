@@ -130,6 +130,15 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="punktID">
+    <xs:annotation>
+      <xs:documentation>M00...</xs:documentation><!-- TODO -->
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="klassifikasjonID">
     <xs:annotation>
       <xs:documentation>M00...</xs:documentation><!-- TODO -->
