@@ -86,11 +86,11 @@
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
-            <xs:element name="dokumentobjekt" type="dokumentobjekt" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="dokumentobjekt" type="dokumentobjektKvittering" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="dokumentobjekt">
+    <xs:complexType name="dokumentobjektKvittering">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
