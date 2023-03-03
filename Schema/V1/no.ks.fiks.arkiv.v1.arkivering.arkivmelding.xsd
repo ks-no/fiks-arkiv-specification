@@ -105,6 +105,7 @@
 
     <xs:complexType name="klassifikasjonssystem">
         <xs:sequence>
+            <xs:element name="klassifikasjonssystemID" type="n5mdk:klassifikasjonssystemID" minOccurs="0"/>
             <xs:element name="klassifikasjonstype" type="n5mdk:klassifikasjonstype" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
