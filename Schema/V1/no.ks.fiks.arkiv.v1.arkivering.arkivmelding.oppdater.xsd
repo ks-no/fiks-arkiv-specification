@@ -301,10 +301,9 @@
         </xs:sequence>
     </xs:complexType>
 
-    <!-- Trengs denne? Eller skal man bare kunne legge til ny og slette? -->
     <xs:complexType name="byggidentOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="opprinneligBygningsnummer" type="n5mdk:bygningsnummer"/>
             <xs:element name="bygningsnummer" type="n5mdk:bygningsnummer" minOccurs="0"/>
             <xs:element name="endringsloepenummer" type="n5mdk:endringsloepenummer" minOccurs="0"/>
         </xs:sequence>
@@ -312,7 +311,7 @@
 
     <xs:complexType name="byggidentSlett">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="bygningsnummer" type="n5mdk:bygningsnummer"/>
         </xs:sequence>
     </xs:complexType>
     
