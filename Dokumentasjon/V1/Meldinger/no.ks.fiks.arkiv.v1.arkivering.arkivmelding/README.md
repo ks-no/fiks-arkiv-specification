@@ -4,6 +4,8 @@
 
 `no.ks.fiks.arkiv.v1.arkivering.arkivmelding`
 
+Meldinger sendt med den meldingstypen skal være i henhold til skjema
+
 **Skjema**
 
 [no.ks.fiks.arkiv.v1.arkivering.arkivmelding.xsd](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.xsd)
@@ -18,13 +20,15 @@ Oppdatering eller endring på et arkivert objekt gjøres ved egen meldingstype.
 Dokumentasjonen her er gruppert på objekter (complexType) i arkivmeldingen som f.eks. arkivmelding, mappe, saksmappe, journalpost, osv.
 
 ## arkivmelding 
-Her er feltene for objektet arkivmelding. 
+Arkivmelding er topp objektet for arkivmelding meldingstypen og inneholder det som skal registreres av mapper og registreringer.
 
 **Arv:** Nei
 
+### Felter
+
 ### `system`
 #### Definisjon
-Identifiserer avsender system. Vil kunne styre hvilke standardverdier som skal kunne kjøres sammen med feltet `regel`.
+Identifiserer avsender system. Vil kunne styre hvilke standardverdier som skal kunne settes sammen med feltet `regel`.
 
 ### `regel`
 #### Definisjon
@@ -38,30 +42,165 @@ Tidspunkt for opprettelsen av arkivmeldingen hos avsender system.
 ### `antallFiler`
 #### Definisjon
 Totalt antall filer som følger med i arkivmeldingen.
-Dette feltet skal vise totalt antall vedlagte filer, ikke inklusiv arkivmelding.xml. Sender man bare en arkivmelding.xml uten hoveddoument eller vedlegg skal `antallFiler` være 0. 
+Dette feltet skal vise totalt antall vedlagte filer, ikke inklusiv arkivmelding.xml. 
+Sender man bare en arkivmelding.xml uten hoveddoument eller vedlegg skal `antallFiler` være 0. 
 
 ### `mappe`
 #### Definisjon
-Liste med `mappe` objekter. Kan inneholde 0 til mange. Se mer om `mappe` lenger nede.
+Liste med `mappe` objekter og typer som arver fra `mappe`. Kan inneholde 0 til mange. Se mer om `mappe` lenger nede.
 
 ### `registrering`
 #### Definisjon
-Liste med `registrering` objekter. Kan inneholde 0 til mange. Se mer om `registrering` lenger nede.
+Liste med `registrering` objekter og typer som arver fra `registrering`. Kan inneholde 0 til mange. Se mer om `registrering` lenger nede.
 
 
 ## mappe
-Her er feltene for objektet mappe. 
+
+#### Definisjon
+En mappe kan inneholde andre mapper eller registreringer.
 
 **Arv:** Nei
 
-*felter kommer*
+### Felter
 
+---
+### `systemID`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `mappeID`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `referanseForelderMappe`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `tittel`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `offentligTittel`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `beskrivelse`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `noekkelord`
+#### Definisjon
+Liste med `noekkelord`. Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `dokumentmedium`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `oppbevaringssted`
+#### Definisjon
+Liste med `oppbevaringssted`. Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `opprettetDato`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `opprettetAv`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `avsluttetDato`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `avsluttetAv`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `arkivdel`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `virksomhetsspesifikkeMetadata`
+#### Definisjon
+Definert som xs:anyType og er ikke bundet til noen datatype. Åpent for virksomhet å sette metadata om mappe.
+
+---
+### `part`
+#### Definisjon
+Liste med parter. Se mer om datatypen [`part` her]() 
+
+---
+### `kryssreferanse`
+#### Definisjon
+Liste med kryssreferanser. Se mer om datatypen [`kryssreferanse` her]()
+
+---
+### `merknad`
+#### Definisjon
+Liste med merknader. Se mer om datatypen [`merknad` her]()
+
+---
+### `skjerming`
+#### Definisjon
+Se mer om datatypen [`skjerming` her]()
+
+---
+### `gradering`
+#### Definisjon
+Se mer om datatypen [`gradering` her]()
+
+---
+### `klassifikasjon`
+#### Definisjon
+Se mer om datatypen [`klassifikasjon` her]()
+
+---
+### `referanseEksternNoekkel`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
+### `mappe`
+#### Definisjon
+Liste med mapper under denne mappen.
+
+---
+### `registrering`
+#### Definisjon
+Liste med registreringer under denne mappen.
+
+---
+### `mappetype`
+#### Definisjon
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+
+---
 ## saksmappe
-Her er feltene for objektet saksmappe. Se også forelder typen `mappe` for arvet felter.
+
+#### Definisjon
+
+Saksmappe arver felter fra forelder typen `mappe`.
 
 **Arv:** `mappe`
 
-*felter kommer*
+### Felter
+*flere felter kommer*
+
+---
 
 ## registrering
 Her er feltene for objektet registrering. 
@@ -70,6 +209,7 @@ Her er feltene for objektet registrering.
 
 *felter kommer*
 
+---
 ## journalpost
 Her er feltene for objektet journalpost. Se også forelder typen `registrering` for arvet felter.
 
