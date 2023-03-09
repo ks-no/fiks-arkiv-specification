@@ -66,72 +66,72 @@ En mappe kan inneholde andre mapper eller registreringer.
 ---
 ### `systemID`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakataloghttps://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `mappeID`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `referanseForelderMappe`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `tittel`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `offentligTittel`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `beskrivelse`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `noekkelord`
 #### Definisjon
-Liste med `noekkelord`. Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Liste med `noekkelord`. Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `dokumentmedium`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `oppbevaringssted`
 #### Definisjon
-Liste med `oppbevaringssted`. Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Liste med `oppbevaringssted`. Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `opprettetDato`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `opprettetAv`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `avsluttetDato`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `avsluttetAv`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `arkivdel`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `virksomhetsspesifikkeMetadata`
@@ -171,7 +171,7 @@ Se mer om datatypen [`klassifikasjon` her]()
 ---
 ### `referanseEksternNoekkel`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `mappe`
@@ -186,7 +186,7 @@ Liste med registreringer under denne mappen.
 ---
 ### `mappetype`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd]()
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ## saksmappe
