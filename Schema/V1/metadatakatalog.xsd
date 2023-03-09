@@ -434,6 +434,16 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:complexType name="skjermingOpphoererAksjon">
+    <xs:annotation>
+      <xs:documentation>M090</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
+
   <!-- M100-M199:	Datoer -->
 
   <xs:simpleType name="saksdato">
