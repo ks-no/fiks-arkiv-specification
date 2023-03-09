@@ -28,7 +28,6 @@
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
-            <xs:element name="dokumentobjekt" type="arkivmelding:dokumentobjekt" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
