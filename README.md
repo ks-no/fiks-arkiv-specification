@@ -16,11 +16,12 @@ Skjemafilene ligger under `Schema/V1`
 ![Avhengigheter mellom schemas](deps.png)
 
 ## Dokumentasjon
-For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki), på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
+For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki), på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/) i tillegg til det som er her.
 
-### [Modeller og diagrammer](Dokumentasjon/V1)
-I mappen [Dokumentasjon/V1](Dokumentasjon/V1) ligger modeller og diagrammer for denne versjonen av protokollen, de fleste utarbeidet vha PlantUML.
+I mappen [Dokumentasjon](Dokumentasjon) ligger modeller og diagrammer for hver versjon av protokollen. Modeller er stort sett utarbeidet vha PlantUML.
 Kildekoden i PlantUML for modellene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
+
+#### [Direkte til dokumentasjon for V1 her](Dokumentasjon/V1) 
 
 
 
