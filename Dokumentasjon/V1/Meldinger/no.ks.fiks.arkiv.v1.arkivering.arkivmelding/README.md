@@ -66,7 +66,7 @@ En mappe kan inneholde andre mapper eller registreringer.
 ---
 ### `systemID`
 #### Definisjon
-Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakataloghttps://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
 
 ---
 ### `mappeID`
