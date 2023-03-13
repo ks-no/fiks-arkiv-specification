@@ -380,7 +380,7 @@
             <xs:element name="tilgangsrestriksjon" type="n5mdk:tilgangsrestriksjon"/>
             <xs:element name="skjermingshjemmel" type="n5mdk:skjermingshjemmel"/>
             <xs:element name="skjermingOpphoererDato" type="n5mdk:skjermingOpphoererDato" minOccurs="0"/>
-            <xs:element name="skjermingOpphoererAksjon" type="n5mdk:kode" minOccurs="0"/>
+            <xs:element name="skjermingOpphoererAksjon" type="n5mdk:skjermingOpphoererAksjon" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
