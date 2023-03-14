@@ -58,7 +58,7 @@
                     <xs:element name="matrikkelnummerOppdateringer" type="matrikkelnummerOppdateringer" minOccurs="0"/>
                     <xs:element name="byggidentOppdateringer" type="byggidentOppdateringer" minOccurs="0"/>
                     <xs:element name="planidentOppdateringer" type="planidentOppdateringer" minOccurs="0"/>
-                    <xs:element name="punkt" type="arkivmelding:punkt" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="punktOppdateringer" type="punktOppdateringer" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -74,7 +74,7 @@
     
     <xs:complexType name="kryssreferanseOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="kryssreferanseID" type="n5mdk:kryssreferanseID"/>
             <xs:element name="referanseTilKlasse" type="n5mdk:referanseTilKlasse" minOccurs="0"/>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering" minOccurs="0"/>
@@ -99,7 +99,7 @@
 
     <xs:complexType name="punktOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="punktID" type="n5mdk:punktID"/>
             <xs:element name="koordinatsystem" type="n5mdk:koordinatsystem" minOccurs="0"/>
             <xs:element name="x" type="n5mdk:x" minOccurs="0"/>
             <xs:element name="y" type="n5mdk:y" minOccurs="0"/>
@@ -109,7 +109,7 @@
 
     <xs:complexType name="punktSlett">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="punktID" type="n5mdk:punktID"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -199,7 +199,7 @@
 
     <xs:complexType name="korrespondansepartOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID"/>
             <xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype" minOccurs="0"/>
             <xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn" minOccurs="0"/>
             <xs:choice minOccurs="0">
@@ -224,7 +224,7 @@
 
     <xs:complexType name="korrespondansepartSlett">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID"/>
         </xs:sequence>
     </xs:complexType>
     
@@ -238,7 +238,7 @@
 
     <xs:complexType name="merknadOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="merknadID" type="n5mdk:merknadID"/>
             <xs:element name="merknadstekst" type="n5mdk:merknadstekst" minOccurs="0"/>
             <xs:element name="merknadstype" type="n5mdk:merknadstype" minOccurs="0"/>
             <xs:element name="merknadsdato" type="n5mdk:merknadsdato" minOccurs="0"/>
@@ -249,7 +249,7 @@
 
     <xs:complexType name="merknadSlett">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="merknadID" type="n5mdk:merknadID"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -300,10 +300,9 @@
         </xs:sequence>
     </xs:complexType>
 
-    <!-- Trengs denne? Eller skal man bare kunne legge til ny og slette? -->
     <xs:complexType name="byggidentOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="opprinneligBygningsnummer" type="n5mdk:bygningsnummer"/>
             <xs:element name="bygningsnummer" type="n5mdk:bygningsnummer" minOccurs="0"/>
             <xs:element name="endringsloepenummer" type="n5mdk:endringsloepenummer" minOccurs="0"/>
         </xs:sequence>
@@ -311,7 +310,7 @@
 
     <xs:complexType name="byggidentSlett">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="bygningsnummer" type="n5mdk:bygningsnummer"/>
         </xs:sequence>
     </xs:complexType>
     
