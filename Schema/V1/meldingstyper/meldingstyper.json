@@ -42,6 +42,18 @@
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater"]
     },
     {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til",
+      "beskrivelse": "",
+      "harPayload": true,
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til.mottatt"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til"]
+    },
+    {
       "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent",
       "beskrivelse": "",
       "harPayload": true,
