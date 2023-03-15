@@ -32,7 +32,7 @@
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.kvittering",
       "beskrivelse": "",
-      "harPayload": false,
+      "harPayload": true,
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater"]
     },
     {
@@ -51,6 +51,12 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til.mottatt",
       "beskrivelse": "",
       "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til.kvittering",
+      "beskrivelse": "",
+      "harPayload": true,
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til"]
     },
     {
