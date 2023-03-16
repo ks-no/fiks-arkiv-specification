@@ -9,7 +9,6 @@
 
     <xs:element name="arkivmelding" type="arkivmelding"/>
 
-    <!-- TODO: fix mixed value, <xs:complexType name="arkivmelding" mixed="true">-->
     <xs:complexType name="arkivmelding">
         <xs:sequence>
             <xs:element name="system" type="xs:string"/>
