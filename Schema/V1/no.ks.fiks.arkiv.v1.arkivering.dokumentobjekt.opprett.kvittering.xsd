@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/leggtil/kvittering/v1"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/opprett/kvittering/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
-           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/leggtil/kvittering/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/opprett/kvittering/v1"
            elementFormDefault="qualified">
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
     
-    <xs:element name="dokumentobjektTilleggKvittering" type="dokumentobjektTilleggKvittering"/>
+    <xs:element name="dokumentobjektOpprettKvittering" type="dokumentobjektOpprettKvittering"/>
 
-    <xs:complexType name="dokumentobjektTilleggKvittering">
+    <xs:complexType name="dokumentobjektOpprettKvittering">
         <xs:annotation>
             <xs:documentation>Kvittering for lagt til dokumenobjekt til en dokumentbeskrivelse</xs:documentation>
         </xs:annotation>

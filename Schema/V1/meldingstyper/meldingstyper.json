@@ -42,22 +42,22 @@
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater"]
     },
     {
-      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til",
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett",
       "beskrivelse": "",
       "harPayload": true,
-      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til.mottatt"]
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.mottatt"]
     },
     {
-      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til.mottatt",
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.mottatt",
       "beskrivelse": "",
       "harPayload": false,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
     },
     {
-      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til.kvittering",
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering",
       "beskrivelse": "",
       "harPayload": true,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.legg.til"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent",
