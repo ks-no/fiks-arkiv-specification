@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/opprett/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           xmlns:arkivmelding="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/opprett/v1"
+           elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/v1" schemaLocation="./no.ks.fiks.arkiv.v1.arkivering.arkivmelding.xsd"/>
+    
+    <xs:element name="dokumentobjektOpprett" type="dokumentobjektOpprett"/>
+
+    <xs:complexType name="dokumentobjektOpprett">
+        <xs:annotation>
+            <xs:documentation>Legg til et dokumenobjekt til en dokumentbeskrivelse basert på dokumentbeskrivelseID</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="dokumentbeskrivelseID" type="n5mdk:systemID" >
+                <xs:annotation>
+                    <xs:documentation>Dette er systemID til dokumentbeskrivelsen som dokumentobjekt skal legges til</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="dokumentobjekt" type="arkivmelding:dokumentobjekt" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
