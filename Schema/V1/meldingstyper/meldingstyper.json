@@ -3,18 +3,18 @@
   "versjon": "v1",
   "meldingstyper": [
     {
-      "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding",
+      "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett",
       "beskrivelse": "", 
       "harPayload": true,
       "payloadFilnavn": "arkivmelding.xml",
-      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil"]
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil"]
     },
     {
-      "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering",
+      "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering",
       "beskrivelse": "",
       "harPayload": true,
       "payloadFilnavn": "arkivmelding-kvittering.xml",
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt",
