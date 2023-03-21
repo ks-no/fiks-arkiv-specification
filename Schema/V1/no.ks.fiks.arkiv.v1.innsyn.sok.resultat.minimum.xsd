@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/v1"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/minimum/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/minimum/v1"
            xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/minimum/v1" elementFormDefault="qualified">
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/minimum/v1" schemaLocation="arkivstrukturMinimum.xsd"/>
     
