@@ -11,7 +11,7 @@ Alle meldinger vil gå via Fiks-Protokoll.
 
 Denne meldingsutvekslingen viser hvordan man som søknadssystem skal arkivere gjennom en søknadsprosess, fra søknadsprosess starter til den avsluttes. 
 Dette gjelder søknadssystemer hvor det er søknadsfrister. 
-Anbefalingen er at søknadsprosesser med søknader som eventuelt endres \n forblir i søknadssystem til prosjektet avsluttes \n som f.eks. søknadsfrist har utgått
+Anbefalingen er at søknadsprosesser med søknader som eventuelt endres forblir i søknadssystem til prosjektet avsluttes, som f.eks. søknadsfrist har utgått.
 
 ![sekvensdiagram](meldingsutveksling.png)
 
