@@ -16,7 +16,7 @@ Mye er hentet fra eksisterende dokumentasjon fra Noark 5 standarden.
 ### UseCases 
 Her beskrives diverse spesifikke usecase og hvordan de kan løses innenfor protokollen
 
-[Søknadssystem](UseCases/Søknadssystem/README.md)
+[Søknadssystem med søknadsfrist](UseCases/Søknadssystem-med-søknadsfrist/README.md)
 
 
 

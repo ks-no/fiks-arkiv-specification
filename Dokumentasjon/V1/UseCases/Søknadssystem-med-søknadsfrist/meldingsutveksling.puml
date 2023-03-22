@@ -12,17 +12,15 @@ Søknadssystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding (*1)
 Søknadssystem <- Arkivsystem : no.ks.fiks.arkiv.v1.mottatt
 Søknadssystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering
 
-...Søknadssystem oppretter journalpost(er) med søknad(er) ...
+... Søknadsprosess med søknader som eventuelt endres \n forblir i søknadssystem til prosjektet avsluttes \n f.eks. søknadsfrist har utgått... 
+
+...Søknadssystem oppretter journalpost(er) med endelige søknad(er) ...
 Søknadssystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding (*2)
 Søknadssystem <- Arkivsystem : no.ks.fiks.arkiv.v1.mottatt
 Søknadssystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering
 
-...Søknadssystem endrer journalpost(er) for søknad(er) ...
-Søknadssystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater (*3)
-Søknadssystem <- Arkivsystem : no.ks.fiks.arkiv.v1.mottatt
-
 ...Søknadssystem avslutter prosjekt...
-Søknadssystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding (*4)
+Søknadssystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding (*3)
 Søknadssystem <- Arkivsystem : no.ks.fiks.arkiv.v1.mottatt
 Søknadssystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.kvittering
 
