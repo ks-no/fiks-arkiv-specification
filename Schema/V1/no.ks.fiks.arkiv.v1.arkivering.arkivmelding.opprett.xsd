@@ -222,9 +222,9 @@
     <xs:complexType name="dokumentobjekt">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
-            <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer"/>
-            <xs:element name="variantformat" type="n5mdk:variantformat"/>
-            <xs:element name="format" type="n5mdk:format"/>
+            <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer" minOccurs="0"/>
+            <xs:element name="variantformat" type="n5mdk:variantformat" minOccurs="0"/>
+            <xs:element name="format" type="n5mdk:format" minOccurs="0"/>
             <xs:element name="formatDetaljer" type="n5mdk:formatDetaljer" minOccurs="0"/>
             <xs:element name="mimeType" type="xs:string" minOccurs="0"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
