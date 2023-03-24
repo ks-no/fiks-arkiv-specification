@@ -23,7 +23,7 @@ Forklaring til diagram
 
 Feltet `<regel>` definerer hvilken regel som skal brukes for forhåndsdefinerte verdier på journalpost og dokumenter. Se mer under [Meldingsdetaljer](#meldingsdetaljer) -> [Arkivmelding](#arkivmelding) -> [Regel](#regel)
 
-*3) Søknadsprosess er ferdig og avsluttes. Arkivmelding sendes for saksmappe. I denne overføringen sendes følgende: Annonse, offentlig søkerliste, utvidet søkerliste, innstillingsvedtak og eventuelle notater og dokumenter som er vedlagt rekrutteringsprosjektet
+*3) Søknadsprosess er ferdig og avsluttes. Resterende journalposter overføres, i en eller flere meldinger. I disse overføringene sendes følgende: Annonse, offentlig søkerliste, utvidet søkerliste, innstillingsvedtak og eventuelle notater og dokumenter som er vedlagt rekrutteringsprosjektet. Saksmappen kan også oppdateres ved behov via en egen oppdater-melding: `no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater`.
 
 ## Meldingsdetaljer
 
