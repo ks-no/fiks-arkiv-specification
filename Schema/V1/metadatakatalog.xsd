@@ -1742,7 +1742,7 @@
   <xs:complexType name="kode">
     <xs:annotation>
       <xs:documentation>FIKS-ARKIV-001</xs:documentation>
-      <xs:documentation>Består av kode og beskrivelse. Elementet kode er en kort identifkator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura</xs:documentation>
+      <xs:documentation>Består av kode og beskrivelse. Elementet kode er en kort identifikator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string"/>
