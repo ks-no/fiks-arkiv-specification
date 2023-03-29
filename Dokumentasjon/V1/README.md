@@ -8,7 +8,7 @@
 Dokumentasjon for hvert skjema i protokollen med beskrivelser og regler for feltene og typene.
 Mye er hentet fra eksisterende dokumentasjon fra Noark 5 standarden.  
 
-[metadatakatalog](Meldinger/metadataktalog/README.md)
+[metadatakatalog](Meldinger/metadatakatalog/README.md)
 
 [no.ks.fiks.arkiv.v1.arkivering.arkivmelding](Meldinger/no.ks.fiks.arkiv.v1.arkivering.arkivmelding/README.md)
 
