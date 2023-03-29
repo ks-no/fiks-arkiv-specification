@@ -376,7 +376,7 @@
   <xs:complexType name="dokumenttype">
     <xs:annotation>
       <xs:documentation>M083</xs:documentation>
-      <xs:documentation>Eksempel kodeliste (kode:beskrivelse) = B:Brev, R:Rundskriv, F:Faktura, O:Ordrebrekeftelse, </xs:documentation>
+      <xs:documentation>Eksempel kodeliste (kode:beskrivelse) = SØKNAD:Søknad, MELDING:Melding, KORR:Korrespondanse, KART:Kart, FOTO:Foto, TEGNING:Tegning, ANSVKONTO:Ansvar og kontroll, TILSYN:Tilsyn, AVTALE:Avtale, VEDTAK:Vedtak, FERDIGATTEST:Ferdigattest </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>

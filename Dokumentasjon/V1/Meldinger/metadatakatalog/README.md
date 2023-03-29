@@ -82,24 +82,6 @@ Skal ikke kunne endres
 Ulike klassifikasjonssystemer innenfor samme arkivsystem kan inneholde en eller flere av de samme identifikasjonene. Identifikasjonen kan være rent nummerisk, men kan også være alfanumerisk og ha et logisk meningsinnhold. Merk at klasseID er identisk med begrepene ordningsverdi og arkivkode i Noark 4.
 
 ---
-### `kode` - FIKS-ARKIV-001
-#### Definisjon
-Kode er basen for felter som f.eks. dokumenttype som er av typen kode. Disse har da verdier fra kodelister. 
-Kode består av kode og beskrivelse. 
-Elementet kode er en kort identifkator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura
-
-#### Arkivenhet
-
-#### Kilde
-
-#### Arv
-
-#### Betingelser
-
-#### Kommentarer
-Elementet kode er den som er påkrevd og er typisk en forkortelse for hva den representerer.
-
----
 ### `dokumenttype` - M083
 #### Definisjon
 Navn på type dokument
@@ -116,15 +98,79 @@ Kode
 #### Betingelser
 Ingen obligatoriske typer. Aktuelle kode/beskrivelser kan f.eks. være:
 
-| kode | beskrivelse      |
-|------|------------------|
-| B    | Brev             |
-| R    | Rundskriv        |
-| F    | Faktura          |
-| O    | Ordrebekreftelse |
+| kode         | beskrivelse        |
+|--------------|--------------------|
+| SØKNAD       | Søknad             |
+| MELDING      | Melding            |
+| KORR         | Korrespondanse     |
+| KART         | Kart               |
+| FOTO         | Foto               |
+| TEGNING      | Tegning            |
+| ANSVKONTO    | Ansvar og kontroll |
+| TILSYN       | Tilsyn             |
+| AVTALE       | Avtale             |
+| VEDTAK       | Vedtak             |
+| FERDIGATTEST | Ferdigattest       |
 
 
 #### Kommentarer
 Se gjerne kodelister fra GI-standarden [her](./../../kodelister/gi-kodelister.png).
+Noe avvik vil det være fra GI-standarden til Fiks-Arkiv standarden
+
+---
+### `saksstatus` - M052
+#### Definisjon
+Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet.
+
+#### Arkivenhet
+_saksmappe_
+
+#### Kilde
+Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.
+
+#### Arv
+_kode_
+
+#### Betingelser
+Obligatoriske verdier:
+- "Under behandling"
+- "Avsluttet"
+- "Utgår"
+Skifte av status kan bare utføres av autoriserte personer.
+
+Kodeliste eksempel:
+
+| kode | beskrivelse                |
+|------|----------------------------|
+| B    | Under behandling           |
+| A    | Avsluttet                  |
+| U    | Utgår                      |
+| R    | Opprettet av saksbehandler |
+| S    | Avsluttet av saksbehandler |
+| P    | Unntatt prosesstyring      |
+| F    | Ferdig fra saksbehandler   |
 
 
+
+#### Kommentarer
+Saksmapper som avleveres skal ha status "Avsluttet" eller "Utgår".
+Se gjerne kodelister fra GI-standarden [her](./../../kodelister/gi-kodelister.png).
+Noe avvik vil det være fra GI-standarden til Fiks-Arkiv standarden
+
+---
+### `kode` - FIKS-ARKIV-001
+#### Definisjon
+Kode er basen for felter som f.eks. dokumenttype som er av typen kode. Disse har da verdier fra kodelister.
+Kode består av kode og beskrivelse.
+Elementet kode er en kort identifkator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura
+
+#### Arkivenhet
+
+#### Kilde
+
+#### Arv
+
+#### Betingelser
+
+#### Kommentarer
+Elementet kode er den som er påkrevd og er typisk en forkortelse for hva den representerer.
