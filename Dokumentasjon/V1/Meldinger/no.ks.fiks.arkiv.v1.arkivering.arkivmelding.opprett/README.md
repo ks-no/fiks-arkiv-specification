@@ -2,7 +2,7 @@
 
 **Meldingstype**
 
-`no.ks.fiks.arkiv.v1.arkivering.arkivmelding`
+`no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett`
 
 Meldinger sendt med den meldingstypen skal være i henhold til skjema
 
@@ -216,6 +216,29 @@ Her er feltene for objektet journalpost. Se også forelder typen `registrering` 
 **Arv:** `registrering`
 
 *felter kommer*
+
+---
+## korrespondansepart
+Her er feltene for objektet korrespondansepart.
+
+**Arv:** Nei
+
+---
+### Felter
+
+### `korrespondansepartID`
+#### Definisjon
+Identifikator for korrespondansepart.
+Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.com/ks-no/fiks-arkiv-specification/tree/main/Dokumentasjon/V1/Meldinger/metadatakatalog)
+
+### `erBehandlingsansvarlig`
+#### Definisjon
+Definerer om korrespondansepart er behandlingsansvarlig. Påkrevd felt hvor default verdi skal være **false**.
+
+#### Betingelser
+Default verdi skal være **false**.
+
+*Flere felter kommer*
 
 
 
