@@ -196,8 +196,8 @@ Noe avvik vil det være fra GI-standarden til Fiks-Arkiv standarden
 ### `kode` - FIKS-ARKIV-001
 #### Definisjon
 Kode er basen for felter som f.eks. dokumenttype som er av typen kode. Disse har da verdier fra kodelister.
-Kode består av kode og beskrivelse.
-Elementet kode er en kort identifkator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura
+Kode består av **kode** og **beskrivelse**.
+Elementet **kode** er en kort identifkator mens **beskrivelse** kan være en lengre tekst som beskriver koden. F.eks. kode="R" og beskrivelse="Opprettet av saksbehandler"
 
 #### Arkivenhet
 
@@ -208,4 +208,4 @@ Elementet kode er en kort identifkator mens beskrivelse kan være en lengre teks
 #### Betingelser
 
 #### Kommentarer
-Elementet kode er den som er påkrevd og er typisk en forkortelse for hva den representerer.
+Elementet **kode** er den som er påkrevd og er typisk en forkortelse for hva den representerer. 
