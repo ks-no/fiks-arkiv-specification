@@ -82,18 +82,93 @@ Skal ikke kunne endres
 Ulike klassifikasjonssystemer innenfor samme arkivsystem kan inneholde en eller flere av de samme identifikasjonene. Identifikasjonen kan være rent nummerisk, men kan også være alfanumerisk og ha et logisk meningsinnhold. Merk at klasseID er identisk med begrepene ordningsverdi og arkivkode i Noark 4.
 
 ---
+### `arkivdelstatus` - M051
+#### Definisjon
+Status til den arkivperioden som arkivdelen omfatter
+
+#### Arkivenhet
+_arkivdel_
+
+#### Kilde
+Registreres manuelt når arkivet opprettes eller ved skifte av status.
+
+#### Arv
+[_kode_](#kode---fiks-arkiv-001)
+
+#### Betingelser
+Obligatoriske verdier:
+- "Aktiv periode"
+- "Overlappingsperiode"
+- "Avsluttet periode"
+- "Uaktuelle mapper"
+Skifte av status kan bare utføres av autoriserte personer.
+
+Kodeliste eksempel:
+
+| kode | beskrivelse         |
+|------|---------------------|
+| A    | Aktiv periode       |
+| O    | Overlappingsperiode |
+| P    | Avsluttet periode   |
+| U    | Uaktuelle mapper    |
+
+#### Kommentarer
+Arkivdeler som avleveres skal ha status "Avsluttet periode".
+Se gjerne kodelister fra GI-standarden [her](./../../kodelister/gi-kodelister.png).
+Noe avvik vil det være fra GI-standarden til Fiks-Arkiv standarden
+
+---
+### `saksstatus` - M052
+#### Definisjon
+Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet.
+
+#### Arkivenhet
+_saksmappe_
+
+#### Kilde
+Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.
+
+#### Arv
+[_kode_](#kode---fiks-arkiv-001)
+
+#### Betingelser
+Obligatoriske verdier:
+- "Under behandling"
+- "Avsluttet"
+- "Utgår"
+  Skifte av status kan bare utføres av autoriserte personer.
+
+Kodeliste eksempel:
+
+| kode | beskrivelse                |
+|------|----------------------------|
+| B    | Under behandling           |
+| A    | Avsluttet                  |
+| U    | Utgår                      |
+| R    | Opprettet av saksbehandler |
+| S    | Avsluttet av saksbehandler |
+| P    | Unntatt prosesstyring      |
+| F    | Ferdig fra saksbehandler   |
+
+#### Kommentarer
+Saksmapper som avleveres skal ha status "Avsluttet" eller "Utgår".
+Se gjerne kodelister fra GI-standarden [her](./../../kodelister/gi-kodelister.png).
+Noe avvik vil det være fra GI-standarden til Fiks-Arkiv standarden
+
+
+---
 ### `dokumenttype` - M083
 #### Definisjon
 Navn på type dokument
 
 #### Arkivenhet
-_dokumentbeskrivelse_ 
+_dokumentbeskrivelse_
 
 #### Kilde
 Registreres automatisk av systemet eller manuelt
 
 #### Arv
-Kode
+[_kode_](#kode---fiks-arkiv-001)
 
 #### Betingelser
 Ingen obligatoriske typer. Aktuelle kode/beskrivelser kan f.eks. være:
@@ -114,46 +189,6 @@ Ingen obligatoriske typer. Aktuelle kode/beskrivelser kan f.eks. være:
 
 
 #### Kommentarer
-Se gjerne kodelister fra GI-standarden [her](./../../kodelister/gi-kodelister.png).
-Noe avvik vil det være fra GI-standarden til Fiks-Arkiv standarden
-
----
-### `saksstatus` - M052
-#### Definisjon
-Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet.
-
-#### Arkivenhet
-_saksmappe_
-
-#### Kilde
-Registreres automatisk gjennom forskjellig saksbehandlings- funksjonalitet, eller overstyres manuelt.
-
-#### Arv
-_kode_
-
-#### Betingelser
-Obligatoriske verdier:
-- "Under behandling"
-- "Avsluttet"
-- "Utgår"
-Skifte av status kan bare utføres av autoriserte personer.
-
-Kodeliste eksempel:
-
-| kode | beskrivelse                |
-|------|----------------------------|
-| B    | Under behandling           |
-| A    | Avsluttet                  |
-| U    | Utgår                      |
-| R    | Opprettet av saksbehandler |
-| S    | Avsluttet av saksbehandler |
-| P    | Unntatt prosesstyring      |
-| F    | Ferdig fra saksbehandler   |
-
-
-
-#### Kommentarer
-Saksmapper som avleveres skal ha status "Avsluttet" eller "Utgår".
 Se gjerne kodelister fra GI-standarden [her](./../../kodelister/gi-kodelister.png).
 Noe avvik vil det være fra GI-standarden til Fiks-Arkiv standarden
 

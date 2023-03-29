@@ -305,6 +305,7 @@
     <xs:annotation>
       <xs:documentation>M051</xs:documentation>
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Eksempel kodeliste (kode:beskrivelse) = A:Aktiv periode, O:Overlappingsperiode, P:Avsluttet periode, U:Uaktuelle mapper</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -315,6 +316,7 @@
     <xs:annotation>
       <xs:documentation>M052</xs:documentation>
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Eksempel kodeliste (kode:beskrivelse) = B:Under behandling, A:Avsluttet, U:Utgår, R:Opprettet av saksbehandler, S:Avsluttet av saksbehandler, P:Unntatt prosesstyring, F:Ferdig fra saksbehandler</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -376,6 +378,7 @@
   <xs:complexType name="dokumenttype">
     <xs:annotation>
       <xs:documentation>M083</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
       <xs:documentation>Eksempel kodeliste (kode:beskrivelse) = SØKNAD:Søknad, MELDING:Melding, KORR:Korrespondanse, KART:Kart, FOTO:Foto, TEGNING:Tegning, ANSVKONTO:Ansvar og kontroll, TILSYN:Tilsyn, AVTALE:Avtale, VEDTAK:Vedtak, FERDIGATTEST:Ferdigattest </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
