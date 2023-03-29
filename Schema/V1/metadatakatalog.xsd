@@ -376,7 +376,7 @@
   <xs:complexType name="dokumenttype">
     <xs:annotation>
       <xs:documentation>M083</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Eksempel kodeliste (kode:beskrivelse) = B:Brev, R:Rundskriv, F:Faktura, O:Ordrebrekeftelse, </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1741,7 +1741,8 @@
 
   <xs:complexType name="kode">
     <xs:annotation>
-      <xs:documentation>M4..</xs:documentation>
+      <xs:documentation>FIKS-ARKIV-001</xs:documentation>
+      <xs:documentation>Består av kode og beskrivelse. Elementet kode er en kort identifikator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="kode" type="xs:string"/>
