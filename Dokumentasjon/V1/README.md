@@ -10,7 +10,7 @@ Mye er hentet fra eksisterende dokumentasjon fra Noark 5 standarden.
 
 [metadatakatalog](Meldinger/metadatakatalog/README.md)
 
-[no.ks.fiks.arkiv.v1.arkivering.arkivmelding](Meldinger/no.ks.fiks.arkiv.v1.arkivering.arkivmelding/README.md)
+[no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett](Meldinger/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett/README.md)
 
 
 ### UseCases 
