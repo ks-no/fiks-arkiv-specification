@@ -233,7 +233,7 @@ Se mer om datatypen i dokumentasjonen for [metadatakatalog.xsd](https://github.c
 
 ### `erBehandlingsansvarlig`
 #### Definisjon
-Definerer om korrespondansepart er behandlingsansvarlig. Påkrevd felt hvor default verdi skal være **false**.
+Definerer om korrespondansepart er behandlingsansvarlig. Valgfritt felt hvor default verdi skal være **false**.
 
 #### Betingelser
 Default verdi skal være **false**.
