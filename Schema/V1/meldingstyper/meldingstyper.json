@@ -17,10 +17,10 @@
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett"]
     },
     {
-      "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt",
+      "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt",
       "beskrivelse": "",
       "harPayload": false,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater",
@@ -32,7 +32,7 @@
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.kvittering",
       "beskrivelse": "",
-      "harPayload": true,
+      "harPayload": false,
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater"]
     },
     {
