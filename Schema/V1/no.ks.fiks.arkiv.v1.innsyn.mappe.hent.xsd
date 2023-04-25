@@ -8,6 +8,13 @@
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
                schemaLocation="./metadatakatalog.xsd"/>
 
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.mappe.hent' message.
+            Use this messagetype for getting mappe or saksmappe.
+        </xs:documentation>
+    </xs:annotation>
+    
     <xs:element name="mappeHent" type="mappeHent"/>
 
     <xs:complexType name="mappeHent">

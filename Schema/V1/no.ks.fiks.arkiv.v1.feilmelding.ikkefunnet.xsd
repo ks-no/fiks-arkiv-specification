@@ -7,7 +7,7 @@
 
 	<xs:annotation>
 		<xs:documentation>
-			This is the "ikkefunnet" message. Use this messagetype as a response for "hent"-messages when the object that is requested doesnt exist.
+			This is connected to the 'no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet' message. Use this messagetype as a response for "hent"-messages when the object that is requested doesnt exist.
 			Much like a HTTP 404 Not Found.
 		</xs:documentation>
 	</xs:annotation>

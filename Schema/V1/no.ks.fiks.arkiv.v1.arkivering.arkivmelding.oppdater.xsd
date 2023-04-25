@@ -7,6 +7,12 @@
            elementFormDefault="qualified">
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/opprett/v1" schemaLocation="./no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater' message. Use this messagetype for updates. 
+        </xs:documentation>
+    </xs:annotation>
     
     <xs:element name="arkivmeldingOppdatering" type="arkivmeldingOppdatering"/>
 

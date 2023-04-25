@@ -7,7 +7,7 @@
 
 	<xs:annotation>
 		<xs:documentation>
-			This is the "ugyldigforespoersel" message. Use this messagetype when there is something wrong with the incoming message,
+			This is connected to the 'no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel' message. Use this messagetype when there is something wrong with the incoming message,
 			much like a HTTP 400 Bad Request. E.g. the XML-message is not valid according to the corresponding xsd or there is something 
 			else wrong in the XML data. 
 		</xs:documentation>

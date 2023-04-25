@@ -7,6 +7,13 @@
 	<xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
 			   schemaLocation="./arkivstruktur.xsd"/>
 
+	<xs:annotation>
+		<xs:documentation>
+			This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat' message.
+			Use this messagetype for response to the get-message 'no.ks.fiks.arkiv.v1.innsyn.mappe.hent'.
+		</xs:documentation>
+	</xs:annotation>
+	
 	<xs:element name="mappeHentResultat" type="mappeHentResultat"/>
 
 	<xs:complexType name="mappeHentResultat">

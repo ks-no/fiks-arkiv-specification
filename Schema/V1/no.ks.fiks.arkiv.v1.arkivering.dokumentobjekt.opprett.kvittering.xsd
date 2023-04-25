@@ -5,6 +5,13 @@
            targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/opprett/kvittering/v1"
            elementFormDefault="qualified">
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.arkivering.arkivmelding.dokumentobjekt.kvittering' message.
+            Use this messagetype for response to the create message 'no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett'.
+        </xs:documentation>
+    </xs:annotation>
     
     <xs:element name="dokumentobjektOpprettKvittering" type="dokumentobjektOpprettKvittering"/>
 

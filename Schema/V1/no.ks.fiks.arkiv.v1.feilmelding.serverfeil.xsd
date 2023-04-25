@@ -7,7 +7,7 @@
 	
 	<xs:annotation>
 		<xs:documentation>
-			This is the "serverfeil" error message. Use this messagetype when there is an internal error in the system, 
+			This is connected to the 'no.ks.fiks.arkiv.v1.feilmelding.serverfeil' message. Use this messagetype when there is an internal error in the system, 
 			much like a HTTP 500 Internal Server Error.  
 		</xs:documentation>
 	</xs:annotation>

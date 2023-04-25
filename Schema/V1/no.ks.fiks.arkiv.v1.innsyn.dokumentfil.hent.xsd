@@ -7,6 +7,13 @@
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
                schemaLocation="./metadatakatalog.xsd"/>
 
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent' message.
+            Use this messagetype for getting dokumentfil.
+        </xs:documentation>
+    </xs:annotation>
+    
     <xs:element name="dokumentfilHent" type="dokumentfilHent"/>
 
     <xs:complexType name="dokumentfilHent">
