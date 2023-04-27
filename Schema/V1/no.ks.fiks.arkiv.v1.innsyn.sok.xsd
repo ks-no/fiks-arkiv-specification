@@ -9,6 +9,14 @@
                schemaLocation="./arkivstruktur.xsd"/>
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
                schemaLocation="./metadatakatalog.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.sok' message.
+            Use this messagetype for search.
+        </xs:documentation>
+    </xs:annotation>
+    
     <xs:element name="sok" type="sok"/>
 
     <xs:complexType name="sok">
