@@ -7,8 +7,15 @@
 	<xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
 		schemaLocation="./metadatakatalog.xsd"/>
 
+	<xs:annotation>
+		<xs:documentation>
+			This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.registrering.hent' message.
+			Use this messagetype for getting registrering or journalpost.
+		</xs:documentation>
+	</xs:annotation>
+
 	<xs:element name="registreringHent" type="registreringHent"/>
-	
+
 	<xs:complexType name="registreringHent">
 		<xs:sequence>
 			<xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering"/>

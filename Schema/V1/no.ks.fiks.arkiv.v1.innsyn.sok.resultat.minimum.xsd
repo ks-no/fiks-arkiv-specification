@@ -4,9 +4,16 @@
            targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/minimum/v1"
            xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/minimum/v1" elementFormDefault="qualified">
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/minimum/v1" schemaLocation="arkivstrukturMinimum.xsd"/>
-    
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum' message.
+            Use this messagetype for response to the search-message 'no.ks.fiks.arkiv.v1.innsyn.sok' where the request was with 'responsetype' = 'minimum'.
+        </xs:documentation>
+    </xs:annotation>
+
     <xs:element name="sokeresultatMinimum" type="sokeresultatMinimum"/>
-    
+
     <xs:complexType name="sokeresultatMinimum">
         <xs:sequence>
             <xs:element name="system" type="xs:string"/>
@@ -29,7 +36,7 @@
             <xs:enumeration value="dokumentbeskrivelse"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:complexType name="resultatListeMinimum">
         <xs:sequence>
             <xs:element name="resultatMinimum" type="resultatMinimum" maxOccurs="unbounded" minOccurs="0"/>
