@@ -1796,4 +1796,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <xs:simpleType name="referanseTilAvskrivning">
+    <xs:annotation>
+      <xs:documentation>TODO</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="ID"/>
+  </xs:simpleType>
 </xs:schema>

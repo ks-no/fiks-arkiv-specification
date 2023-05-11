@@ -60,6 +60,42 @@
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
     },
     {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett",
+      "beskrivelse": "",
+      "harPayload": true,
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.kvittering",
+      "beskrivelse": "",
+      "harPayload": true,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett",
+      "beskrivelse": "",
+      "harPayload": true,
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.kvittering",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.slett"]
+    },
+    {
       "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent",
       "beskrivelse": "",
       "harPayload": true,
@@ -98,7 +134,7 @@
       "id": "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat",
       "beskrivelse": "",
       "harPayload": true,
-      "payloadFilnavn": "resultat.xml",
+      "payloadFilnavn": "",
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent"]
     },
     {

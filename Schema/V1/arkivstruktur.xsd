@@ -370,6 +370,8 @@
 
     <xs:complexType name="avskrivning">
         <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="referanseTilAvskrivning" type="n5mdk:referanseTilAvskrivning"/>
             <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
             <xs:element name="avskrevetAv" type="n5mdk:avskrevetAv"/>
             <xs:element name="avskrivningsmaate" type="n5mdk:avskrivningsmaate"/>
