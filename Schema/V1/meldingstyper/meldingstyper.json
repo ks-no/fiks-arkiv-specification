@@ -45,6 +45,7 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "dokumentobjekt.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.mottatt"]
     },
     {
@@ -57,6 +58,7 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "dokumentobjekt-kvittering.xml",
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
     },
     {
