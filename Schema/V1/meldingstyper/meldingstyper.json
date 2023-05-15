@@ -74,7 +74,7 @@
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.kvittering",
       "beskrivelse": "",
-      "harPayload": true,
+      "harPayload": false,
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett"]
     },
     {
@@ -93,7 +93,7 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.kvittering",
       "beskrivelse": "",
       "harPayload": false,
-      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.slett"]
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent",

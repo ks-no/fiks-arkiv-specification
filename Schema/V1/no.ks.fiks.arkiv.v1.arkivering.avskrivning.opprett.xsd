@@ -7,19 +7,25 @@
     <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
                schemaLocation="./metadatakatalog.xsd"/>
 
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett' message. Use this messagetype for creating a single 'avskrivning'.
+            Keys are 'referanseTilJournalpost' and 'korrespondansepartID'
+        </xs:documentation>
+    </xs:annotation>
+
     <xs:element name="nyAvskrivning" type="nyAvskrivning"/>
 
     <xs:complexType name="nyAvskrivning">
         <xs:sequence>
-            <xs:element name="avskrivninger" type="avskrivning" maxOccurs="unbounded"/>
-            <xs:element name="journalnoekkel" type="n5mdk:referanseTilJournalpost" />
-            <xs:element name="kontekst" type="xs:string"/> <!-- Fra GeoIntegrasjon: <xs:element name="kontekst" type="fellestekniskns:ArkivKontekst" minOccurs="0" maxOccurs="1"/> Hva skal det være her? -->
+            <xs:element name="avskrivning" type="avskrivning"/>
+            <xs:element name="referanseTilJournalpost" type="n5mdk:referanseTilJournalpost" />
+            <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID" />
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="avskrivning">
         <xs:sequence>
-            <xs:element name="referanseTilAvskrivning" type="n5mdk:referanseTilAvskrivning"/>
             <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
             <xs:element name="avskrevetAv" type="n5mdk:avskrevetAv"/>
             <xs:element name="avskrivningsmaate" type="n5mdk:avskrivningsmaate"/>
