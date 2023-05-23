@@ -27,7 +27,7 @@ Dokumentasjonen her inneholder både tekst og innhold hentet fra Noark-5 dokumen
 Base for ID'er som skal være på formatet for UID. 
 
 #### Arkivenhet
-Brukes som base flere steder hvor det er en ID og som skal følge UID formatet. F.eks. `systemID` og `korrelasjonsid` og `feilId`
+Brukes som base flere steder hvor det er en ID og som skal følge UID formatet. F.eks. `systemID` og `feilId`
 
 #### Kilde
 
