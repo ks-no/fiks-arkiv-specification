@@ -57,12 +57,14 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "dokumentobjekt-kvittering.xml",
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "avskrivning.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil"]
     },
     {
@@ -81,6 +83,7 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "avskrivning.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
     },
     {
