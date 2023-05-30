@@ -58,12 +58,14 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "dokumentobjekt-kvittering.xml",
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "avskrivning-opprett.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil"]
     },
     {
@@ -82,6 +84,7 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "avskrivning-slett.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
     },
     {
@@ -100,35 +103,35 @@
       "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent",
       "beskrivelse": "",
       "harPayload": true,
-      "payloadFilnavn": "arkivmelding.xml",
+      "payloadFilnavn": "mappe-hent.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat",
       "beskrivelse": "",
       "harPayload": true,
-      "payloadFilnavn": "resultat.xml",
+      "payloadFilnavn": "mappe.xml",
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.registrering.hent",
       "beskrivelse": "",
       "harPayload": true,
-      "payloadFilnavn": "arkivmelding.xml",
+      "payloadFilnavn": "registrering-hent.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat",
       "beskrivelse": "",
       "harPayload": true,
-      "payloadFilnavn": "resultat.xml",
+      "payloadFilnavn": "registrering.xml",
       "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.registrering.hent"]
     },
     {
       "id": "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent",
       "beskrivelse": "",
       "harPayload": true,
-      "payloadFilnavn": "arkivmelding.xml",
+      "payloadFilnavn": "dokumentfil-hent.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
     },
     {
