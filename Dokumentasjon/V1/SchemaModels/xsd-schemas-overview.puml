@@ -1,0 +1,47 @@
+@startuml
+object "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.xsd" as arkivmelding.opprett
+object "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering.xsd" as arkivmelding.opprett.kvittering
+object "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.xsd" as arkivmelding.oppdater
+object "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.xsd" as dokumentobjekt.opprett
+object "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering.xsd" as dokumentobjekt.opprett.kvittering
+object "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.xsd" as avskrivning.opprett
+object "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.xsd" as avskrivning.slett
+object "arkivstruktur.xsd" as arkivstruktur
+object "arkivstrukturMinimum.xsd" as arkivstrukturMinimum
+object "metadatakatalog.xsd" as metadatakatalog
+object arkivstrukturNoekler.xsd
+object "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.xsd" as dokumentfil.hent
+object "no.ks.fiks.arkiv.v1.innsyn.registrering.hent.xsd" as registrering.hent
+object "no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat.xsd" as registrering.hent.resultat
+object "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.xsd" as mappe.hent
+object "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat.xsd" as mappe.hent.resultat
+object "sok.xsd" as sok
+object "sokeresultatMinimum.xsd" as sokeresultatMinimum
+object "sokeresultatNoekler.xsd" as sokeresultatNoekler
+object "sokeresultatUtvidet.xsd" as sokeresultatUtvidet
+
+
+arkivmelding.opprett --> metadatakatalog
+arkivmelding.opprett.kvittering --> metadatakatalog
+arkivmelding.oppdater --> arkivmelding.opprett
+arkivmelding.oppdater --> metadatakatalog
+avskrivning.opprett --> metadatakatalog
+avskrivning.slett --> metadatakatalog
+dokumentobjekt.opprett --> metadatakatalog
+dokumentobjekt.opprett --> arkivmelding.opprett
+dokumentobjekt.opprett.kvittering --> metadatakatalog
+arkivstruktur --> metadatakatalog
+arkivstrukturMinimum --> metadatakatalog
+arkivstrukturNoekler.xsd --> metadatakatalog
+dokumentfil.hent --> metadatakatalog
+registrering.hent --> arkivstruktur
+registrering.hent --> metadatakatalog
+mappe.hent --> arkivstruktur
+mappe.hent --> metadatakatalog
+sok --> arkivstruktur
+mappe.hent.resultat --> arkivstruktur
+sokeresultatMinimum --> arkivstruktur
+sokeresultatNoekler --> arkivstruktur
+sokeresultatUtvidet --> arkivstruktur
+
+@enduml
