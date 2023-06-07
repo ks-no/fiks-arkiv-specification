@@ -1,0 +1,331 @@
+@startuml
+
+class adresse {
+    +adresse : string
+    +postnummer : string
+    +poststed : string
+}
+class arkivmelding {
+    +system : string
+    +regel : string
+    +tidspunkt : dateTime
+    +antallFiler : int
+    +mappe : mappe
+    +registrering : registrering
+}
+class arkivnotat {
+    +dokumentetsDato : date
+    +mottattDato : dateTime
+    +sendtDato : dateTime
+    +forfallsdato : date
+    +offentlighetsvurdertDato : date
+    +antallVedlegg : int
+    +utlaantDato : date
+    +utlaantTil : string
+    +dokumentflyt : dokumentflyt[]
+}
+arkivnotat *- registrering
+class avskrivning {
+    +avskrivningsdato : date
+    +avskrevetAv : string
+    +avskrivningsmaate : avskrivningsmaate
+    +referanseAvskrivesAvJournalpost : referanseTilJournalpost
+    +referanseAvskriverJournalpost : referanseTilJournalpost
+}
+class byggident {
+    +bygningsnummer : int
+    +endringsloepenummer : int
+}
+class dokumentbeskrivelse {
+    +systemID : systemID
+    +dokumenttype : dokumenttype
+    +dokumentstatus : dokumentstatus
+    +tittel : string
+    +beskrivelse : string
+    +forfatter : string[]
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +dokumentmedium : dokumentmedium
+    +oppbevaringssted : string
+    +arkivdel : kode
+    +tilknyttetRegistreringSom : tilknyttetRegistreringSom
+    +dokumentnummer : int
+    +tilknyttetDato : dateTime
+    +tilknyttetAv : string
+    +part : part[]
+    +merknad : merknad[]
+    +skjerming : skjerming
+    +gradering : gradering
+    +dokumentobjekt : dokumentobjekt[]
+}
+class dokumentflyt {
+    +flytTil : string
+    +flytFra : string
+    +flytMottattDato : dateTime
+    +flytSendtDato : dateTime
+    +flytStatus : flytStatus
+    +flytMerknad : string
+}
+class dokumentobjekt {
+    +systemID : systemID
+    +versjonsnummer : int
+    +variantformat : variantformat
+    +format : format
+    +formatDetaljer : string
+    +mimeType : string
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +filnavn : string
+    +referanseDokumentfil : string
+    +sjekksum : string
+    +sjekksumAlgoritme : string
+    +filstoerrelse : int
+}
+class gradering {
+    +grad : grad
+    +graderingsdato : dateTime
+    +gradertAv : string
+    +nedgraderingsdato : dateTime
+    +nedgradertAv : string
+}
+class hendelseslogg {
+    +referanseArkivenhet : string
+    +beskrivelse : string
+    +hendelsestype : string
+    +hendelsesdato : dateTime
+    +utfortAv : string
+}
+class journalpost {
+    +journalaar : int
+    +journalsekvensnummer : int
+    +journalpostnummer : int
+    +journalposttype : journalposttype
+    +journalstatus : journalstatus
+    +journaldato : date
+    +dokumentetsDato : date
+    +mottattDato : dateTime
+    +sendtDato : dateTime
+    +forfallsdato : date
+    +offentlighetsvurdertDato : date
+    +antallVedlegg : int
+    +utlaantDato : date
+    +utlaantTil : string
+    +journalenhet : string
+    +dokumentflyt : dokumentflyt[]
+    +presedens : presedens[]
+    +avskrivningsdato : date
+}
+journalpost *- registrering
+class kassasjon {
+    +kassasjonsvedtak : kassasjonsvedtak
+    +kassasjonshjemmel : string
+    +bevaringstid : int
+    +kassasjonsdato : date
+}
+class klasse {
+    +klasseID : string
+    +tittel : string
+    +beskrivelse : string
+    +noekkelord : string[]
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +avsluttetDato : dateTime
+    +avsluttetAv : string
+    +kryssreferanse : kryssreferanse[]
+    +kassasjon : kassasjon
+    +skjerming : skjerming
+    +gradering : gradering
+    +klasse : klasse[]
+    +mappe : mappe[]
+    +registrering : registrering[]
+}
+class klassifikasjon {
+    +klassifikasjonssystemID : string
+    +klasseID : string
+    +tittel : string
+    +erSkjermet : boolean
+}
+class klassifikasjonssystem {
+    +klassifikasjonssystemID : string
+    +klassifikasjonstype : klassifikasjonstype
+    +tittel : string
+    +beskrivelse : string
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +avsluttetDato : dateTime
+    +avsluttetAv : string
+    +klasse : klasse[]
+}
+class korrespondansepart {
+    +korrespondansepartID : string
+    +korrespondanseparttype : korrespondanseparttype
+    +erBehandlingsansvarlig : boolean
+    +korrespondansepartNavn : string
+    +organisasjonid : string
+    +personid : string
+    +postadresse : string[]
+    +postnummer : string
+    +poststed : string
+    +land : string
+    +epostadresse : string
+    +telefonnummer : string[]
+    +kontaktperson : string
+    +administrativEnhet : administrativEnhet
+    +saksbehandler : saksbehandler
+    +erSkjermet : boolean
+    +erPersonnavn : string
+    +forsendelsesmaate : string
+    +deresReferanse : string
+    +avskrivning : avskrivning[]
+}
+class kryssreferanse {
+    +kryssreferanseID : string
+    +referanseTilKlasse : string
+    +referanseTilMappe : referanseTilMappe
+    +referanseTilRegistrering : referanseTilRegistrering
+    +referanseTilDokumentbeskrivelse : string
+}
+class mappe {
+    +systemID : systemID
+    +mappeID : string
+    +referanseForeldermappe : referanseTilMappe
+    +tittel : string
+    +offentligTittel : string
+    +beskrivelse : string
+    +noekkelord : string[]
+    +dokumentmedium : dokumentmedium
+    +oppbevaringssted : string[]
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +avsluttetDato : dateTime
+    +avsluttetAv : string
+    +arkivdel : kode
+    +virksomhetsspesifikkeMetadata : anyType
+    +part : part[]
+    +kryssreferanse : kryssreferanse[]
+    +merknad : merknad[]
+    +skjerming : skjerming
+    +gradering : gradering
+    +klassifikasjon : klassifikasjon[]
+    +referanseEksternNoekkel : eksternNoekkel
+    +mappetype : kode
+}
+class matrikkelnummer {
+    +kommunenummer : string
+    +gardsnummer : int
+    +bruksnummer : int
+    +festenummer : int
+    +seksjonsnummer : int
+}
+class merknad {
+    +merknadID : string
+    +merknadstekst : string
+    +merknadstype : merknadstype
+    +merknadsdato : dateTime
+    +merknadRegistrertAv : string
+    +erSkjermet : boolean
+}
+class organisasjonsID {
+    +identifikator : string
+    +landkode : string
+}
+class part {
+    +partID : string
+    +partNavn : string
+    +partRolle : partRolle
+    +organisasjonID : organisasjonsID
+    +personID : personID
+    +postadresse : string[]
+    +postnummer : string
+    +poststed : string
+    +land : string
+    +epostadresse : string
+    +telefonnummer : string[]
+    +kontaktperson : string
+    +virksomhetsspesifikkeMetadata : anyType
+    +erSkjermet : boolean
+    +erPersonnavn : string
+}
+class personID {
+    +landkode : string
+    +identifikator : string
+}
+class planident {
+    +planidentifikasjon : string
+    +kommunenummer : string
+    +fylkesnummer : string
+    +landkode : string
+}
+class presedens {
+    +presedensDato : date
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +tittel : string
+    +beskrivelse : string
+    +presedensHjemmel : string
+    +rettskildefaktor : string
+    +presedensGodkjentDato : dateTime
+    +presedensGodkjentAv : string
+    +avsluttetDato : dateTime
+    +avsluttetAv : string
+    +presedensStatus : presedensStatus
+}
+class punkt {
+    +koordinatsystem : string
+    +x : double
+    +y : double
+    +z : double
+}
+class registrering {
+    +systemID : systemID
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +arkivertDato : dateTime
+    +arkivertAv : string
+    +referanseForelderMappe : referanseTilMappe
+    +arkivdel : kode
+    +part : part[]
+    +skjerming : skjerming
+    +gradering : gradering
+    +dokumentbeskrivelse : dokumentbeskrivelse[]
+    +registreringsID : string
+    +tittel : string
+    +offentligTittel : string
+    +beskrivelse : string
+    +noekkelord : string[]
+    +forfatter : string[]
+    +dokumentmedium : dokumentmedium
+    +oppbevaringssted : string[]
+    +virksomhetsspesifikkeMetadata : anyType
+    +merknad : merknad[]
+    +kryssreferanse : kryssreferanse[]
+    +korrespondansepart : korrespondansepart[]
+    +klassifikasjon : klassifikasjon[]
+    +referanseEksternNoekkel : eksternNoekkel
+}
+class saksmappe {
+    +saksaar : int
+    +sakssekvensnummer : int
+    +saksdato : date
+    +administrativEnhet : administrativEnhet
+    +saksansvarlig : saksansvarlig
+    +journalenhet : string
+    +saksstatus : saksstatus
+    +utlaantDato : date
+    +utlaantTil : string
+    +presedens : presedens[]
+    +matrikkelnummer : matrikkelnummer[]
+    +byggident : byggident[]
+    +planident : planident
+    +punkt : punkt
+    +adresse : adresse[]
+}
+saksmappe *- mappe
+class skjerming {
+    +tilgangsrestriksjon : tilgangsrestriksjon
+    +skjermingshjemmel : string
+    +skjermingOpphoererDato : date
+    +skjermingOpphoererAksjon : skjermingOpphoererAksjon
+}
+
+@enduml

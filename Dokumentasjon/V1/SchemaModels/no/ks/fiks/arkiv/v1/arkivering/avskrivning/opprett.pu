@@ -1,0 +1,16 @@
+@startuml
+
+class avskrivning {
+    +avskrivningsdato : date
+    +avskrevetAv : string
+    +avskrivningsmaate : avskrivningsmaate
+    +referanseAvskrivesAvJournalpost : referanseTilJournalpost
+    +referanseAvskriverJournalpost : referanseTilJournalpost
+}
+class nyAvskrivning {
+    +avskrivning : avskrivning
+    +referanseTilJournalpost : referanseTilJournalpost
+    +korrespondansepartID : string
+}
+
+@enduml

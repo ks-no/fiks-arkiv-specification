@@ -1,0 +1,10 @@
+@startuml
+
+class dokumentfilHent {
+    +dokumentfilNoekkel : dokumentfilNoekkel
+}
+class dokumentfilNoekkel {
+    +systemID : systemID
+}
+
+@enduml

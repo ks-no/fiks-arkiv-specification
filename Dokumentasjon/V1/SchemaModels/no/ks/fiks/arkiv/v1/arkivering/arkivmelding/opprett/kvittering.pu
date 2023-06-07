@@ -1,0 +1,59 @@
+@startuml
+
+class arkivmeldingKvittering {
+    +system : string
+    +tidspunkt : dateTime
+    +mappeKvittering : mappeKvittering[]
+    +registreringKvittering : registreringKvittering[]
+}
+class dokumentbeskrivelseKvittering {
+    +systemID : systemID
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +dokumentobjekt : dokumentobjektKvittering[]
+}
+class dokumentobjektKvittering {
+    +systemID : systemID
+    +opprettetDato : dateTime
+    +opprettetAv : string
+}
+class journalpostKvittering {
+    +journalaar : int
+    +journalsekvensnummer : int
+    +journalpostnummer : int
+    +journalposttype : journalposttype
+    +journalstatus : journalstatus
+    +journaldato : date
+    +forfallsdato : date
+}
+journalpostKvittering *- registreringKvittering
+class mappeKvittering {
+    +systemID : systemID
+    +mappeID : string
+    +referanseForeldermappe : referanseTilMappe
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +avsluttetDato : dateTime
+    +avsluttetAv : string
+    +referanseEksternNoekkel : eksternNoekkel
+    +mappeKvittering : mappeKvittering[]
+    +registreringKvittering : registreringKvittering[]
+}
+class registreringKvittering {
+    +systemID : systemID
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +arkivertDato : dateTime
+    +arkivertAv : string
+    +dokumentbeskrivelseKvittering : dokumentbeskrivelseKvittering[]
+    +registreringsID : string
+    +referanseEksternNoekkel : eksternNoekkel
+}
+class saksmappeKvittering {
+    +saksaar : int
+    +sakssekvensnummer : int
+    +saksdato : date
+}
+saksmappeKvittering *- mappeKvittering
+
+@enduml

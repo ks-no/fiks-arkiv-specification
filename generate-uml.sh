@@ -1,0 +1,26 @@
+echo "Generating PlantUML files from xsd with xsdata python library"
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.feilmelding.serverfeil.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.mappe.hent.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.registrering.hent.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.mininum.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+
+echo "Generating png files from puml"
+plantuml "Dokumentasjon/**/*.puml"
+plantuml "Dokumentasjon/**/*.pu"
+plantuml "Schema/**/*.puml" -tsvg
+

@@ -1,0 +1,17 @@
+@startuml
+
+enum inkluder {
+    merknad = merknad
+    noekkelord = noekkelord
+    kryssreferanse = kryssreferanse
+    klasse = klasse
+    part = part
+    presedens = presedens
+    moetedeltaker = moetedeltaker
+}
+class mappeHent {
+    +referanseTilMappe : referanseTilMappe
+    +inkluder : inkluder[]
+}
+
+@enduml

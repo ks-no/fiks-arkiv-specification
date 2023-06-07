@@ -1,0 +1,18 @@
+@startuml
+
+enum inkluder {
+    merknad = merknad
+    noekkelord = noekkelord
+    kryssreferanse = kryssreferanse
+    dokumentbeskrivelse = dokumentbeskrivelse
+    korrespondansepart = korrespondansepart
+    avskrivning = avskrivning
+    dokumentflyt = dokumentflyt
+    dokumentobjekt = dokumentobjekt
+}
+class registreringHent {
+    +referanseTilRegistrering : referanseTilRegistrering
+    +inkluder : inkluder[]
+}
+
+@enduml

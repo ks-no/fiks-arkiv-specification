@@ -1,0 +1,9 @@
+@startuml
+
+class dokumentobjektOpprettKvittering {
+    +systemID : systemID
+    +opprettetDato : dateTime
+    +opprettetAv : string
+}
+
+@enduml
