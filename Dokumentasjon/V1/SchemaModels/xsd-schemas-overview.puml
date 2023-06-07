@@ -33,7 +33,7 @@ dokumentobjektOpprettKvittering --> metadatakatalog
 arkivstruktur --> metadatakatalog
 arkivstrukturMinimum --> metadatakatalog
 arkivstrukturNoekler.xsd --> metadatakatalog
-dokumentfil.hent --> metadatakatalog
+dokumentfilHent --> metadatakatalog
 registreringHent --> arkivstruktur
 registreringHent --> metadatakatalog
 mappeHent --> arkivstruktur

@@ -6,7 +6,7 @@
 
 ### Fiks Arkiv versjon 1 (V1)
 #### Meldingstyper
-Se filen `Schema/V1/meldingstyper/meldingstyper.json` for hvilke meldingstyper som finnes og hvordan de henger sammen.
+Se filen `Schema/V1/meldingstyper/meldingstyper.json` for hvilke meldingstyper som finnes og hvordan de henger sammen eller den genererte [UML-modellen](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/meldingstyper/meldingstyper.svg) som viser hvordan meldingstypene henger sammen.
 
 #### Skjema
 
