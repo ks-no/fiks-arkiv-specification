@@ -19,8 +19,12 @@ xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.mininum.xsd --output pl
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 
-echo "Generating png files from puml"
+echo "Generating png files from puml and pu files"
 plantuml "Dokumentasjon/**/*.puml"
 plantuml "Dokumentasjon/**/*.pu"
+
+echo "Generating svg files from puml and pu files"
+plantuml "Dokumentasjon/**/*.puml" -tsvg
+plantuml "Dokumentasjon/**/*.pu" -tsvg
 plantuml "Schema/**/*.puml" -tsvg
 
