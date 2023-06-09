@@ -15,7 +15,7 @@ xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat.xsd --output pla
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.registrering.hent.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
-xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.mininum.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 

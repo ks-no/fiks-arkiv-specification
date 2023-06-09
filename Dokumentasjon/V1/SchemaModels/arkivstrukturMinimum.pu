@@ -1,0 +1,109 @@
+@startuml
+
+class dokumentbeskrivelseMinimum {
+    +systemID : systemID
+    +dokumenttype : dokumenttype
+    +dokumentstatus : dokumentstatus
+    +tittel : string
+    +skjerming : skjermingMinimum
+    +gradering : graderingMinimum
+    +dokumentobjekt : dokumentobjektMinimum[]
+}
+class dokumentobjektMinimum {
+    +systemID : systemID
+    +versjonsnummer : int
+    +variantformat : variantformat
+    +format : format
+    +formatDetaljer : string
+    +referanseDokumentfil : string
+    +filstoerrelse : int
+}
+class graderingMinimum {
+    +grad : grad
+    +graderingsdato : dateTime
+    +gradertAv : string
+    +nedgraderingsdato : dateTime
+    +nedgradertAv : string
+}
+class journalpostMedSaksmappeMinimum {
+    +saksaar : int
+    +sakssekvensnummer : int
+    +saksdato : date
+    +administrativEnhet : administrativEnhet
+    +saksansvarlig : saksansvarlig
+    +saksstatus : saksstatus
+}
+journalpostMedSaksmappeMinimum *- journalpostMinimum
+class journalpostMinimum {
+    +journalaar : int
+    +journalsekvensnummer : int
+    +journalpostnummer : int
+    +journalposttype : journalposttype
+    +journalstatus : journalstatus
+    +journaldato : date
+    +dokumentetsDato : date
+}
+journalpostMinimum *- registreringMinimum
+class klasseMinimum {
+    +klasseID : string
+    +tittel : string
+    +skjerming : skjermingMinimum
+    +gradering : graderingMinimum
+    +klassifikasjonssystem : klassifikasjonssystemMinimum
+}
+class klassifikasjon {
+    +klassifikasjonID : string
+    +klassifikasjonssystem : klassifikasjonssystemMinimum
+    +klasseID : string
+    +tittel : string
+    +erSkjermet : boolean
+}
+class klassifikasjonssystemMinimum {
+    +klassifikasjonssystemID : string
+    +klassifikasjonstype : klassifikasjonstype
+    +tittel : string
+}
+class korrespondansepartMinimum {
+    +korrespondanseparttype : korrespondanseparttype
+    +korrespondansepartNavn : string
+}
+class mappeMinimum {
+    +systemID : systemID
+    +mappeID : string
+    +referanseForeldermappe : referanseTilMappe
+    +tittel : string
+    +offentligTittel : string
+    +skjerming : skjermingMinimum
+    +gradering : graderingMinimum
+    +klassifikasjon : klassifikasjon[]
+    +referanseEksternNoekkel : eksternNoekkel
+}
+class registreringMinimum {
+    +systemID : systemID
+    +skjerming : skjermingMinimum
+    +gradering : graderingMinimum
+    +dokumentbeskrivelse : dokumentbeskrivelseMinimum[]
+    +registreringsID : string
+    +tittel : string
+    +offentligTittel : string
+    +korrespondansepart : korrespondansepartMinimum[]
+}
+class saksmappeMinimum {
+    +saksaar : int
+    +sakssekvensnummer : int
+    +saksdato : date
+    +administrativEnhet : administrativEnhet
+    +saksansvarlig : saksansvarlig
+    +saksstatus : saksstatus
+}
+saksmappeMinimum *- mappeMinimum
+class skjermingMinimum {
+    +tilgangsrestriksjon : tilgangsrestriksjon
+    +skjermingshjemmel : string
+    +skjermingMetadata : skjermingMetadata[]
+    +skjermingDokument : skjermingDokument
+    +skjermingsvarighet : int
+    +skjermingOpphoererDato : date
+}
+
+@enduml
