@@ -6,7 +6,7 @@
 
 ### Fiks Arkiv versjon 1 (V1)
 #### Meldingstyper
-Se filen `Schema/V1/meldingstyper/meldingstyper.json` for hvilke meldingstyper som finnes og hvordan de henger sammen eller den genererte [UML-modellen](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/meldingstyper/meldingstyper.svg) som viser hvordan meldingstypene henger sammen.
+Se filen [`meldingstyper.json`](Schema/V1/meldingstyper/meldingstyper.json) for hvilke meldingstyper som finnes og hvordan de henger sammen eller den genererte [UML-modellen](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/meldingstyper/meldingstyper.svg) som viser hvordan meldingstypene henger sammen.
 
 #### Skjema
 
@@ -22,6 +22,12 @@ I mappen [Dokumentasjon](Dokumentasjon) ligger modeller og diagrammer for hver v
 Kildekoden i PlantUML for modellene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
 
 #### [Direkte til dokumentasjon for V1 her](Dokumentasjon/V1) 
+
+### Generering av diagrammer
+Vi bruker [PlantUML](https://plantuml.com/) for å tegne diagrammer som så blir eksportert til png og svg filer. For eksempel bruker vi PlantUML til å generere oversikten over sammenhengen mellom meldingstyper ut i fra `meldingstyper.json` filen.
+Vi genererer også PlantUML kode fra xsd filene for å vise datamodellen vha PHP biblioteket **[xsdata](https://pypi.org/project/xsdata-plantuml/)**
+
+For å generere nye modeller i prosjektet kan man kjøre `generate-uml.sh` scriptet.
 
 
 
