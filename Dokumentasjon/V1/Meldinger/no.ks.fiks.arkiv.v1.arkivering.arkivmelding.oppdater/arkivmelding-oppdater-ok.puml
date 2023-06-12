@@ -1,0 +1,19 @@
+@startuml
+skinparam sequenceMessageAlign center
+
+title "Oppdater arkivmelding - ok"
+
+participant Fagsystem [
+    = Fagsystem
+]
+participant Arkivsystem [
+    = Møtesystem
+]
+
+Fagsystem -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater**
+...Arkivsystem melder at melding er mottatt og håndteres...
+Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.mottatt**
+...Arkivsystem kvitterer med kvitteringsmelding uten payload....
+Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.kvittering**
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+skinparam sequenceMessageAlign center
+
+title "Opprett arkivmelding - serverfeil"
+
+participant Fagsystem [
+    = Fagsystem
+]
+participant Arkivsystem [
+    = Møtesystem
+]
+
+Fagsystem -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
+...Arkivsystem **kan** melde at melding er mottatt og håndteres.\nMerk at serverfeil kan inntreffe både før og etter mottatt-melding...
+Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
+...Arkivsystem feiler av en eller annen grunn\n og sender serverfeil feilmelding...
+Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.feilmelding.serverfeil**
+
+@enduml
