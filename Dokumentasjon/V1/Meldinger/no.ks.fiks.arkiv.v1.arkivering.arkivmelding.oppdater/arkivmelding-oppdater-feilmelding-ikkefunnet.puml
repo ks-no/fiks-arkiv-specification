@@ -6,14 +6,20 @@ title "Oppdater arkivmelding - ikkefunnet"
 participant Fagsystem [
     = Fagsystem
 ]
+participant FiksProtokoll [
+    = Fiks Protokoll
+]
 participant Arkivsystem [
     = Arkivsystem
 ]
 
-Fagsystem -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater**
+Fagsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater**
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater**
 ...Arkivsystem melder at melding er mottatt og håndteres...
-Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.mottatt**
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.mottatt**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.mottatt**
 ...Arkivsystem finner ikke objektet det refereres til i hent-melding...
-Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet**
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet**
 
 @enduml

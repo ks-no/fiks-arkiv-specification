@@ -6,14 +6,20 @@ title "Oppdater arkivmelding - ok"
 participant Fagsystem [
     = Fagsystem
 ]
+participant FiksProtokoll [
+    = Fiks Protokoll
+]
 participant Arkivsystem [
     = Arkivsystem
 ]
 
-Fagsystem -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater**
+Fagsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater**
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater**
 ...Arkivsystem melder at melding er mottatt og håndteres...
-Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.mottatt**
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.mottatt**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.mottatt**
 ...Arkivsystem kvitterer med kvitteringsmelding uten payload....
-Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.kvittering**
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.kvittering**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.kvittering**
 
 @enduml

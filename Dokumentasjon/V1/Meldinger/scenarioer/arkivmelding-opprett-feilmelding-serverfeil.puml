@@ -1,0 +1,29 @@
+@startuml
+skinparam sequenceMessageAlign center
+
+title "Melding - feil ved mottak"
+
+participant Fagsystem [
+    = Avsender system
+]
+participant FiksProtokoll [
+    = Fiks Protokoll
+]
+participant Arkivsystem [
+    = Mottakende system
+]
+
+Fagsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.xxxxx.xxxxx**
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.xxxxx.xxxxx**
+...Mottakende system feiler 1 gang av en eller annen grunn\n ved henting av melding og klarer ikke 'acke' melding...
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.xxxxx.xxxxx**
+...Mottakende system feiler 2 gang av en eller annen grunn\n ved henting av melding og klarer ikke 'acke' melding...
+
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.xxxxx.xxxxx**
+...Mottakende system feiler 3 gang av en eller annen grunn\n ved henting av melding og klarer ikke 'acke' melding...
+
+
+...Avsender system får feilmelding fra Fiks Protokoll om at\n antall forsøk hentet har overskredet maksgrensen...
+FiksProtokoll -> Fagsystem : **no.ks.fiks.kvittering.serverfeil.v1**
+
+@enduml

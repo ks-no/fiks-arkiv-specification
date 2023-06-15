@@ -6,14 +6,20 @@ title "Opprett arkivmelding - ok"
 participant Fagsystem [
     = Fagsystem
 ]
+participant FiksProtokoll [
+    = Fiks Protokoll
+]
 participant Arkivsystem [
     = Arkivsystem
 ]
 
-Fagsystem -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
+Fagsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
 ...Arkivsystem melder at melding er mottatt og håndteres...
-Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
 ...Arkivsystem kvitterer...
-Arkivsystem -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering**
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering**
+FiksProtokoll -> Fagsysttem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering**
 
 @enduml
