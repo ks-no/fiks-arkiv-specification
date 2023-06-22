@@ -16,12 +16,20 @@ Skjemafilene ligger under `Schema/V1`
 ![Avhengigheter mellom schemas](Dokumentasjon/V1/SchemaModels/xsd-schemas-overview.png)
 
 ## Dokumentasjon
+
+
+* ### [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki)
+
+* ### [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
+
+* ### [diagrammer](Dokumentasjon/V1)
+
 For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki), på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/) i tillegg til det som er her.
 
-I mappen [Dokumentasjon](Dokumentasjon) ligger modeller og diagrammer for hver versjon av protokollen. Modeller er stort sett utarbeidet vha PlantUML.
+I mappen [Dokumentasjon](Dokumentasjon) i dette repet ligger modeller og **diagrammer** for hver versjon av protokollen. Modeller er stort sett utarbeidet vha PlantUML.
 Kildekoden i PlantUML for modellene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
 
-#### [Direkte til dokumentasjon for V1 her](Dokumentasjon/V1) 
+
 
 ### Generering av diagrammer
 Vi bruker [PlantUML](https://plantuml.com/) for å tegne diagrammer som så blir eksportert til png og svg filer. For eksempel bruker vi PlantUML til å generere oversikten over sammenhengen mellom meldingstyper ut i fra `meldingstyper.json` filen.
