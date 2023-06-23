@@ -19,7 +19,6 @@
         <xs:sequence>
             <xs:element name="system" type="xs:string"/>
             <xs:element name="regel" type="xs:string" minOccurs="0"/>
-            <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:element name="antallFiler" type="xs:int"/>
             <xs:choice>
                 <xs:element name="mappe" type="mappe" minOccurs="0"/>

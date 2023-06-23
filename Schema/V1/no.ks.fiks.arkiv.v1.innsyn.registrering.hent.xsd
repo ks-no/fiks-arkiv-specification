@@ -18,6 +18,7 @@
 
 	<xs:complexType name="registreringHent">
 		<xs:sequence>
+			<xs:element name="system" type="xs:string"/>
 			<xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering"/>
 			<xs:element name="inkluder" type="inkluder" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
