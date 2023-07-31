@@ -102,61 +102,7 @@
       <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
-
-  <xs:simpleType name="klassifikasjonssystemID">
-    <xs:annotation>
-      <xs:documentation>M00...</xs:documentation><!-- TODO -->
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="korrespondansepartID">
-    <xs:annotation>
-      <xs:documentation>M00...</xs:documentation><!-- TODO -->
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="merknadID">
-    <xs:annotation>
-      <xs:documentation>M00...</xs:documentation><!-- TODO -->
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="punktID">
-    <xs:annotation>
-      <xs:documentation>M00...</xs:documentation><!-- TODO -->
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="klassifikasjonID">
-    <xs:annotation>
-      <xs:documentation>M00...</xs:documentation><!-- TODO -->
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="kryssreferanseID">
-    <xs:annotation>
-      <xs:documentation>M00...</xs:documentation><!-- TODO -->
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
+  
   <xs:simpleType name="versjonsnummer">
     <xs:annotation>
       <xs:documentation>M005</xs:documentation>
@@ -1812,4 +1758,65 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <xs:simpleType name="klassifikasjonssystemID">
+    <xs:annotation>
+      <xs:documentation>FA-M007</xs:documentation>
+      <xs:documentation>Unik ID for et klassifikasjonssystem</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="korrespondansepartID">
+    <xs:annotation>
+      <xs:documentation>FA-M008</xs:documentation>
+      <xs:documentation>Unik ID for en korrespondansepart</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="merknadID">
+    <xs:annotation>
+      <xs:documentation>FA-M009</xs:documentation>
+      <xs:documentation>Unik ID for en merknad</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="punktID">
+    <xs:annotation>
+      <xs:documentation>FA-M010</xs:documentation>
+      <xs:documentation>Unik ID for et punkt</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="klassifikasjonID">
+    <xs:annotation>
+      <xs:documentation>FA-M011</xs:documentation>
+      <xs:documentation>Unik ID for en klassifikasjon</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="kryssreferanseID">
+    <xs:annotation>
+      <xs:documentation>FA-M012</xs:documentation>
+      <xs:documentation>Unik ID for en kryssreferanse</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>
+
