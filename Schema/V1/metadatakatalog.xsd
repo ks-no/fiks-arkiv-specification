@@ -734,7 +734,7 @@
   <xs:complexType name="administrativEnhet">
     <xs:annotation>
       <xs:documentation>M305</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="identifikatorer"/>
@@ -744,7 +744,7 @@
   <xs:complexType name="saksansvarlig">
     <xs:annotation>
       <xs:documentation>M306</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="identifikatorer"/>
@@ -754,7 +754,7 @@
   <xs:complexType name="saksbehandler">
     <xs:annotation>
       <xs:documentation>M307</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="identifikatorer"/>
@@ -964,7 +964,6 @@
   </xs:simpleType>
 
   <!-- M500-M579: Skjerming og gradering -->
-  <!--TODO tilsvarer dette tilgangskategori? -->
   <xs:complexType name="tilgangsrestriksjon">
     <xs:annotation>
       <xs:documentation>M500</xs:documentation>
@@ -1023,6 +1022,7 @@
     <xs:annotation>
       <xs:documentation>M506</xs:documentation>
       <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Fiks-arkiv: endret datatypens navn fra gradering til grad</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1744,7 +1744,7 @@
 
   <xs:complexType name="kode">
     <xs:annotation>
-      <xs:documentation>FIKS-ARKIV-001</xs:documentation>
+      <xs:documentation>FA-M001</xs:documentation>
       <xs:documentation>Består av kode og beskrivelse. Elementet kode er en kort identifikator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1755,7 +1755,7 @@
 
   <xs:complexType name="identifikatorer">
     <xs:annotation>
-      <xs:documentation>M4..</xs:documentation>
+      <xs:documentation>FA-M002</xs:documentation>
       <xs:documentation>Inneholder forskjellige identifikatorer som "navn", "identifikator" (kan være fra annet system som f.eks. AD), "epostadresse" og "initialer"</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1767,6 +1767,10 @@
   </xs:complexType>
 
   <xs:complexType name="saksnummer">
+    <xs:annotation>
+      <xs:documentation>FA-M003</xs:documentation>
+      <xs:documentation>Saksnummer består av kombinasjonen saksaar og sakssekvensnummer som tilsammen blir et unikt saksnummer</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="saksaar" type="saksaar" />
       <xs:element name="sakssekvensnummer" type="sakssekvensnummer" />
@@ -1774,6 +1778,10 @@
   </xs:complexType>
 
   <xs:complexType name="eksternNoekkel">
+    <xs:annotation>
+      <xs:documentation>FA-M004</xs:documentation>
+      <xs:documentation>EksternNoekkel er en nøkkel fra fagsystemet. Består av navn/id (fagsystem) for fagsystem og en nøkkel (noekkel) som er id fra fagsystemet</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="fagsystem" type="fagsystem"/>
       <xs:element name="noekkel" type="noekkel"/>
@@ -1781,6 +1789,10 @@
   </xs:complexType>
 
   <xs:complexType name="journalnummer">
+    <xs:annotation>
+      <xs:documentation>FA-M005</xs:documentation>
+      <xs:documentation>Journalnummer består av kombinasjonen journalaar og journalsekvensnummer som tilsammen blir et unikt journalnummer</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="journalaar" type="journalaar"/>
       <xs:element name="journalsekvensnummer" type="journalsekvensnummer"/>
@@ -1788,6 +1800,10 @@
   </xs:complexType>
 
   <xs:complexType name="saksJournalpostnummer">
+    <xs:annotation>
+      <xs:documentation>FA-M006</xs:documentation>
+      <xs:documentation>SaksJournalpostnummer er en kombinasjon av saksnummer og journalpostnummer</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="saksnummer">
         <xs:sequence>
