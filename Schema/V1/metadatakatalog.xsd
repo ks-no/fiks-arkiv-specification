@@ -1522,14 +1522,7 @@
       <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
-
-  <xs:simpleType name="referanseAvskriverJournalpost">
-    <xs:annotation>
-      <xs:documentation>M2..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="ID"/>
-  </xs:simpleType>
-
+  
   <xs:simpleType name="hendelsestype">
     <xs:annotation>
       <xs:documentation>M4..</xs:documentation>
