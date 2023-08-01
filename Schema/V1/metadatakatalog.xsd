@@ -182,7 +182,7 @@
   <xs:simpleType name="fagsystem">
     <xs:annotation>
       <xs:documentation>M016</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -192,7 +192,7 @@
   <xs:simpleType name="noekkel">
     <xs:annotation>
       <xs:documentation>M017</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -395,7 +395,7 @@
   <xs:complexType name="moetesakstype">
     <xs:annotation>
       <xs:documentation>M088</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -405,7 +405,7 @@
   <xs:complexType name="slettingstype">
     <xs:annotation>
       <xs:documentation>M089</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -415,7 +415,7 @@
   <xs:complexType name="skjermingOpphoererAksjon">
     <xs:annotation>
       <xs:documentation>M090</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -555,7 +555,7 @@
   <xs:complexType name="referanseTilMappe">
     <xs:annotation>
       <xs:documentation>M210</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en systemID til en complexType som kan inneholde en eller flere identifikatorer</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en systemID til en complexType som kan inneholde en eller flere identifikatorer</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
@@ -568,7 +568,7 @@
   <xs:complexType name="referanseTilRegistrering">
     <xs:annotation>
       <xs:documentation>M212</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en systemID til en complexType som kan inneholde en eller flere identifikatorer</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en systemID til en complexType som kan inneholde en eller flere identifikatorer</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
@@ -581,7 +581,7 @@
 
   <xs:complexType name="referanseTilJournalpost">
     <xs:annotation>
-      <xs:documentation>Fiks-arkiv: nytt felt som inneholder forskjellige id'er som kan identifisere en journalpost</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  nytt felt som inneholder forskjellige id'er som kan identifisere en journalpost</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
@@ -602,7 +602,7 @@
   <xs:complexType name="tilknyttetRegistreringSom">
     <xs:annotation>
       <xs:documentation>M217</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -668,7 +668,7 @@
   <xs:complexType name="dokumentmedium">
     <xs:annotation>
       <xs:documentation>M300</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -696,7 +696,7 @@
   <xs:complexType name="partRolle">
     <xs:annotation>
       <xs:documentation>M303</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -713,7 +713,7 @@
   <xs:complexType name="administrativEnhet">
     <xs:annotation>
       <xs:documentation>M305</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="identifikatorer"/>
@@ -723,7 +723,7 @@
   <xs:complexType name="saksansvarlig">
     <xs:annotation>
       <xs:documentation>M306</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="identifikatorer"/>
@@ -733,7 +733,7 @@
   <xs:complexType name="saksbehandler">
     <xs:annotation>
       <xs:documentation>M307</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny datatype "identifikatorer"</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="identifikatorer"/>
@@ -797,7 +797,7 @@
   <xs:simpleType name="kommunenummer">
     <xs:annotation>
       <xs:documentation>M314</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -807,7 +807,7 @@
   <xs:simpleType name="gardsnummer">
     <xs:annotation>
       <xs:documentation>M315</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:int" />
   </xs:simpleType>
@@ -815,7 +815,7 @@
   <xs:simpleType name="bruksnummer">
     <xs:annotation>
       <xs:documentation>M316</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:int" />
   </xs:simpleType>
@@ -823,7 +823,7 @@
   <xs:simpleType name="festenummer">
     <xs:annotation>
       <xs:documentation>M317</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:int" />
   </xs:simpleType>
@@ -831,7 +831,7 @@
   <xs:simpleType name="seksjonsnummer">
     <xs:annotation>
       <xs:documentation>M318</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:int" />
   </xs:simpleType>
@@ -839,7 +839,7 @@
   <xs:simpleType name="bygningsnummer">
     <xs:annotation>
       <xs:documentation>M319</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:int" />
   </xs:simpleType>
@@ -847,7 +847,7 @@
   <xs:simpleType name="endringsloepenummer">
     <xs:annotation>
       <xs:documentation>M320</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:int" />
   </xs:simpleType>
@@ -855,7 +855,7 @@
   <xs:simpleType name="fylkesnummer">
     <xs:annotation>
       <xs:documentation>M321</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -865,7 +865,7 @@
   <xs:simpleType name="landkode">
     <xs:annotation>
       <xs:documentation>M322</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -875,7 +875,7 @@
   <xs:simpleType name="planidentifikasjon">
     <xs:annotation>
       <xs:documentation>M323</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -885,7 +885,7 @@
   <xs:simpleType name="x">
     <xs:annotation>
       <xs:documentation>M324</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:double" />
   </xs:simpleType>
@@ -893,7 +893,7 @@
   <xs:simpleType name="y">
     <xs:annotation>
       <xs:documentation>M325</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:double" />
   </xs:simpleType>
@@ -901,7 +901,7 @@
   <xs:simpleType name="z">
     <xs:annotation>
       <xs:documentation>M326</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:double" />
   </xs:simpleType>
@@ -909,7 +909,7 @@
   <xs:simpleType name="koordinatsystem">
     <xs:annotation>
       <xs:documentation>M327</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -948,7 +948,7 @@
   <xs:complexType name="moetedeltakerFunksjon">
     <xs:annotation>
       <xs:documentation>M373</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1032,7 +1032,7 @@
   <xs:simpleType name="forsendelsesmaate">
     <xs:annotation>
       <xs:documentation>M413</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
       <xs:documentation>Fiks-Arkiv: TODO gjøre om til kode type og gi en kodeliste som er oppdatert</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -1043,7 +1043,7 @@
   <xs:simpleType name="hendelsestype">
     <xs:annotation>
       <xs:documentation>M4..</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
       <xs:documentation>Fiks-Arkiv: TODO trenger vi denne? </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -1054,7 +1054,7 @@
   <xs:simpleType name="hendelsesdato">
     <xs:annotation>
       <xs:documentation>M4..</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
       <xs:documentation>Fiks-Arkiv: TODO trenger vi denne? </xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:dateTime"/>
@@ -1063,7 +1063,7 @@
   <xs:simpleType name="personid">
     <xs:annotation>
       <xs:documentation>M414</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -1073,7 +1073,7 @@
   <xs:simpleType name="organisasjonid">
     <xs:annotation>
       <xs:documentation>M415</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -1083,7 +1083,7 @@
   <xs:simpleType name="utfortAv">
     <xs:annotation>
       <xs:documentation>M4..</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -1095,7 +1095,7 @@
   <xs:complexType name="kassasjonsvedtak">
     <xs:annotation>
       <xs:documentation>M450</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1129,7 +1129,7 @@
   <xs:complexType name="tilgangsrestriksjon">
     <xs:annotation>
       <xs:documentation>M500</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1148,7 +1148,7 @@
   <xs:complexType name="skjermingMetadata">
     <xs:annotation>
       <xs:documentation>M502</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1158,7 +1158,7 @@
   <xs:complexType name="skjermingDokument">
     <xs:annotation>
       <xs:documentation>M503</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1183,8 +1183,8 @@
   <xs:complexType name="grad">
     <xs:annotation>
       <xs:documentation>M506</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypens navn fra gradering til grad</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypens navn fra gradering til grad</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1194,7 +1194,7 @@
   <xs:complexType name="elektroniskSignaturSikkerhetsnivaa">
     <xs:annotation>
       <xs:documentation>M507</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1204,7 +1204,7 @@
   <xs:complexType name="elektroniskSignaturVerifisert">
     <xs:annotation>
       <xs:documentation>M508</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1214,7 +1214,7 @@
   <xs:simpleType name="erSkjermet">
     <xs:annotation>
       <xs:documentation>M509</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:boolean"/>
   </xs:simpleType>
@@ -1278,7 +1278,7 @@
   <xs:simpleType name="erPersonnavn">
     <xs:annotation>
       <xs:documentation>M586</xs:documentation>
-      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -1409,7 +1409,7 @@
   <xs:complexType name="avskrivningsmaate">
     <xs:annotation>
       <xs:documentation>M619</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1540,7 +1540,7 @@
   <xs:complexType name="flytStatus">
     <xs:annotation>
       <xs:documentation>M663</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1624,7 +1624,7 @@
   <xs:complexType name="variantformat">
     <xs:annotation>
       <xs:documentation>M700</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1634,7 +1634,7 @@
   <xs:complexType name="format">
     <xs:annotation>
       <xs:documentation>M701</xs:documentation>
-      <xs:documentation>Fiks-arkiv: endret datatypen fra en xs:string til en egen kode datatype som inneholder verdi og beskrivelse</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv):  endret datatypen fra en xs:string til en ny kode datatype (m800) som inneholder verdi og beskrivelse</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
@@ -1713,14 +1713,13 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <!-- GI Arkiv 2.0 -->
-
-
   <!-- Fiks Arkiv -->
+  <!-- M800-: Fiks Arkiv -->
 
   <xs:complexType name="kode">
     <xs:annotation>
-      <xs:documentation>FA-M001</xs:documentation>
+      <xs:documentation>M800</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Består av kode og beskrivelse. Elementet kode er en kort identifikator mens beskrivelse kan være en lengre tekst som beskriver koden. F.eks. kode=F og beskrivelse=Faktura</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1731,7 +1730,8 @@
 
   <xs:complexType name="identifikatorer">
     <xs:annotation>
-      <xs:documentation>FA-M002</xs:documentation>
+      <xs:documentation>M801</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Inneholder forskjellige identifikatorer som "navn", "identifikator" (kan være fra annet system som f.eks. AD), "epostadresse" og "initialer"</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1744,7 +1744,8 @@
 
   <xs:complexType name="saksnummer">
     <xs:annotation>
-      <xs:documentation>FA-M003</xs:documentation>
+      <xs:documentation>M802</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Saksnummer består av kombinasjonen saksaar og sakssekvensnummer som tilsammen blir et unikt saksnummer</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1755,7 +1756,8 @@
 
   <xs:complexType name="eksternNoekkel">
     <xs:annotation>
-      <xs:documentation>FA-M004</xs:documentation>
+      <xs:documentation>M803</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>EksternNoekkel er en nøkkel fra fagsystemet. Består av navn/id (fagsystem) for fagsystem og en nøkkel (noekkel) som er id fra fagsystemet</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1766,7 +1768,8 @@
 
   <xs:complexType name="journalnummer">
     <xs:annotation>
-      <xs:documentation>FA-M005</xs:documentation>
+      <xs:documentation>M804</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Journalnummer består av kombinasjonen journalaar og journalsekvensnummer som tilsammen blir et unikt journalnummer</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -1777,7 +1780,8 @@
 
   <xs:complexType name="saksJournalpostnummer">
     <xs:annotation>
-      <xs:documentation>FA-M006</xs:documentation>
+      <xs:documentation>M805</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>SaksJournalpostnummer er en kombinasjon av saksnummer og journalpostnummer</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -1791,7 +1795,8 @@
 
   <xs:simpleType name="klassifikasjonssystemID">
     <xs:annotation>
-      <xs:documentation>FA-M007</xs:documentation>
+      <xs:documentation>M806</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Unik ID for et klassifikasjonssystem</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -1801,7 +1806,8 @@
 
   <xs:simpleType name="korrespondansepartID">
     <xs:annotation>
-      <xs:documentation>FA-M008</xs:documentation>
+      <xs:documentation>M807</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Unik ID for en korrespondansepart</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -1811,7 +1817,8 @@
 
   <xs:simpleType name="merknadID">
     <xs:annotation>
-      <xs:documentation>FA-M009</xs:documentation>
+      <xs:documentation>M808</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Unik ID for en merknad</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -1821,7 +1828,8 @@
 
   <xs:simpleType name="punktID">
     <xs:annotation>
-      <xs:documentation>FA-M010</xs:documentation>
+      <xs:documentation>M809</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Unik ID for et punkt</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -1831,7 +1839,8 @@
 
   <xs:simpleType name="klassifikasjonID">
     <xs:annotation>
-      <xs:documentation>FA-M011</xs:documentation>
+      <xs:documentation>M810</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Unik ID for en klassifikasjon</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -1841,7 +1850,8 @@
 
   <xs:simpleType name="kryssreferanseID">
     <xs:annotation>
-      <xs:documentation>FA-M012</xs:documentation>
+      <xs:documentation>M811</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
       <xs:documentation>Unik ID for en kryssreferanse</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
