@@ -179,6 +179,26 @@
     <xs:restriction base="xs:int"/>
   </xs:simpleType>
 
+  <xs:simpleType name="fagsystem">
+    <xs:annotation>
+      <xs:documentation>M016</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="noekkel">
+    <xs:annotation>
+      <xs:documentation>M017</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
   <!-- M020-M049: Kjernemetadata (jf. Dublin Core) -->
 
   <xs:simpleType name="tittel">
@@ -560,6 +580,9 @@
   </xs:complexType>
 
   <xs:complexType name="referanseTilJournalpost">
+    <xs:annotation>
+      <xs:documentation>Fiks-arkiv: nytt felt som inneholder forskjellige id'er som kan identifisere en journalpost</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
       <xs:element name="registreringsID" type="registreringsID" minOccurs="0"/>
@@ -629,6 +652,16 @@
     </xs:annotation>
     <xs:restriction base="ID"/>
   </xs:simpleType>
+
+  <xs:complexType name="referanseTilDokumentbeskrivelse">
+    <xs:annotation>
+      <xs:documentation>M225</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: inneholder systemID som identifiserer en Dokumentbeskrivelse. Mulig å utvide senere med andre identifikatorer til en Dokumentbeskrivelse.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="systemID" type="systemID" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
 
   <!-- M300-M369: Arkiv- og saksbehandlingsfunksjonalitet -->
 
@@ -761,6 +794,128 @@
     </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="kommunenummer">
+    <xs:annotation>
+      <xs:documentation>M314</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gardsnummer">
+    <xs:annotation>
+      <xs:documentation>M315</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+
+  <xs:simpleType name="bruksnummer">
+    <xs:annotation>
+      <xs:documentation>M316</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+
+  <xs:simpleType name="festenummer">
+    <xs:annotation>
+      <xs:documentation>M317</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+
+  <xs:simpleType name="seksjonsnummer">
+    <xs:annotation>
+      <xs:documentation>M318</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+
+  <xs:simpleType name="bygningsnummer">
+    <xs:annotation>
+      <xs:documentation>M319</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+
+  <xs:simpleType name="endringsloepenummer">
+    <xs:annotation>
+      <xs:documentation>M320</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:int" />
+  </xs:simpleType>
+
+  <xs:simpleType name="fylkesnummer">
+    <xs:annotation>
+      <xs:documentation>M321</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="landkode">
+    <xs:annotation>
+      <xs:documentation>M322</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="planidentifikasjon">
+    <xs:annotation>
+      <xs:documentation>M323</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="x">
+    <xs:annotation>
+      <xs:documentation>M324</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:double" />
+  </xs:simpleType>
+
+  <xs:simpleType name="y">
+    <xs:annotation>
+      <xs:documentation>M325</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:double" />
+  </xs:simpleType>
+
+  <xs:simpleType name="z">
+    <xs:annotation>
+      <xs:documentation>M326</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:double" />
+  </xs:simpleType>
+
+  <xs:simpleType name="koordinatsystem">
+    <xs:annotation>
+      <xs:documentation>M327</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- M370-M399: Møtebehandling -->
 
   <xs:simpleType name="utvalg">
@@ -868,6 +1023,67 @@
   <xs:simpleType name="kontaktperson">
     <xs:annotation>
       <xs:documentation>M412</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="forsendelsesmaate">
+    <xs:annotation>
+      <xs:documentation>M413</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: TODO gjøre om til kode type og gi en kodeliste som er oppdatert</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hendelsestype">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: TODO trenger vi denne? </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="hendelsesdato">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: TODO trenger vi denne? </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:dateTime"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="personid">
+    <xs:annotation>
+      <xs:documentation>M414</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="organisasjonid">
+    <xs:annotation>
+      <xs:documentation>M415</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="utfortAv">
+    <xs:annotation>
+      <xs:documentation>M4..</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -994,7 +1210,15 @@
       <xs:extension base="kode"/>
     </xs:complexContent>
   </xs:complexType>
-
+  
+  <xs:simpleType name="erSkjermet">
+    <xs:annotation>
+      <xs:documentation>M509</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean"/>
+  </xs:simpleType>
+  
   <!-- M580-M599:	Brukeradministrasjon og administrativ oppbygning -->
 
   <xs:simpleType name="brukerNavn">
@@ -1045,6 +1269,16 @@
   <xs:simpleType name="referanseOverordnetEnhet">
     <xs:annotation>
       <xs:documentation>M585</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="erPersonnavn">
+    <xs:annotation>
+      <xs:documentation>M586</xs:documentation>
+      <xs:documentation>Fra GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
@@ -1480,206 +1714,9 @@
   </xs:simpleType>
 
   <!-- GI Arkiv 2.0 -->
-  <xs:simpleType name="fagsystem">
-    <xs:annotation>
-      <xs:documentation>M01..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
 
-<xs:simpleType name="noekkel">
-    <xs:annotation>
-      <xs:documentation>M01..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
 
-  <xs:simpleType name="erSkjermet">
-    <xs:annotation>
-      <xs:documentation>M5..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:boolean"/>
-  </xs:simpleType>
-
-<xs:simpleType name="erPersonnavn">
-    <xs:annotation>
-      <xs:documentation>M5..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="forsendelsesmaate">
-    <xs:annotation>
-      <xs:documentation>M4..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-  
-  <xs:simpleType name="hendelsestype">
-    <xs:annotation>
-      <xs:documentation>M4..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="hendelsesdato">
-    <xs:annotation>
-      <xs:documentation>M4..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:dateTime"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="personid">
-    <xs:annotation>
-      <xs:documentation>M4..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-  
-  <xs:simpleType name="organisasjonid">
-    <xs:annotation>
-      <xs:documentation>M4..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="kommunenummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="gardsnummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:int" />
-  </xs:simpleType>
-
-  <xs:simpleType name="bruksnummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:int" />
-  </xs:simpleType>
-
-<xs:simpleType name="festenummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:int" />
-  </xs:simpleType>
-
-  <xs:simpleType name="seksjonsnummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:int" />
-  </xs:simpleType>
-
-<xs:simpleType name="bygningsnummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:int" />
-  </xs:simpleType>
-
-  <xs:simpleType name="endringsloepenummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:int" />
-  </xs:simpleType>
-
-<xs:simpleType name="fylkesnummer">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="landkode">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-   <xs:simpleType name="planidentifikasjon">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="x">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:double" />
-  </xs:simpleType>
-
-   <xs:simpleType name="y">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:double" />
-  </xs:simpleType>
-
-  <xs:simpleType name="z">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:double" />
-  </xs:simpleType>
-
-  <xs:simpleType name="koordinatsystem">
-    <xs:annotation>
-      <xs:documentation>M3..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="referanseTilDokumentbeskrivelse">
-    <xs:annotation>
-      <xs:documentation>M2..</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="ID"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="utfortAv">
-    <xs:annotation>      
-      <xs:documentation>M4..</xs:documentation>    
-    </xs:annotation>    
-    <xs:restriction base="xs:string">      
-      <xs:minLength value="1"/>    
-    </xs:restriction>  
-  </xs:simpleType>
+  <!-- Fiks Arkiv -->
 
   <xs:complexType name="kode">
     <xs:annotation>
