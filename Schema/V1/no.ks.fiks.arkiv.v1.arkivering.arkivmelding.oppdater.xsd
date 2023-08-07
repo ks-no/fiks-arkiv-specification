@@ -90,7 +90,7 @@
     
     <xs:complexType name="kryssreferanseSlett">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="kryssreferanseID" type="n5mdk:kryssreferanseID"/>
         </xs:sequence>
     </xs:complexType>
 
