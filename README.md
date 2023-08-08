@@ -17,12 +17,11 @@ Skjemafilene ligger under `Schema/V1`
 
 ## Dokumentasjon
 
+* ### [Wiki - dokumentasjon av Fiks-Arkiv protokollen](https://github.com/ks-no/fiks-arkiv-specification/wiki)
 
-* ### [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki)
+* ### [Fiks plattformen og Fiks-Arkiv - developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
 
-* ### [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
-
-* ### [diagrammer](Dokumentasjon/V1)
+* ### [Diagrammer](Dokumentasjon/V1)
 
 For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki), på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/) i tillegg til det som er her.
 
