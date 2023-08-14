@@ -21,7 +21,7 @@
             <xs:choice minOccurs="1" maxOccurs="1">
                 <xs:element name="mappeOppdateringer" type="mappeOppdatering" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registreringOppdateringer" type="registreringOppdatering" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="dokumentbeskrivelseOppdatering" type="dokumentbeskrivelseOppdatering" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="dokumentbeskrivelseOppdateringer" type="dokumentbeskrivelseOppdatering" minOccurs="0" maxOccurs="unbounded" />
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
