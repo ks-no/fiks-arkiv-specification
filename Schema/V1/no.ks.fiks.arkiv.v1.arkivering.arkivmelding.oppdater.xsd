@@ -122,23 +122,7 @@
         <xs:sequence>
             <xs:element name="oppdatering" type="partOppdatering" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="slett" type="partSlett" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="ny" type="part" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="part">
-        <xs:sequence>
-            <xs:element name="partID" type="n5mdk:partID" minOccurs="0"/>
-            <xs:element name="partNavn" type="n5mdk:partNavn"/>
-            <xs:element name="partRolle" type="n5mdk:partRolle"/>
-            <xs:element name="postadresse" type="n5mdk:postadresse" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="postnummer" type="n5mdk:postnummer" minOccurs="0"/>
-            <xs:element name="poststed" type="n5mdk:poststed" minOccurs="0"/>
-            <xs:element name="land" type="n5mdk:land" minOccurs="0"/>
-            <xs:element name="epostadresse" type="n5mdk:epostadresse" minOccurs="0"/>
-            <xs:element name="telefonnummer" type="n5mdk:telefonnummer" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="kontaktperson" type="n5mdk:kontaktperson" minOccurs="0"/>
-            <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
+            <xs:element name="ny" type="arkivmelding:part" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 
