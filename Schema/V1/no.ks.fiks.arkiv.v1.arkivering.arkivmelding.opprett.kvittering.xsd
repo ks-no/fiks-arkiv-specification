@@ -101,6 +101,7 @@
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer" minOccurs="0"/>
+            <xs:element name="variantformat" type="n5mdk:variantformat" minOccurs="0"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
         </xs:sequence>
