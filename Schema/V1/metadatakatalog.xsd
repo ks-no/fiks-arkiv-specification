@@ -592,6 +592,16 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="referanseTilKlassifikasjon">
+    <xs:annotation>
+      <xs:documentation>Endret (fiks-arkiv):  nytt felt som inneholder forskjellige id'er som kan identifisere en klassifikasjon</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="klassifikasjonssystemID" type="klassifikasjonssystemID"/>
+      <xs:element name="klasseID" type="klasseID"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:simpleType name="referanseAvskrivesAvJournalpost">
     <xs:annotation>
       <xs:documentation>M215</xs:documentation>

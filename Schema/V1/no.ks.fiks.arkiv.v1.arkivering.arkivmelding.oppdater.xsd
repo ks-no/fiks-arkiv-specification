@@ -252,9 +252,9 @@
     
     <xs:complexType name="klassifikasjonOppdatering">
         <xs:sequence>
-            <xs:element name="klassifikasjonssystemID" type="n5mdk:klassifikasjonssystemID"/>
-            <xs:element name="klasseID" type="n5mdk:klasseID" minOccurs="0"/>
+            <xs:element name="referanseTilKlassifikasjon" type="n5mdk:referanseTilKlassifikasjon"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
+            <xs:element name="erSkjermet" type="n5mdk:erSkjermet" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 

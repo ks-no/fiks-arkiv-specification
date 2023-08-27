@@ -78,44 +78,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-    <xs:complexType name="klasse">
-        <xs:sequence>
-            <xs:element name="klasseID" type="n5mdk:klasseID" minOccurs="0"/>
-            <xs:element name="tittel" type="n5mdk:tittel"/>
-            <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
-            <xs:element name="noekkelord" type="n5mdk:noekkelord" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
-            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
-            <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
-            <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
-            <xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="kassasjon" type="kassasjon" minOccurs="0"/>
-            <xs:element name="skjerming" type="skjerming" minOccurs="0"/>
-            <xs:element name="gradering" type="gradering" minOccurs="0"/>
-            <!-- Tillater klasser uten forekomster av (under)klasse, mappe og registering -->
-            <xs:choice>
-                <xs:element name="klasse" type="klasse" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="mappe" type="mappe" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:choice>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="klassifikasjonssystem">
-        <xs:sequence>
-            <xs:element name="klassifikasjonssystemID" type="n5mdk:klassifikasjonssystemID" minOccurs="0"/>
-            <xs:element name="klassifikasjonstype" type="n5mdk:klassifikasjonstype" minOccurs="0"/>
-            <xs:element name="tittel" type="n5mdk:tittel"/>
-            <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
-            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
-            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
-            <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
-            <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
-            <xs:element name="klasse" type="klasse" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-
+    
     <xs:complexType name="registrering">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
