@@ -80,7 +80,6 @@
     <xs:complexType name="kryssreferanseOppdatering">
         <xs:sequence>
             <xs:element name="kryssreferanseID" type="n5mdk:kryssreferanseID"/>
-            <xs:element name="referanseTilKlasse" type="n5mdk:referanseTilKlasse" minOccurs="0"/>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering" minOccurs="0"/>
             <xs:element name="referanseTilDokumentbeskrivelse" type="n5mdk:referanseTilDokumentbeskrivelse"

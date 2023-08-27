@@ -628,13 +628,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="referanseTilKlasse">
-    <xs:annotation>
-      <xs:documentation>M219</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="ID"/>
-  </xs:simpleType>
-
   <xs:simpleType name="referanseForrigeMoete">
     <xs:annotation>
       <xs:documentation>M221</xs:documentation>
