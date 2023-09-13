@@ -8,7 +8,6 @@ class adresse {
 class arkivmelding {
     +system : string
     +regel : string
-    +tidspunkt : dateTime
     +antallFiler : int
     +mappe : mappe
     +registrering : registrering
@@ -122,39 +121,11 @@ class kassasjon {
     +bevaringstid : int
     +kassasjonsdato : date
 }
-class klasse {
-    +klasseID : string
-    +tittel : string
-    +beskrivelse : string
-    +noekkelord : string[]
-    +opprettetDato : dateTime
-    +opprettetAv : string
-    +avsluttetDato : dateTime
-    +avsluttetAv : string
-    +kryssreferanse : kryssreferanse[]
-    +kassasjon : kassasjon
-    +skjerming : skjerming
-    +gradering : gradering
-    +klasse : klasse[]
-    +mappe : mappe[]
-    +registrering : registrering[]
-}
 class klassifikasjon {
     +klassifikasjonssystemID : string
     +klasseID : string
     +tittel : string
     +erSkjermet : boolean
-}
-class klassifikasjonssystem {
-    +klassifikasjonssystemID : string
-    +klassifikasjonstype : klassifikasjonstype
-    +tittel : string
-    +beskrivelse : string
-    +opprettetDato : dateTime
-    +opprettetAv : string
-    +avsluttetDato : dateTime
-    +avsluttetAv : string
-    +klasse : klasse[]
 }
 class korrespondansepart {
     +korrespondansepartID : string
@@ -180,10 +151,9 @@ class korrespondansepart {
 }
 class kryssreferanse {
     +kryssreferanseID : string
-    +referanseTilKlasse : string
     +referanseTilMappe : referanseTilMappe
     +referanseTilRegistrering : referanseTilRegistrering
-    +referanseTilDokumentbeskrivelse : string
+    +referanseTilDokumentbeskrivelse : referanseTilDokumentbeskrivelse
 }
 class mappe {
     +systemID : systemID

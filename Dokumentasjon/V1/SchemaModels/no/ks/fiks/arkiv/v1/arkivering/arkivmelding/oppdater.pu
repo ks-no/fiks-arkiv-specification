@@ -1,10 +1,9 @@
 @startuml
 
 class arkivmeldingOppdatering {
-    +tidspunkt : dateTime
     +mappeOppdateringer : mappeOppdatering[]
     +registreringOppdateringer : registreringOppdatering[]
-    +dokumentbeskrivelseOppdatering : dokumentbeskrivelseOppdatering[]
+    +dokumentbeskrivelseOppdateringer : dokumentbeskrivelseOppdatering[]
 }
 class byggidentOppdatering {
     +opprinneligBygningsnummer : int
@@ -30,9 +29,9 @@ class journalpostOppdatering {
 }
 journalpostOppdatering *- registreringOppdatering
 class klassifikasjonOppdatering {
-    +klassifikasjonssystemID : string
-    +klasseID : string
+    +referanseTilKlassifikasjon : referanseTilKlassifikasjon
     +tittel : string
+    +erSkjermet : boolean
 }
 class klassifikasjonOppdateringer {
     +oppdatering : klassifikasjonOppdatering[]
@@ -72,10 +71,9 @@ class korrespondansepartSlett {
 }
 class kryssreferanseOppdatering {
     +kryssreferanseID : string
-    +referanseTilKlasse : string
     +referanseTilMappe : referanseTilMappe
     +referanseTilRegistrering : referanseTilRegistrering
-    +referanseTilDokumentbeskrivelse : string
+    +referanseTilDokumentbeskrivelse : referanseTilDokumentbeskrivelse
 }
 class kryssreferanseOppdateringer {
     +oppdatering : kryssreferanseOppdatering[]
@@ -83,7 +81,7 @@ class kryssreferanseOppdateringer {
     +ny : kryssreferanse[]
 }
 class kryssreferanseSlett {
-    +systemID : systemID
+    +kryssreferanseID : string
 }
 class mappeOppdatering {
     +referanseTilMappe : referanseTilMappe
@@ -125,19 +123,6 @@ class merknadOppdateringer {
 }
 class merknadSlett {
     +merknadID : string
-}
-class part {
-    +partID : string
-    +partNavn : string
-    +partRolle : partRolle
-    +postadresse : string[]
-    +postnummer : string
-    +poststed : string
-    +land : string
-    +epostadresse : string
-    +telefonnummer : string[]
-    +kontaktperson : string
-    +virksomhetsspesifikkeMetadata : anyType
 }
 class partOppdatering {
     +partID : string

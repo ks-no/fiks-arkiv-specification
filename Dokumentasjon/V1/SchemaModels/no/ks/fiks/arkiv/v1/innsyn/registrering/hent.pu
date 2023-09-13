@@ -11,6 +11,7 @@ enum inkluder {
     dokumentobjekt = dokumentobjekt
 }
 class registreringHent {
+    +system : string
     +referanseTilRegistrering : referanseTilRegistrering
     +inkluder : inkluder[]
 }

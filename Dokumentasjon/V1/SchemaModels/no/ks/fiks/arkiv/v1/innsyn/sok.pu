@@ -326,7 +326,6 @@ enum saksmappeSorteringsfelt {
 }
 class sok {
     +system : string
-    +tidspunkt : dateTime
     +take : int
     +skip : int
     +sokdefinisjon : sokdefinisjon

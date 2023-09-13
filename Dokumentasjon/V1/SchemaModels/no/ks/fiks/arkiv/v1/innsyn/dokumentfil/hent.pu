@@ -1,6 +1,7 @@
 @startuml
 
 class dokumentfilHent {
+    +system : string
     +dokumentfilNoekkel : dokumentfilNoekkel
 }
 class dokumentfilNoekkel {

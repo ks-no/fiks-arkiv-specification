@@ -21,7 +21,6 @@ enum resultatType {
 }
 class sokeresultat {
     +system : string
-    +tidspunkt : dateTime
     +take : int
     +skip : int
     +count : int

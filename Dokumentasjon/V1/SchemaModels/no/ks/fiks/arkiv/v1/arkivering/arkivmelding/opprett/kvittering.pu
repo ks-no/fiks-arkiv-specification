@@ -2,7 +2,6 @@
 
 class arkivmeldingKvittering {
     +system : string
-    +tidspunkt : dateTime
     +mappeKvittering : mappeKvittering[]
     +registreringKvittering : registreringKvittering[]
 }
@@ -10,10 +9,13 @@ class dokumentbeskrivelseKvittering {
     +systemID : systemID
     +opprettetDato : dateTime
     +opprettetAv : string
+    +dokumentnummer : int
     +dokumentobjekt : dokumentobjektKvittering[]
 }
 class dokumentobjektKvittering {
     +systemID : systemID
+    +versjonsnummer : int
+    +variantformat : variantformat
     +opprettetDato : dateTime
     +opprettetAv : string
 }
