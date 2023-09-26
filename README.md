@@ -5,15 +5,32 @@
 ## Protokollen
 
 ### Fiks Arkiv versjon 1 (V1)
+
 #### Meldingstyper
-Se filen [`meldingstyper.json`](Schema/V1/meldingstyper/meldingstyper.json) for hvilke meldingstyper som finnes og hvordan de henger sammen eller den genererte [UML-modellen](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/meldingstyper/meldingstyper.svg) som viser hvordan meldingstypene henger sammen.
+
+Se filen [`meldingstyper.json`](Schema/V1/meldingstyper/meldingstyper.json) for hvilke meldingstyper som er i denne protokollen og hvordan de henger sammen. Man kan også se på den genererte [UML-modellen](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/meldingstyper/meldingstyper.svg) som viser hvordan meldingstypene henger sammen.
+Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme navn. 
 
 #### Skjema
 
-Skjemafilene ligger under `Schema/V1`  
+Skjemaene er i xsd-format og ligger under `Schema/V1`.
+Det er et skjema for hver meldingstype som har en payload og som har samme navn som meldingstype, samt delte skjema med fellest datatyper. 
 
 ##### Avhengighet mellom skjemaer
+
 ![Avhengigheter mellom schemas](Dokumentasjon/V1/SchemaModels/xsd-schemas-overview.png)
+
+
+#### Distribuerte bibliotek for Fiks Arkiv
+
+KS leverer også bibliotek for Java og .NET som inneholder skjemaene, meldingstyper.json filen, hjelpeklasser og genererte modeller fra skjema.
+
+##### Java
+Maven Central: https://central.sonatype.com/artifact/no.ks.fiks/fiks-arkiv
+
+##### .NET
+Nuget.org: https://www.nuget.org/packages/KS.Fiks.Arkiv.Models.V1
+
 
 ## Dokumentasjon
 
