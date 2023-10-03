@@ -90,12 +90,19 @@ partRolle *- kode
 class presedensStatus {
 }
 presedensStatus *- kode
+class referanseTilDokumentbeskrivelse {
+    +systemID : systemID
+}
 class referanseTilJournalpost {
     +systemID : systemID
     +registreringsID : string
     +journalnummer : journalnummer
     +saksJournalpostnummer : saksJournalpostnummer
     +referanseEksternNoekkel : eksternNoekkel
+}
+class referanseTilKlassifikasjon {
+    +klassifikasjonssystemID : string
+    +klasseID : string
 }
 class referanseTilMappe {
     +systemID : systemID

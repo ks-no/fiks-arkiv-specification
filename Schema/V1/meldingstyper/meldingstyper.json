@@ -45,6 +45,7 @@
       "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett",
       "beskrivelse": "",
       "harPayload": true,
+      "payloadFilnavn": "dokumentobjekt-opprett.xml",
       "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.mottatt"]
     },
     {

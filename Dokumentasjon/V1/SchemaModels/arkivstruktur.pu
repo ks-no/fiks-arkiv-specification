@@ -233,10 +233,9 @@ class korrespondansepart {
 }
 class kryssreferanse {
     +kryssreferanseID : string
-    +referanseTilKlasse : string
     +referanseTilMappe : referanseTilMappe
     +referanseTilRegistrering : referanseTilRegistrering
-    +referanseTilDokumentbeskrivelse : string
+    +referanseTilDokumentbeskrivelse : referanseTilDokumentbeskrivelse
 }
 class mappe {
     +systemID : systemID

@@ -19,7 +19,6 @@ enum resultatTypeNoekler {
 }
 class sokeresultatNoekler {
     +system : string
-    +tidspunkt : dateTime
     +take : int
     +skip : int
     +count : int
