@@ -466,13 +466,6 @@
     <xs:restriction base="xs:dateTime"/>
   </xs:simpleType>
 
-  <xs:simpleType name="utlaantDato">
-    <xs:annotation>
-      <xs:documentation>M106</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:date"/>
-  </xs:simpleType>
-
   <xs:simpleType name="arkivperiodeStartDato">
     <xs:annotation>
       <xs:documentation>M107</xs:documentation>
@@ -748,15 +741,6 @@
   <xs:simpleType name="journalenhet">
     <xs:annotation>
       <xs:documentation>M308</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="utlaantTil">
-    <xs:annotation>
-      <xs:documentation>M309</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
