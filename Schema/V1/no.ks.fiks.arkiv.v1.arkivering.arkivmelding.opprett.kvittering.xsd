@@ -18,7 +18,6 @@
 
     <xs:complexType name="arkivmeldingKvittering">
         <xs:sequence>
-            <xs:element name="system" type="xs:string"/>
             <xs:choice>
                 <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0"
