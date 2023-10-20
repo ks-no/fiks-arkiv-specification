@@ -422,4 +422,71 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="moetemappe">
+        <xs:complexContent>
+            <xs:extension base="mappe">
+                <xs:sequence>
+                    <xs:element name="moetenummer" type="n5mdk:moetenummer"/>
+                    <xs:element name="utvalg" type="n5mdk:utvalg"/>
+                    <xs:element name="moetedato" type="n5mdk:moetedato"/>
+                    <xs:element name="moetested" type="n5mdk:moetested" minOccurs="0"/>
+                    <xs:element name="referanseForrigeMoete" type="n5mdk:referanseForrigeMoete" minOccurs="0"/>
+                    <xs:element name="referanseNesteMoete" type="n5mdk:referanseNesteMoete" minOccurs="0"/>
+                    <xs:element name="moetedeltaker" type="n5mdk:moetedeltaker" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="moetesak">
+        <xs:complexContent>
+            <xs:extension base="registrering">
+                <xs:sequence>
+                    <xs:element name="moetesakstype" type="n5mdk:moetesakstype"/>
+                    <xs:element name="moetesaksaar" type="n5mdk:saksaar"/>
+                    <xs:element name="moetesakssekvensnummer" type="n5mdk:sakssekvensnummer"/>
+                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet" minOccurs="0"/>
+                    <xs:element name="utredning" type="utredning" minOccurs="0"/>
+                    <xs:element name="innstilling" type="n5mdk:moetesaksBeskrivelse" minOccurs="0"/>
+                    <xs:element name="vedtak" type="vedtak" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="utredning">
+        <xs:sequence>
+            <xs:element name="saksbeskrivelse" type="n5mdk:moetesaksBeskrivelse"/>
+            <xs:element name="innstilling" type="n5mdk:moetesaksBeskrivelse"/>
+            <xs:element name="utredningsdokumenter" type="dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vedtak">
+        <xs:sequence>
+            <xs:element name="vedtak" type="n5mdk:moetesaksBeskrivelse"/>
+            <xs:element name="votering" type="votering"/>
+            <xs:element name="behandlingsprotokoll" type="n5mdk:behandlingsprotokoll"/>
+            <xs:element name="vedtaksdokumenter" type="dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="votering">
+        <xs:sequence>
+            <xs:element name="moetedeltaker" type="n5mdk:moetedeltaker"/>
+            <xs:element name="stemme" type="n5mdk:moeteStemme" />
+            <xs:element name="representerer" type="n5mdk:representerer" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="moetedokument">
+        <xs:complexContent>
+            <xs:extension base="registrering">
+                <xs:sequence>
+                    <xs:element name="moetedokumenttype" type="n5mdk:moetedokumenttype"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
 </xs:schema>

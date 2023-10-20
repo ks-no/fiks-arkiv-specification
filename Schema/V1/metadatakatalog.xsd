@@ -960,6 +960,72 @@
     </xs:complexContent>
   </xs:complexType>
 
+  <xs:simpleType name="representerer">
+    <xs:annotation>
+      <xs:documentation>M374</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv): Ny datatype</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="moetesaksBeskrivelse">
+    <xs:annotation>
+      <xs:documentation>M375</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv): Nytt felt. Feltet tekstFormat er av typen kode med kodelisten: </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="tekstInnhold" type="xs:string"/>
+      <xs:element name="tekstFormat" type="kode"/>
+    </xs:sequence>    
+  </xs:complexType>
+
+  <xs:simpleType name="behandlingsprotokoll">
+    <xs:annotation>
+      <xs:documentation>M376</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv): Nytt felt</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="moeteStemme" final="restriction" >
+    <xs:annotation>
+      <xs:documentation>M377</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv): Nytt felt. Feltet tekstFormat er av typen kode med kodelisten: </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ja" />
+      <xs:enumeration value="Nei" />
+      <xs:enumeration value="Blankt" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="moetedeltaker">
+    <xs:annotation>
+      <xs:documentation>M378</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv): Nytt felt. Feltet tekstFormat er av typen kode med kodelisten: </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="navn" type="moetedeltakerNavn"/>
+      <xs:element name="personid" type="personid" minOccurs="0"/>
+      <xs:element name="funksjon" type="moetedeltakerFunksjon" minOccurs="0"/>
+      <xs:element name="representerer" type="representerer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="moetedokumenttype">
+    <xs:annotation>
+      <xs:documentation>M373</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv): Nytt felt av typen kode</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
+
   <!-- M400-M449:	Korrespondanse -->
 
   <xs:simpleType name="korrespondansepartNavn">
