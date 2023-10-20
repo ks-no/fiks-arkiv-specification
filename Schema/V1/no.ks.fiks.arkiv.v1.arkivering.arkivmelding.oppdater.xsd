@@ -29,8 +29,17 @@
     <xs:complexType name="dokumentbeskrivelseOppdatering">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID" />
+            <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
+            <xs:element name="forfatter" type="n5mdk:forfatter" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+            <xs:element name="tilknyttetRegistreringSom" type="n5mdk:tilknyttetRegistreringSom"/>
+            <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer" minOccurs="0"/>
+            <xs:element name="tilknyttetDato" type="n5mdk:tilknyttetDato" minOccurs="0"/>
+            <xs:element name="tilknyttetAv" type="n5mdk:tilknyttetAv" minOccurs="0"/>
+            <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
             <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
         </xs:sequence>
@@ -39,17 +48,24 @@
     <xs:complexType name="mappeOppdatering">
         <xs:sequence>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe"/>
-            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
-            <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
-            <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
+            <xs:element name="noekkelord" type="n5mdk:noekkelord" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+            <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
+            <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
+            <xs:element name="arkivdel" type="n5mdk:kode" minOccurs="0"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
             <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
             <xs:element name="kryssreferanseOppdateringer" type="kryssreferanseOppdateringer" minOccurs="0"/>
             <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
+            <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
+            <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
             <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="mappetype" type="n5mdk:kode" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -57,13 +73,16 @@
         <xs:complexContent>
             <xs:extension base="mappeOppdatering">
                 <xs:sequence>
+                    <xs:element name="saksdato" type="n5mdk:saksdato" minOccurs="0"/>
                     <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet" minOccurs="0"/>
                     <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig" minOccurs="0"/>
                     <xs:element name="saksstatus" type="n5mdk:saksstatus" minOccurs="0"/>
+                    <xs:element name="presedens" type="arkivmelding:presedens" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="matrikkelnummerOppdateringer" type="matrikkelnummerOppdateringer" minOccurs="0"/>
                     <xs:element name="byggidentOppdateringer" type="byggidentOppdateringer" minOccurs="0"/>
                     <xs:element name="planidentOppdateringer" type="planidentOppdateringer" minOccurs="0"/>
                     <xs:element name="punktOppdateringer" type="punktOppdateringer" minOccurs="0"/>
+                    <xs:element name="adresse" type="arkivmelding:adresse" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -156,23 +175,44 @@
     <xs:complexType name="registreringOppdatering">
         <xs:sequence>
             <xs:element name="referanseTilRegistrering" type="n5mdk:referanseTilRegistrering"/>
-            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+            <xs:element name="arkivertDato" type="n5mdk:arkivertDato" minOccurs="0"/>
+            <xs:element name="arkivertAv" type="n5mdk:arkivertAv" minOccurs="0"/>
+            <xs:element name="referanseForelderMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
             <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
             <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
+            <xs:element name="noekkelord" type="n5mdk:noekkelord" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="forfatter" type="n5mdk:forfatter" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
             <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
             <xs:element name="korrespondansepartOppdateringer" type="korrespondansepartOppdateringer" minOccurs="0"/>
             <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="journalpostOppdatering">
         <xs:complexContent>
             <xs:extension base="registreringOppdatering">
+                <xs:sequence>
+                    <xs:element name="journalposttype" type="n5mdk:journalposttype" minOccurs="0"/>
+                    <xs:element name="journalstatus" type="n5mdk:journalstatus" minOccurs="0"/>
+                    <xs:element name="journaldato" type="n5mdk:journaldato" minOccurs="0"/>
+                    <xs:element name="dokumentetsDato" type="n5mdk:dokumentetsDato" minOccurs="0"/>
+                    <xs:element name="mottattDato" type="n5mdk:mottattDato" minOccurs="0"/>
+                    <xs:element name="sendtDato" type="n5mdk:sendtDato" minOccurs="0"/>
+                    <xs:element name="forfallsdato" type="n5mdk:forfallsdato" minOccurs="0"/>
+                    <xs:element name="offentlighetsvurdertDato" type="n5mdk:offentlighetsvurdertDato" minOccurs="0"/>
+                    <xs:element name="journalenhet" type="n5mdk:journalenhet" minOccurs="0"/>
+                    <xs:element name="dokumentflyt" type="arkivmelding:dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="presedens" type="arkivmelding:presedens" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato" minOccurs="0"/>
+                </xs:sequence>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
