@@ -70,7 +70,6 @@
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="arkivstatus" type="n5mdk:arkivstatus" minOccurs="0"/>
             <xs:element name="dokumentmedium" type="n5mdk:dokumentmedium" minOccurs="0"/>
-            <xs:element name="oppbevaringssted" type="n5mdk:oppbevaringssted" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato"/>
@@ -99,7 +98,6 @@
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="arkivdelstatus" type="n5mdk:arkivdelstatus"/>
             <xs:element name="dokumentmedium" type="n5mdk:dokumentmedium" minOccurs="0"/>
-            <xs:element name="oppbevaringssted" type="n5mdk:oppbevaringssted" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato"/>
@@ -171,7 +169,6 @@
             <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
             <xs:element name="noekkelord" type="n5mdk:noekkelord" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="dokumentmedium" type="n5mdk:dokumentmedium" minOccurs="0"/>
-            <xs:element name="oppbevaringssted" type="n5mdk:oppbevaringssted" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
@@ -290,7 +287,6 @@
             <xs:element name="noekkelord" type="n5mdk:noekkelord" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="forfatter" type="n5mdk:forfatter" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="dokumentmedium" type="n5mdk:dokumentmedium" minOccurs="0"/>
-            <xs:element name="oppbevaringssted" type="n5mdk:oppbevaringssted" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
             <xs:element name="merknad" type="merknad" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kryssreferanse" type="kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
@@ -430,7 +426,6 @@
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
             <xs:element name="dokumentmedium" type="n5mdk:dokumentmedium" minOccurs="0"/>
-            <xs:element name="oppbevaringssted" type="n5mdk:oppbevaringssted" minOccurs="0"/>
             <xs:element name="arkivdel" type="n5mdk:kode" minOccurs="0"/>
             <xs:element name="tilknyttetRegistreringSom" type="n5mdk:tilknyttetRegistreringSom"/>
             <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer"/>
