@@ -205,8 +205,6 @@
                     <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig"/>
                     <xs:element name="journalenhet" type="n5mdk:journalenhet" minOccurs="0"/>
                     <xs:element name="saksstatus" type="n5mdk:saksstatus"/>
-                    <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
-                    <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="matrikkelnummer" type="matrikkelnummer" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="byggident" type="byggident" minOccurs="0" maxOccurs="unbounded"/>
@@ -318,8 +316,6 @@
                     <xs:element name="forfallsdato" type="n5mdk:forfallsdato" minOccurs="0"/>
                     <xs:element name="offentlighetsvurdertDato" type="n5mdk:offentlighetsvurdertDato" minOccurs="0"/>
                     <xs:element name="antallVedlegg" type="n5mdk:antallVedlegg" minOccurs="0"/>
-                    <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
-                    <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
                     <xs:element name="journalenhet" type="n5mdk:journalenhet" minOccurs="0"/>
                     <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
@@ -388,8 +384,6 @@
                     <xs:element name="forfallsdato" type="n5mdk:forfallsdato" minOccurs="0"/>
                     <xs:element name="offentlighetsvurdertDato" type="n5mdk:offentlighetsvurdertDato" minOccurs="0"/>
                     <xs:element name="antallVedlegg" type="n5mdk:antallVedlegg" minOccurs="0"/>
-                    <xs:element name="utlaantDato" type="n5mdk:utlaantDato" minOccurs="0"/>
-                    <xs:element name="utlaantTil" type="n5mdk:utlaantTil" minOccurs="0"/>
                     <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
                 </xs:sequence>
             </xs:extension>
