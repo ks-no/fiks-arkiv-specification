@@ -1,0 +1,19 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "tekstformat",
+  "versjon": "v1",
+  "kodeliste": [
+    {
+      "kodeverdi" : "tekst",
+      "kodebeskrivelse" : "Tekst som tekstformat"
+    },
+    {
+      "kodeverdi" : "markdown",
+      "kodebeskrivelse" : "Markdown markup som tekstformat"
+    },
+    {
+      "kodeverdi" : "html",
+      "kodebeskrivelse" : "HTML markup som tekstformat"
+    }
+  ]
+}
