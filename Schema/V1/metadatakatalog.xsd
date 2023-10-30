@@ -960,15 +960,15 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:simpleType name="representerer">
+  <xs:complexType name="representerer">
     <xs:annotation>
       <xs:documentation>M374</xs:documentation>
       <xs:documentation>Endret (fiks-arkiv): Ny datatype</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="identifikatorer"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:complexType name="moetesaksBeskrivelse">
     <xs:annotation>
