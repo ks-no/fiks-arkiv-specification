@@ -1035,6 +1035,17 @@
     <xs:restriction base="xs:dateTime"/>
   </xs:simpleType>
 
+  <xs:simpleType name="slettEllerOppdater" final="restriction" >
+    <xs:annotation>
+      <xs:documentation>M380</xs:documentation>
+      <xs:documentation>Endret (fiks-arkiv): Nytt felt. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Slett" />
+      <xs:enumeration value="Oppdater" />
+    </xs:restriction>
+  </xs:simpleType>
+
   <!-- M400-M449:	Korrespondanse -->
 
   <xs:simpleType name="korrespondansepartNavn">
