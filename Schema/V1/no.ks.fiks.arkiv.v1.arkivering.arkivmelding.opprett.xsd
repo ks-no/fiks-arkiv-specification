@@ -464,10 +464,11 @@
 
     <xs:complexType name="vedtak">
         <xs:sequence>
-            <xs:element name="vedtak" type="n5mdk:moetesaksBeskrivelse"/>
-            <xs:element name="votering" type="votering"/>
-            <xs:element name="behandlingsprotokoll" type="n5mdk:behandlingsprotokoll"/>
+            <xs:element name="vedtakstekst" type="n5mdk:moetesaksBeskrivelse"/>
+            <xs:element name="votering" type="votering" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="behandlingsprotokoll" type="n5mdk:behandlingsprotokoll" minOccurs="0"/>
             <xs:element name="vedtaksdokumenter" type="dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="dato" type="n5mdk:vedtaksdato" />
         </xs:sequence>
     </xs:complexType>
 
