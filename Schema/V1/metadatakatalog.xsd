@@ -911,15 +911,16 @@
     <xs:restriction base="xs:double" />
   </xs:simpleType>
 
-  <xs:simpleType name="koordinatsystem">
+  <xs:complexType name="koordinatsystem">
     <xs:annotation>
       <xs:documentation>M327</xs:documentation>
-      <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Opprettet: GI Arkiv 2.0. Datatype kode</xs:documentation>
+      <xs:documentation>Kodeliste (kode:beskrivelse) = "EPSG:25832":"EUREF89 UTM sone 32", "EPSG:25833":"EUREF89 UTM sone 33", "EPSG:25835":"EUREF89 UTM sone 35", "EPSG:4258":"EUREF 89 Geografisk (ETRS 89) 2d"</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <!-- M370-M399: Møtebehandling -->
 
