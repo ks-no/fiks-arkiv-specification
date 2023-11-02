@@ -367,4 +367,90 @@
         </xs:sequence>
     </xs:complexType>
 
+    <xs:complexType name="moetemappeOppdatering">
+        <xs:complexContent>
+            <xs:extension base="mappeOppdatering">
+                <xs:sequence>
+                    <xs:element name="moetenummer" type="n5mdk:moetenummer" minOccurs="0"/>
+                    <xs:element name="utvalg" type="n5mdk:utvalg" minOccurs="0"/>
+                    <xs:element name="moetedato" type="n5mdk:moetedato" minOccurs="0"/>
+                    <xs:element name="moetested" type="n5mdk:moetested" minOccurs="0"/>
+                    <xs:element name="referanseForrigeMoete" type="n5mdk:referanseForrigeMoete" minOccurs="0"/>
+                    <xs:element name="referanseNesteMoete" type="n5mdk:referanseNesteMoete" minOccurs="0"/>
+                    <xs:element name="moetedeltakerOppdateringer" type="moetedeltakerOppdateringer" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="moetedeltakerOppdateringer">
+        <xs:sequence>
+            <xs:element name="oppdatering" type="moetedeltakerOppdatering" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="slett" type="moetedeltakerSlett" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ny" type="n5mdk:moetedeltaker" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="moetedeltakerOppdatering">
+        <xs:sequence>
+            <xs:element name="personid" type="n5mdk:personid"/>
+            <xs:element name="navn" type="n5mdk:moetedeltakerNavn" minOccurs="0"/>
+            <xs:element name="funksjon" type="n5mdk:moetedeltakerFunksjon" minOccurs="0"/>
+            <xs:element name="representerer" type="n5mdk:representerer" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="moetedeltakerSlett">
+        <xs:sequence>
+            <xs:element name="personid" type="n5mdk:personid"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="moetesakOppdatering">
+        <xs:complexContent>
+            <xs:extension base="registreringOppdatering">
+                <xs:sequence>
+                    <xs:element name="moetesakstype" type="n5mdk:moetesakstype" minOccurs="0"/>
+                    <xs:element name="moetesaksaar" type="n5mdk:saksaar" minOccurs="0"/>
+                    <xs:element name="moetesakssekvensnummer" type="n5mdk:sakssekvensnummer" minOccurs="0"/>
+                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet" minOccurs="0"/>
+                    <xs:element name="utredning" type="utredningOppdatering" minOccurs="0"/>
+                    <xs:element name="innstillingOppdatering" type="innstillingOppdatering" minOccurs="0"/>
+                    <xs:element name="vedtakOppdatering" type="vedtakOppdatering" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="utredningOppdatering">
+        <xs:sequence>
+            <xs:element name="oppdateringstype" type="n5mdk:slettEllerOppdater"/>
+            <xs:element name="saksbeskrivelse" type="n5mdk:moetesaksBeskrivelse" minOccurs="0"/>
+            <xs:element name="innstilling" type="n5mdk:moetesaksBeskrivelse" minOccurs="0"/>
+            <xs:element name="utredningsdokumenter" type="arkivmelding:dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="innstillingOppdatering">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="oppdateringstype" type="n5mdk:slettEllerOppdater"/>
+                <xs:element name="innstilling" type="n5mdk:moetesaksBeskrivelse" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vedtakOppdatering">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="oppdateringstype" type="n5mdk:slettEllerOppdater"/>
+                <xs:element name="vedtakstekst" type="n5mdk:moetesaksBeskrivelse" minOccurs="0"/>
+                <xs:element name="votering" type="arkivmelding:votering" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="behandlingsprotokoll" type="n5mdk:behandlingsprotokoll" minOccurs="0"/>
+                <xs:element name="vedtaksdokumenter" type="arkivmelding:dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="dato" type="n5mdk:vedtaksdato" minOccurs="0"/>            
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
 </xs:schema>
