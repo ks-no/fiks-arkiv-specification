@@ -924,14 +924,14 @@
 
   <!-- M370-M399: Møtebehandling -->
 
-  <xs:simpleType name="utvalg">
+  <xs:complexType name="utvalg">
     <xs:annotation>
       <xs:documentation>M370</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="identifikatorer"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="moetested">
     <xs:annotation>
@@ -1011,8 +1011,7 @@
       <xs:documentation>Endret (fiks-arkiv): Nytt felt. Feltet tekstFormat er av typen kode med kodelisten: </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="navn" type="moetedeltakerNavn"/>
-      <xs:element name="personid" type="personid" minOccurs="0"/>
+      <xs:element name="identifikator" type="identifikatorer" minOccurs="0"/>
       <xs:element name="funksjon" type="moetedeltakerFunksjon" minOccurs="0"/>
       <xs:element name="representerer" type="representerer" minOccurs="0"/>
     </xs:sequence>
