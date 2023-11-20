@@ -19,9 +19,13 @@
     <xs:complexType name="arkivmeldingKvittering">
         <xs:sequence>
             <xs:choice>
-                <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0"
-                            maxOccurs="unbounded"/>
+                <xs:element name="nyMappeKvittering" type="nyMappeKvittering" minOccurs="0" />
+                <xs:element name="eksisterendeMappeKvittering" type="eksisterendeMappeKvittering" minOccurs="0" />
+                <xs:element name="mappeFeilet" type="arkiveringFeilet" minOccurs="0" />
+            </xs:choice>
+            <xs:choice>
+                <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0" />
+                <xs:element name="registreringFeilet" type="arkiveringFeilet" minOccurs="0" />
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
@@ -36,12 +40,21 @@
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
             <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
-            <xs:choice>
-                <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0"
-                            maxOccurs="unbounded"/>
-            </xs:choice>
         </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="eksisterendeMappeKvittering">
+        <xs:complexContent>
+            <xs:extension base="mappeKvittering">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="nyMappeKvittering">
+        <xs:complexContent>
+            <xs:extension base="mappeKvittering">
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="saksmappeKvittering">
@@ -52,6 +65,20 @@
                     <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" minOccurs="0"/>
                     <xs:element name="saksdato" type="n5mdk:saksdato" minOccurs="0"/>
                 </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="eksisterendeSaksmappeKvittering">
+        <xs:complexContent>
+            <xs:extension base="saksmappeKvittering">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="nySaksmappeKvittering">
+        <xs:complexContent>
+            <xs:extension base="mappeKvittering">
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -103,6 +130,12 @@
             <xs:element name="variantformat" type="n5mdk:variantformat" minOccurs="0"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="arkiveringFeilet">
+        <xs:sequence>
+            <xs:element name="feilmelding" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
