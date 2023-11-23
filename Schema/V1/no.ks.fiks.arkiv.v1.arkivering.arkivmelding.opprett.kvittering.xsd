@@ -20,8 +20,7 @@
     <xs:complexType name="arkivmeldingKvittering">
         <xs:sequence>
             <xs:choice>
-                <xs:element name="nyMappeKvittering" type="nyMappeKvittering" minOccurs="0" />
-                <xs:element name="eksisterendeMappeKvittering" type="eksisterendeMappeKvittering" minOccurs="0" />
+                <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" />
                 <xs:element name="mappeFeilet" type="feilmelding:feilmeldingBase" minOccurs="0" />
             </xs:choice>
             <xs:choice>
@@ -41,21 +40,8 @@
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
             <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="opprettetEllerEksisterende" type="opprettetEllerEksisterende" />
         </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="eksisterendeMappeKvittering">
-        <xs:complexContent>
-            <xs:extension base="mappeKvittering">
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="nyMappeKvittering">
-        <xs:complexContent>
-            <xs:extension base="mappeKvittering">
-            </xs:extension>
-        </xs:complexContent>
     </xs:complexType>
 
     <xs:complexType name="saksmappeKvittering">
@@ -66,20 +52,6 @@
                     <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer" minOccurs="0"/>
                     <xs:element name="saksdato" type="n5mdk:saksdato" minOccurs="0"/>
                 </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-
-    <xs:complexType name="eksisterendeSaksmappeKvittering">
-        <xs:complexContent>
-            <xs:extension base="saksmappeKvittering">
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType>
-    
-    <xs:complexType name="nySaksmappeKvittering">
-        <xs:complexContent>
-            <xs:extension base="mappeKvittering">
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -133,5 +105,12 @@
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:simpleType name="opprettetEllerEksisterende" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Opprettet" />
+            <xs:enumeration value="Eksisterende" />
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
