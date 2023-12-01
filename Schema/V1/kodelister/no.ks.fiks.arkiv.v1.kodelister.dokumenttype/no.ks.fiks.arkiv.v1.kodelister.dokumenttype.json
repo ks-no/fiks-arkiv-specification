@@ -2,6 +2,7 @@
   "protokollnavn": "no.ks.fiks.arkiv",
   "navn": "dokumenttype",
   "versjon": "v1",
+  "definisjon": "Navn på type dokument",
   "kodeliste": [
     {
       "kodeverdi" : "SØKNAD",

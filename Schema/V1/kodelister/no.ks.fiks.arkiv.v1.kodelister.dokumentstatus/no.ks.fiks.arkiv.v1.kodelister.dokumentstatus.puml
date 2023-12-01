@@ -1,0 +1,18 @@
+@startjson
+  {
+    "protokollnavn": "no.ks.fiks.arkiv",
+    "navn": "dokumentstatus",
+    "versjon": "v1",
+    "definisjon": "Status til dokumentet",
+    "kodeliste": [
+      {
+        "kodeverdi" : "B",
+        "kodebeskrivelse" : "Dokumentet er under redigering"
+      },
+      {
+        "kodeverdi" : "F",
+        "kodebeskrivelse" : "Dokumentet er ferdigstilt"
+      }
+    ]
+  }
+@endjson

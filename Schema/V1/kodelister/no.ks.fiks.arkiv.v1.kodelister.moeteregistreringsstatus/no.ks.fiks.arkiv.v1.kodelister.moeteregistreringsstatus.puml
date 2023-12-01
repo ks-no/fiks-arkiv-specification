@@ -1,0 +1,10 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "moeteregistreringsstatus",
+  "versjon": "v1",
+  "definisjon": "Status til møteregistreringen",
+  "kodeliste": [
+  ]
+}
+@endjson
