@@ -1,0 +1,40 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "klassifikasjonstype",
+  "versjon": "v1",
+  "definisjon": "Type klassifikasjonssystem",
+  "kodeliste": [
+    {
+      "kodeverdi" : "GBN",
+      "kodebeskrivelse" : "Gårds- og bruksnummer"
+    },
+    {
+      "kodeverdi" : "FH",
+      "kodebeskrivelse" : "Funksjonsbasert, hierarkisk"
+    },
+    {
+      "kodeverdi" : "EH",
+      "kodebeskrivelse" : "Emnebasert, hierarkisk arkivnøkkel"
+    },
+    {
+      "kodeverdi" : "E1",
+      "kodebeskrivelse" : "Emnebasert, ett nivå"
+    },
+    {
+      "kodeverdi" : "KK",
+      "kodebeskrivelse" : "K-koder"
+    },
+    {
+      "kodeverdi" : "MF",
+      "kodebeskrivelse" : "Mangefasettert, ikke hierarki"
+    },
+    {
+      "kodeverdi" : "UO",
+      "kodebeskrivelse" : "Objektbasert"
+    },
+    {
+      "kodeverdi" : "PNR",
+      "kodebeskrivelse" : "Fødselsnummer"
+    }
+  ]
+}
