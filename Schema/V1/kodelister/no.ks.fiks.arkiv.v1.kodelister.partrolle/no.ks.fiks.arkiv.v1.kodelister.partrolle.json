@@ -1,0 +1,24 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "partrolle",
+  "versjon": "v1",
+  "definisjon": "Angivelse av rollen til parten",
+  "kodeliste": [
+    {
+      "kodeverdi" : "K",
+      "kodebeskrivelse" : "Klient"
+    },
+    {
+      "kodeverdi" : "P",
+      "kodebeskrivelse" : "Pårørende arkiv"
+    },
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Formynder"
+    },
+    {
+      "kodeverdi" : "A",
+      "kodebeskrivelse" : "Advokat"
+    }
+  ]
+}
