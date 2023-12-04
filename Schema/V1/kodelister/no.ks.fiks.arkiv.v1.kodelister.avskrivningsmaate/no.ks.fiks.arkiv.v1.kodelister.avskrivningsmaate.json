@@ -1,0 +1,28 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "avskrivningsmaate",
+  "versjon": "v1",
+  "definisjon": "Måten en journalpost har blitt avskrevet på",
+  "kodeliste": [
+    {
+      "kodeverdi" : "BU",
+      "kodebeskrivelse" : "Besvart med brev"
+    },
+    {
+      "kodeverdi" : "BE",
+      "kodebeskrivelse" : "Besvart med e-post"
+    },
+    {
+      "kodeverdi" : "TLF",
+      "kodebeskrivelse" : "Besvart på telefon"
+    },
+    {
+      "kodeverdi" : "TE",
+      "kodebeskrivelse" : "Tatt til etteretning"
+    },
+    {
+      "kodeverdi" : "TO",
+      "kodebeskrivelse" : "Tatt til orientering"
+    }
+  ]
+}
