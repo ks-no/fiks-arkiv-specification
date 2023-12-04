@@ -1,0 +1,16 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "moetedeltakerfunksjon",
+  "versjon": "v1",
+  "definisjon": "Funksjon eller rolle til personen som deltok på møtet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "M",
+      "kodebeskrivelse" : "Møteleder"
+    },
+    {
+      "kodeverdi" : "R",
+      "kodebeskrivelse" : "Referent"
+    }
+  ]
+}
