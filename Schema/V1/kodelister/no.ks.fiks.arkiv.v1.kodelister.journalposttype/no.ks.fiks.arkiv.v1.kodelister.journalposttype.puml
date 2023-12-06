@@ -1,17 +1,29 @@
 @startjson
 {
   "protokollnavn": "no.ks.fiks.arkiv",
-  "navn": "presedensstatus",
+  "navn": "journalposttype",
   "versjon": "v1",
-  "definisjon": "Informasjon om presedensen er gjeldende eller foreldet",
+  "definisjon": "Navn på type journalpost",
   "kodeliste": [
     {
-      "kodeverdi" : "G",
-      "kodebeskrivelse" : "Gjeldende"
+      "kodeverdi" : "I",
+      "kodebeskrivelse" : "Inngående dokument"
     },
     {
-      "kodeverdi" : "F",
-      "kodebeskrivelse" : "Foreldet"
+      "kodeverdi" : "U",
+      "kodebeskrivelse" : "Utgående dokument"
+    },
+    {
+      "kodeverdi" : "N",
+      "kodebeskrivelse" : "Organinternt dokument for oppfølging"
+    },
+    {
+      "kodeverdi" : "X",
+      "kodebeskrivelse" : "Organinternt dokument uten oppfølging"
+    },
+    {
+      "kodeverdi" : "S",
+      "kodebeskrivelse" : "Saksframlegg"
     }
   ]
 }

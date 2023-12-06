@@ -16,6 +16,10 @@
     {
       "kodeverdi" : "G",
       "kodebeskrivelse" : "Vurderes senere"
+    },
+    {
+      "kodeverdi" : "U",
+      "kodebeskrivelse" : "Utført"
     }
   ]
 }

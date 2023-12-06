@@ -4,5 +4,21 @@
   "versjon": "v1",
   "definisjon": "Status til møteregistreringen",
   "kodeliste": [
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Ferdigstilt av saksbehandler"
+    },
+    {
+      "kodeverdi" : "G",
+      "kodebeskrivelse" : "Godkjent av leder"
+    },
+    {
+      "kodeverdi" : "A",
+      "kodebeskrivelse" : "Arkivert"
+    },
+    {
+      "kodeverdi" : "R",
+      "kodebeskrivelse" : "Reservert dokument"
+    }
   ]
 }

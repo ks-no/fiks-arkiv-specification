@@ -15,6 +15,10 @@
     {
       "kodeverdi" : "O",
       "kodebeskrivelse" : "Dokument hvor deler av innholdet er skjermet"
+    },
+    {
+      "kodeverdi" : "S",
+      "kodebeskrivelse" : "Digitalt signert dokument"
     }
   ]
 }

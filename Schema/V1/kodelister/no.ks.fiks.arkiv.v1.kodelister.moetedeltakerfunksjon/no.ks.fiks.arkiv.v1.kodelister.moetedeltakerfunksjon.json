@@ -5,12 +5,24 @@
   "definisjon": "Funksjon eller rolle til personen som deltok på møtet",
   "kodeliste": [
     {
-      "kodeverdi" : "M",
-      "kodebeskrivelse" : "Møteleder"
+      "kodeverdi" : "LEDER",
+      "kodebeskrivelse" : ""
     },
     {
-      "kodeverdi" : "R",
-      "kodebeskrivelse" : "Referent"
+      "kodeverdi" : "NETL",
+      "kodebeskrivelse" : ""
+    },
+    {
+      "kodeverdi" : "MEDL",
+      "kodebeskrivelse" : ""
+    },
+    {
+      "kodeverdi" : "VARE",
+      "kodebeskrivelse" : ""
+    },
+    {
+      "kodeverdi" : "SEKR",
+      "kodebeskrivelse" : ""
     }
   ]
 }
