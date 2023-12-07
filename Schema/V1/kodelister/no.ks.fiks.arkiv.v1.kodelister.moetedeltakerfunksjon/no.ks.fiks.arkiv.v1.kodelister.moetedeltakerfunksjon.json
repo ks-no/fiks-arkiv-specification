@@ -6,23 +6,23 @@
   "kodeliste": [
     {
       "kodeverdi" : "LEDER",
-      "kodebeskrivelse" : ""
+      "kodebeskrivelse" : "Leder"
     },
     {
-      "kodeverdi" : "NETL",
-      "kodebeskrivelse" : ""
+      "kodeverdi" : "NESTL",
+      "kodebeskrivelse" : "Nestleder"
     },
     {
       "kodeverdi" : "MEDL",
-      "kodebeskrivelse" : ""
+      "kodebeskrivelse" : "Medlem"
     },
     {
-      "kodeverdi" : "VARE",
-      "kodebeskrivelse" : ""
+      "kodeverdi" : "VARA",
+      "kodebeskrivelse" : "Varamedlem"
     },
     {
       "kodeverdi" : "SEKR",
-      "kodebeskrivelse" : ""
+      "kodebeskrivelse" : "Sekretær"
     }
   ]
 }
