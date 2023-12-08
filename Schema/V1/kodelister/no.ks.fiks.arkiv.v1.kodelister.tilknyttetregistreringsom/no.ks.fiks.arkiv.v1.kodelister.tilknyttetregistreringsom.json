@@ -1,0 +1,16 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "tilknyttetregistreringsom",
+  "versjon": "v1",
+  "definisjon": "",
+  "kodeliste": [
+    {
+      "kodeverdi" : "H",
+      "kodebeskrivelse" : "Hoveddokument"
+    },
+    {
+      "kodeverdi" : "V",
+      "kodebeskrivelse" : "Vedlegg"
+    }
+  ]
+}
