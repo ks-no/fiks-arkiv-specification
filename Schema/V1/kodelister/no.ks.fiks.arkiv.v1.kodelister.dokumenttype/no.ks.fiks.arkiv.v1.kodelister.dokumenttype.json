@@ -82,7 +82,7 @@
     },
     {
       "kodeverdi" : "KUNNGJ",
-      "kodebeskrivelse" : "Plankart"
+      "kodebeskrivelse" : "Kunngjøring"
     },
     {
       "kodeverdi" : "RAPPORT",
@@ -115,10 +115,6 @@
     {
       "kodeverdi" : "GEOREFPLAN",
       "kodebeskrivelse" : "Georeferert plankart"
-    },
-    {
-      "kodeverdi" : "KORR",
-      "kodebeskrivelse" : "Korrespondanse"
     },
     {
       "kodeverdi" : "DOKUMENT",
