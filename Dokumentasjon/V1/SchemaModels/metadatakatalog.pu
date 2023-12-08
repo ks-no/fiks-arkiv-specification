@@ -12,6 +12,10 @@ arkivstatus *- kode
 class avskrivningsmaate {
 }
 avskrivningsmaate *- kode
+class behandlingsprotokoll {
+    +tekstInnhold : string
+    +tekstFormat : kode
+}
 class dokumentmedium {
 }
 dokumentmedium *- kode
@@ -66,21 +70,41 @@ class kode {
     +kode : string
     +beskrivelse : string
 }
+class koordinatsystem {
+}
+koordinatsystem *- kode
 class korrespondanseparttype {
 }
 korrespondanseparttype *- kode
 class merknadstype {
 }
 merknadstype *- kode
+enum moeteStemme {
+    Ja = Ja
+    Nei = Nei
+    Blankt = Blankt
+}
+class moetedeltaker {
+    +identifikator : identifikatorer
+    +funksjon : moetedeltakerFunksjon
+    +representerer : representerer
+}
 class moetedeltakerFunksjon {
 }
 moetedeltakerFunksjon *- kode
+class moetedokumenttype {
+}
+moetedokumenttype *- kode
 class moeteregistreringsstatus {
 }
 moeteregistreringsstatus *- kode
 class moeteregistreringstype {
 }
 moeteregistreringstype *- kode
+class moetesaksBeskrivelse {
+    +tekstInnhold : string
+    +tekstFormat : kode
+}
 class moetesakstype {
 }
 moetesakstype *- kode
@@ -117,6 +141,9 @@ class referanseTilRegistrering {
     +saksJournalpostnummer : saksJournalpostnummer
     +referanseEksternNoekkel : eksternNoekkel
 }
+class representerer {
+}
+representerer *- identifikatorer
 class saksJournalpostnummer {
     +journalpostnummer : int
 }
@@ -156,6 +183,9 @@ tilgangsrestriksjon *- kode
 class tilknyttetRegistreringSom {
 }
 tilknyttetRegistreringSom *- kode
+class utvalg {
+}
+utvalg *- identifikatorer
 class variantformat {
 }
 variantformat *- kode

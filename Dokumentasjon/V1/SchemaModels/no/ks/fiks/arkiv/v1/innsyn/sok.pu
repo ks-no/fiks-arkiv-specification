@@ -1,7 +1,7 @@
 @startuml
 
 class bbox {
-    +koordinatsystem : string
+    +koordinatsystem : koordinatsystem
     +nedreVenstre : bboxKoordinater
     +oevreHoeyre : bboxKoordinater
 }
@@ -329,6 +329,7 @@ class sok {
     +take : int
     +skip : int
     +sokdefinisjon : sokdefinisjon
+    +spraak : string
 }
 class sokVerdier {
     +stringvalues : stringvalues

@@ -11,7 +11,6 @@ class arkiv {
     +beskrivelse : string
     +arkivstatus : arkivstatus
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string[]
     +opprettetDato : dateTime
     +opprettetAv : string
     +avsluttetDato : dateTime
@@ -26,7 +25,6 @@ class arkivdel {
     +beskrivelse : string
     +arkivdelstatus : arkivdelstatus
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string[]
     +opprettetDato : dateTime
     +opprettetAv : string
     +avsluttetDato : dateTime
@@ -51,8 +49,6 @@ class arkivnotat {
     +forfallsdato : date
     +offentlighetsvurdertDato : date
     +antallVedlegg : int
-    +utlaantDato : date
-    +utlaantTil : string
     +dokumentflyt : dokumentflyt[]
 }
 arkivnotat *- registrering
@@ -81,7 +77,6 @@ class dokumentbeskrivelse {
     +opprettetDato : dateTime
     +opprettetAv : string
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string
     +arkivdel : kode
     +tilknyttetRegistreringSom : tilknyttetRegistreringSom
     +dokumentnummer : int
@@ -148,8 +143,6 @@ class journalpost {
     +forfallsdato : date
     +offentlighetsvurdertDato : date
     +antallVedlegg : int
-    +utlaantDato : date
-    +utlaantTil : string
     +journalenhet : string
     +dokumentflyt : dokumentflyt[]
     +presedens : presedens[]
@@ -246,7 +239,6 @@ class mappe {
     +beskrivelse : string
     +noekkelord : string[]
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string[]
     +opprettetDato : dateTime
     +opprettetAv : string
     +avsluttetDato : dateTime
@@ -280,13 +272,13 @@ class merknad {
     +merknadRegistrertAv : string
     +erSkjermet : boolean
 }
-class moetedeltaker {
-    +moetedeltakerNavn : string
-    +moetedeltakerFunksjon : moetedeltakerFunksjon
+class moetedokument {
+    +moetedokumenttype : moetedokumenttype
 }
+moetedokument *- registrering
 class moetemappe {
     +moetenummer : string
-    +utvalg : string
+    +utvalg : utvalg
     +moetedato : date
     +moetested : string
     +referanseForrigeMoete : string
@@ -294,16 +286,16 @@ class moetemappe {
     +moetedeltaker : moetedeltaker[]
 }
 moetemappe *- mappe
-class moeteregistrering {
-    +moeteregistreringstype : moeteregistreringstype
+class moetesak {
     +moetesakstype : moetesakstype
-    +moeteregistreringsstatus : moeteregistreringsstatus
+    +moetesaksaar : int
+    +moetesakssekvensnummer : int
     +administrativEnhet : administrativEnhet
-    +saksbehandler : saksbehandler
-    +referanseTilMoeteregistrering : string[]
-    +referanseFraMoeteregistrering : string[]
+    +utredning : utredning
+    +innstilling : moetesaksBeskrivelse
+    +vedtak : vedtak
 }
-moeteregistrering *- registrering
+moetesak *- registrering
 class part {
     +partID : string
     +partNavn : string
@@ -339,7 +331,7 @@ class presedens {
 }
 class punkt {
     +punktID : string
-    +koordinatsystem : string
+    +koordinatsystem : koordinatsystem
     +x : double
     +y : double
     +z : double
@@ -364,7 +356,6 @@ class registrering {
     +noekkelord : string[]
     +forfatter : string[]
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string[]
     +virksomhetsspesifikkeMetadata : anyType
     +merknad : merknad[]
     +kryssreferanse : kryssreferanse[]
@@ -380,8 +371,6 @@ class saksmappe {
     +saksansvarlig : saksansvarlig
     +journalenhet : string
     +saksstatus : saksstatus
-    +utlaantDato : date
-    +utlaantTil : string
     +presedens : presedens[]
     +matrikkelnummer : matrikkelnummer[]
     +byggident : byggident[]
@@ -404,6 +393,23 @@ class sletting {
 class utfoertKassasjon {
     +kassertDato : dateTime
     +kassertAv : string
+}
+class utredning {
+    +saksbeskrivelse : moetesaksBeskrivelse
+    +innstilling : moetesaksBeskrivelse
+    +utredningsdokumenter : dokumentbeskrivelse[]
+}
+class vedtak {
+    +vedtakstekst : moetesaksBeskrivelse
+    +votering : votering[]
+    +behandlingsprotokoll : behandlingsprotokoll
+    +vedtaksdokumenter : dokumentbeskrivelse[]
+    +dato : dateTime
+}
+class votering {
+    +moetedeltaker : moetedeltaker
+    +stemme : moeteStemme
+    +representerer : representerer
 }
 
 @enduml

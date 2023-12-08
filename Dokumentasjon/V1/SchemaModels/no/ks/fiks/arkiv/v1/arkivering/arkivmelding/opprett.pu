@@ -19,8 +19,6 @@ class arkivnotat {
     +forfallsdato : date
     +offentlighetsvurdertDato : date
     +antallVedlegg : int
-    +utlaantDato : date
-    +utlaantTil : string
     +dokumentflyt : dokumentflyt[]
 }
 arkivnotat *- registrering
@@ -45,8 +43,6 @@ class dokumentbeskrivelse {
     +opprettetDato : dateTime
     +opprettetAv : string
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string
-    +arkivdel : kode
     +tilknyttetRegistreringSom : tilknyttetRegistreringSom
     +dokumentnummer : int
     +tilknyttetDato : dateTime
@@ -107,8 +103,6 @@ class journalpost {
     +forfallsdato : date
     +offentlighetsvurdertDato : date
     +antallVedlegg : int
-    +utlaantDato : date
-    +utlaantTil : string
     +journalenhet : string
     +dokumentflyt : dokumentflyt[]
     +presedens : presedens[]
@@ -164,7 +158,6 @@ class mappe {
     +beskrivelse : string
     +noekkelord : string[]
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string[]
     +opprettetDato : dateTime
     +opprettetAv : string
     +avsluttetDato : dateTime
@@ -195,6 +188,30 @@ class merknad {
     +merknadRegistrertAv : string
     +erSkjermet : boolean
 }
+class moetedokument {
+    +moetedokumenttype : moetedokumenttype
+}
+moetedokument *- registrering
+class moetemappe {
+    +moetenummer : string
+    +utvalg : utvalg
+    +moetedato : date
+    +moetested : string
+    +referanseForrigeMoete : string
+    +referanseNesteMoete : string
+    +moetedeltaker : moetedeltaker[]
+}
+moetemappe *- mappe
+class moetesak {
+    +moetesakstype : moetesakstype
+    +moetesaksaar : int
+    +moetesakssekvensnummer : int
+    +administrativEnhet : administrativEnhet
+    +utredning : utredning
+    +innstilling : moetesaksBeskrivelse
+    +vedtak : vedtak
+}
+moetesak *- registrering
 class organisasjonsID {
     +identifikator : string
     +landkode : string
@@ -241,7 +258,7 @@ class presedens {
     +presedensStatus : presedensStatus
 }
 class punkt {
-    +koordinatsystem : string
+    +koordinatsystem : koordinatsystem
     +x : double
     +y : double
     +z : double
@@ -265,7 +282,6 @@ class registrering {
     +noekkelord : string[]
     +forfatter : string[]
     +dokumentmedium : dokumentmedium
-    +oppbevaringssted : string[]
     +virksomhetsspesifikkeMetadata : anyType
     +merknad : merknad[]
     +kryssreferanse : kryssreferanse[]
@@ -281,8 +297,6 @@ class saksmappe {
     +saksansvarlig : saksansvarlig
     +journalenhet : string
     +saksstatus : saksstatus
-    +utlaantDato : date
-    +utlaantTil : string
     +presedens : presedens[]
     +matrikkelnummer : matrikkelnummer[]
     +byggident : byggident[]
@@ -296,6 +310,23 @@ class skjerming {
     +skjermingshjemmel : string
     +skjermingOpphoererDato : date
     +skjermingOpphoererAksjon : skjermingOpphoererAksjon
+}
+class utredning {
+    +saksbeskrivelse : moetesaksBeskrivelse
+    +innstilling : moetesaksBeskrivelse
+    +utredningsdokumenter : dokumentbeskrivelse[]
+}
+class vedtak {
+    +vedtakstekst : moetesaksBeskrivelse
+    +votering : votering[]
+    +behandlingsprotokoll : behandlingsprotokoll
+    +vedtaksdokumenter : dokumentbeskrivelse[]
+    +dato : dateTime
+}
+class votering {
+    +moetedeltaker : moetedeltaker
+    +stemme : moeteStemme
+    +representerer : representerer
 }
 
 @enduml

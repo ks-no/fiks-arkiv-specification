@@ -1,0 +1,22 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "dokumentmedium",
+  "versjon": "v1",
+  "definisjon": "Angivelse av om arkivenheten inneholder fysiske dokumenter, elektroniske dokumenter eller en blanding av fysiske og elektroniske dokumenter",
+  "kodeliste": [
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Fysisk medium"
+    },
+    {
+      "kodeverdi" : "E",
+      "kodebeskrivelse" : "Elektronisk arkiv"
+    },
+    {
+      "kodeverdi" : "B",
+      "kodebeskrivelse" : "Blandet fysisk og elektronisk arkiv"
+    }
+  ]
+}
+@endjson

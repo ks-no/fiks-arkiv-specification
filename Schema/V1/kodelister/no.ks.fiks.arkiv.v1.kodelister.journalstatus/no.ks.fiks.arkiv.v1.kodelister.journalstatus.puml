@@ -1,0 +1,46 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "journalstatus",
+  "versjon": "v1",
+  "definisjon": "Status til journalposten, dvs. om dokumentet er registrert, under behandling eller endelig arkivert",
+  "kodeliste": [
+    {
+      "kodeverdi" : "J",
+      "kodebeskrivelse" : "Journalført"
+    },
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Ferdigstilt av saksbehandler"
+    },
+    {
+      "kodeverdi" : "G",
+      "kodebeskrivelse" : "Godkjent av leder"
+    },
+    {
+      "kodeverdi" : "E",
+      "kodebeskrivelse" : "Ekspedert"
+    },
+    {
+      "kodeverdi" : "A",
+      "kodebeskrivelse" : "Arkivert"
+    },
+    {
+      "kodeverdi" : "U",
+      "kodebeskrivelse" : "Utgår"
+    },
+    {
+      "kodeverdi" : "M",
+      "kodebeskrivelse" : "Midlertidig registrering av innkommende dokument"
+    },
+    {
+      "kodeverdi" : "S",
+      "kodebeskrivelse" : "Saksbehandler har registrert innkommende dokument"
+    },
+    {
+      "kodeverdi" : "R",
+      "kodebeskrivelse" : "Reservert dokument"
+    }
+  ]
+}
+@endjson

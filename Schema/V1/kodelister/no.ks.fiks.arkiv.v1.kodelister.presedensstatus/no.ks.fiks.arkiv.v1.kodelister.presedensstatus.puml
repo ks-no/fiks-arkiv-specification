@@ -1,0 +1,18 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "presedensstatus",
+  "versjon": "v1",
+  "definisjon": "Informasjon om presedensen er gjeldende eller foreldet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "G",
+      "kodebeskrivelse" : "Gjeldende"
+    },
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Foreldet"
+    }
+  ]
+}
+@endjson
