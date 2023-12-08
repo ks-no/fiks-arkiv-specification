@@ -16,6 +16,10 @@ Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme nav
 Skjemaene er i xsd-format og ligger under `Schema/V1`.
 Det er et skjema for hver meldingstype som har en payload og som har samme navn som meldingstype, samt delte skjema med fellest datatyper. 
 
+##### Kodelister
+
+Under mappen kodelister ligger eksempler på kodelister i json-format samt diagram som gir oversikt over innhold.
+
 ##### Avhengighet mellom skjemaer
 
 ![Avhengigheter mellom schemas](Dokumentasjon/V1/SchemaModels/xsd-schemas-overview.png)
