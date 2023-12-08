@@ -11,14 +11,14 @@
 Se filen [`meldingstyper.json`](Schema/V1/meldingstyper/meldingstyper.json) for hvilke meldingstyper som er i denne protokollen og hvordan de henger sammen. Man kan også se på den genererte [UML-modellen](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/meldingstyper/meldingstyper.svg) som viser hvordan meldingstypene henger sammen.
 Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme navn. 
 
+#### Kodelister
+
+Under mappen kodelister ligger eksempler på kodelister i json-format samt diagram som gir oversikt over innhold.
+
 #### Skjema
 
 Skjemaene er i xsd-format og ligger under `Schema/V1`.
 Det er et skjema for hver meldingstype som har en payload og som har samme navn som meldingstype, samt delte skjema med fellest datatyper. 
-
-#### Kodelister
-
-Under mappen kodelister ligger eksempler på kodelister i json-format samt diagram som gir oversikt over innhold.
 
 ##### Avhengighet mellom skjemaer
 
