@@ -67,6 +67,7 @@
                         maxOccurs="unbounded"/>
             <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="opprettetEllerEksisterende" type="opprettetEllerEksisterende" />
         </xs:sequence>
     </xs:complexType>
 
