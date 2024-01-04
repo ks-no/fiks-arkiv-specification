@@ -1,0 +1,8 @@
+@startuml
+
+class mappeHentResultat {
+    +mappe : mappe
+    +saksmappe : saksmappe
+}
+
+@enduml

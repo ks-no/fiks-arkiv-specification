@@ -18,6 +18,7 @@
 
     <xs:complexType name="dokumentfilHent">
         <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
             <xs:element name="dokumentfilNoekkel" type="dokumentfilNoekkel"/>
         </xs:sequence>
     </xs:complexType>

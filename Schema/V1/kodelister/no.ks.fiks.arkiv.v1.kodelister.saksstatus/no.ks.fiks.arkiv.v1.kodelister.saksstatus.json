@@ -1,0 +1,36 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "saksstatus",
+  "versjon": "v1",
+  "definisjon": "Status til saksmappen, dvs. hvor langt saksbehandlingen har kommet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "B",
+      "kodebeskrivelse" : "Under behandling"
+    },
+    {
+      "kodeverdi" : "A",
+      "kodebeskrivelse" : "Avsluttet"
+    },
+    {
+      "kodeverdi" : "U",
+      "kodebeskrivelse" : "Utgår"
+    },
+    {
+      "kodeverdi" : "R",
+      "kodebeskrivelse" : "Opprettet av saksbehandler"
+    },
+    {
+      "kodeverdi" : "S",
+      "kodebeskrivelse" : "Avsluttet av saksbehandler"
+    },
+    {
+      "kodeverdi" : "P",
+      "kodebeskrivelse" : "Unntatt prosesstyring"
+    },
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Ferdig fra saksbehandler"
+    }
+  ]
+}

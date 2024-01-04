@@ -1,0 +1,25 @@
+@startuml
+skinparam sequenceMessageAlign center
+
+title "Opprett arkivmelding - ugyldigforespoersel"
+
+participant Fagsystem [
+    = Fagsystem
+]
+participant FiksProtokoll [
+    = Fiks Protokoll
+]
+participant Arkivsystem [
+    = Arkivsystem
+]
+
+Fagsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
+...Arkivsystem melder at melding er mottatt og håndteres.\nMerk at i noen tilfeller kan validering \ninntreffe før mottatt-melding sendes og man får bare feilmelding...
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
+...Arkivsystem finner ut at melding ikke er gyldig\nF.eks. ikke validerer mot xsd-skjema eller annet ugyldig innhold...
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel**
+
+@enduml

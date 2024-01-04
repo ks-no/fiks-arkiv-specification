@@ -1,0 +1,8 @@
+@startuml
+
+class dokumentobjektOpprett {
+    +dokumentbeskrivelseID : systemID
+    +dokumentobjekt : dokumentobjekt
+}
+
+@enduml

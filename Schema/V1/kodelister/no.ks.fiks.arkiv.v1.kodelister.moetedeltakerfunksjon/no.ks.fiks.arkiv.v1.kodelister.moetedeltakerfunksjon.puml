@@ -1,0 +1,30 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "moetedeltakerfunksjon",
+  "versjon": "v1",
+  "definisjon": "Funksjon eller rolle til personen som deltok på møtet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "LEDER",
+      "kodebeskrivelse" : ""
+    },
+    {
+      "kodeverdi" : "NETL",
+      "kodebeskrivelse" : ""
+    },
+    {
+      "kodeverdi" : "MEDL",
+      "kodebeskrivelse" : ""
+    },
+    {
+      "kodeverdi" : "VARE",
+      "kodebeskrivelse" : ""
+    },
+    {
+      "kodeverdi" : "SEKR",
+      "kodebeskrivelse" : ""
+    }
+  ]
+}
+@endjson

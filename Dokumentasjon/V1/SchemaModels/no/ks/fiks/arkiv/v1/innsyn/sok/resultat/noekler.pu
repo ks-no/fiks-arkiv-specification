@@ -1,0 +1,29 @@
+@startuml
+
+class resultatListeNoekler {
+    +resultatNoekler : resultatNoekler[]
+}
+class resultatNoekler {
+    +mappe : mappeNoekler
+    +saksmappe : saksmappeNoekler
+    +registrering : registreringNoekler
+    +journalpost : journalpostNoekler
+    +dokumentbeskrivelse : dokumentbeskrivelseNoekler
+}
+enum resultatTypeNoekler {
+    mappe = mappe
+    saksmappe = saksmappe
+    registrering = registrering
+    journalpost = journalpost
+    dokumentbeskrivelse = dokumentbeskrivelse
+}
+class sokeresultatNoekler {
+    +system : string
+    +take : int
+    +skip : int
+    +count : int
+    +resultattype : resultatTypeNoekler
+    +resultatListe : resultatListeNoekler
+}
+
+@enduml

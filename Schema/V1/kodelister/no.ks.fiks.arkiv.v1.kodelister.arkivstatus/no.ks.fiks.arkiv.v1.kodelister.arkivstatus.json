@@ -1,0 +1,16 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "arkivstatus",
+  "versjon": "v1",
+  "definisjon": "Status til arkivet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "Opprettet",
+      "kodebeskrivelse" : "Opprettet"
+    },
+    {
+      "kodeverdi" : "Avsluttet",
+      "kodebeskrivelse" : "Avsluttet"
+    }
+  ]
+}

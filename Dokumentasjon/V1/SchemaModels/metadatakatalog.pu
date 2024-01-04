@@ -1,0 +1,193 @@
+@startuml
+
+class administrativEnhet {
+}
+administrativEnhet *- identifikatorer
+class arkivdelstatus {
+}
+arkivdelstatus *- kode
+class arkivstatus {
+}
+arkivstatus *- kode
+class avskrivningsmaate {
+}
+avskrivningsmaate *- kode
+class behandlingsprotokoll {
+    +tekstInnhold : string
+    +tekstFormat : kode
+}
+class dokumentmedium {
+}
+dokumentmedium *- kode
+class dokumentstatus {
+}
+dokumentstatus *- kode
+class dokumenttype {
+}
+dokumenttype *- kode
+class eksternNoekkel {
+    +fagsystem : string
+    +noekkel : string
+}
+class elektroniskSignaturSikkerhetsnivaa {
+}
+elektroniskSignaturSikkerhetsnivaa *- kode
+class elektroniskSignaturVerifisert {
+}
+elektroniskSignaturVerifisert *- kode
+class flytStatus {
+}
+flytStatus *- kode
+class format {
+}
+format *- kode
+class grad {
+}
+grad *- kode
+class identifikatorer {
+    +navn : string
+    +identifikator : string
+    +initialer : string
+    +epostadresse : string
+}
+class journalnummer {
+    +journalaar : int
+    +journalsekvensnummer : int
+}
+class journalposttype {
+}
+journalposttype *- kode
+class journalstatus {
+}
+journalstatus *- kode
+class kassasjonsvedtak {
+}
+kassasjonsvedtak *- kode
+class klassifikasjonstype {
+}
+klassifikasjonstype *- kode
+class kode {
+    +kode : string
+    +beskrivelse : string
+}
+class koordinatsystem {
+}
+koordinatsystem *- kode
+class korrespondanseparttype {
+}
+korrespondanseparttype *- kode
+class merknadstype {
+}
+merknadstype *- kode
+enum moeteStemme {
+    Ja = Ja
+    Nei = Nei
+    Blankt = Blankt
+}
+class moetedeltaker {
+    +identifikator : identifikatorer
+    +funksjon : moetedeltakerFunksjon
+    +representerer : representerer
+}
+class moetedeltakerFunksjon {
+}
+moetedeltakerFunksjon *- kode
+class moetedokumenttype {
+}
+moetedokumenttype *- kode
+class moeteregistreringsstatus {
+}
+moeteregistreringsstatus *- kode
+class moeteregistreringstype {
+}
+moeteregistreringstype *- kode
+class moetesaksBeskrivelse {
+    +tekstInnhold : string
+    +tekstFormat : kode
+}
+class moetesakstype {
+}
+moetesakstype *- kode
+class partRolle {
+}
+partRolle *- kode
+class presedensStatus {
+}
+presedensStatus *- kode
+class referanseTilDokumentbeskrivelse {
+    +systemID : systemID
+}
+class referanseTilJournalpost {
+    +systemID : systemID
+    +registreringsID : string
+    +journalnummer : journalnummer
+    +saksJournalpostnummer : saksJournalpostnummer
+    +referanseEksternNoekkel : eksternNoekkel
+}
+class referanseTilKlassifikasjon {
+    +klassifikasjonssystemID : string
+    +klasseID : string
+}
+class referanseTilMappe {
+    +systemID : systemID
+    +mappeID : string
+    +saksnummer : saksnummer
+    +referanseEksternNoekkel : eksternNoekkel
+}
+class referanseTilRegistrering {
+    +systemID : systemID
+    +registreringsID : string
+    +journalnummer : journalnummer
+    +saksJournalpostnummer : saksJournalpostnummer
+    +referanseEksternNoekkel : eksternNoekkel
+}
+class representerer {
+}
+representerer *- identifikatorer
+class saksJournalpostnummer {
+    +journalpostnummer : int
+}
+saksJournalpostnummer *- saksnummer
+class saksansvarlig {
+}
+saksansvarlig *- identifikatorer
+class saksbehandler {
+}
+saksbehandler *- identifikatorer
+class saksnummer {
+    +saksaar : int
+    +sakssekvensnummer : int
+}
+class saksstatus {
+}
+saksstatus *- kode
+class skjermingDokument {
+}
+skjermingDokument *- kode
+class skjermingMetadata {
+}
+skjermingMetadata *- kode
+class skjermingOpphoererAksjon {
+}
+skjermingOpphoererAksjon *- kode
+class slettingstype {
+}
+slettingstype *- kode
+class systemID {
+    +value : string
+    +label : string
+}
+class tilgangsrestriksjon {
+}
+tilgangsrestriksjon *- kode
+class tilknyttetRegistreringSom {
+}
+tilknyttetRegistreringSom *- kode
+class utvalg {
+}
+utvalg *- identifikatorer
+class variantformat {
+}
+variantformat *- kode
+
+@enduml

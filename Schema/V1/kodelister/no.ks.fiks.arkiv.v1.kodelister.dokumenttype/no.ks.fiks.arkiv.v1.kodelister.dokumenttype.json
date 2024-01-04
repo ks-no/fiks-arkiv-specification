@@ -1,0 +1,152 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "dokumenttype",
+  "versjon": "v1",
+  "definisjon": "Navn på type dokument",
+  "kodeliste": [
+    {
+      "kodeverdi" : "SØKNAD",
+      "kodebeskrivelse" : "Søknad"
+    },
+    {
+      "kodeverdi" : "MELDING",
+      "kodebeskrivelse" : "Melding"
+    },
+    {
+      "kodeverdi" : "KORR",
+      "kodebeskrivelse" : "Korrespondanse"
+    },
+    {
+      "kodeverdi" : "KART",
+      "kodebeskrivelse" : "Kart"
+    },
+    {
+      "kodeverdi" : "FOTO",
+      "kodebeskrivelse" : "Foto"
+    },
+    {
+      "kodeverdi" : "TEGNING",
+      "kodebeskrivelse" : "Tegning"
+    },
+    {
+      "kodeverdi" : "ANSVKONTO",
+      "kodebeskrivelse" : "Ansvar og kontroll"
+    },
+    {
+      "kodeverdi" : "TILSYN",
+      "kodebeskrivelse" : "Tilsyn"
+    },
+    {
+      "kodeverdi" : "AVTALE",
+      "kodebeskrivelse" : "Avtale"
+    },
+    {
+      "kodeverdi" : "VEDTAK",
+      "kodebeskrivelse" : "Vedtak"
+    },
+    {
+      "kodeverdi" : "SAKSFRAMLEGG",
+      "kodebeskrivelse" : "Saksframlegg"
+    },
+    {
+      "kodeverdi" : "FERDIGATTEST",
+      "kodebeskrivelse" : "Ferdigattest"
+    },
+    {
+      "kodeverdi" : "PLANBESKR",
+      "kodebeskrivelse" : "Planbeskrivelse"
+    },
+    {
+      "kodeverdi" : "PLANKART",
+      "kodebeskrivelse" : "Plankart"
+    },
+    {
+      "kodeverdi" : "PLANBEST",
+      "kodebeskrivelse" : "Planbestemmelser"
+    },
+    {
+      "kodeverdi" : "PLANPROG",
+      "kodebeskrivelse" : "Planprogram"
+    },
+    {
+      "kodeverdi" : "JURILLUST",
+      "kodebeskrivelse" : "Juridisk bindende illustrasjon"
+    },
+    {
+      "kodeverdi" : "ILLUST",
+      "kodebeskrivelse" : "Illustrasjon"
+    },
+    {
+      "kodeverdi" : "KONSUTR",
+      "kodebeskrivelse" : "Konsekvensutredning"
+    },
+    {
+      "kodeverdi" : "KUNNGJ",
+      "kodebeskrivelse" : "Kunngjøring"
+    },
+    {
+      "kodeverdi" : "RAPPORT",
+      "kodebeskrivelse" : "Rapport"
+    },
+    {
+      "kodeverdi" : "ROS-ANALYSE",
+      "kodebeskrivelse" : "ROS-analyse"
+    },
+    {
+      "kodeverdi" : "UTREDNING",
+      "kodebeskrivelse" : "Utredning"
+    },
+    {
+      "kodeverdi" : "UTTALELSE",
+      "kodebeskrivelse" : "Uttalelse"
+    },
+    {
+      "kodeverdi" : "INNSIGELSE",
+      "kodebeskrivelse" : "Innsigelse"
+    },
+    {
+      "kodeverdi" : "KLAGE",
+      "kodebeskrivelse" : "Klage"
+    },
+    {
+      "kodeverdi" : "TEGNFKL",
+      "kodebeskrivelse" : "Tegnforklaring"
+    },
+    {
+      "kodeverdi" : "GEOREFPLAN",
+      "kodebeskrivelse" : "Georeferert plankart"
+    },
+    {
+      "kodeverdi" : "DOKUMENT",
+      "kodebeskrivelse" : "Dokument"
+    },
+    {
+      "kodeverdi" : "NOTAT",
+      "kodebeskrivelse" : "Notat"
+    },
+    {
+      "kodeverdi" : "ANALYSE",
+      "kodebeskrivelse" : "Analyse"
+    },
+    {
+      "kodeverdi" : "FAKTURA",
+      "kodebeskrivelse" : "Faktura"
+    },
+    {
+      "kodeverdi" : "LYD",
+      "kodebeskrivelse" : "Lydfil"
+    },
+    {
+      "kodeverdi" : "VIDEO",
+      "kodebeskrivelse" : "Videofil"
+    },
+    {
+      "kodeverdi" : "PROTOKOLL",
+      "kodebeskrivelse" : "Protokoll"
+    },
+    {
+      "kodeverdi" : "VEDLEGG",
+      "kodebeskrivelse" : "Vedlegg"
+    }
+  ]
+}

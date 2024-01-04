@@ -1,0 +1,47 @@
+@startuml
+object "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.xsd" as arkivmeldingOpprett
+object "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering.xsd" as arkivmeldingOpprettKvittering
+object "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater.xsd" as arkivmeldingOppdater
+object "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.xsd" as dokumentobjektOpprett
+object "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering.xsd" as dokumentobjektOpprettKvittering
+object "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.xsd" as avskrivningOpprett
+object "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.xsd" as avskrivningSlett
+object "arkivstruktur.xsd" as arkivstruktur
+object "arkivstrukturMinimum.xsd" as arkivstrukturMinimum
+object "metadatakatalog.xsd" as metadatakatalog
+object arkivstrukturNoekler.xsd
+object "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.xsd" as dokumentfilHent
+object "no.ks.fiks.arkiv.v1.innsyn.registrering.hent.xsd" as registreringHent
+object "no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat.xsd" as registreringHentResultat
+object "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.xsd" as mappeHent
+object "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat.xsd" as mappeHentResultat
+object "sok.xsd" as sok
+object "sokeresultatMinimum.xsd" as sokeresultatMinimum
+object "sokeresultatNoekler.xsd" as sokeresultatNoekler
+object "sokeresultatUtvidet.xsd" as sokeresultatUtvidet
+
+
+arkivmeldingOpprett --> metadatakatalog
+arkivmeldingOpprettKvittering --> metadatakatalog
+arkivmeldingOppdater --> arkivmeldingOpprett
+arkivmeldingOppdater --> metadatakatalog
+avskrivningOpprett --> metadatakatalog
+avskrivningSlett --> metadatakatalog
+dokumentobjektOpprett --> metadatakatalog
+dokumentobjektOpprett --> arkivmeldingOpprett
+dokumentobjektOpprettKvittering --> metadatakatalog
+arkivstruktur --> metadatakatalog
+arkivstrukturMinimum --> metadatakatalog
+arkivstrukturNoekler.xsd --> metadatakatalog
+dokumentfilHent --> metadatakatalog
+registreringHent --> arkivstruktur
+registreringHent --> metadatakatalog
+mappeHent --> arkivstruktur
+mappeHent --> metadatakatalog
+sok --> arkivstruktur
+mappeHentResultat --> arkivstruktur
+sokeresultatMinimum --> arkivstruktur
+sokeresultatNoekler --> arkivstruktur
+sokeresultatUtvidet --> arkivstruktur
+
+@enduml

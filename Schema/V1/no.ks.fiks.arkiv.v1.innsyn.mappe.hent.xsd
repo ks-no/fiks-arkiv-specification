@@ -18,9 +18,16 @@
     <xs:element name="mappeHent" type="mappeHent"/>
 
     <xs:complexType name="mappeHent">
+        <xs:annotation>
+            <xs:documentation>
+                The optional "spraak" value must be a ISO 639-1 code. If "spraak" is not set, default language is a configuration choice in the archive.
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
             <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe"/>
             <xs:element name="inkluder" type="inkluder" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="spraak" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 

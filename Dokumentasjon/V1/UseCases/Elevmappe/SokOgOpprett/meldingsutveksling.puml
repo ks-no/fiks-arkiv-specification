@@ -1,0 +1,29 @@
+@startuml
+skinparam sequenceMessageAlign center 
+
+title "Eksempel på dialog mellom fagsystem og arkivsystem\nved opprette ny journalpost på elevmappe"
+
+
+participant Fagsystem as "Fagsystem"
+participant Arkivsystem as "Arkivsystem"
+
+...Fagsystem søker etter elevmappe (saksmappe)\nfor å se om mappen eksisterer...
+...Søk med søkeresultat minimum...
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.sok
+
+
+...Arkiv leverer tilbake søkeresultat\nfor elevmappen som ble etterspurt...
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum
+
+
+
+...Alternativ 1: Fagsystem oppretter saksmappe\n for elev hvis mappen ikke eksisterte ...
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering
+
+...Fagsystem oppretter journalposten på saksmappen ...
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering
+@enduml

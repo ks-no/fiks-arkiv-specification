@@ -1,0 +1,8 @@
+@startuml
+
+class registreringHentResultat {
+    +registrering : registrering
+    +journalpost : journalpost
+}
+
+@enduml

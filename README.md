@@ -5,23 +5,57 @@
 ## Protokollen
 
 ### Fiks Arkiv versjon 1 (V1)
+
 #### Meldingstyper
-Se filen `Schema/V1/meldingstyper/meldingstyper.json` for hvilke meldingstyper som finnes og hvordan de henger sammen.
+
+Se filen [`meldingstyper.json`](Schema/V1/meldingstyper/meldingstyper.json) for hvilke meldingstyper som er i denne protokollen og hvordan de henger sammen. Man kan også se på den genererte [UML-modellen](https://github.com/ks-no/fiks-arkiv-specification/blob/main/Schema/V1/meldingstyper/meldingstyper.svg) som viser hvordan meldingstypene henger sammen.
+Hver meldingstype som har en payload har et tilhørende xsd-skjema med samme navn. 
+
+#### Kodelister
+
+Under mappen kodelister ligger eksempler på kodelister i json-format samt diagram som gir oversikt over innhold.
 
 #### Skjema
 
-Skjemafilene ligger under `Schema/V1`  
+Skjemaene er i xsd-format og ligger under `Schema/V1`.
+Det er et skjema for hver meldingstype som har en payload og som har samme navn som meldingstype, samt delte skjema med fellest datatyper. 
 
 ##### Avhengighet mellom skjemaer
-![Avhengigheter mellom schemas](deps.png)
+
+![Avhengigheter mellom schemas](Dokumentasjon/V1/SchemaModels/xsd-schemas-overview.png)
+
+
+#### Distribuerte bibliotek for Fiks Arkiv
+
+KS leverer også bibliotek for Java og .NET som inneholder skjemaene, meldingstyper.json filen, hjelpeklasser og genererte modeller fra skjema.
+
+##### Java
+Maven Central: https://central.sonatype.com/artifact/no.ks.fiks/fiks-arkiv
+
+##### .NET
+Nuget.org: https://www.nuget.org/packages/KS.Fiks.Arkiv.Models.V1
+
 
 ## Dokumentasjon
+
+* ### [Wiki - dokumentasjon av Fiks-Arkiv protokollen](https://github.com/ks-no/fiks-arkiv-specification/wiki)
+
+* ### [Fiks plattformen og Fiks-Arkiv - developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
+
+* ### [Diagrammer](Dokumentasjon/V1)
+
 For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki), på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/) i tillegg til det som er her.
 
-I mappen [Dokumentasjon](Dokumentasjon) ligger modeller og diagrammer for hver versjon av protokollen. Modeller er stort sett utarbeidet vha PlantUML.
+I mappen [Dokumentasjon](Dokumentasjon) i dette repet ligger modeller og **diagrammer** for hver versjon av protokollen. Modeller er stort sett utarbeidet vha PlantUML.
 Kildekoden i PlantUML for modellene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
 
-#### [Direkte til dokumentasjon for V1 her](Dokumentasjon/V1) 
+
+
+### Generering av diagrammer
+Vi bruker [PlantUML](https://plantuml.com/) for å tegne diagrammer som så blir eksportert til png og svg filer. For eksempel bruker vi PlantUML til å generere oversikten over sammenhengen mellom meldingstyper ut i fra `meldingstyper.json` filen.
+Vi genererer også PlantUML kode fra xsd filene for å vise datamodellen vha PHP biblioteket **[xsdata](https://pypi.org/project/xsdata-plantuml/)**
+
+For å generere nye modeller i prosjektet kan man kjøre `generate-uml.sh` scriptet.
 
 
 

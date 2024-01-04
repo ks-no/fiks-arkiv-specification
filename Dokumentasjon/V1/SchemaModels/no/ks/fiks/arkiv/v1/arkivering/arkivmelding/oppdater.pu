@@ -1,0 +1,296 @@
+@startuml
+
+class arkivmeldingOppdatering {
+    +mappeOppdateringer : mappeOppdatering[]
+    +registreringOppdateringer : registreringOppdatering[]
+    +dokumentbeskrivelseOppdateringer : dokumentbeskrivelseOppdatering[]
+}
+class byggidentOppdatering {
+    +opprinneligBygningsnummer : int
+    +bygningsnummer : int
+    +endringsloepenummer : int
+}
+class byggidentOppdateringer {
+    +Oppdatering : byggidentOppdatering[]
+    +Slett : byggidentSlett[]
+    +Ny : byggident[]
+}
+class byggidentSlett {
+    +bygningsnummer : int
+}
+class dokumentbeskrivelseOppdatering {
+    +systemID : systemID
+    +dokumentstatus : dokumentstatus
+    +tittel : string
+    +beskrivelse : string
+    +forfatter : string[]
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +tilknyttetRegistreringSom : tilknyttetRegistreringSom
+    +dokumentnummer : int
+    +tilknyttetDato : dateTime
+    +tilknyttetAv : string
+    +partOppdateringer : partOppdateringer
+    +skjerming : skjerming
+    +gradering : gradering
+}
+class innstillingOppdatering {
+    +oppdateringstype : slettEllerOppdater
+    +innstilling : moetesaksBeskrivelse
+}
+class journalpostOppdatering {
+    +journalposttype : journalposttype
+    +journalstatus : journalstatus
+    +journaldato : date
+    +dokumentetsDato : date
+    +mottattDato : dateTime
+    +sendtDato : dateTime
+    +forfallsdato : date
+    +offentlighetsvurdertDato : date
+    +journalenhet : string
+    +dokumentflyt : dokumentflyt[]
+    +presedens : presedens[]
+    +avskrivningsdato : date
+}
+journalpostOppdatering *- registreringOppdatering
+class klassifikasjonOppdatering {
+    +referanseTilKlassifikasjon : referanseTilKlassifikasjon
+    +tittel : string
+    +erSkjermet : boolean
+}
+class klassifikasjonOppdateringer {
+    +oppdatering : klassifikasjonOppdatering[]
+    +slett : klassifikasjonSlett[]
+    +ny : klassifikasjon[]
+}
+class klassifikasjonSlett {
+    +klassifikasjonssystemID : string
+}
+class korrespondansepartOppdatering {
+    +korrespondansepartID : string
+    +korrespondanseparttype : korrespondanseparttype
+    +korrespondansepartNavn : string
+    +organisasjonid : string
+    +personid : string
+    +postadresse : string[]
+    +postnummer : string
+    +poststed : string
+    +land : string
+    +epostadresse : string
+    +telefonnummer : string[]
+    +kontaktperson : string
+    +administrativEnhet : administrativEnhet
+    +saksbehandler : saksbehandler
+    +erSkjermet : boolean
+    +erPersonnavn : string
+    +forsendelsesmaate : string
+    +deresReferanse : string
+}
+class korrespondansepartOppdateringer {
+    +oppdatering : korrespondansepartOppdatering[]
+    +slett : korrespondansepartSlett[]
+    +ny : korrespondansepart[]
+}
+class korrespondansepartSlett {
+    +korrespondansepartID : string
+}
+class kryssreferanseOppdatering {
+    +kryssreferanseID : string
+    +referanseTilMappe : referanseTilMappe
+    +referanseTilRegistrering : referanseTilRegistrering
+    +referanseTilDokumentbeskrivelse : referanseTilDokumentbeskrivelse
+}
+class kryssreferanseOppdateringer {
+    +oppdatering : kryssreferanseOppdatering[]
+    +slett : kryssreferanseSlett[]
+    +ny : kryssreferanse[]
+}
+class kryssreferanseSlett {
+    +kryssreferanseID : string
+}
+class mappeOppdatering {
+    +referanseTilMappe : referanseTilMappe
+    +tittel : string
+    +offentligTittel : string
+    +beskrivelse : string
+    +noekkelord : string[]
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +avsluttetDato : dateTime
+    +avsluttetAv : string
+    +arkivdel : kode
+    +virksomhetsspesifikkeMetadata : anyType
+    +partOppdateringer : partOppdateringer
+    +kryssreferanseOppdateringer : kryssreferanseOppdateringer
+    +merknadOppdateringer : merknadOppdateringer
+    +skjerming : skjerming
+    +gradering : gradering
+    +klassifikasjonOppdateringer : klassifikasjonOppdateringer
+    +referanseEksternNoekkel : eksternNoekkel
+    +mappetype : kode
+}
+class matrikkelnummerOppdateringer {
+    +ny : matrikkelnummer[]
+    +slett : matrikkelnummerSlett[]
+}
+class matrikkelnummerSlett {
+    +kommunenummer : string
+    +gardsnummer : int
+    +bruksnummer : int
+    +festenummer : int
+    +seksjonsnummer : int
+}
+class merknadOppdatering {
+    +merknadID : string
+    +merknadstekst : string
+    +merknadstype : merknadstype
+    +merknadsdato : dateTime
+    +merknadRegistrertAv : string
+    +erSkjermet : boolean
+}
+class merknadOppdateringer {
+    +oppdatering : merknadOppdatering[]
+    +slett : merknadSlett[]
+    +ny : merknad[]
+}
+class merknadSlett {
+    +merknadID : string
+}
+class moetedeltakerOppdatering {
+    +personid : string
+    +navn : string
+    +funksjon : moetedeltakerFunksjon
+    +representerer : representerer
+}
+class moetedeltakerOppdateringer {
+    +oppdatering : moetedeltakerOppdatering[]
+    +slett : moetedeltakerSlett[]
+    +ny : moetedeltaker[]
+}
+class moetedeltakerSlett {
+    +personid : string
+}
+class moetemappeOppdatering {
+    +moetenummer : string
+    +utvalg : utvalg
+    +moetedato : date
+    +moetested : string
+    +referanseForrigeMoete : string
+    +referanseNesteMoete : string
+    +moetedeltakerOppdateringer : moetedeltakerOppdateringer[]
+}
+moetemappeOppdatering *- mappeOppdatering
+class moetesakOppdatering {
+    +moetesakstype : moetesakstype
+    +moetesaksaar : int
+    +moetesakssekvensnummer : int
+    +administrativEnhet : administrativEnhet
+    +utredning : utredningOppdatering
+    +innstillingOppdatering : innstillingOppdatering
+    +vedtakOppdatering : vedtakOppdatering
+}
+moetesakOppdatering *- registreringOppdatering
+class partOppdatering {
+    +partID : string
+    +partNavn : string
+    +partRolle : partRolle
+    +organisasjonid : string
+    +personid : string
+    +postadresse : string[]
+    +postnummer : string
+    +poststed : string
+    +land : string
+    +epostadresse : string
+    +telefonnummer : string[]
+    +kontaktperson : string
+    +virksomhetsspesifikkeMetadata : anyType
+    +erSkjermet : boolean
+    +erPersonnavn : string
+}
+class partOppdateringer {
+    +oppdatering : partOppdatering[]
+    +slett : partSlett[]
+    +ny : part[]
+}
+class partSlett {
+    +partID : string
+}
+class planidentOppdatering {
+    +planidentifikasjon : string
+    +kommunenummer : string
+    +fylkesnummer : string
+    +landkode : string
+}
+class planidentOppdateringer {
+    +oppdatering : planidentOppdatering[]
+    +slett : planidentSlett[]
+    +ny : planident[]
+}
+class planidentSlett {
+    +planidentifikasjon : string
+}
+class punktOppdatering {
+    +punktID : string
+    +koordinatsystem : koordinatsystem
+    +x : double
+    +y : double
+    +z : double
+}
+class punktOppdateringer {
+    +oppdatering : punktOppdatering[]
+    +slett : punktSlett[]
+    +ny : punkt[]
+}
+class punktSlett {
+    +punktID : string
+}
+class registreringOppdatering {
+    +referanseTilRegistrering : referanseTilRegistrering
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +arkivertDato : dateTime
+    +arkivertAv : string
+    +referanseForelderMappe : referanseTilMappe
+    +partOppdateringer : partOppdateringer
+    +skjerming : skjerming
+    +gradering : gradering
+    +tittel : string
+    +offentligTittel : string
+    +beskrivelse : string
+    +noekkelord : string[]
+    +forfatter : string[]
+    +virksomhetsspesifikkeMetadata : anyType
+    +merknadOppdateringer : merknadOppdateringer
+    +korrespondansepartOppdateringer : korrespondansepartOppdateringer
+    +klassifikasjonOppdateringer : klassifikasjonOppdateringer
+    +referanseEksternNoekkel : eksternNoekkel
+}
+class saksmappeOppdatering {
+    +saksdato : date
+    +administrativEnhet : administrativEnhet
+    +saksansvarlig : saksansvarlig
+    +saksstatus : saksstatus
+    +presedens : presedens[]
+    +matrikkelnummerOppdateringer : matrikkelnummerOppdateringer
+    +byggidentOppdateringer : byggidentOppdateringer
+    +planidentOppdateringer : planidentOppdateringer
+    +punktOppdateringer : punktOppdateringer
+    +adresse : adresse[]
+}
+saksmappeOppdatering *- mappeOppdatering
+class utredningOppdatering {
+    +oppdateringstype : slettEllerOppdater
+    +saksbeskrivelse : moetesaksBeskrivelse
+    +innstilling : moetesaksBeskrivelse
+    +utredningsdokumenter : dokumentbeskrivelse[]
+}
+class vedtakOppdatering {
+    +oppdateringstype : slettEllerOppdater
+    +vedtakstekst : moetesaksBeskrivelse
+    +votering : votering[]
+    +behandlingsprotokoll : behandlingsprotokoll
+    +vedtaksdokumenter : dokumentbeskrivelse[]
+    +dato : dateTime
+}
+
+@enduml

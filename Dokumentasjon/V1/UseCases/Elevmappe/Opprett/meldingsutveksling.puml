@@ -1,0 +1,14 @@
+@startuml
+skinparam sequenceMessageAlign center 
+
+title "Eksempel på dialog mellom fagsystem og arkivsystem\nved opprette ny journalpost på elevmappe"
+
+
+participant Fagsystem as "Fagsystem"
+participant Arkivsystem as "Arkivsystem"
+
+...Fagsystem oppretter journalposten på eksisterende saksmappe ...
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering
+@enduml

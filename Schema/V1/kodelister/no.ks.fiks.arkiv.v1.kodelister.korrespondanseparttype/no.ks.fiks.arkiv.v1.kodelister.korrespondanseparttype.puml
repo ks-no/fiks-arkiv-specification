@@ -1,0 +1,38 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "korrespondanseparttype",
+  "versjon": "v1",
+  "definisjon": "Type korrespondansepart",
+  "kodeliste": [
+    {
+      "kodeverdi" : "EA",
+      "kodebeskrivelse" : "Avsender"
+    },
+    {
+      "kodeverdi" : "EM",
+      "kodebeskrivelse" : "Mottaker"
+    },
+    {
+      "kodeverdi" : "EK",
+      "kodebeskrivelse" : "Kopimottaker"
+    },
+    {
+      "kodeverdi" : "GM",
+      "kodebeskrivelse" : "Gruppemottaker"
+    },
+    {
+      "kodeverdi" : "IA",
+      "kodebeskrivelse" : "Intern avsender"
+    },
+    {
+      "kodeverdi" : "IM",
+      "kodebeskrivelse" : "Intern mottaker"
+    },
+    {
+      "kodeverdi" : "IK",
+      "kodebeskrivelse" : "Intern kopimottaker"
+    }
+  ]
+}
+@endjson

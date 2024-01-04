@@ -1,0 +1,7 @@
+@startuml
+
+class serverfeil {
+}
+serverfeil *- feilmeldingBase
+
+@enduml

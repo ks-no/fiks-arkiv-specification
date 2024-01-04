@@ -2,10 +2,11 @@
 <xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/opprett/kvittering/v1"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           xmlns:feilmelding="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/feil/feilmelding/v1"
            targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/opprett/kvittering/v1"
            elementFormDefault="qualified">
-    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
-               schemaLocation="./metadatakatalog.xsd"/>
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/feil/feilmelding/v1" schemaLocation="./feilmeldingBase.xsd"/>
     
     <xs:annotation>
         <xs:documentation>
@@ -18,12 +19,13 @@
 
     <xs:complexType name="arkivmeldingKvittering">
         <xs:sequence>
-            <xs:element name="system" type="xs:string"/>
-            <xs:element name="tidspunkt" type="xs:dateTime"/>
             <xs:choice>
-                <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0"
-                            maxOccurs="unbounded"/>
+                <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" />
+                <xs:element name="mappeFeilet" type="feilmelding:feilmeldingBase" minOccurs="0" />
+            </xs:choice>
+            <xs:choice>
+                <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0" />
+                <xs:element name="registreringFeilet" type="feilmelding:feilmeldingBase" minOccurs="0" />
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
@@ -38,11 +40,7 @@
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
             <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
-            <xs:choice>
-                <xs:element name="mappeKvittering" type="mappeKvittering" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="registreringKvittering" type="registreringKvittering" minOccurs="0"
-                            maxOccurs="unbounded"/>
-            </xs:choice>
+            <xs:element name="opprettetEllerEksisterende" type="opprettetEllerEksisterende" />
         </xs:sequence>
     </xs:complexType>
 
@@ -69,6 +67,7 @@
                         maxOccurs="unbounded"/>
             <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="opprettetEllerEksisterende" type="opprettetEllerEksisterende" />
         </xs:sequence>
     </xs:complexType>
 
@@ -93,6 +92,7 @@
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+            <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer" minOccurs="0"/>
             <xs:element name="dokumentobjekt" type="dokumentobjektKvittering" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
@@ -100,9 +100,18 @@
     <xs:complexType name="dokumentobjektKvittering">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer" minOccurs="0"/>
+            <xs:element name="variantformat" type="n5mdk:variantformat" minOccurs="0"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:simpleType name="opprettetEllerEksisterende" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Opprettet" />
+            <xs:enumeration value="Eksisterende" />
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
