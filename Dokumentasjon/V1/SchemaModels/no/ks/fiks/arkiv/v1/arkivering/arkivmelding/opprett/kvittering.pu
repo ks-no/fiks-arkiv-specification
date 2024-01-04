@@ -54,6 +54,7 @@ class registreringKvittering {
     +dokumentbeskrivelseKvittering : dokumentbeskrivelseKvittering[]
     +registreringsID : string
     +referanseEksternNoekkel : eksternNoekkel
+    +opprettetEllerEksisterende : opprettetEllerEksisterende
 }
 class saksmappeKvittering {
     +saksaar : int
