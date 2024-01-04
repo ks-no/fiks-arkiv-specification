@@ -1,14 +1,14 @@
 @startuml
 skinparam sequenceMessageAlign center 
 
-title "Eksempel på dialog mellom fagsystem og arkivsystem\nved opprette ny journalpost på elevmappe"
+title "Eksempel på dialog mellom fagsystem og arkivsystem\nved opprette ny journalpost på elevmappe.\n Saksmappe og journalpost sendes alltid inn sammen"
 
 
 participant Fagsystem as "Fagsystem"
 participant Arkivsystem as "Arkivsystem"
 
 ... Fagsystem oppretter journalposten på saksmappen ...
-... Arkivmelding kan inneholde saksmappe + journalpost. \n Saksmappe blir opprettet hvis den ikke eksisterer fra før  \n  og kvittering viser om mappe ble opprettet eller ikke ...
+... Arkivmelding inneholder saksmappe + journalpost. \n Saksmappe blir opprettet hvis den ikke eksisterer fra før  \n  og kvittering viser om mappe ble opprettet eller ikke ...
 Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett
 Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.mottatt
 Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.kvittering
