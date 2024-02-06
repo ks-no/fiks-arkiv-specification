@@ -19,6 +19,9 @@ xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum.xsd --output pl
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 
+echo "Using python3 to prettify generated plantuml file(s)"
+python3 ./prettify-plantuml.py
+
 echo "Generating png files from puml and pu files"
 plantuml "Dokumentasjon/**/*.puml"
 plantuml "Dokumentasjon/**/*.pu"

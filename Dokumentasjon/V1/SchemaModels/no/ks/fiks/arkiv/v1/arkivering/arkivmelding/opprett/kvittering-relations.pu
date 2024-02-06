@@ -1,0 +1,79 @@
+@startuml
+
+class arkivmeldingKvittering {
+    +mappeKvittering : mappeKvittering
+    +mappeFeilet : feilmeldingBase
+    +registreringKvittering : registreringKvittering
+    +registreringFeilet : feilmeldingBase
+}
+arkivmeldingKvittering -- mappeKvittering
+arkivmeldingKvittering -- feilmeldingBase
+arkivmeldingKvittering -- registreringKvittering
+class dokumentbeskrivelseKvittering {
+    +systemID : systemID
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +dokumentnummer : int
+    +dokumentobjekt : dokumentobjektKvittering[]
+}
+dokumentbeskrivelseKvittering -- dokumentobjektKvittering
+class dokumentobjektKvittering {
+    +systemID : systemID
+    +versjonsnummer : int
+    +variantformat : variantformat
+    +opprettetDato : dateTime
+    +opprettetAv : string
+}
+dokumentobjektKvittering -- variantformat
+class journalpostKvittering {
+    +journalaar : int
+    +journalsekvensnummer : int
+    +journalpostnummer : int
+    +journalposttype : journalposttype
+    +journalstatus : journalstatus
+    +journaldato : date
+    +forfallsdato : date
+}
+journalpostKvittering *- registreringKvittering
+journalpostKvittering -- journalposttype
+journalpostKvittering -- journalstatus
+class mappeKvittering {
+    +systemID : systemID
+    +mappeID : string
+    +referanseForeldermappe : referanseTilMappe
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +avsluttetDato : dateTime
+    +avsluttetAv : string
+    +referanseEksternNoekkel : eksternNoekkel
+    +opprettetEllerEksisterende : opprettetEllerEksisterende
+}
+mappeKvittering -- referanseTilMappe
+mappeKvittering -- eksternNoekkel
+mappeKvittering -- opprettetEllerEksisterende
+enum opprettetEllerEksisterende {
+    Opprettet = Opprettet
+    Eksisterende = Eksisterende
+}
+class registreringKvittering {
+    +systemID : systemID
+    +opprettetDato : dateTime
+    +opprettetAv : string
+    +arkivertDato : dateTime
+    +arkivertAv : string
+    +dokumentbeskrivelseKvittering : dokumentbeskrivelseKvittering[]
+    +registreringsID : string
+    +referanseEksternNoekkel : eksternNoekkel
+    +opprettetEllerEksisterende : opprettetEllerEksisterende
+}
+registreringKvittering -- dokumentbeskrivelseKvittering
+registreringKvittering -- eksternNoekkel
+registreringKvittering -- opprettetEllerEksisterende
+class saksmappeKvittering {
+    +saksaar : int
+    +sakssekvensnummer : int
+    +saksdato : date
+}
+saksmappeKvittering *- mappeKvittering
+
+@enduml

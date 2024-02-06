@@ -42,7 +42,7 @@ Nuget.org: https://www.nuget.org/packages/KS.Fiks.Arkiv.Models.V1
 
 * ### [Fiks plattformen og Fiks-Arkiv - developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
 
-* ### [Diagrammer](Dokumentasjon/V1)
+* ### [Diagrammer for skjema (PlantUML)](Dokumentasjon/V1)
 
 For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki), på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/) i tillegg til det som er her.
 
