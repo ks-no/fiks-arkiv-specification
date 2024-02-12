@@ -1,0 +1,41 @@
+@startuml
+
+class resultatListeMinimum {
+    +resultatMinimum : resultatMinimum[]
+}
+resultatListeMinimum -- resultatMinimum
+class resultatMinimum {
+    +mappe : mappeMinimum
+    +saksmappe : saksmappeMinimum
+    +registrering : registreringMinimum
+    +journalpost : journalpostMinimum
+    +journalpostMedSaksmappe : journalpostMedSaksmappeMinimum
+    +dokumentbeskrivelse : dokumentbeskrivelseMinimum
+}
+resultatMinimum -- mappeMinimum
+resultatMinimum -- saksmappeMinimum
+resultatMinimum -- registreringMinimum
+resultatMinimum -- journalpostMinimum
+resultatMinimum -- journalpostMedSaksmappeMinimum
+resultatMinimum -- dokumentbeskrivelseMinimum
+
+enum resultatTypeMinimum {
+    mappe = mappe
+    saksmappe = saksmappe
+    registrering = registrering
+    journalpost = journalpost
+    journalpostMedSaksmappe = journalpostMedSaksmappe
+    dokumentbeskrivelse = dokumentbeskrivelse
+}
+class sokeresultatMinimum {
+    +system : string
+    +take : int
+    +skip : int
+    +count : int
+    +resultattype : resultatTypeMinimum
+    +resultatListe : resultatListeMinimum
+}
+sokeresultatMinimum -- resultatTypeMinimum
+sokeresultatMinimum -- resultatListeMinimum
+
+@enduml

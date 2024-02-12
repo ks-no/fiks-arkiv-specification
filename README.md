@@ -38,17 +38,16 @@ Nuget.org: https://www.nuget.org/packages/KS.Fiks.Arkiv.Models.V1
 
 ## Dokumentasjon
 
-* ### [Wiki - dokumentasjon av Fiks-Arkiv protokollen](https://github.com/ks-no/fiks-arkiv-specification/wiki)
+### [Wiki - utfyllende dokumentasjon av Fiks-Arkiv protokollen](https://github.com/ks-no/fiks-arkiv-specification/wiki)
+For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki for Fiks Arkiv](https://github.com/ks-no/fiks-arkiv-specification/wiki)
 
-* ### [Fiks plattformen og Fiks-Arkiv - developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
+### [Fiks plattformen og Fiks-Arkiv - developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
+For informasjon om Fiks plattformen og Fiks Arkiv i den sammenheng kan man lese mer på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
 
-* ### [Diagrammer for skjema (PlantUML)](Dokumentasjon/V1)
+### [Brukstilfeller, meldinger og tilhørende skjema](Dokumentasjon/V1/README.md)
 
-For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki](https://github.com/ks-no/fiks-arkiv-specification/wiki), på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/) i tillegg til det som er her.
-
-I mappen [Dokumentasjon](Dokumentasjon) i dette repet ligger modeller og **diagrammer** for hver versjon av protokollen. Modeller er stort sett utarbeidet vha PlantUML.
-Kildekoden i PlantUML for modellene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
-
+I mappen [Dokumentasjon](Dokumentasjon/V1/README.md) i dette repoet finner man dokumentasjon og **diagrammer** for denne versjonen av protokollen. Diagrammene er stort sett utarbeidet vha PlantUML.
+Kildekoden i PlantUML for diagrammene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
 
 
 ### Generering av diagrammer

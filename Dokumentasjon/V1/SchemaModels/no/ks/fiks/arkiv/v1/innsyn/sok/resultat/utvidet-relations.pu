@@ -1,0 +1,41 @@
+@startuml
+
+class resultat {
+    +mappe : mappe
+    +saksmappe : saksmappe
+    +registrering : registrering
+    +journalpost : journalpost
+    +journalpostMedSaksmappe : journalpostMedSaksmappe
+    +dokumentbeskrivelse : dokumentbeskrivelse
+}
+resultat -- mappe
+resultat -- saksmappe
+resultat -- registrering
+resultat -- journalpost
+resultat -- journalpostMedSaksmappe
+resultat -- dokumentbeskrivelse
+
+class resultatListe {
+    +resultat : resultat[]
+}
+resultatListe -- resultat
+enum resultatType {
+    mappe = mappe
+    saksmappe = saksmappe
+    registrering = registrering
+    journalpost = journalpost
+    journalpostMedSaksmappe = journalpostMedSaksmappe
+    dokumentbeskrivelse = dokumentbeskrivelse
+}
+class sokeresultat {
+    +system : string
+    +take : int
+    +skip : int
+    +count : int
+    +resultattype : resultatType
+    +resultatListe : resultatListe
+}
+sokeresultat -- resultatType
+sokeresultat -- resultatListe
+
+@enduml

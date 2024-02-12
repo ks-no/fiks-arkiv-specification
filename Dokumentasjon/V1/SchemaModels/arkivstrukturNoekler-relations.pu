@@ -1,0 +1,35 @@
+@startuml
+
+class dokumentbeskrivelseNoekler {
+    +systemID : systemID
+}
+dokumentbeskrivelseNoekler -- systemID
+class journalpostNoekler {
+    +journalaar : int
+    +journalsekvensnummer : int
+    +journalpostnummer : int
+}
+journalpostNoekler *- registreringNoekler
+class mappeNoekler {
+    +systemID : systemID
+    +mappeID : string
+    +referanseEksternNoekkel : eksternNoekkel
+}
+mappeNoekler -- systemID
+mappeNoekler -- eksternNoekkel
+class partNoekler {
+    +partID : string
+}
+class registreringNoekler {
+    +systemID : systemID
+    +referanseEksternNoekkel : eksternNoekkel
+}
+registreringNoekler -- systemID
+registreringNoekler -- eksternNoekkel
+class saksmappeNoekler {
+    +saksnummer : saksnummer
+}
+saksmappeNoekler *- mappeNoekler
+saksmappeNoekler -- saksnummer
+
+@enduml

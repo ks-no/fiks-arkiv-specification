@@ -79,11 +79,6 @@ korrespondanseparttype *- kode
 class merknadstype {
 }
 merknadstype *- kode
-enum moeteStemme {
-    Ja = Ja
-    Nei = Nei
-    Blankt = Blankt
-}
 class moetedeltaker {
     +identifikator : identifikatorer
     +funksjon : moetedeltakerFunksjon

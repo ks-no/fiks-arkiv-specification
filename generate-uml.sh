@@ -18,6 +18,11 @@ xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.xsd --output plantuml --package 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 xsdata Schema/V1/no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/arkivstruktur.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/arkivstrukturMinimum.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/arkivstrukturNoekler.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/feilmeldingBase.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
+xsdata Schema/V1/metadatakatalog.xsd --output plantuml --package Dokumentasjon/V1/SchemaModels 
 
 echo "Using python3 to prettify generated plantuml file(s)"
 python3 ./prettify-plantuml.py
