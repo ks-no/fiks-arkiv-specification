@@ -188,7 +188,7 @@
             </xs:element>
             <xs:element name="referanseDokumentfil" type="n5mdk:referanseDokumentfil" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>URL som kan brukes for å hente filen. Vil normalt ikke inneholde tegn som komma, æøå etc. som gjerne er med i filnavn.</xs:documentation>
+                    <xs:documentation>Dette er enten filnavn slik filen heter i meldingen eller URL som kan brukes for å hente filen. Vil normalt ikke inneholde tegn som komma, æøå etc. som gjerne er med i filnavn. Dette filnavnet vil kunne være forskjellig fra "filnavn" attributtet i ekelte tilfeller, f.eks. hvor meldingen inneholder flere filer med samme navn.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="sjekksum" type="n5mdk:sjekksum" minOccurs="0"/>
