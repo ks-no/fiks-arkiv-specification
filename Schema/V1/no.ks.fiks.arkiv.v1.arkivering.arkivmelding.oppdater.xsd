@@ -299,7 +299,7 @@
 
     <xs:complexType name="klassifikasjonSlett">
         <xs:sequence>
-            <xs:element name="klassifikasjonssystemID" type="n5mdk:klassifikasjonssystemID"/>
+            <xs:element name="referanseTilKlassifikasjon" type="n5mdk:referanseTilKlassifikasjon"/>
         </xs:sequence>
     </xs:complexType>
 
