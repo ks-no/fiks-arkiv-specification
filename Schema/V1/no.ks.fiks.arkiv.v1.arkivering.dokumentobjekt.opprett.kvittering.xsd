@@ -17,7 +17,7 @@
 
     <xs:complexType name="dokumentobjektOpprettKvittering">
         <xs:annotation>
-            <xs:documentation>Kvittering for lagt til dokumenobjekt til en dokumentbeskrivelse</xs:documentation>
+            <xs:documentation>Kvittering for lagt til dokumentobjekt til en dokumentbeskrivelse</xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
