@@ -160,7 +160,11 @@
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
             <xs:element name="dokumentmedium" type="n5mdk:dokumentmedium" minOccurs="0"/>
             <xs:element name="tilknyttetRegistreringSom" type="n5mdk:tilknyttetRegistreringSom"/>
-            <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer" minOccurs="0"/>
+            <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Selv om "dokumentnummer" ikke er påkrevd, så er det viktig å sette der hvor man har flere dokumentbeskrivelser. "dokumentnummer" vil være det man knytter opp mot det man får tilbake i "dokumentbeskrivelseKvittering" i kvittering-melding</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="tilknyttetDato" type="n5mdk:tilknyttetDato" minOccurs="0"/>
             <xs:element name="tilknyttetAv" type="n5mdk:tilknyttetAv" minOccurs="0"/>
             <xs:element name="part" type="part" minOccurs="0" maxOccurs="unbounded"/>
