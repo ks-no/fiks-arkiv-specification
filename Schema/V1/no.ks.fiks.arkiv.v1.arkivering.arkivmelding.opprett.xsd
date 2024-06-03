@@ -183,8 +183,16 @@
             <xs:element name="format" type="n5mdk:format" minOccurs="0"/>
             <xs:element name="formatDetaljer" type="n5mdk:formatDetaljer" minOccurs="0"/>
             <xs:element name="mimeType" type="xs:string" minOccurs="0"/>
-            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
-            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Feltet er ikke påkrevd og det kan ikke garanteres at det blir tatt med i betraktning av arkivet. Arkivet kan velge å bruke eget og dermed vil det være det man får tilbake i kvitteringen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Feltet er ikke påkrevd og det kan ikke garanteres at det blir tatt med i betraktning av arkivet. Arkivet kan velge å bruke eget og dermed vil det være det man får tilbake i kvitteringen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="filnavn" type="xs:string">
                 <xs:annotation>
                     <xs:documentation>Det opprinnelige filnavnet som gjerne skal brukes hvis filen lastes ned. Kan inneholde alle lovlige tegn for filnavn. Egnet også for visning.</xs:documentation>
