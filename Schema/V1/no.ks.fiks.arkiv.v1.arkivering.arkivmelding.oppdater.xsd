@@ -31,7 +31,7 @@
             <xs:element name="systemID" type="n5mdk:systemID" />
             <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
-            <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
+            <xs:element name="beskrivelse" type="beskrivelseOppdateringer" minOccurs="0"/>
             <xs:element name="forfatter" type="n5mdk:forfatter" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
@@ -40,8 +40,8 @@
             <xs:element name="tilknyttetDato" type="n5mdk:tilknyttetDato" minOccurs="0"/>
             <xs:element name="tilknyttetAv" type="n5mdk:tilknyttetAv" minOccurs="0"/>
             <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
-            <xs:element name="skjerming" type="arkivmelding:skjerming" minOccurs="0"/>
-            <xs:element name="gradering" type="arkivmelding:gradering" minOccurs="0"/>
+            <xs:element name="skjerming" type="skjermingOppdateringer" minOccurs="0"/>
+            <xs:element name="gradering" type="graderingOppdateringer" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -57,14 +57,7 @@
             <xs:element name="avsluttetDato" type="n5mdk:avsluttetDato" minOccurs="0"/>
             <xs:element name="avsluttetAv" type="n5mdk:avsluttetAv" minOccurs="0"/>
             <xs:element name="arkivdel" type="n5mdk:kode" minOccurs="0"/>
-            <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>
-                        When updating virksomhetsspesifikkeMetadata, all data must be sent. Both updated and unchanged data.
-                        The xs:anyType leaves no way of identifying what is updated and what is unchanged.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element name="virksomhetsspesifikkeMetadataOppdateringer" type="virksomhetsspesifikkeMetadataOppdateringer" minOccurs="0"/>
             <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
             <xs:element name="kryssreferanseOppdateringer" type="kryssreferanseOppdateringer" minOccurs="0"/>
             <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
@@ -167,7 +160,7 @@
             <xs:element name="epostadresse" type="n5mdk:epostadresse" minOccurs="0"/>
             <xs:element name="telefonnummer" type="n5mdk:telefonnummer" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kontaktperson" type="n5mdk:kontaktperson" minOccurs="0"/>
-            <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0"/>
+            <xs:element name="virksomhetsspesifikkeMetadataOppdateringer" type="virksomhetsspesifikkeMetadataOppdateringer" minOccurs="0"/>
             <xs:element name="erSkjermet" type="n5mdk:erSkjermet" minOccurs="0"/>
             <xs:element name="erPersonnavn" type="n5mdk:erPersonnavn" minOccurs="0"/>
         </xs:sequence>
@@ -192,17 +185,10 @@
             <xs:element name="gradering" type="graderingOppdateringer" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
-            <xs:element name="beskrivelse" type="n5mdk:beskrivelse" minOccurs="0"/>
-            <xs:element name="noekkelord" type="n5mdk:noekkelord" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="beskrivelse" type="beskrivelseOppdateringer" minOccurs="0"/>
+            <xs:element name="noekkelord" type="noekkelordOppdateringer" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="forfatter" type="forfatterOppdateringer" minOccurs="0"/>
-            <xs:element name="virksomhetsspesifikkeMetadata" type="xs:anyType" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>
-                        When updating virksomhetsspesifikkeMetadata, all data must be sent. Both updated and unchanged data.
-                        The xs:anyType leaves no way of identifying what is updated and what is unchanged.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element name="virksomhetsspesifikkeMetadataOppdateringer" type="virksomhetsspesifikkeMetadataOppdateringer" minOccurs="0"/>
             <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
             <xs:element name="korrespondansepartOppdateringer" type="korrespondansepartOppdateringer" minOccurs="0"/>
             <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
@@ -559,6 +545,20 @@
                 <xs:element name="vedtaksdokumenter" type="arkivmelding:dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="dato" type="n5mdk:vedtaksdato" minOccurs="0"/>            
             </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="virksomhetsspesifikkeMetadataOppdateringer">
+        <xs:annotation>
+            <xs:documentation>
+                Deleting this object is done by using the "slett" elment and setting it to true.
+                Use "oppdatering" for update and adding. When updating virksomhetsspesifikkeMetadata, all data must be sent. Both updated, new and unchanged data.
+                The xs:anyType leaves no way of identifying what is updated, what is new and what is unchanged.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="slett" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="oppdatering" type="xs:anyType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
