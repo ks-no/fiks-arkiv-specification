@@ -32,7 +32,7 @@
             <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="beskrivelseOppdateringer" minOccurs="0"/>
-            <xs:element name="forfatter" type="n5mdk:forfatter" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="forfatterOppdateringer" type="forfatterOppdateringer" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
             <xs:element name="tilknyttetRegistreringSom" type="n5mdk:tilknyttetRegistreringSom"/>
@@ -187,7 +187,7 @@
             <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="beskrivelseOppdateringer" minOccurs="0"/>
             <xs:element name="noekkelord" type="noekkelordOppdateringer" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="forfatter" type="forfatterOppdateringer" minOccurs="0"/>
+            <xs:element name="forfatterOppdateringer" type="forfatterOppdateringer" minOccurs="0"/>
             <xs:element name="virksomhetsspesifikkeMetadataOppdateringer" type="virksomhetsspesifikkeMetadataOppdateringer" minOccurs="0"/>
             <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
             <xs:element name="korrespondansepartOppdateringer" type="korrespondansepartOppdateringer" minOccurs="0"/>
@@ -552,13 +552,14 @@
         <xs:annotation>
             <xs:documentation>
                 Deleting this object is done by using the "slett" elment and setting it to true.
-                Use "oppdatering" for update and adding. When updating virksomhetsspesifikkeMetadata, all data must be sent. Both updated, new and unchanged data.
+                Use "ny" for adding to existing virksomhetsspesifikkeMetadata.
+                When updating virksomhetsspesifikkeMetadata, delete first with "slett" then use "ny". All existing data must be sent with the updated. Both updated, new and unchanged data.
                 The xs:anyType leaves no way of identifying what is updated, what is new and what is unchanged.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="slett" type="xs:boolean" minOccurs="0"/>
-            <xs:element name="oppdatering" type="xs:anyType" minOccurs="0"/>
+            <xs:element name="ny" type="xs:anyType" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
