@@ -38,19 +38,19 @@ Nuget.org: https://www.nuget.org/packages/KS.Fiks.Arkiv.Models.V1
 
 ## Dokumentasjon
 
-### [Wiki - utfyllende dokumentasjon av Fiks-Arkiv protokollen](https://github.com/ks-no/fiks-arkiv-specification/wiki)
+### [Wiki for Fiks-Arkiv](https://github.com/ks-no/fiks-arkiv-specification/wiki)
 For mer utfyllende dokumentasjon om protokollen kan man lese mer i [wiki for Fiks Arkiv](https://github.com/ks-no/fiks-arkiv-specification/wiki)
 
-### [Fiks plattformen og Fiks-Arkiv - developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
+### [Utvikler dokumentasjon for Fiks plattformen og Fiks-Arkiv](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
 For informasjon om Fiks plattformen og Fiks Arkiv i den sammenheng kan man lese mer på [ks.no](https://www.ks.no/fagomrader/digitalisering/felleslosninger/verktoykasse-plan--og-byggesak/verktoy/sammenhengende-tjenester---integrasjoner/fiks-arkiv/) og på [developers.fiks.ks.no](https://developers.fiks.ks.no/fiks-plattform/tjenester/fiksprotokoll/arkiv/)
 
-### [Brukstilfeller, meldinger og tilhørende skjema](Dokumentasjon/V1/README.md)
+### [Diagrammer for brukstilfeller, meldinger og tilhørende skjema](Dokumentasjon/V1/README.md)
 
-I mappen [Dokumentasjon](Dokumentasjon/V1/README.md) i dette repoet finner man dokumentasjon og **diagrammer** for denne versjonen av protokollen. Diagrammene er stort sett utarbeidet vha PlantUML.
+I mappen [Dokumentasjon](Dokumentasjon/V1/README.md) i dette repoet finner man **diagrammer** for denne versjonen av protokollen. Disse diagrammene brukes gjerne i Wiki og dokumentasjonen der. Diagrammene er stort sett utarbeidet vha PlantUML.
 Kildekoden i PlantUML for diagrammene ligger da der også hvis man ønsker å bruke de som utgangspunkt i videre arbeid eller ønsker å forbedre de.
 
 
-### Generering av diagrammer
+#### Generering av diagrammer
 Vi bruker [PlantUML](https://plantuml.com/) for å tegne diagrammer som så blir eksportert til png og svg filer. For eksempel bruker vi PlantUML til å generere oversikten over sammenhengen mellom meldingstyper ut i fra `meldingstyper.json` filen.
 Vi genererer også PlantUML kode fra xsd filene for å vise datamodellen vha PHP biblioteket **[xsdata](https://pypi.org/project/xsdata-plantuml/)**
 
