@@ -1,9 +1,17 @@
 @startuml
 
+class adresseOppdateringer {
+    +slett : adresse[]
+    +ny : adresse[]
+}
 class arkivmeldingOppdatering {
     +mappeOppdateringer : mappeOppdatering[]
     +registreringOppdateringer : registreringOppdatering[]
     +dokumentbeskrivelseOppdateringer : dokumentbeskrivelseOppdatering[]
+}
+class beskrivelseOppdateringer {
+    +slett : boolean
+    +oppdatering : string
 }
 class byggidentOppdatering {
     +opprinneligBygningsnummer : int
@@ -22,8 +30,8 @@ class dokumentbeskrivelseOppdatering {
     +systemID : systemID
     +dokumentstatus : dokumentstatus
     +tittel : string
-    +beskrivelse : string
-    +forfatter : string[]
+    +beskrivelse : beskrivelseOppdateringer
+    +forfatterOppdateringer : forfatterOppdateringer[]
     +opprettetDato : dateTime
     +opprettetAv : string
     +tilknyttetRegistreringSom : tilknyttetRegistreringSom
@@ -31,8 +39,23 @@ class dokumentbeskrivelseOppdatering {
     +tilknyttetDato : dateTime
     +tilknyttetAv : string
     +partOppdateringer : partOppdateringer
-    +skjerming : skjerming
-    +gradering : gradering
+    +skjerming : skjermingOppdateringer
+    +gradering : graderingOppdateringer
+}
+class forfatterOppdateringer {
+    +slett : string[]
+    +ny : string[]
+}
+class graderingOppdatering {
+    +grad : grad
+    +graderingsdato : dateTime
+    +gradertAv : string
+    +nedgraderingsdato : dateTime
+    +nedgradertAv : string
+}
+class graderingOppdateringer {
+    +slett : boolean
+    +oppdatering : graderingOppdatering
 }
 class innstillingOppdatering {
     +oppdateringstype : slettEllerOppdater
@@ -64,7 +87,7 @@ class klassifikasjonOppdateringer {
     +ny : klassifikasjon[]
 }
 class klassifikasjonSlett {
-    +klassifikasjonssystemID : string
+    +referanseTilKlassifikasjon : referanseTilKlassifikasjon
 }
 class korrespondansepartOppdatering {
     +korrespondansepartID : string
@@ -112,19 +135,19 @@ class mappeOppdatering {
     +referanseTilMappe : referanseTilMappe
     +tittel : string
     +offentligTittel : string
-    +beskrivelse : string
-    +noekkelord : string[]
+    +beskrivelse : beskrivelseOppdateringer
+    +noekkelord : noekkelordOppdateringer
     +opprettetDato : dateTime
     +opprettetAv : string
     +avsluttetDato : dateTime
     +avsluttetAv : string
     +arkivdel : kode
-    +virksomhetsspesifikkeMetadata : anyType
+    +virksomhetsspesifikkeMetadataOppdateringer : virksomhetsspesifikkeMetadataOppdateringer
     +partOppdateringer : partOppdateringer
     +kryssreferanseOppdateringer : kryssreferanseOppdateringer
     +merknadOppdateringer : merknadOppdateringer
-    +skjerming : skjerming
-    +gradering : gradering
+    +skjermingOppdateringer : skjermingOppdateringer
+    +graderingOppdateringer : graderingOppdateringer
     +klassifikasjonOppdateringer : klassifikasjonOppdateringer
     +referanseEksternNoekkel : eksternNoekkel
     +mappetype : kode
@@ -190,6 +213,10 @@ class moetesakOppdatering {
     +vedtakOppdatering : vedtakOppdatering
 }
 moetesakOppdatering *- registreringOppdatering
+class noekkelordOppdateringer {
+    +slett : string[]
+    +ny : string[]
+}
 class partOppdatering {
     +partID : string
     +partNavn : string
@@ -203,7 +230,7 @@ class partOppdatering {
     +epostadresse : string
     +telefonnummer : string[]
     +kontaktperson : string
-    +virksomhetsspesifikkeMetadata : anyType
+    +virksomhetsspesifikkeMetadataOppdateringer : virksomhetsspesifikkeMetadataOppdateringer
     +erSkjermet : boolean
     +erPersonnavn : string
 }
@@ -252,14 +279,14 @@ class registreringOppdatering {
     +arkivertAv : string
     +referanseForelderMappe : referanseTilMappe
     +partOppdateringer : partOppdateringer
-    +skjerming : skjerming
-    +gradering : gradering
+    +skjermingOppdateringer : skjermingOppdateringer
+    +gradering : graderingOppdateringer
     +tittel : string
     +offentligTittel : string
-    +beskrivelse : string
-    +noekkelord : string[]
-    +forfatter : string[]
-    +virksomhetsspesifikkeMetadata : anyType
+    +beskrivelse : beskrivelseOppdateringer
+    +noekkelord : noekkelordOppdateringer[]
+    +forfatterOppdateringer : forfatterOppdateringer
+    +virksomhetsspesifikkeMetadataOppdateringer : virksomhetsspesifikkeMetadataOppdateringer
     +merknadOppdateringer : merknadOppdateringer
     +korrespondansepartOppdateringer : korrespondansepartOppdateringer
     +klassifikasjonOppdateringer : klassifikasjonOppdateringer
@@ -278,6 +305,16 @@ class saksmappeOppdatering {
     +adresse : adresse[]
 }
 saksmappeOppdatering *- mappeOppdatering
+class skjermingOppdatering {
+    +tilgangsrestriksjon : tilgangsrestriksjon
+    +skjermingshjemmel : string
+    +skjermingOpphoererDato : date
+    +skjermingOpphoererAksjon : skjermingOpphoererAksjon
+}
+class skjermingOppdateringer {
+    +slett : boolean
+    +oppdatering : skjermingOppdatering
+}
 class utredningOppdatering {
     +oppdateringstype : slettEllerOppdater
     +saksbeskrivelse : moetesaksBeskrivelse
@@ -291,6 +328,10 @@ class vedtakOppdatering {
     +behandlingsprotokoll : behandlingsprotokoll
     +vedtaksdokumenter : dokumentbeskrivelse[]
     +dato : dateTime
+}
+class virksomhetsspesifikkeMetadataOppdateringer {
+    +slett : boolean
+    +ny : anyType
 }
 
 @enduml

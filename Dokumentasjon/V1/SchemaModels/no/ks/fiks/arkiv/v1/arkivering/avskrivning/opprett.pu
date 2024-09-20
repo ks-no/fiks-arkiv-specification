@@ -5,7 +5,7 @@ class avskrivning {
     +avskrevetAv : string
     +avskrivningsmaate : avskrivningsmaate
     +referanseAvskrivesAvJournalpost : referanseTilJournalpost
-    +referanseAvskriverJournalpost : referanseTilJournalpost
+    +referanseAvskriverJournalpost : referanseTilJournalpost[]
 }
 class nyAvskrivning {
     +avskrivning : avskrivning

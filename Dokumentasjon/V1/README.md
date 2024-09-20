@@ -7,6 +7,8 @@ Her beskrives diverse spesifikke usecase og hvordan de kan løses innenfor proto
 Disse diagrammene brukes og vises også i Wiki. Gå der for mer utfyllende dokumentasjon
 
 * ### [Søknadssystem med søknadsfrist](UseCases/Soeknadssystem-med-soeknadsfrist)
+* ### [Elevmappe](UseCases/Elevmappe)
+* ### [Flere klientsystemer med delt data i arkiv](UseCases/Flere-klientsystemer-med-felles-data)
 
 ## Meldingstyper og skjema
 Diagrammene brukes og vises også i Wiki. Gå der for mer utfyllende dokumentasjon.

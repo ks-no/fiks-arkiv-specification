@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+
+actor KlientsystemA as "Klientsystem A"
+actor KlientsystemB as "Klientsystem B"
+
+package Arkivsystem as "Felles data i arkivsystem" {
+    usecase "Arkiverer" as uc1
+    usecase "Henter fra arkiv (innsyn)" as uc2
+}
+
+KlientsystemA --> uc1
+KlientsystemB <-- uc2
+
+@enduml
