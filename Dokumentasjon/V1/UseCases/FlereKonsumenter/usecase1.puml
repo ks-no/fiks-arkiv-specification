@@ -2,8 +2,8 @@
 left to right direction
 
 package Mottaker as "Motakende system" {
-    usecase Konsument1 as "Konsument 1"
-    usecase Konsument2 as "Konsument 2"
+    usecase Konsument1 as "Konsument klient 1"
+    usecase Konsument2 as "Konsument klient 2"
     usecase Lagring as "Lagring"
 }
 
