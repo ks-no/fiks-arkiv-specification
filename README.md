@@ -1,4 +1,4 @@
-# Kontrakter og dokumentasjon for Fiks Arkiv
+# ![](KSDigital25.png) Kontrakter og dokumentasjon for Fiks Arkiv - V1
 
 > Fiks Arkiv er en modernisering av GI Arkiv 1.1 og det nye grensesnittet som anbefales brukt når kommunen skal sette opp kommunikasjonen mellom et fagsystem og en arkivløsning.
 
