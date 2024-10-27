@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+
+package Mottaker as "Motakende system" {
+    usecase Konsument1 as "Konsument klient 1"
+    usecase Konsument2 as "Konsument klient 2"
+    usecase Lagring as "Lagring"
+}
+
+Lagring <-- Konsument1
+Lagring <-- Konsument2
+actor Avsender as "Avsender"
+
+package FiksProtokoll as "Fiks Protokoll" {
+    usecase "Kø (konto)" as fpuc1
+}
+
+Konsument1 <-- fpuc1 : Henter sett med meldinger
+Konsument2 <-- fpuc1 : Henter sett med meldinger
+Avsender -up-> fpuc1 : Sender flere meldinger
+
+
+@enduml
