@@ -82,7 +82,7 @@
                     <xs:element name="byggidentOppdateringer" type="byggidentOppdateringer" minOccurs="0"/>
                     <xs:element name="planidentOppdateringer" type="planidentOppdateringer" minOccurs="0"/>
                     <xs:element name="punktOppdateringer" type="punktOppdateringer" minOccurs="0"/>
-                    <xs:element name="adresse" type="arkivmelding:adresse" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="adresseOppdateringer" type="adresseOppdateringer" minOccurs="0" />
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
