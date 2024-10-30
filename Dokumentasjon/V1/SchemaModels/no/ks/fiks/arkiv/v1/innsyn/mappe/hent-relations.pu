@@ -1,22 +1,7 @@
 @startuml
+!include hent.pu
 
-enum inkluder {
-    merknad = merknad
-    noekkelord = noekkelord
-    kryssreferanse = kryssreferanse
-    klasse = klasse
-    part = part
-    presedens = presedens
-    moetedeltaker = moetedeltaker
-}
-class mappeHent {
-    +system : string
-    +referanseTilMappe : referanseTilMappe
-    +inkluder : inkluder[]
-    +spraak : string
-}
-
-mappeHent -- inkluder
-mappeHent -- referanseTilMappe
+mappeHent .. inkluder
+mappeHent .. referanseTilMappe
 
 @enduml

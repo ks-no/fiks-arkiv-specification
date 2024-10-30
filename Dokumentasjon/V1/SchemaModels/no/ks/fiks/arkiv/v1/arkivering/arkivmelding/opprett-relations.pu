@@ -1,118 +1,112 @@
 @startuml
-
 !include opprett.pu
 
-arkivmelding -- registrering
-arkivmelding -- mappe
+arkivmelding .. registrering
+arkivmelding .. mappe
 
-arkivnotat *- registrering
-arkivnotat -- dokumentflyt
+arkivnotat .. dokumentflyt
 
-avskrivning -- avskrivningsmaate
-avskrivning -- referanseTilJournalpost
+avskrivning .. avskrivningsmaate
+avskrivning .. referanseTilJournalpost
 
-dokumentbeskrivelse -- systemID
-dokumentbeskrivelse -- dokumenttype
-dokumentbeskrivelse -- dokumentstatus
-dokumentbeskrivelse -- dokumentmedium
-dokumentbeskrivelse -- tilknyttetRegistreringSom
-dokumentbeskrivelse -- merknad
-dokumentbeskrivelse -- skjerming
-dokumentbeskrivelse -- dokumentobjekt
+dokumentbeskrivelse .. systemID
+dokumentbeskrivelse .. dokumenttype
+dokumentbeskrivelse .. dokumentstatus
+dokumentbeskrivelse .. dokumentmedium
+dokumentbeskrivelse .. tilknyttetRegistreringSom
+dokumentbeskrivelse .. merknad
+dokumentbeskrivelse .. skjerming
+dokumentbeskrivelse .. dokumentobjekt
 
-dokumentflyt -- flytStatus
+dokumentflyt .. flytStatus
 
-dokumentobjekt -- variantformat
-dokumentobjekt -- format
+dokumentobjekt .. variantformat
+dokumentobjekt .. format
 
-gradering -- grad
+gradering .. grad
 
-journalpost *- registrering
-journalpost -- journalposttype
-journalpost -- journalstatus
-journalpost -- dokumentflyt
-journalpost -- presedens
+journalpost .. journalposttype
+journalpost .. journalstatus
+journalpost .. dokumentflyt
+journalpost .. presedens
 
-kassasjon -- kassasjonsvedtak
+kassasjon .. kassasjonsvedtak
 
-korrespondansepart -- korrespondanseparttype
-korrespondansepart -- administrativEnhet
-korrespondansepart -- saksbehandler
-korrespondansepart -- avskrivning
+korrespondansepart .. korrespondanseparttype
+korrespondansepart .. administrativEnhet
+korrespondansepart .. saksbehandler
+korrespondansepart .. avskrivning
 
-kryssreferanse -- referanseTilMappe
-kryssreferanse -- referanseTilRegistrering
-kryssreferanse -- referanseTilDokumentbeskrivelse
+kryssreferanse .. referanseTilMappe
+kryssreferanse .. referanseTilRegistrering
+kryssreferanse .. referanseTilDokumentbeskrivelse
 
-mappe -- referanseTilMappe
-mappe -- dokumentmedium
-mappe -- kryssreferanse
-mappe -- part
-mappe -- merknad
-mappe -- skjerming
-mappe -- gradering
-mappe -- klassifikasjon
-mappe -- eksternNoekkel
+mappe .. referanseTilMappe
+mappe .. dokumentmedium
+mappe .. kryssreferanse
+mappe .. part
+mappe .. merknad
+mappe .. skjerming
+mappe .. gradering
+mappe .. klassifikasjon
+mappe .. eksternNoekkel
 
-merknad -- merknadstype
+merknad .. merknadstype
 
-moetedokument *- registrering
-moetedokument -- moetedokumenttype
+moetedokument .. registrering
+moetedokument .. moetedokumenttype
 
-moetemappe *- mappe
-moetemappe -- moetedeltaker
+moetemappe .. moetedeltaker
 
-moetesak *- registrering
-moetesak -- moetesakstype
-moetesak -- administrativEnhet
-moetesak -- utredning
-moetesak -- moetesaksBeskrivelse
-moetesak -- vedtak
+moetesak .. moetesakstype
+moetesak .. administrativEnhet
+moetesak .. utredning
+moetesak .. moetesaksBeskrivelse
+moetesak .. vedtak
 
-part -- partRolle
-part -- organisasjonsID
-part -- personID
+part .. partRolle
+part .. organisasjonsID
+part .. personID
 
-presedens -- presedensStatus
+presedens .. presedensStatus
 
-punkt -- koordinatsystem
+punkt .. koordinatsystem
 
-registrering -- referanseTilMappe
-registrering -- part
-registrering -- skjerming
-registrering -- gradering
-registrering -- dokumentbeskrivelse
-registrering -- dokumentmedium
-registrering -- merknad
-registrering -- kryssreferanse
-registrering -- korrespondansepart
-registrering -- klassifikasjon
-registrering -- eksternNoekkel
+registrering .. referanseTilMappe
+registrering .. part
+registrering .. skjerming
+registrering .. gradering
+registrering .. dokumentbeskrivelse
+registrering .. dokumentmedium
+registrering .. merknad
+registrering .. kryssreferanse
+registrering .. korrespondansepart
+registrering .. klassifikasjon
+registrering .. eksternNoekkel
 
-saksmappe *- mappe
-saksmappe *- administrativEnhet
-saksmappe *- saksansvarlig
-saksmappe *- saksstatus
-saksmappe *- presedens
-saksmappe *- matrikkelnummer
-saksmappe *- byggident
-saksmappe *- planident
-saksmappe *- punkt
-saksmappe *- adresse
+saksmappe .. administrativEnhet
+saksmappe .. saksansvarlig
+saksmappe .. saksstatus
+saksmappe .. presedens
+saksmappe .. matrikkelnummer
+saksmappe .. byggident
+saksmappe .. planident
+saksmappe .. punkt
+saksmappe .. adresse
 
-skjerming -- tilgangsrestriksjon
-skjerming -- skjermingOpphoererAksjon
+skjerming .. tilgangsrestriksjon
+skjerming .. skjermingOpphoererAksjon
 
-utredning -- moetesaksBeskrivelse
-utredning -- dokumentbeskrivelse
+utredning .. moetesaksBeskrivelse
+utredning .. dokumentbeskrivelse
 
-vedtak -- moetesaksBeskrivelse
-vedtak -- votering
-vedtak -- behandlingsprotokoll
-vedtak -- dokumentbeskrivelse
+vedtak .. moetesaksBeskrivelse
+vedtak .. votering
+vedtak .. behandlingsprotokoll
+vedtak .. dokumentbeskrivelse
 
-votering -- moetedeltaker
-votering -- moeteStemme
-votering -- representerer
+votering .. moetedeltaker
+votering .. moeteStemme
+votering .. representerer
 
 @enduml

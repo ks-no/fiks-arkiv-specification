@@ -1,10 +1,7 @@
 @startuml
+!include resultat.pu
 
-class registreringHentResultat {
-    +registrering : registrering
-    +journalpost : journalpost
-}
-registreringHentResultat -- registrering
-registreringHentResultat -- journalpost
+registreringHentResultat .. registrering
+registreringHentResultat .. journalpost
 
 @enduml

@@ -1,8 +1,6 @@
 @startuml
+!include slett.pu
 
-class slettAvskrivning {
-    +referanseTilJournalpost : referanseTilJournalpost
-    +korrespondansepartID : string
-}
-slettAvskrivning -- referanseTilJournalpost
+slettAvskrivning .. referanseTilJournalpost
+
 @enduml

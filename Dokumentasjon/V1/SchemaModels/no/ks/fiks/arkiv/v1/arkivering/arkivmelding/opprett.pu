@@ -1,6 +1,5 @@
 @startuml
 left to right direction
-
 class adresse {
     +adresse : string
     +postnummer : string
