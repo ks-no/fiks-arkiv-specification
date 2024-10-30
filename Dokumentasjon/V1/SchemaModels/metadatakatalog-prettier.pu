@@ -1,0 +1,8 @@
+@startuml
+!include metadatakatalog.pu
+left to right direction
+skinparam nodesep 30
+skinparam ranksep 50
+
+
+@enduml
