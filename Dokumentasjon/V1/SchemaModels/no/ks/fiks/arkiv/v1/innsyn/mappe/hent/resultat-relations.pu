@@ -1,10 +1,7 @@
 @startuml
+!include resultat.pu
 
-class mappeHentResultat {
-    +mappe : mappe
-    +saksmappe : saksmappe
-}
-mappeHentResultat -- mappe
-mappeHentResultat -- saksmappe
+mappeHentResultat .. mappe
+mappeHentResultat .. saksmappe
 
 @enduml

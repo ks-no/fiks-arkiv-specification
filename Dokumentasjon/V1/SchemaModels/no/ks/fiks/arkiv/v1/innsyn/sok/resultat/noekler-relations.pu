@@ -1,36 +1,15 @@
 @startuml
+!include noekler.pu
 
-class resultatListeNoekler {
-    +resultatNoekler : resultatNoekler[]
-}
-resultatListeNoekler -- resultatNoekler
-class resultatNoekler {
-    +mappe : mappeNoekler
-    +saksmappe : saksmappeNoekler
-    +registrering : registreringNoekler
-    +journalpost : journalpostNoekler
-    +dokumentbeskrivelse : dokumentbeskrivelseNoekler
-}
-resultatNoekler -- mappeNoekler
-resultatNoekler -- saksmappeNoekler
-resultatNoekler -- registreringNoekler
-resultatNoekler -- journalpostNoekler
-resultatNoekler -- dokumentbeskrivelseNoekler
+sokeresultatNoekler .. resultatListeNoekler
+sokeresultatNoekler .. resultatTypeNoekler
 
-enum resultatTypeNoekler {
-    mappe = mappe
-    saksmappe = saksmappe
-    registrering = registrering
-    journalpost = journalpost
-    dokumentbeskrivelse = dokumentbeskrivelse
-}
-class sokeresultatNoekler {
-    +system : string
-    +take : int
-    +skip : int
-    +count : int
-    +resultattype : resultatTypeNoekler
-    +resultatListe : resultatListeNoekler
-}
+resultatListeNoekler .. resultatNoekler 
+
+resultatNoekler .. mappeNoekler
+resultatNoekler .. saksmappeNoekler
+resultatNoekler .. registreringNoekler
+resultatNoekler .. journalpostNoekler
+resultatNoekler .. dokumentbeskrivelseNoekler
 
 @enduml

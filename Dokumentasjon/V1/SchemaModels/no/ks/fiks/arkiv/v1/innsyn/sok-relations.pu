@@ -1,405 +1,82 @@
 @startuml
 left to right direction
+!include sok.pu
 
-class bbox {
-    +koordinatsystem : koordinatsystem
-    +nedreVenstre : bboxKoordinater
-    +oevreHoeyre : bboxKoordinater
-}
-bbox -- koordinatsystem
-bbox -- bboxKoordinater
-class bboxKoordinater {
-    +x : double
-    +y : double
-}
-class datevalues {
-    +value : dateTime[]
-}
-class dokumentbeskrivelseFritekstSokdefinisjon {
-    +inkluder : dokumentbeskrivelseInkluder[]
-    +soketekst : string
-}
-dokumentbeskrivelseFritekstSokdefinisjon *- sokdefinisjon
-dokumentbeskrivelseFritekstSokdefinisjon -- dokumentbeskrivelseInkluder
-enum dokumentbeskrivelseInkluder {
-    dokumentobjekt = dokumentobjekt
-}
-class dokumentbeskrivelseParameter {
-    +felt : dokumentbeskrivelseSokefelt
-}
-dokumentbeskrivelseParameter *- parameter
-dokumentbeskrivelseParameter -- dokumentbeskrivelseSokefelt
-class dokumentbeskrivelseSokdefinisjon {
-    +inkluder : dokumentbeskrivelseInkluder[]
-    +parametere : dokumentbeskrivelseParameter[]
-    +sortering : dokumentbeskrivelseSortering[]
-}
-dokumentbeskrivelseSokdefinisjon *- sokdefinisjon
-dokumentbeskrivelseSokdefinisjon -- dokumentbeskrivelseInkluder
-dokumentbeskrivelseSokdefinisjon -- dokumentbeskrivelseSortering
-enum dokumentbeskrivelseSokefelt {
-    dokumentbeskrivelseEksternId = dokumentbeskrivelseEksternId
-    dokumentbeskrivelseOpprettetDato = dokumentbeskrivelseOpprettetDato
-    dokumentbeskrivelseTittel = dokumentbeskrivelseTittel
-    dokumentbeskrivelseDokumenttype = dokumentbeskrivelseDokumenttype
-    dokumentbeskrivelseDokumentstatus = dokumentbeskrivelseDokumentstatus
-    dokumentbeskrivelseSkjermingTilgangsrestriksjon = dokumentbeskrivelseSkjermingTilgangsrestriksjon
-    dokumentbeskrivelseSkjermingSkjermingshjemmel = dokumentbeskrivelseSkjermingSkjermingshjemmel
-    dokumentbeskrivelseSkjermingSkjermingsvarighet = dokumentbeskrivelseSkjermingSkjermingsvarighet
-    dokumentbeskrivelseSkjermingSkjermingOpphoererDato = dokumentbeskrivelseSkjermingSkjermingOpphoererDato
-}
+sok .. sokdefinisjon
 
-class dokumentbeskrivelseSortering {
-    +felt : dokumentbeskrivelseSorteringsfelt
-    +type : sorteringType
-}
-dokumentbeskrivelseSortering -- dokumentbeskrivelseSorteringsfelt
-dokumentbeskrivelseSortering -- sorteringType
-enum dokumentbeskrivelseSorteringsfelt {
-    opprettetDato = opprettetDato
-}
-class eksternId {
-    +system : string
-    +id : string
-}
-class intvalues {
-    +value : int[]
-}
-class journalpostFritekstSokdefinisjon {
-    +inkluder : journalpostInkluder[]
-    +soketekst : string
-}
-journalpostFritekstSokdefinisjon *- sokdefinisjon
-journalpostFritekstSokdefinisjon -- journalpostInkluder
-enum journalpostInkluder {
-    noekkelord = noekkelord
-    kryssreferanse = kryssreferanse
-    part = part
-    merknad = merknad
-    dokumentbeskrivelse = dokumentbeskrivelse
-    korrespondansepart = korrespondansepart
-    avskrivning = avskrivning
-    dokumentflyt = dokumentflyt
-}
-class journalpostMedSaksmappeFritekstSokdefinisjon {
-    +inkluder : journalpostInkluder[]
-    +soketekst : string
-}
-journalpostMedSaksmappeFritekstSokdefinisjon *- sokdefinisjon
-journalpostMedSaksmappeFritekstSokdefinisjon -- journalpostInkluder
-class journalpostMedSaksmappeSokdefinisjon {
-    +inkluder : journalpostInkluder[]
-    +parametere : journalpostParameter[]
-    +sortering : journalpostSortering[]
-}
-journalpostMedSaksmappeSokdefinisjon *- sokdefinisjon
-journalpostMedSaksmappeSokdefinisjon -- journalpostInkluder
-journalpostMedSaksmappeSokdefinisjon -- journalpostParameter
-journalpostMedSaksmappeSokdefinisjon -- journalpostSortering
-class journalpostParameter {
-    +felt : journalpostSokefelt
-}
-journalpostParameter *- parameter
-journalpostParameter -- journalpostSokefelt
-class journalpostSokdefinisjon {
-    +inkluder : journalpostInkluder[]
-    +parametere : journalpostParameter[]
-    +sortering : journalpostSortering[]
-}
-journalpostSokdefinisjon *- sokdefinisjon
-journalpostSokdefinisjon -- journalpostInkluder
-journalpostSokdefinisjon -- journalpostParameter
-journalpostSokdefinisjon -- journalpostSortering
-enum journalpostSokefelt {
-    registreringEksternId = registreringEksternId
-    registreringOpprettetDato = registreringOpprettetDato
-    registreringTittel = registreringTittel
-    registreringAdministrativenhet = registreringAdministrativenhet
-    registreringJournalpostansvarlig = registreringJournalpostansvarlig
-    registreringEndretDato = registreringEndretDato
-    registreringPartPartNavn = registreringPartPartNavn
-    registreringPartPartRolle = registreringPartPartRolle
-    registreringPartPostadresse = registreringPartPostadresse
-    registreringPartPostnummer = registreringPartPostnummer
-    registreringPartPoststed = registreringPartPoststed
-    registreringPartEpostadresse = registreringPartEpostadresse
-    registreringSkjermingTilgangsrestriksjon = registreringSkjermingTilgangsrestriksjon
-    registreringSkjermingSkjermingshjemmel = registreringSkjermingSkjermingshjemmel
-    registreringSkjermingSkjermingsvarighet = registreringSkjermingSkjermingsvarighet
-    registreringSkjermingSkjermingOpphoererDato = registreringSkjermingSkjermingOpphoererDato
-    journalpostJournalaar = journalpostJournalaar
-    journalpostJournalsekvensnummer = journalpostJournalsekvensnummer
-    journalpostSaksaar = journalpostSaksaar
-    journalpostSakssekvensnummer = journalpostSakssekvensnummer
-    journalpostJournalpostnummer = journalpostJournalpostnummer
-    journalpostJournalposttype = journalpostJournalposttype
-    journalpostJournalstatus = journalpostJournalstatus
-    journalpostJournaldato = journalpostJournaldato
-    journalpostDokumentetsdato = journalpostDokumentetsdato
-    journalpostForfallsdato = journalpostForfallsdato
-}
-class journalpostSortering {
-    +felt : journalpostSorteringsfelt
-    +type : sorteringType
-}
-journalpostSortering -- journalpostSorteringsfelt
-journalpostSortering -- sorteringType
-enum journalpostSorteringsfelt {
-    registreringOpprettetDato = registreringOpprettetDato
-    journalpostJournaldato = journalpostJournaldato
-    journalpostJournalaar-journalsekvensnummer = journalpostJournalaar-journalsekvensnummer
-    journalpostJournalpostnummer = journalpostJournalpostnummer
-}
-class klassifikasjonvalues {
-    +klassifikasjonssystem : string[]
-    +klasse : string[]
-}
-class mappeFritekstSokdefinisjon {
-    +inkluder : mappeInkluder[]
-    +soketekst : string
-}
-mappeFritekstSokdefinisjon *- sokdefinisjon
-mappeFritekstSokdefinisjon -- mappeInkluder
-enum mappeInkluder {
-    noekkelord = noekkelord
-    kryssreferanse = kryssreferanse
-    part = part
-    merknad = merknad
-}
-class mappeParameter {
-    +felt : mappeSokefelt
-}
-mappeParameter *- parameter
-mappeParameter -- mappeSokefelt
-class mappeSokdefinisjon {
-    +inkluder : mappeInkluder[]
-    +parametere : mappeParameter[]
-    +sortering : mappeSortering[]
-}
-mappeSokdefinisjon *- sokdefinisjon
-mappeSokdefinisjon -- mappeInkluder
-mappeSokdefinisjon *- mappeParameter
-mappeSokdefinisjon *- mappeSortering
-enum mappeSokefelt {
-    mappeEksternId = mappeEksternId
-    mappeTittel = mappeTittel
-    mappeOpprettetDato = mappeOpprettetDato
-    mappeBeskrivelse = mappeBeskrivelse
-    mappeNoekkelord = mappeNoekkelord
-    mappeAvsluttetDato = mappeAvsluttetDato
-    mappeArkivdel = mappeArkivdel
-    mappeEndretDato = mappeEndretDato
-    mappeMappetype = mappeMappetype
-    mappeKlasseKlassifikasjonssystem = mappeKlasseKlassifikasjonssystem
-    mappeKlasseKlasseID = mappeKlasseKlasseID
-    mappeKlasseTittel = mappeKlasseTittel
-    mappeKlasseBeskrivelse = mappeKlasseBeskrivelse
-    mappePartPartNavn = mappePartPartNavn
-    mappePartPartRolle = mappePartPartRolle
-    mappePartPostadresse = mappePartPostadresse
-    mappePartPostnummer = mappePartPostnummer
-    mappePartPoststed = mappePartPoststed
-    mappePartEpostadresse = mappePartEpostadresse
-    mappeSkjermingTilgangsrestriksjon = mappeSkjermingTilgangsrestriksjon
-    mappeSkjermingSkjermingshjemmel = mappeSkjermingSkjermingshjemmel
-    mappeSkjermingSkjermingsvarighet = mappeSkjermingSkjermingsvarighet
-    mappeSkjermingSkjermingOpphoererDato = mappeSkjermingSkjermingOpphoererDato
-}
-class mappeSortering {
-    +felt : mappeSorteringsfelt
-    +type : sorteringType
-}
-mappeSortering -- mappeSorteringsfelt
-mappeSortering -- sorteringType
-enum mappeSorteringsfelt {
-    mappeOpprettetDato = mappeOpprettetDato
-}
-enum operatorType {
-    equal = equal
-    notequal = notequal
-    between = between
-    lessthan = lessthan
-    lessequal = lessequal
-    greaterthan = greaterthan
-    greaterequal = greaterequal
-    inlist = inlist
-    wildcardquery = wildcardquery
-}
-class parameter {
-    +operator : operatorType
-    +sokVerdier : sokVerdier
-}
-parameter -- operatorType
-parameter -- sokVerdier
-class registreringFritekstSokdefinisjon {
-    +inkluder : registreringInkluder[]
-    +soketekst : string
-}
-registreringFritekstSokdefinisjon *- sokdefinisjon
-registreringFritekstSokdefinisjon -- registreringInkluder
-enum registreringInkluder {
-    noekkelord = noekkelord
-    kryssreferanse = kryssreferanse
-    part = part
-    merknad = merknad
-    dokumentbeskrivelse = dokumentbeskrivelse
-    korrespondansepart = korrespondansepart
-}
-class registreringParameter {
-    +felt : registreringSokefelt
-}
-registreringParameter *- parameter
-registreringParameter -- registreringSokefelt
-class registreringSokdefinisjon {
-    +inkluder : registreringInkluder[]
-    +parametere : registreringParameter[]
-    +sortering : registreringSortering[]
-}
-registreringSokdefinisjon *- sokdefinisjon
-registreringSokdefinisjon -- registreringInkluder
-registreringSokdefinisjon -- registreringParameter
-registreringSokdefinisjon -- registreringSortering
-enum registreringSokefelt {
-    registreringEksternId = registreringEksternId
-    registreringOpprettetDato = registreringOpprettetDato
-    registreringTittel = registreringTittel
-    registreringAdministrativenhet = registreringAdministrativenhet
-    registreringJournalpostansvarlig = registreringJournalpostansvarlig
-    registreringEndretDato = registreringEndretDato
-    registreringPartPartNavn = registreringPartPartNavn
-    registreringPartPartRolle = registreringPartPartRolle
-    registreringPartPostadresse = registreringPartPostadresse
-    registreringPartPostnummer = registreringPartPostnummer
-    registreringPartPoststed = registreringPartPoststed
-    registreringPartEpostadresse = registreringPartEpostadresse
-    registreringSkjermingTilgangsrestriksjon = registreringSkjermingTilgangsrestriksjon
-    registreringSkjermingSkjermingshjemmel = registreringSkjermingSkjermingshjemmel
-    registreringSkjermingSkjermingsvarighet = registreringSkjermingSkjermingsvarighet
-    registreringSkjermingSkjermingOpphoererDato = registreringSkjermingSkjermingOpphoererDato
-}
-class registreringSortering {
-    +felt : registreringSorteringsfelt
-    +type : sorteringType
-}
-registreringSortering -- registreringSorteringsfelt
-registreringSortering -- sorteringType
-enum registreringSorteringsfelt {
-    registreringOpprettetDato = registreringOpprettetDato
-}
-class saksmappeFritekstSokdefinisjon {
-    +inkluder : saksmappeInkluder[]
-    +soketekst : string
-}
-saksmappeFritekstSokdefinisjon *- sokdefinisjon
-saksmappeFritekstSokdefinisjon -- saksmappeInkluder
-enum saksmappeInkluder {
-    noekkelord = noekkelord
-    kryssreferanse = kryssreferanse
-    part = part
-    merknad = merknad
-    presedens = presedens
-}
-class saksmappeParameter {
-    +felt : saksmappeSokefelt
-}
-saksmappeParameter *- parameter
-saksmappeParameter -- saksmappeSokefelt
-class saksmappeSokdefinisjon {
-    +inkluder : saksmappeInkluder[]
-    +parametere : saksmappeParameter[]
-    +sortering : saksmappeSortering[]
-}
-saksmappeSokdefinisjon *- sokdefinisjon
-saksmappeSokdefinisjon -- saksmappeInkluder
-saksmappeSokdefinisjon -- saksmappeParameter
-saksmappeSokdefinisjon -- saksmappeSortering
-enum saksmappeSokefelt {
-    mappeEksternId = mappeEksternId
-    mappeTittel = mappeTittel
-    mappeOpprettetDato = mappeOpprettetDato
-    mappeBeskrivelse = mappeBeskrivelse
-    mappeNoekkelord = mappeNoekkelord
-    mappeAvsluttetDato = mappeAvsluttetDato
-    mappeArkivdel = mappeArkivdel
-    mappeEndretDato = mappeEndretDato
-    mappeMappetype = mappeMappetype
-    mappeKlasseKlassifikasjonssystem = mappeKlasseKlassifikasjonssystem
-    mappeKlasseKlasseID = mappeKlasseKlasseID
-    mappeKlasseTittel = mappeKlasseTittel
-    mappeKlasseBeskrivelse = mappeKlasseBeskrivelse
-    mappePartPartNavn = mappePartPartNavn
-    mappePartPartRolle = mappePartPartRolle
-    mappePartPostadresse = mappePartPostadresse
-    mappePartPostnummer = mappePartPostnummer
-    mappePartPoststed = mappePartPoststed
-    mappePartEpostadresse = mappePartEpostadresse
-    mappeSkjermingTilgangsrestriksjon = mappeSkjermingTilgangsrestriksjon
-    mappeSkjermingSkjermingshjemmel = mappeSkjermingSkjermingshjemmel
-    mappeSkjermingSkjermingsvarighet = mappeSkjermingSkjermingsvarighet
-    mappeSkjermingSkjermingOpphoererDato = mappeSkjermingSkjermingOpphoererDato
-    sakSaksdato = sakSaksdato
-    sakSaksaar = sakSaksaar
-    sakSaksekvensnummer = sakSaksekvensnummer
-    sakSaksstatus = sakSaksstatus
-    sakAdministrativenhet = sakAdministrativenhet
-    sakSaksansvarlig = sakSaksansvarlig
-    sakMatrikkelnummerKommunenummer = sakMatrikkelnummerKommunenummer
-    sakMatrikkelnummerGaardsnummer = sakMatrikkelnummerGaardsnummer
-    sakMatrikkelnummerBruksnummer = sakMatrikkelnummerBruksnummer
-    sakMatrikkelnummerFestenummer = sakMatrikkelnummerFestenummer
-    sakMatrikkelnummerSeksjonsnummer = sakMatrikkelnummerSeksjonsnummer
-    sakByggidentBygningsnummer = sakByggidentBygningsnummer
-    sakByggidentEndringsloepenummer = sakByggidentEndringsloepenummer
-    sakPlanidentStatLandkode = sakPlanidentStatLandkode
-    sakPlanidentFylkeFylkesnummer = sakPlanidentFylkeFylkesnummer
-    sakPlanidentKommuneKommunenummer = sakPlanidentKommuneKommunenummer
-    sakPlanidentPlanidentifikasjon = sakPlanidentPlanidentifikasjon
-    sakPartOrganisasjonsid = sakPartOrganisasjonsid
-    sakPartPersonid = sakPartPersonid
-    sakBbox = sakBbox
-}
-class saksmappeSortering {
-    +felt : saksmappeSorteringsfelt
-    +type : sorteringType
-}
-saksmappeSortering -- saksmappeSorteringsfelt
-saksmappeSortering -- sorteringType
-enum saksmappeSorteringsfelt {
-    mappeOpprettetDato = mappeOpprettetDato
-    sakSaksaar-saksekvensnummer = sakSaksaar-saksekvensnummer
-}
-class sok {
-    +system : string
-    +take : int
-    +skip : int
-    +sokdefinisjon : sokdefinisjon
-    +spraak : string
-}
-sok -- sokdefinisjon
-class sokVerdier {
-    +stringvalues : stringvalues
-    +datevalues : datevalues
-    +intvalues : intvalues
-    +eksternId : eksternId
-    +klassifikasjonvalues : klassifikasjonvalues
-    +bbox : bbox
-}
-sokVerdier -- stringvalues
-sokVerdier -- datevalues
-sokVerdier -- intvalues
-sokVerdier -- eksternId
-sokVerdier -- klassifikasjonvalues
-sokVerdier -- bbox
-class sokdefinisjon {
-    +responstype : responstype
-}
-sokdefinisjon -- responstype
-enum sorteringType {
-    synkende = synkende
-    stigende = stigende
-}
-class stringvalues {
-    +value : string[]
-}
+bbox .. koordinatsystem
+bbox .. bboxKoordinater
+
+dokumentbeskrivelseFritekstSokdefinisjon .. dokumentbeskrivelseInkluder
+
+dokumentbeskrivelseParameter .. dokumentbeskrivelseSokefelt
+
+dokumentbeskrivelseSokdefinisjon .. dokumentbeskrivelseInkluder
+dokumentbeskrivelseSokdefinisjon .. dokumentbeskrivelseSortering
+
+dokumentbeskrivelseSortering .. dokumentbeskrivelseSorteringsfelt
+dokumentbeskrivelseSortering .. sorteringType
+
+journalpostFritekstSokdefinisjon .. journalpostInkluder
+
+journalpostMedSaksmappeFritekstSokdefinisjon .. journalpostInkluder
+
+journalpostMedSaksmappeSokdefinisjon .. journalpostInkluder
+journalpostMedSaksmappeSokdefinisjon .. journalpostParameter
+journalpostMedSaksmappeSokdefinisjon .. journalpostSortering
+
+journalpostParameter .. journalpostSokefelt
+
+journalpostSokdefinisjon .. journalpostInkluder
+journalpostSokdefinisjon .. journalpostParameter
+journalpostSokdefinisjon .. journalpostSortering
+
+journalpostSortering .. journalpostSorteringsfelt
+journalpostSortering .. sorteringType
+
+mappeFritekstSokdefinisjon .. mappeInkluder
+
+mappeParameter .. mappeSokefelt
+
+mappeSokdefinisjon .. mappeInkluder
+mappeSokdefinisjon .. mappeParameter
+mappeSokdefinisjon .. mappeSortering
+
+mappeSortering .. mappeSorteringsfelt
+mappeSortering .. sorteringType
+
+parameter .. operatorType
+parameter .. sokVerdier
+
+registreringFritekstSokdefinisjon .. registreringInkluder
+
+registreringParameter .. registreringSokefelt
+
+registreringSokdefinisjon .. registreringInkluder
+registreringSokdefinisjon .. registreringParameter
+registreringSokdefinisjon .. registreringSortering
+
+registreringSortering .. registreringSorteringsfelt
+registreringSortering .. sorteringType
+
+saksmappeFritekstSokdefinisjon .. saksmappeInkluder
+
+saksmappeParameter .. saksmappeSokefelt
+
+saksmappeSokdefinisjon .. saksmappeInkluder
+saksmappeSokdefinisjon .. saksmappeParameter
+saksmappeSokdefinisjon .. saksmappeSortering
+
+saksmappeSortering .. saksmappeSorteringsfelt
+saksmappeSortering .. sorteringType
+
+sokVerdier .. stringvalues
+sokVerdier .. datevalues
+sokVerdier .. intvalues
+sokVerdier .. eksternId
+sokVerdier .. klassifikasjonvalues
+sokVerdier .. bbox
+
+sokdefinisjon .. responstype
 
 @enduml

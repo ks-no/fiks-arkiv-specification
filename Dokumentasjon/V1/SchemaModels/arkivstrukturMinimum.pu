@@ -100,10 +100,8 @@ saksmappeMinimum *- mappeMinimum
 class skjermingMinimum {
     +tilgangsrestriksjon : tilgangsrestriksjon
     +skjermingshjemmel : string
-    +skjermingMetadata : skjermingMetadata[]
-    +skjermingDokument : skjermingDokument
-    +skjermingsvarighet : int
     +skjermingOpphoererDato : date
+    +skjermingOpphoererAksjon : skjermingOpphoererAksjon
 }
 
 @enduml

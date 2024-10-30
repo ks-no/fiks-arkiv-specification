@@ -302,7 +302,7 @@ class saksmappeOppdatering {
     +byggidentOppdateringer : byggidentOppdateringer
     +planidentOppdateringer : planidentOppdateringer
     +punktOppdateringer : punktOppdateringer
-    +adresse : adresse[]
+    +adresseOppdateringer : adresseOppdateringer
 }
 saksmappeOppdatering *- mappeOppdatering
 class skjermingOppdatering {

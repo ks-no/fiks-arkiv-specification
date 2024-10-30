@@ -258,6 +258,7 @@ class presedens {
     +presedensStatus : presedensStatus
 }
 class punkt {
+    +punktID : string
     +koordinatsystem : koordinatsystem
     +x : double
     +y : double
@@ -300,8 +301,8 @@ class saksmappe {
     +presedens : presedens[]
     +matrikkelnummer : matrikkelnummer[]
     +byggident : byggident[]
-    +planident : planident
-    +punkt : punkt
+    +planident : planident[]
+    +punkt : punkt[]
     +adresse : adresse[]
 }
 saksmappe *- mappe

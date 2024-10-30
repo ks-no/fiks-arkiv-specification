@@ -1,12 +1,6 @@
 @startuml
+!include hent.pu
 
-class dokumentfilHent {
-    +system : string
-    +dokumentfilNoekkel : dokumentfilNoekkel
-}
-dokumentfilHent -- dokumentfilNoekkel
-class dokumentfilNoekkel {
-    +systemID : systemID
-}
+dokumentfilHent .. dokumentfilNoekkel
 
 @enduml

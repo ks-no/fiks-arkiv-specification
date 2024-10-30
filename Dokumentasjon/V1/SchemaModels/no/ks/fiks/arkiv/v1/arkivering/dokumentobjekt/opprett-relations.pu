@@ -1,11 +1,7 @@
 @startuml
+!include opprett.pu
 
-class dokumentobjektOpprett {
-    +dokumentbeskrivelseID : systemID
-    +dokumentobjekt : dokumentobjekt
-}
-
-dokumentobjektOpprett -- dokumentobjekt
-dokumentobjektOpprett -- systemID
+dokumentobjektOpprett .. dokumentobjekt
+dokumentobjektOpprett .. systemID
 
 @enduml

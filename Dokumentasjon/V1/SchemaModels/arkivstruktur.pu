@@ -213,6 +213,8 @@ class korrespondansepart {
     +korrespondanseparttype : korrespondanseparttype
     +erBehandlingsansvarlig : boolean
     +korrespondansepartNavn : string
+    +organisasjonid : string
+    +personid : string
     +postadresse : string[]
     +postnummer : string
     +poststed : string
@@ -222,6 +224,10 @@ class korrespondansepart {
     +kontaktperson : string
     +administrativEnhet : administrativEnhet
     +saksbehandler : saksbehandler
+    +erSkjermet : boolean
+    +erPersonnavn : string
+    +forsendelsesmaate : string
+    +deresReferanse : string
     +avskrivning : avskrivning[]
 }
 class kryssreferanse {
@@ -296,10 +302,16 @@ class moetesak {
     +vedtak : vedtak
 }
 moetesak *- registrering
+class organisasjonsID {
+    +identifikator : string
+    +landkode : string
+}
 class part {
     +partID : string
     +partNavn : string
     +partRolle : partRolle
+    +organisasjonID : organisasjonsID
+    +personID : personID
     +postadresse : string[]
     +postnummer : string
     +poststed : string
@@ -308,6 +320,12 @@ class part {
     +telefonnummer : string[]
     +kontaktperson : string
     +virksomhetsspesifikkeMetadata : anyType
+    +erSkjermet : boolean
+    +erPersonnavn : string
+}
+class personID {
+    +landkode : string
+    +identifikator : string
 }
 class planident {
     +planidentifikasjon : string
@@ -374,8 +392,8 @@ class saksmappe {
     +presedens : presedens[]
     +matrikkelnummer : matrikkelnummer[]
     +byggident : byggident[]
-    +planident : planident
-    +punkt : punkt
+    +planident : planident[]
+    +punkt : punkt[]
     +adresse : adresse[]
 }
 saksmappe *- mappe

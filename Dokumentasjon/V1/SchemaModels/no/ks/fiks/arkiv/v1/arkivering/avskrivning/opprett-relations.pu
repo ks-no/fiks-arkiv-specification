@@ -1,20 +1,10 @@
 @startuml
+!include opprett.pu
 
-class avskrivning {
-    +avskrivningsdato : date
-    +avskrevetAv : string
-    +avskrivningsmaate : avskrivningsmaate
-    +referanseAvskrivesAvJournalpost : referanseTilJournalpost
-    +referanseAvskriverJournalpost : referanseTilJournalpost
-}
-avskrivning -- avskrivningsmaate
-avskrivning -- referanseTilJournalpost
-class nyAvskrivning {
-    +avskrivning : avskrivning
-    +referanseTilJournalpost : referanseTilJournalpost
-    +korrespondansepartID : string
-}
-nyAvskrivning -- avskrivning
-nyAvskrivning -- referanseTilJournalpost
+avskrivning .. avskrivningsmaate
+avskrivning .. referanseTilJournalpost
+
+nyAvskrivning .. avskrivning
+nyAvskrivning .. referanseTilJournalpost
 
 @enduml

@@ -1,0 +1,25 @@
+@startuml
+skinparam sequenceMessageAlign center
+
+title "Opprett arkivmelding - ikkefunnet\nFagsystem ønsker å arkivere noe med referanse til noe som skal eksistere i arkivet"
+
+participant Fagsystem [
+    = Fagsystem
+]
+participant FiksProtokoll [
+    = Fiks Protokoll
+]
+participant Arkivsystem [
+    = Arkivsystem
+]
+
+Fagsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
+FiksProtokoll -> Arkivsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett**
+...Arkivsystem melder at melding er mottatt og håndteres...
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.mottatt**
+...Arkivsystem finner ikke objektet det refereres til i opprett-melding\nFor eksempel finner man ikke saksmappen hvor man vil opprette en journalpost...
+Arkivsystem -> FiksProtokoll : **no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet**
+FiksProtokoll -> Fagsystem : **no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet**
+
+@enduml
