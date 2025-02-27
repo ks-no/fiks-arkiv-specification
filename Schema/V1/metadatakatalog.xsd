@@ -867,15 +867,16 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="landkode">
+  <xs:complexType name="landkode">
     <xs:annotation>
       <xs:documentation>M322</xs:documentation>
       <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Endret: Fiks Arkiv 1.0 endret til å være et kode objekt</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="planidentifikasjon">
     <xs:annotation>
