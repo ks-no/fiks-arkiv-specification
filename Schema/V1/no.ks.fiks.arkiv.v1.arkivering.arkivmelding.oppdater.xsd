@@ -42,7 +42,7 @@
             <xs:element name="tilknyttetDato" type="n5mdk:tilknyttetDato" minOccurs="0"/>
             <xs:element name="tilknyttetAv" type="n5mdk:tilknyttetAv" minOccurs="0"/>
             <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
-            <xs:element name="merknad" type="arkivmelding:merknad" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="merknadOppdateringer" type="merknadOppdateringer" minOccurs="0"/>
             <xs:element name="skjerming" type="skjermingOppdateringer" minOccurs="0"/>
             <xs:element name="gradering" type="graderingOppdateringer" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
