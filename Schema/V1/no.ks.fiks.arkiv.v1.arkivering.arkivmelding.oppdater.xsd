@@ -28,7 +28,7 @@
 
     <xs:complexType name="dokumentbeskrivelseOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" />
+            <xs:element name="referanseTilDokumentbeskrivelse" type="n5mdk:referanseTilDokumentbeskrivelse" />
             <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
             <xs:element name="beskrivelse" type="beskrivelseOppdateringer" minOccurs="0"/>
