@@ -636,10 +636,11 @@
   <xs:complexType name="referanseTilDokumentbeskrivelse">
     <xs:annotation>
       <xs:documentation>M225</xs:documentation>
-      <xs:documentation>Fiks-Arkiv: inneholder systemID som identifiserer en Dokumentbeskrivelse. Mulig å utvide senere med andre identifikatorer til en Dokumentbeskrivelse.</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: inneholder systemID eller eksternNoekkel som identifiserer en Dokumentbeskrivelse.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
+      <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
