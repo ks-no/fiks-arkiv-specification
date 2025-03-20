@@ -636,10 +636,12 @@
   <xs:complexType name="referanseTilDokumentbeskrivelse">
     <xs:annotation>
       <xs:documentation>M225</xs:documentation>
-      <xs:documentation>Fiks-Arkiv: inneholder systemID som identifiserer en Dokumentbeskrivelse. Mulig å utvide senere med andre identifikatorer til en Dokumentbeskrivelse.</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: inneholder systemID eller eksternNoekkel som identifiserer en Dokumentbeskrivelse.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
+      <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+      <xs:element name="journalpostDokumentnummer" type="journalpostDokumentnummer" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -1950,5 +1952,17 @@
       <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
+  
+  <xs:complexType name="journalpostDokumentnummer">
+    <xs:annotation>
+      <xs:documentation>M812</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
+      <xs:documentation>Identifiserer en dokumentbeskrivelse under en journalpost</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="referanseTilJournalpost" type="referanseTilJournalpost" />
+      <xs:element name="dokumentnummer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>
 
