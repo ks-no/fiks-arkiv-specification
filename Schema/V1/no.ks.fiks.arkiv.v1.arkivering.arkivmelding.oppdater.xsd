@@ -28,7 +28,7 @@
 
     <xs:complexType name="dokumentbeskrivelseOppdatering">
         <xs:sequence>
-            <xs:element name="systemID" type="n5mdk:systemID" />
+            <xs:element name="referanseTilDokumentbeskrivelse" type="n5mdk:referanseTilDokumentbeskrivelse" />
             <xs:element name="dokumenttype" type="n5mdk:dokumenttype" minOccurs="0"/>
             <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
@@ -160,7 +160,7 @@
             <xs:element name="postadresse" type="n5mdk:postadresse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="postnummer" type="n5mdk:postnummer" minOccurs="0"/>
             <xs:element name="poststed" type="n5mdk:poststed" minOccurs="0"/>
-            <xs:element name="land" type="n5mdk:land" minOccurs="0"/>
+            <xs:element name="landkode" type="n5mdk:landkode" minOccurs="0"/>
             <xs:element name="epostadresse" type="n5mdk:epostadresse" minOccurs="0"/>
             <xs:element name="telefonnummer" type="n5mdk:telefonnummer" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kontaktperson" type="n5mdk:kontaktperson" minOccurs="0"/>
@@ -241,7 +241,7 @@
             <xs:element name="postadresse" type="n5mdk:postadresse" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="postnummer" type="n5mdk:postnummer" minOccurs="0"/>
             <xs:element name="poststed" type="n5mdk:poststed" minOccurs="0"/>
-            <xs:element name="land" type="n5mdk:land" minOccurs="0"/>
+            <xs:element name="landkode" type="n5mdk:landkode" minOccurs="0"/>
             <xs:element name="epostadresse" type="n5mdk:epostadresse" minOccurs="0"/>
             <xs:element name="telefonnummer" type="n5mdk:telefonnummer" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="kontaktperson" type="n5mdk:kontaktperson" minOccurs="0"/>

@@ -19,14 +19,10 @@
 
     <xs:complexType name="dokumentobjektOpprett">
         <xs:annotation>
-            <xs:documentation>Legg til et dokumenobjekt til en dokumentbeskrivelse basert på dokumentbeskrivelseID</xs:documentation>
+            <xs:documentation>Legg til et dokumenobjekt til en dokumentbeskrivelse basert på referanseTilDokumentbeskrivelse</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="dokumentbeskrivelseID" type="n5mdk:systemID" >
-                <xs:annotation>
-                    <xs:documentation>Dette er systemID til dokumentbeskrivelsen som dokumentobjekt skal legges til</xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:element name="referanseTilDokumentbeskrivelse" type="n5mdk:referanseTilDokumentbeskrivelse" />
             <xs:element name="dokumentobjekt" type="arkivmelding:dokumentobjekt" />
         </xs:sequence>
     </xs:complexType>

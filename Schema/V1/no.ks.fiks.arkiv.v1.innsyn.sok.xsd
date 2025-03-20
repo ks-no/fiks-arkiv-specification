@@ -240,7 +240,7 @@
             <xs:element name="stringvalues" type="stringvalues"/>
             <xs:element name="datevalues" type="datevalues"/>
             <xs:element name="intvalues" type="intvalues"/>
-            <xs:element name="eksternId" type="eksternId"/>
+            <xs:element name="eksternNoekkel" type="eksternNoekkel"/>
             <xs:element name="klassifikasjonvalues" type="klassifikasjonvalues"/>
             <xs:element name="bbox" type="bbox"/>
         </xs:choice>
@@ -266,15 +266,15 @@
 
     <xs:complexType name="klassifikasjonvalues">
         <xs:sequence maxOccurs="unbounded">
-            <xs:element name="klassifikasjonssystem" type="xs:string" minOccurs="0"/>
-            <xs:element name="klasse" type="xs:string" minOccurs="0"/>
+            <xs:element name="klassifikasjonssystemID" type="xs:string" minOccurs="0"/>
+            <xs:element name="klasseID" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="eksternId">
+    <xs:complexType name="eksternNoekkel">
         <xs:sequence>
-            <xs:element name="system" type="xs:string"/>
-            <xs:element name="id" type="xs:string"/>
+            <xs:element name="fagsystem" type="xs:string"/>
+            <xs:element name="noekkel" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -294,7 +294,7 @@
 
     <xs:simpleType name="mappeSokefelt">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="mappeEksternId"/>
+            <xs:enumeration value="mappeEksternNoekkel"/>
             <xs:enumeration value="mappeTittel"/>
             <xs:enumeration value="mappeOpprettetDato"/>
             <xs:enumeration value="mappeBeskrivelse"/>
@@ -304,7 +304,7 @@
             <xs:enumeration value="mappeEndretDato"/>
             <xs:enumeration value="mappeMappetype"/>
     
-            <xs:enumeration value="mappeKlasseKlassifikasjonssystem"/>
+            <xs:enumeration value="mappeKlasseKlassifikasjonssystemID"/>
             <xs:enumeration value="mappeKlasseKlasseID"/>
             <xs:enumeration value="mappeKlasseTittel"/>
             <xs:enumeration value="mappeKlasseBeskrivelse"/>
@@ -325,7 +325,7 @@
 
     <xs:simpleType name="saksmappeSokefelt">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="mappeEksternId"/>
+            <xs:enumeration value="mappeEksternNoekkel"/>
             <xs:enumeration value="mappeTittel"/>
             <xs:enumeration value="mappeOpprettetDato"/>
             <xs:enumeration value="mappeBeskrivelse"/>
@@ -335,7 +335,7 @@
             <xs:enumeration value="mappeEndretDato"/>
             <xs:enumeration value="mappeMappetype"/>
 
-            <xs:enumeration value="mappeKlasseKlassifikasjonssystem"/>
+            <xs:enumeration value="mappeKlasseKlassifikasjonssystemID"/>
             <xs:enumeration value="mappeKlasseKlasseID"/>
             <xs:enumeration value="mappeKlasseTittel"/>
             <xs:enumeration value="mappeKlasseBeskrivelse"/>

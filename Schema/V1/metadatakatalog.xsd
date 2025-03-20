@@ -636,10 +636,12 @@
   <xs:complexType name="referanseTilDokumentbeskrivelse">
     <xs:annotation>
       <xs:documentation>M225</xs:documentation>
-      <xs:documentation>Fiks-Arkiv: inneholder systemID som identifiserer en Dokumentbeskrivelse. Mulig å utvide senere med andre identifikatorer til en Dokumentbeskrivelse.</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: inneholder systemID eller eksternNoekkel som identifiserer en Dokumentbeskrivelse.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="systemID" type="systemID" minOccurs="0"/>
+      <xs:element name="referanseEksternNoekkel" type="eksternNoekkel" minOccurs="0"/>
+      <xs:element name="journalpostDokumentnummer" type="journalpostDokumentnummer" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -867,15 +869,16 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="landkode">
+  <xs:complexType name="landkode">
     <xs:annotation>
       <xs:documentation>M322</xs:documentation>
       <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
+      <xs:documentation>Endret: Fiks Arkiv 1.0 endret til å være et kode objekt</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="planidentifikasjon">
     <xs:annotation>
@@ -1120,16 +1123,16 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="forsendelsesmaate">
+  <xs:complexType name="forsendelsesmaate">
     <xs:annotation>
       <xs:documentation>M413</xs:documentation>
       <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
-      <xs:documentation>Fiks-Arkiv: TODO gjøre om til kode type og gi en kodeliste som er oppdatert</xs:documentation>
+      <xs:documentation>Fiks-Arkiv: Endret til kode objekt</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexContent>
+      <xs:extension base="kode"/>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:simpleType name="hendelsestype">
     <xs:annotation>
@@ -1949,5 +1952,17 @@
       <xs:minLength value="1"/>
     </xs:restriction>
   </xs:simpleType>
+  
+  <xs:complexType name="journalpostDokumentnummer">
+    <xs:annotation>
+      <xs:documentation>M812</xs:documentation>
+      <xs:documentation>Opprettet: Fiks-arkiv</xs:documentation>
+      <xs:documentation>Identifiserer en dokumentbeskrivelse under en journalpost</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="referanseTilJournalpost" type="referanseTilJournalpost" />
+      <xs:element name="dokumentnummer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>
 
