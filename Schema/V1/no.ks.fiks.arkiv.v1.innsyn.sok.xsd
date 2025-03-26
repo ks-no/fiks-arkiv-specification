@@ -380,7 +380,8 @@
             <xs:enumeration value="sakPlanidentPlanidentifikasjon"/>
 
             <xs:enumeration value="sakBbox"/>
-            <xs:enumeration value="planident"/>
+            <xs:enumeration value="sakMatrikkelnummer"/>
+            <xs:enumeration value="sakPlanident"/>
         </xs:restriction>
     </xs:simpleType>
 
