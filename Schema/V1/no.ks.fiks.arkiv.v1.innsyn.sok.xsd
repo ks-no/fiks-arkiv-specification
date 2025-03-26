@@ -243,6 +243,8 @@
             <xs:element name="eksternNoekkel" type="eksternNoekkel"/>
             <xs:element name="klassifikasjonvalues" type="klassifikasjonvalues"/>
             <xs:element name="bbox" type="bbox"/>
+            <xs:element name="matrikkelnummer" type="matrikkelnummer"/>
+            <xs:element name="planident" type="planident"/>
         </xs:choice>
     </xs:complexType>
 
@@ -315,6 +317,8 @@
             <xs:enumeration value="mappePartPostnummer"/>
             <xs:enumeration value="mappePartPoststed"/>
             <xs:enumeration value="mappePartEpostadresse"/>
+            <xs:enumeration value="mappePartOrganisasjonsid"/>
+            <xs:enumeration value="mappePartPersonid"/>
     
             <xs:enumeration value="mappeSkjermingTilgangsrestriksjon"/>
             <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
@@ -346,12 +350,14 @@
             <xs:enumeration value="mappePartPostnummer"/>
             <xs:enumeration value="mappePartPoststed"/>
             <xs:enumeration value="mappePartEpostadresse"/>
+            <xs:enumeration value="mappePartOrganisasjonsid"/>
+            <xs:enumeration value="mappePartPersonid"/>
 
             <xs:enumeration value="mappeSkjermingTilgangsrestriksjon"/>
             <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="mappeSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="mappeSkjermingSkjermingOpphoererDato"/>
-            
+
             <xs:enumeration value="sakSaksdato"/>
             <xs:enumeration value="sakSaksaar"/>
             <xs:enumeration value="sakSaksekvensnummer"/>
@@ -373,10 +379,8 @@
             <xs:enumeration value="sakPlanidentKommuneKommunenummer"/>
             <xs:enumeration value="sakPlanidentPlanidentifikasjon"/>
 
-            <xs:enumeration value="sakPartOrganisasjonsid"/>
-            <xs:enumeration value="sakPartPersonid"/>
-
             <xs:enumeration value="sakBbox"/>
+            <xs:enumeration value="planident"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -591,6 +595,27 @@
             <xs:enumeration value="opprettetDato"/>
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:complexType name="matrikkelnummer">
+        <xs:sequence>
+            <xs:element name="kommunenummer" type="n5mdk:kommunenummer" minOccurs="0"/>
+            <xs:element name="gardsnummer" type="n5mdk:gardsnummer"/>
+            <xs:element name="bruksnummer" type="n5mdk:bruksnummer"/>
+            <xs:element name="festenummer" type="n5mdk:festenummer" minOccurs="0"/>
+            <xs:element name="seksjonsnummer" type="n5mdk:seksjonsnummer" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="planident">
+        <xs:sequence>
+            <xs:element name="planidentifikasjon" type="n5mdk:planidentifikasjon"/>
+            <xs:choice minOccurs="0">
+                <xs:element name="kommunenummer" minOccurs="0" type="n5mdk:kommunenummer"/>
+                <xs:element name="fylkesnummer" minOccurs="0" type="n5mdk:fylkesnummer"/>
+                <xs:element name="landkode" minOccurs="0" type="n5mdk:landkode"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
 
 </xs:schema>
 
