@@ -12,8 +12,9 @@
 
     <xs:annotation>
         <xs:documentation>
-            This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.sok' message.
-            Use this messagetype for search.
+            This schema is connected to the 'no.ks.fiks.arkiv.v1.innsyn.sok' and is for search in the archive.
+            When searching on more than one field on the same object, all of these must match the same object ("WHERE" with "AND" in a SQL query).
+            Example: klasse.klassifikasjonssystem/FE, klasse.klasseID/123 will return cases with klasse FE/123, but not cases with klasse FE/2 and FA/123)
         </xs:documentation>
     </xs:annotation>
     
@@ -243,8 +244,6 @@
             <xs:element name="eksternNoekkel" type="eksternNoekkel"/>
             <xs:element name="klassifikasjonvalues" type="klassifikasjonvalues"/>
             <xs:element name="bbox" type="bbox"/>
-            <xs:element name="matrikkelnummer" type="matrikkelnummer"/>
-            <xs:element name="planident" type="planident"/>
         </xs:choice>
     </xs:complexType>
 
@@ -380,8 +379,6 @@
             <xs:enumeration value="sakPlanidentPlanidentifikasjon"/>
 
             <xs:enumeration value="sakBbox"/>
-            <xs:enumeration value="sakMatrikkelnummer"/>
-            <xs:enumeration value="sakPlanident"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -596,27 +593,6 @@
             <xs:enumeration value="opprettetDato"/>
         </xs:restriction>
     </xs:simpleType>
-
-    <xs:complexType name="matrikkelnummer">
-        <xs:sequence>
-            <xs:element name="kommunenummer" type="n5mdk:kommunenummer" minOccurs="0"/>
-            <xs:element name="gardsnummer" type="n5mdk:gardsnummer"/>
-            <xs:element name="bruksnummer" type="n5mdk:bruksnummer"/>
-            <xs:element name="festenummer" type="n5mdk:festenummer" minOccurs="0"/>
-            <xs:element name="seksjonsnummer" type="n5mdk:seksjonsnummer" minOccurs="0"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="planident">
-        <xs:sequence>
-            <xs:element name="planidentifikasjon" type="n5mdk:planidentifikasjon"/>
-            <xs:choice minOccurs="0">
-                <xs:element name="kommunenummer" minOccurs="0" type="n5mdk:kommunenummer"/>
-                <xs:element name="fylkesnummer" minOccurs="0" type="n5mdk:fylkesnummer"/>
-                <xs:element name="landkode" minOccurs="0" type="n5mdk:landkode"/>
-            </xs:choice>
-        </xs:sequence>
-    </xs:complexType>
 
 </xs:schema>
 
