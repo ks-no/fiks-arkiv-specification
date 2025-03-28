@@ -12,8 +12,9 @@
 
     <xs:annotation>
         <xs:documentation>
-            This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.sok' message.
-            Use this messagetype for search.
+            This schema is connected to the 'no.ks.fiks.arkiv.v1.innsyn.sok' and is for search in the archive.
+            When searching on more than one field on the same object, all of these must match the same object ("WHERE" with "AND" in a SQL query).
+            Example: klasse.klassifikasjonssystem/FE, klasse.klasseID/123 will return cases with klasse FE/123, but not cases with klasse FE/2 and FA/123)
         </xs:documentation>
     </xs:annotation>
     
@@ -315,6 +316,8 @@
             <xs:enumeration value="mappePartPostnummer"/>
             <xs:enumeration value="mappePartPoststed"/>
             <xs:enumeration value="mappePartEpostadresse"/>
+            <xs:enumeration value="mappePartOrganisasjonsid"/>
+            <xs:enumeration value="mappePartPersonid"/>
     
             <xs:enumeration value="mappeSkjermingTilgangsrestriksjon"/>
             <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
@@ -346,12 +349,14 @@
             <xs:enumeration value="mappePartPostnummer"/>
             <xs:enumeration value="mappePartPoststed"/>
             <xs:enumeration value="mappePartEpostadresse"/>
+            <xs:enumeration value="mappePartOrganisasjonsid"/>
+            <xs:enumeration value="mappePartPersonid"/>
 
             <xs:enumeration value="mappeSkjermingTilgangsrestriksjon"/>
             <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="mappeSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="mappeSkjermingSkjermingOpphoererDato"/>
-            
+
             <xs:enumeration value="sakSaksdato"/>
             <xs:enumeration value="sakSaksaar"/>
             <xs:enumeration value="sakSaksekvensnummer"/>
@@ -372,9 +377,6 @@
             <xs:enumeration value="sakPlanidentFylkeFylkesnummer"/>
             <xs:enumeration value="sakPlanidentKommuneKommunenummer"/>
             <xs:enumeration value="sakPlanidentPlanidentifikasjon"/>
-
-            <xs:enumeration value="sakPartOrganisasjonsid"/>
-            <xs:enumeration value="sakPartPersonid"/>
 
             <xs:enumeration value="sakBbox"/>
         </xs:restriction>
