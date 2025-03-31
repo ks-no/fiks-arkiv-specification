@@ -402,6 +402,19 @@
             <xs:enumeration value="registreringSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="registreringSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="registreringSkjermingSkjermingOpphoererDato"/>
+
+            <xs:enumeration value="registreringKorrespondansepartKorrespondanseparttype"/>
+            <xs:enumeration value="registreringKorrespondansepartKorrespondansepartNavn"/>
+            <xs:enumeration value="registreringKorrespondansepartPostadresse"/>
+            <xs:enumeration value="registreringKorrespondansepartPostnummer"/>
+            <xs:enumeration value="registreringKorrespondansepartPoststed"/>
+            <xs:enumeration value="registreringKorrespondansepartEpostadresse"/>
+            <xs:enumeration value="registreringKorrespondansepartOrganisasjonsid"/>
+            <xs:enumeration value="registreringKorrespondansepartPersonid"/>
+            <xs:enumeration value="registreringKorrespondansepartForsendelsesmaate"/>
+            <xs:enumeration value="registreringKorrespondansepartDeresReferanse"/>
+            <xs:enumeration value="registreringKorrespondansepartAdministrativEnhet"/>
+            <xs:enumeration value="registreringKorrespondansepartSaksbehandler"/>
         </xs:restriction>
     </xs:simpleType>    
     
