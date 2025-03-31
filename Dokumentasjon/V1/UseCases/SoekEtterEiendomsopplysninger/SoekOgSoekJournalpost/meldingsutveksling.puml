@@ -1,0 +1,34 @@
+@startuml
+skinparam sequenceMessageAlign center 
+
+title "Eksempel på dialog mellom fagsystem og arkivsystem\nved søk på matrikkel som gir saksmapper,\n så nytt søk på journalposter og til slutt\nhente dokumenter"
+
+
+participant Fagsystem as "Fagsystem"
+participant Arkivsystem as "Arkivsystem"
+
+...Fagsystem søker etter saksmapper basert på matrikkel...
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.sok
+
+
+...Arkiv leverer tilbake søkeresultat\nfor saksmapper registrert med matrikkel i søket.\nResultatet er "minimum" data som gir nøkler til å hente mer data...
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum
+
+... Fagsystem søker etter journalposter\n basert på resultat i søk etter saksmapper...
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.sok
+
+
+...Arkiv leverer tilbake søkeresultat for journalposter.\nResultatet gir dokumentbeskrivelser tilhørende journalpost...
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum
+
+
+...Fagsystem henter dokumenter basert på nøkler i dokumentbeskrivelser\nHenter første dokument......
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent
+
+...Resultatet er kun filen...
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat
+
+...Henter neste dokumentfil osv. ...
+Fagsystem -> Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent
+Fagsystem <- Arkivsystem : no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat
+@enduml
