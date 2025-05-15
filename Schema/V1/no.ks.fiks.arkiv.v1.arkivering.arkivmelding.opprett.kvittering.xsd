@@ -75,12 +75,12 @@
         <xs:complexContent>
             <xs:extension base="registreringKvittering">
                 <xs:sequence>
-                    <xs:element name="journalaar" type="n5mdk:journalaar"/>
-                    <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"/>
-                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"/>
-                    <xs:element name="journalposttype" type="n5mdk:journalposttype"/>
-                    <xs:element name="journalstatus" type="n5mdk:journalstatus"/>
-                    <xs:element name="journaldato" type="n5mdk:journaldato"/>
+                    <xs:element name="journalaar" type="n5mdk:journalaar" minOccurs="0"/>
+                    <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer" minOccurs="0"/>
+                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer" minOccurs="0"/>
+                    <xs:element name="journalposttype" type="n5mdk:journalposttype" minOccurs="0"/>
+                    <xs:element name="journalstatus" type="n5mdk:journalstatus" minOccurs="0"/>
+                    <xs:element name="journaldato" type="n5mdk:journaldato" minOccurs="0"/>
                     <xs:element name="forfallsdato" type="n5mdk:forfallsdato" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
@@ -90,9 +90,9 @@
     <xs:complexType name="dokumentbeskrivelseKvittering">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
-            <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
-            <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
-            <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+            <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer" minOccurs="0"/>
             <xs:element name="dokumentobjekt" type="dokumentobjektKvittering" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
@@ -100,10 +100,10 @@
     <xs:complexType name="dokumentobjektKvittering">
         <xs:sequence>
             <xs:element name="systemID" type="n5mdk:systemID"/>
-            <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer"/>
-            <xs:element name="variantformat" type="n5mdk:variantformat"/>
-            <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
-            <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
+            <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer" minOccurs="0"/>
+            <xs:element name="variantformat" type="n5mdk:variantformat" minOccurs="0"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
