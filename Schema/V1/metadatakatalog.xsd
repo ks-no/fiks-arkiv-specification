@@ -873,7 +873,9 @@
     <xs:annotation>
       <xs:documentation>M322</xs:documentation>
       <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
-      <xs:documentation>Endret: Fiks Arkiv 1.0 endret til å være et kode objekt</xs:documentation>
+      <xs:documentation>Endret: Fiks Arkiv 1.0 endret til å være et kode objekt.
+        Kode-verdi skal inneholde to-bokstavs kode i hht ISO 3166
+      </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="kode"/>
