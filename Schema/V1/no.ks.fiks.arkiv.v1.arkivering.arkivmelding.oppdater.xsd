@@ -185,6 +185,7 @@
             <xs:element name="arkivertAv" type="n5mdk:arkivertAv" minOccurs="0"/>
             <xs:element name="referanseForelderMappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
             <xs:element name="partOppdateringer" type="partOppdateringer" minOccurs="0"/>
+            <xs:element name="kryssreferanseOppdateringer" type="kryssreferanseOppdateringer" minOccurs="0"/>
             <xs:element name="skjermingOppdateringer" type="skjermingOppdateringer" minOccurs="0"/>
             <xs:element name="gradering" type="graderingOppdateringer" minOccurs="0"/>
             <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
