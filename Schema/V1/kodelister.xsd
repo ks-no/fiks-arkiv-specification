@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodelister/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodelister/v1"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="kodelister">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="arkivdelstatus"/>
+            <xs:enumeration value="arkivstatus"/>
+            <xs:enumeration value="avskrivningsmaate"/>
+            <xs:enumeration value="dokumentmedium"/>
+            <xs:enumeration value="dokumentstatus"/>
+            <xs:enumeration value="dokumenttype"/>
+            <xs:enumeration value="elektronisksignatursikkerhetsnivaa"/>
+            <xs:enumeration value="elektronisksignaturverifisert"/>
+            <xs:enumeration value="flystatus"/>
+            <xs:enumeration value="grad"/>
+            <xs:enumeration value="journalposttype"/>
+            <xs:enumeration value="journalstatus"/>
+            <xs:enumeration value="kassasjonsvedtak"/>
+            <xs:enumeration value="klassifikasjonstype"/>
+            <xs:enumeration value="korrespondanseparttype"/>
+            <xs:enumeration value="merknadstype"/>
+            <xs:enumeration value="moetedeltakerfunksjon"/>
+            <xs:enumeration value="moeteregistreringsstatus"/>
+            <xs:enumeration value="moeteregistreringstype"/>
+            <xs:enumeration value="moetesakstype"/>
+            <xs:enumeration value="partrolle"/>
+            <xs:enumeration value="presedensstatus"/>
+            <xs:enumeration value="saksstatus"/>
+            <xs:enumeration value="skjermingdokument"/>
+            <xs:enumeration value="skjermingopphoereraksjon"/>
+            <xs:enumeration value="slettingstype"/>
+            <xs:enumeration value="tekstformat"/>
+            <xs:enumeration value="tilknyttetregistreringsom"/>
+            <xs:enumeration value="variantformat"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
