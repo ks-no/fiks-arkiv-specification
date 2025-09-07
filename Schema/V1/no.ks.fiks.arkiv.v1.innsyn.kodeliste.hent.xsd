@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodeliste/hent/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:kodelister="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodelister/v1"
+		   targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodeliste/hent/v1"
+           elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodelister/v1"
+               schemaLocation="./kodelister.xsd"/>
+
+	<xs:element name="HentKodeliste">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kodelistenavn" type="kodelister:kodelister" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
