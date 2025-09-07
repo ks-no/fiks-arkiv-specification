@@ -11,7 +11,7 @@
 	<xs:element name="KodeListe" type="KodeListe"/>
 	<xs:complexType name="KodeListe">
 		<xs:sequence>
-			<xs:element name="liste" type="n5mdk:kode" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="liste" type="n5mdk:kode" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 

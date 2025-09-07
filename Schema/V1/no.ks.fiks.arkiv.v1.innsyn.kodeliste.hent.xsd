@@ -12,7 +12,6 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="kodelistenavn" type="kodelister:kodelister" minOccurs="0"/>
-				<xs:element name="spraak" type="xs:string" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
