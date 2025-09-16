@@ -326,6 +326,7 @@
             <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="mappeSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="mappeSkjermingSkjermingOpphoererDato"/>
+            <xs:enumeration value="mappeTilgangsgruppeNavn"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -418,6 +419,7 @@
             <xs:enumeration value="registreringKorrespondansepartDeresReferanse"/>
             <xs:enumeration value="registreringKorrespondansepartAdministrativEnhet"/>
             <xs:enumeration value="registreringKorrespondansepartSaksbehandler"/>
+            <xs:enumeration value="registreringTilgangsgruppeNavn"/>
         </xs:restriction>
     </xs:simpleType>    
     

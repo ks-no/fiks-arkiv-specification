@@ -70,6 +70,7 @@
             <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:element name="mappetype" type="n5mdk:kode" minOccurs="0"/>
+            <xs:element name="tilgangsgruppeNavn" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -198,6 +199,7 @@
             <xs:element name="korrespondansepartOppdateringer" type="korrespondansepartOppdateringer" minOccurs="0"/>
             <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="tilgangsgruppeNavn" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
