@@ -319,7 +319,7 @@
             <xs:element name="systemID" type="n5mdk:systemID"/>
             <xs:element name="opprettetDato" type="n5mdk:opprettetDato"/>
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv"/>
-            <xs:element name="arkivertDato" type="n5mdk:arkivertDato"/>
+            <xs:element name="arkivertDato" type="n5mdk:arkivertDato" minOccurs="0"/>
             <xs:element name="arkivertAv" type="n5mdk:arkivertAv"/>
             <!-- Dersom en registrering kommer alene må den kunne plasseres i en mappe eller arkivdel-->
             <xs:choice minOccurs="0">
@@ -368,7 +368,7 @@
                     <xs:element name="dokumentflyt" type="dokumentflyt" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="presedens" type="presedens" minOccurs="0" maxOccurs="unbounded"/>
                     <xs:element name="elektroniskSignatur" type="elektroniskSignatur" minOccurs="0"/>
-                    <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
+                    <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato" minOccurs="0"/>
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
