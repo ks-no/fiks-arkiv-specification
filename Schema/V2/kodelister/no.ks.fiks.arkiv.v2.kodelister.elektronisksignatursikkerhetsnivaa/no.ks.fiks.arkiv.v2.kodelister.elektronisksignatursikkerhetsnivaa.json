@@ -1,0 +1,24 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "elektronisksignatursikkerhetsnivaa",
+  "versjon": "v2",
+  "definisjon": "Angivelse av hvilket sikkerhetsnivå som ble brukt ved forsendelse og mottak av elektroniske dokumenter",
+  "kodeliste": [
+    {
+      "kodeverdi" : "SK",
+      "kodebeskrivelse" : "Symmetrisk kryptert"
+    },
+    {
+      "kodeverdi" : "V",
+      "kodebeskrivelse" : "Sendt med PKI/virksomhetssertifikat"
+    },
+    {
+      "kodeverdi" : "PS",
+      "kodebeskrivelse" : "Sendt med PKI/'person standard'-sertifikat"
+    },
+    {
+      "kodeverdi" : "PH",
+      "kodebeskrivelse" : "Sendt med PKI/'person høy'-sertifikat"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "moeteregistreringstype",
+  "versjon": "v2",
+  "definisjon": "Navn på type møteregistrering",
+  "kodeliste": [
+    {
+      "kodeverdi" : "MI",
+      "kodebeskrivelse" : "Møteinnkalling"
+    },
+    {
+      "kodeverdi" : "SF",
+      "kodebeskrivelse" : "Saksframlegg"
+    },
+    {
+      "kodeverdi" : "SP",
+      "kodebeskrivelse" : "Saksprotokoll"
+    },
+    {
+      "kodeverdi" : "MP",
+      "kodebeskrivelse" : "Møteprotokoll"
+    },
+    {
+      "kodeverdi" : "SL",
+      "kodebeskrivelse" : "Saksliste"
+    },
+    {
+      "kodeverdi" : "OL",
+      "kodebeskrivelse" : "Offentlig saksliste"
+    },
+    {
+      "kodeverdi" : "VL",
+      "kodebeskrivelse" : "Vedlegg til møtesak"
+    }
+  ]
+}

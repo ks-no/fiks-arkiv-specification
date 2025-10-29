@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodelister/v2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/kodelister/v2"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="kodelister">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="arkivdel"/>
+            <xs:enumeration value="avskrivningsmaate"/>
+            <xs:enumeration value="dokumentmedium"/>
+            <xs:enumeration value="dokumentstatus"/>
+            <xs:enumeration value="dokumenttype"/>
+            <xs:enumeration value="flytsatus"/>
+            <xs:enumeration value="format"/>
+            <xs:enumeration value="forsendelsesmaate"/>
+            <xs:enumeration value="grad"/>
+            <xs:enumeration value="journalposttype"/>
+            <xs:enumeration value="journalstatus"/>
+            <xs:enumeration value="kassasjonsvedtak"/>
+            <xs:enumeration value="klassifikasjonstype"/>
+            <xs:enumeration value="koordinatsystem"/>
+            <xs:enumeration value="korrespondanseparttype"/>
+            <xs:enumeration value="landkode"/>
+            <xs:enumeration value="mappetype"/>
+            <xs:enumeration value="merknadstype"/>
+            <xs:enumeration value="moetedokumenttype"/>
+            <xs:enumeration value="moetesakstype"/>
+            <xs:enumeration value="partrolle"/>
+            <xs:enumeration value="presedensstatus"/>
+            <xs:enumeration value="saksstatus"/>
+            <xs:enumeration value="skjermingopphoereraksjon"/>
+            <xs:enumeration value="tilgangsrestriksjon"/>
+            <xs:enumeration value="tilknyttetregistreringsom"/>
+            <xs:enumeration value="variantformat"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/feil/serverfeil/v2"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:feilmelding="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/feil/feilmelding/v1"
+			targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/feil/serverfeil/v1"
+			elementFormDefault="qualified">
+	
+	<xs:annotation>
+		<xs:documentation>
+			This is connected to the 'no.ks.fiks.arkiv.v1.feilmelding.serverfeil' message. Use this messagetype when there is an internal error in the system, 
+			much like a HTTP 500 Internal Server Error.  
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/feil/feilmelding/v1"
+			   schemaLocation="./feilmeldingBase.xsd"/>
+
+	<xs:element name="serverfeil" type="feilmelding:feilmeldingBase" />
+
+</xs:schema>

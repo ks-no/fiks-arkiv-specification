@@ -1,0 +1,16 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "elektroniskSignaturVerifisert",
+  "versjon": "v2",
+  "definisjon": "Angivelse av om et dokument er mottatt med elektronisk signatur, og om signaturen er verifisert",
+  "kodeliste": [
+    {
+      "kodeverdi" : "I",
+      "kodebeskrivelse" : "Signatur påført, ikke verifisert"
+    },
+    {
+      "kodeverdi" : "V",
+      "kodebeskrivelse" : "Signatur påført og verifisert"
+    }
+  ]
+}

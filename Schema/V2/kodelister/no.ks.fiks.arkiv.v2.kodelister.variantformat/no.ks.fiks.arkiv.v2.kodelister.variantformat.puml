@@ -1,0 +1,22 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "variantformat",
+  "versjon": "v2",
+  "definisjon": "Angivelse av hvilken variant et dokument forekommer i",
+  "kodeliste": [
+    {
+      "kodeverdi" : "P",
+      "kodebeskrivelse" : "Produksjonsformat"
+    },
+    {
+      "kodeverdi" : "A",
+      "kodebeskrivelse" : "Arkivformat"
+    },
+    {
+      "kodeverdi" : "O",
+      "kodebeskrivelse" : "Dokument hvor deler av innholdet er skjermet"
+    }
+  ]
+}
+@endjson

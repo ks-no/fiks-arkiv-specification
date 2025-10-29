@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/opprett/kvittering/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentobjekt/opprett/kvittering/v1"
+           elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.arkivering.arkivmelding.dokumentobjekt.kvittering' message.
+            Use this messagetype for response to the create message 'no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett'.
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:element name="dokumentobjektOpprettKvittering" type="dokumentobjektOpprettKvittering"/>
+
+    <xs:complexType name="dokumentobjektOpprettKvittering">
+        <xs:annotation>
+            <xs:documentation>Kvittering for lagt til dokumentobjekt til en dokumentbeskrivelse</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="opprettetDato" type="n5mdk:opprettetDato" minOccurs="0"/>
+            <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

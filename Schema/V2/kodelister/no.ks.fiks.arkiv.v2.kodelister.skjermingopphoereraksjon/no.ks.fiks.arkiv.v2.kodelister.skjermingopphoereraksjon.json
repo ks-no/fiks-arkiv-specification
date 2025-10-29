@@ -1,0 +1,28 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "skjermingopphoereraksjon",
+  "versjon": "v2",
+  "definisjon": "",
+  "kodeliste": [
+    {
+      "kodeverdi" : "A",
+      "kodebeskrivelse" : "Avgraderes ved første kjøring av funksjon for avgradering etter at avgraderingstidspunktet er nådd"
+    },
+    {
+      "kodeverdi" : "G",
+      "kodebeskrivelse" : "Gjennomgås for vurdering av avgradering når angitt avgraderingstidspunkt nås"
+    },
+    {
+      "kodeverdi" : "S",
+      "kodebeskrivelse" : "Sperrefrist, avgraderes automatisk når avgraderingsdato nås"
+    },
+    {
+      "kodeverdi" : "AU",
+      "kodebeskrivelse" : "Avgradering utført. Dette er den eneste avgraderingskoden som er tillatt etter at tilgangskode er slettet"
+    },
+    {
+      "kodeverdi" : "U",
+      "kodebeskrivelse" : "Unntatt fra automatisk avgradering"
+    }
+  ]
+}

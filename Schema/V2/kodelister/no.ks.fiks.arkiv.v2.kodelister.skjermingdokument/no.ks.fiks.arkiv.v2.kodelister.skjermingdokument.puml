@@ -1,0 +1,18 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "skjermingdokument",
+  "versjon": "v2",
+  "definisjon": "Angivelse av at hele dokumentet eller deler av det må skjermes",
+  "kodeliste": [
+    {
+      "kodeverdi" : "H",
+      "kodebeskrivelse" : "Skjerming av hele dokumentet"
+    },
+    {
+      "kodeverdi" : "D",
+      "kodebeskrivelse" : "Skjerming av deler av dokumentet"
+    }
+  ]
+}
+@endjson

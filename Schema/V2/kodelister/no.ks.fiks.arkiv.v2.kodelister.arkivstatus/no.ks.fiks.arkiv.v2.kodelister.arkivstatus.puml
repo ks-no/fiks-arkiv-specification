@@ -1,0 +1,18 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "arkivstatus",
+  "versjon": "v2",
+  "definisjon": "Status til arkivet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "Opprettet",
+      "kodebeskrivelse" : "Opprettet"
+    },
+    {
+      "kodeverdi" : "Avsluttet",
+      "kodebeskrivelse" : "Avsluttet"
+    }
+  ]
+}
+@endjson

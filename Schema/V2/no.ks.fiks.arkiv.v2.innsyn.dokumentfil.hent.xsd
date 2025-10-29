@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentfil/hent/v2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/dokumentfil/hent/v2"
+           elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+               schemaLocation="./metadatakatalog.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v2.innsyn.dokumentfil.hent' message.
+            Use this messagetype for getting dokumentfil.
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:element name="dokumentfilHent" type="dokumentfilHent"/>
+
+    <xs:complexType name="dokumentfilHent">
+        <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
+            <xs:element name="dokumentfilNoekkel" type="dokumentfilNoekkel"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentfilNoekkel">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
