@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/minimum/v2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/minimum/v2"
+           elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0">
+
+    <xs:annotation>
+        <xs:documentation xml:lang="no">KS - Fiks</xs:documentation>
+        <xs:documentation xml:lang="no">XML Schema for søkeresultat fra Noark 5-løsninger</xs:documentation>
+        <xs:documentation xml:lang="no">Hovedskjema - skjema for arkivstruktur for søkeresultat</xs:documentation>
+    </xs:annotation>
+
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+               schemaLocation="metadatakatalog.xsd"/>
+
+    <xs:complexType name="klassifikasjonssystemMinimum">
+        <xs:sequence>
+            <xs:element name="klassifikasjonssystemID" type="n5mdk:klassifikasjonssystemID"/>
+            <xs:element name="klassifikasjonstype" type="n5mdk:klassifikasjonstype" minOccurs="0"/>
+            <xs:element name="tittel" type="n5mdk:tittel"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="klassifikasjon">
+        <xs:sequence>
+            <xs:element name="klassifikasjonID" type="n5mdk:klassifikasjonID" minOccurs="0"/>
+            <xs:element name="klassifikasjonssystem" type="klassifikasjonssystemMinimum"/>
+            <xs:element name="klasseID" type="n5mdk:klasseID"/>
+            <xs:element name="tittel" type="n5mdk:tittel" minOccurs="0"/>
+            <xs:element name="erSkjermet" type="n5mdk:erSkjermet" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="klasseMinimum">
+        <xs:sequence>
+            <xs:element name="klasseID" type="n5mdk:klasseID"/>
+            <xs:element name="tittel" type="n5mdk:tittel"/>
+            <xs:element name="skjerming" type="skjermingMinimum" minOccurs="0"/>
+            <xs:element name="gradering" type="graderingMinimum" minOccurs="0"/>
+            <xs:element name="klassifikasjonssystem" type="klassifikasjonssystemMinimum" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="mappeMinimum">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="mappeID" type="n5mdk:mappeID"/>
+            <xs:element name="referanseForeldermappe" type="n5mdk:referanseTilMappe" minOccurs="0"/>
+            <xs:element name="tittel" type="n5mdk:tittel"/>
+            <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
+            <xs:element name="skjerming" type="skjermingMinimum" minOccurs="0"/>
+            <xs:element name="gradering" type="graderingMinimum" minOccurs="0"/>
+            <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="saksmappeMinimum">
+        <xs:complexContent>
+            <xs:extension base="mappeMinimum">
+                <xs:sequence>
+                    <xs:element name="saksaar" type="n5mdk:saksaar"/>
+                    <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer"/>
+                    <xs:element name="saksdato" type="n5mdk:saksdato"/>
+                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet"/>
+                    <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig"/>
+                    <xs:element name="saksstatus" type="n5mdk:saksstatus"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="registreringMinimum">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="skjerming" type="skjermingMinimum" minOccurs="0"/>
+            <xs:element name="gradering" type="graderingMinimum" minOccurs="0"/>
+            <!-- Tillater registreringer uten forekomster av dokumentbeskrivelse -->
+            <xs:element name="dokumentbeskrivelse" type="dokumentbeskrivelseMinimum" minOccurs="0"
+                        maxOccurs="unbounded"/>
+            <xs:element name="registreringsID" type="n5mdk:registreringsID" minOccurs="0"/>
+            <xs:element name="tittel" type="n5mdk:tittel"/>
+            <xs:element name="offentligTittel" type="n5mdk:offentligTittel" minOccurs="0"/>
+            <xs:element name="korrespondansepart" type="korrespondansepartMinimum" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostMinimum">
+        <xs:complexContent>
+            <xs:extension base="registreringMinimum">
+                <xs:sequence>
+                    <xs:element name="journalaar" type="n5mdk:journalaar"/>
+                    <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"/>
+                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"/>
+                    <xs:element name="journalposttype" type="n5mdk:journalposttype"/>
+                    <xs:element name="journalstatus" type="n5mdk:journalstatus"/>
+                    <xs:element name="journaldato" type="n5mdk:journaldato"/>
+                    <xs:element name="dokumentetsDato" type="n5mdk:dokumentetsDato" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostMedSaksmappeMinimum">
+        <xs:complexContent>
+            <xs:extension base="journalpostMinimum">
+                <xs:sequence>
+                    <xs:element name="saksaar" type="n5mdk:saksaar"/>
+                    <xs:element name="sakssekvensnummer" type="n5mdk:sakssekvensnummer"/>
+                    <xs:element name="saksdato" type="n5mdk:saksdato"/>
+                    <xs:element name="administrativEnhet" type="n5mdk:administrativEnhet"/>
+                    <xs:element name="saksansvarlig" type="n5mdk:saksansvarlig"/>
+                    <xs:element name="saksstatus" type="n5mdk:saksstatus"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="korrespondansepartMinimum">
+        <xs:sequence>
+            <xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype"/>
+            <xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseMinimum">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="dokumenttype" type="n5mdk:dokumenttype"/>
+            <xs:element name="dokumentstatus" type="n5mdk:dokumentstatus"/>
+            <xs:element name="tittel" type="n5mdk:tittel"/>
+            <xs:element name="skjerming" type="skjermingMinimum" minOccurs="0"/>
+            <xs:element name="gradering" type="graderingMinimum" minOccurs="0"/>
+            <xs:element name="dokumentobjekt" type="dokumentobjektMinimum" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentobjektMinimum">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID"/>
+            <xs:element name="versjonsnummer" type="n5mdk:versjonsnummer"/>
+            <xs:element name="variantformat" type="n5mdk:variantformat"/>
+            <xs:element name="format" type="n5mdk:format"/>
+            <xs:element name="formatDetaljer" type="n5mdk:formatDetaljer" minOccurs="0"/>
+            <xs:element name="referanseDokumentfil" type="n5mdk:referanseDokumentfil"/>
+            <xs:element name="filstoerrelse" type="n5mdk:filstoerrelse"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="skjermingMinimum">
+        <xs:sequence>
+            <xs:element name="tilgangsrestriksjon" type="n5mdk:tilgangsrestriksjon"/>
+            <xs:element name="skjermingshjemmel" type="n5mdk:skjermingshjemmel"/>
+            <xs:element name="skjermingOpphoererDato" type="n5mdk:skjermingOpphoererDato" minOccurs="0"/>
+            <xs:element name="skjermingOpphoererAksjon" type="n5mdk:skjermingOpphoererAksjon" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="graderingMinimum">
+        <xs:sequence>
+            <xs:element name="grad" type="n5mdk:grad"/>
+            <xs:element name="graderingsdato" type="n5mdk:graderingsdato"/>
+            <xs:element name="gradertAv" type="n5mdk:gradertAv"/>
+            <xs:element name="nedgraderingsdato" type="n5mdk:nedgraderingsdato" minOccurs="0"/>
+            <xs:element name="nedgradertAv" type="n5mdk:nedgradertAv" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

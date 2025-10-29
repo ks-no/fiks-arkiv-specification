@@ -1,0 +1,30 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "journalposttype",
+  "versjon": "v2",
+  "definisjon": "Navn på type journalpost",
+  "kodeliste": [
+    {
+      "kodeverdi" : "I",
+      "kodebeskrivelse" : "Inngående dokument"
+    },
+    {
+      "kodeverdi" : "U",
+      "kodebeskrivelse" : "Utgående dokument"
+    },
+    {
+      "kodeverdi" : "N",
+      "kodebeskrivelse" : "Organinternt dokument for oppfølging"
+    },
+    {
+      "kodeverdi" : "X",
+      "kodebeskrivelse" : "Organinternt dokument uten oppfølging"
+    },
+    {
+      "kodeverdi" : "S",
+      "kodebeskrivelse" : "Saksframlegg"
+    }
+  ]
+}
+@endjson

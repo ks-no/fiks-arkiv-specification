@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/mappe/hent/v2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/mappe/hent/v2"
+           elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+               schemaLocation="./metadatakatalog.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v2.innsyn.mappe.hent' message.
+            Use this messagetype for getting mappe or saksmappe.
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:element name="mappeHent" type="mappeHent"/>
+
+    <xs:complexType name="mappeHent">
+        <xs:annotation>
+            <xs:documentation>
+                The optional "spraak" value must be a ISO 639-1 code. If "spraak" is not set, default language is a configuration choice in the archive.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="system" type="xs:string"/>
+            <xs:element name="referanseTilMappe" type="n5mdk:referanseTilMappe"/>
+            <xs:element name="inkluder" type="inkluder" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="spraak" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="inkluder">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="merknad"/>
+            <xs:enumeration value="noekkelord"/>
+            <xs:enumeration value="kryssreferanse"/>
+            <xs:enumeration value="klasse"/>
+            <xs:enumeration value="part"/>
+            <xs:enumeration value="presedens"/>
+            <xs:enumeration value="moetedeltaker"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

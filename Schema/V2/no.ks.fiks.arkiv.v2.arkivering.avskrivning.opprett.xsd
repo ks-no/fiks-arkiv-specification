@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/avskrivning/opprett/v1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/avskrivning/opprett/v1"
+           elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
+               schemaLocation="./metadatakatalog.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>
+            This is connected to the 'no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett' message. Use this messagetype for creating a single 'avskrivning'.
+            Keys are 'referanseTilJournalpost' and 'korrespondansepartID'
+        </xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="nyAvskrivning" type="nyAvskrivning"/>
+
+    <xs:complexType name="nyAvskrivning">
+        <xs:annotation>
+            <xs:documentation>
+                Register a new "avskrivning".
+                referanseTilJournalpost is the reference to the journalpost to signoff
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="avskrivning" type="avskrivning"/>
+            <xs:element name="referanseTilJournalpost" type="n5mdk:referanseTilJournalpost" />
+            <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="avskrivning">
+        <xs:annotation>
+            <xs:documentation>
+                "referanseAvskrivesAvJournalpost" can be many or zero journalposts that this refers to.
+                "referanseAvskriverJournalpost" can be one or zero journalposts that refers to this.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
+            <xs:element name="avskrevetAv" type="n5mdk:saksbehandler"/>
+            <xs:element name="avskrivningsmaate" type="n5mdk:avskrivningsmaate"/>
+            <xs:element name="referanseAvskrivesAvJournalpost" type="n5mdk:referanseTilJournalpost" minOccurs="0"/>
+            <xs:element name="referanseAvskriverJournalpost" type="n5mdk:referanseTilJournalpost" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

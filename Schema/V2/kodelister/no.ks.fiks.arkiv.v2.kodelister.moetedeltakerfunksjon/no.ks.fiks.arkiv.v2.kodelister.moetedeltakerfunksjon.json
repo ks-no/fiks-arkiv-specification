@@ -1,0 +1,28 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "moetedeltakerfunksjon",
+  "versjon": "v2",
+  "definisjon": "Funksjon eller rolle til personen som deltok på møtet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "LEDER",
+      "kodebeskrivelse" : "Leder"
+    },
+    {
+      "kodeverdi" : "NESTL",
+      "kodebeskrivelse" : "Nestleder"
+    },
+    {
+      "kodeverdi" : "MEDL",
+      "kodebeskrivelse" : "Medlem"
+    },
+    {
+      "kodeverdi" : "VARA",
+      "kodebeskrivelse" : "Varamedlem"
+    },
+    {
+      "kodeverdi" : "SEKR",
+      "kodebeskrivelse" : "Sekretær"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "grad",
+  "versjon": "v2",
+  "definisjon": "Angivelse av at dokumentene er gradert i henhold til sikkerhetsloven eller beskyttelsesinstruksen",
+  "kodeliste": [
+    {
+      "kodeverdi" : "SH",
+      "kodebeskrivelse" : "Strengt hemmelig (sikkerhetsgrad)"
+    },
+    {
+      "kodeverdi" : "H",
+      "kodebeskrivelse" : "Hemmelig (sikkerhetsgrad)"
+    },
+    {
+      "kodeverdi" : "K",
+      "kodebeskrivelse" : "Konfidensielt (sikkerhetsgrad)"
+    },
+    {
+      "kodeverdi" : "B",
+      "kodebeskrivelse" : "Begrenset (sikkerhetsgrad)"
+    },
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Fortrolig (beskyttelsesgrad)"
+    },
+    {
+      "kodeverdi" : "SF",
+      "kodebeskrivelse" : "Strengt fortrolig (beskyttelsesgrad)"
+    }
+  ]
+}
+@endjson

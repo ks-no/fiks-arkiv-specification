@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/registrering/hent/resultat/v1"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   	xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
+			targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/registrering/hent/resultat/v1"
+			elementFormDefault="qualified">
+
+	<xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/v1"
+			   schemaLocation="./arkivstruktur.xsd"/>
+
+	<xs:annotation>
+		<xs:documentation>
+			This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat' message.
+			Use this messagetype for response to the get-message 'no.ks.fiks.arkiv.v1.innsyn.registrering.hent'.
+		</xs:documentation>
+	</xs:annotation>
+
+	<xs:element name="registreringHentResultat" type="registreringHentResultat"/>
+
+	<xs:complexType name="registreringHentResultat">
+		<xs:sequence>
+			<xs:element name="registrering" type="arkivstruktur:registrering" minOccurs="0"/>
+			<xs:element name="journalpost" type="arkivstruktur:journalpost" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

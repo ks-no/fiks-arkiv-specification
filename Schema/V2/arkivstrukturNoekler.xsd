@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v2"
+           elementFormDefault="qualified" attributeFormDefault="unqualified" version="5.0">
+
+    <xs:annotation>
+        <xs:documentation xml:lang="no">KS - Fiks</xs:documentation>
+        <xs:documentation xml:lang="no">XML Schema for søkeresultat fra Noark 5-løsninger</xs:documentation>
+        <xs:documentation xml:lang="no">Hovedskjema - skjema for arkivstruktur for søkeresultat</xs:documentation>
+    </xs:annotation>
+
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+               schemaLocation="metadatakatalog.xsd"/>
+
+    <xs:complexType name="mappeNoekler">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="mappeID" type="n5mdk:mappeID" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="saksmappeNoekler">
+        <xs:complexContent>
+            <xs:extension base="mappeNoekler">
+                <xs:sequence>
+                    <xs:element name="saksnummer" type="n5mdk:saksnummer" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="partNoekler">
+        <xs:sequence>
+            <xs:element name="partID" type="n5mdk:partID" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="registreringNoekler">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="journalpostNoekler">
+        <xs:complexContent>
+            <xs:extension base="registreringNoekler">
+                <xs:sequence>
+                    <xs:element name="journalaar" type="n5mdk:journalaar" minOccurs="0"/>
+                    <xs:element name="journalsekvensnummer" type="n5mdk:journalsekvensnummer"
+                                minOccurs="0"/>
+                    <xs:element name="journalpostnummer" type="n5mdk:journalpostnummer"
+                                minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="dokumentbeskrivelseNoekler">
+        <xs:sequence>
+            <xs:element name="systemID" type="n5mdk:systemID" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

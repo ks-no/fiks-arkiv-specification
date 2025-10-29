@@ -1,0 +1,30 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "moetesakstype",
+  "versjon": "v2",
+  "definisjon": "Navn på type møtesak",
+  "kodeliste": [
+    {
+      "kodeverdi" : "PS",
+      "kodebeskrivelse" : "Politisk sak"
+    },
+    {
+      "kodeverdi" : "DS",
+      "kodebeskrivelse" : "Delegert møtesak"
+    },
+    {
+      "kodeverdi" : "RS",
+      "kodebeskrivelse" : "Referatsak"
+    },
+    {
+      "kodeverdi" : "FO",
+      "kodebeskrivelse" : "Forespørsel (interpellasjon)"
+    },
+    {
+      "kodeverdi" : "AN",
+      "kodebeskrivelse" : "Annet"
+    }
+  ]
+}
+@endjson

@@ -1,0 +1,16 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "presedensstatus",
+  "versjon": "v2",
+  "definisjon": "Informasjon om presedensen er gjeldende eller foreldet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "G",
+      "kodebeskrivelse" : "Gjeldende"
+    },
+    {
+      "kodeverdi" : "F",
+      "kodebeskrivelse" : "Foreldet"
+    }
+  ]
+}

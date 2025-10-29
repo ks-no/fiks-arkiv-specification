@@ -1,0 +1,24 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "kassasjonsvedtak",
+  "versjon": "v2",
+  "definisjon": "Handling som skal utføres ved bevaringstidens slutt",
+  "kodeliste": [
+    {
+      "kodeverdi" : "B",
+      "kodebeskrivelse" : "Bevares"
+    },
+    {
+      "kodeverdi" : "K",
+      "kodebeskrivelse" : "Kasseres"
+    },
+    {
+      "kodeverdi" : "G",
+      "kodebeskrivelse" : "Vurderes senere"
+    },
+    {
+      "kodeverdi" : "U",
+      "kodebeskrivelse" : "Utført"
+    }
+  ]
+}

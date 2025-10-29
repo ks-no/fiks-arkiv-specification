@@ -1,0 +1,20 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "merknadstype",
+  "versjon": "v2",
+  "definisjon": "Navn på type merknad",
+  "kodeliste": [
+    {
+      "kodeverdi" : "MS",
+      "kodebeskrivelse" : "Merknad fra saksbehandler"
+    },
+    {
+      "kodeverdi" : "ML",
+      "kodebeskrivelse" : "Merknad fra leder"
+    },
+    {
+      "kodeverdi" : "MA",
+      "kodebeskrivelse" : "Arkivmerknad"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "flytStatus",
+  "versjon": "v2",
+  "definisjon": "Godkjennelse/ikke godkjennelse av dokumentet som er sendt på flyt",
+  "kodeliste": [
+    {
+      "kodeverdi" : "G",
+      "kodebeskrivelse" : "Godkjent"
+    },
+    {
+      "kodeverdi" : "I",
+      "kodebeskrivelse" : "Ikke godkjent"
+    },
+    {
+      "kodeverdi" : "S",
+      "kodebeskrivelse" : "Sendt tilbake til saksbehandler med kommentarer"
+    }
+  ]
+}
+@endjson

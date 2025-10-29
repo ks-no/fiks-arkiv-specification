@@ -1,0 +1,26 @@
+@startjson
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "navn": "dokumentmedium",
+  "versjon": "v2",
+  "definisjon": "Navn på hvilken type objekt som er slettet",
+  "kodeliste": [
+    {
+      "kodeverdi" : "SP",
+      "kodebeskrivelse" : "Sletting av produksjonsformat"
+    },
+    {
+      "kodeverdi" : "SV",
+      "kodebeskrivelse" : "Sletting av tidligere versjon"
+    },
+    {
+      "kodeverdi" : "SS",
+      "kodebeskrivelse" : "Sletting av variant med sladdet informasjon"
+    },
+    {
+      "kodeverdi" : "SA",
+      "kodebeskrivelse" : "Sletting av hele innholdet i arkivdelen"
+    }
+  ]
+}
+@endjson

@@ -1,0 +1,194 @@
+{
+  "protokollnavn": "no.ks.fiks.arkiv",
+  "versjon": "v2",
+  "meldingstyper": [
+    {
+      "id": "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett",
+      "beskrivelse": "", 
+      "harPayload": true,
+      "payloadFilnavn": "arkivmelding.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett.mottatt", "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett.kvittering", "no.ks.fik.arkiv.v2.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v2.feilmelding.serverfeil"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett.kvittering",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "arkivmelding-kvittering.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.oppdater",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "arkivmelding.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v2.arkivering.arkivmelding.oppdater.mottatt", "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.oppdater.kvittering", "no.ks.fik.arkiv.v2.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v2.feilmelding.serverfeil", "no.ks.fiks.arkiv.v2.feilmelding.ikkefunnet"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.oppdater.kvittering",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v2.arkivering.arkivmelding.oppdater"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v2.arkivering.arkivmelding.oppdater.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "dokumentobjekt-opprett.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.mottatt"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett.kvittering",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "dokumentobjekt-kvittering.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.dokumentobjekt.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "avskrivning-opprett.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett.kvittering",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.opprett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "avskrivning-slett.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.mottatt", "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.kvittering", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.mottatt",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett.kvittering",
+      "beskrivelse": "",
+      "harPayload": false,
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.avskrivning.slett"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "mappe-hent.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.mappe.hent.resultat",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "mappe.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.mappe.hent"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.registrering.hent",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "registrering-hent.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.registrering.hent.resultat",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "registrering.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.registrering.hent"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "dokumentfil-hent.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent.resultat",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "sok.xml",
+      "kanSvareMed": ["no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet", "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum", "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler", "no.ks.fik.arkiv.v1.feilmelding.ugyldigforespoersel", "no.ks.fiks.arkiv.v1.feilmelding.serverfeil", "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.utvidet",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "resultat.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.minimum",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "resultat.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "resultat.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.feilmelding.ugyldigforespoersel",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "feilmelding.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.registrering.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.feilmelding.serverfeil",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "feilmelding.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding", "no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.registrering.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent", "no.ks.fiks.arkiv.v1.innsyn.sok"]
+    },
+    {
+      "id": "no.ks.fiks.arkiv.v1.feilmelding.ikkefunnet",
+      "beskrivelse": "",
+      "harPayload": true,
+      "payloadFilnavn": "feilmelding.xml",
+      "erSvarPaa": ["no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater", "no.ks.fiks.arkiv.v1.innsyn.mappe.hent", "no.ks.fiks.arkiv.v1.innsyn.registrering.hent", "no.ks.fiks.arkiv.v1.innsyn.dokumentfil.hent"]
+    }
+  ]
+}
