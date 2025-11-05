@@ -425,8 +425,8 @@
             <xs:element name="avskrivningsdato" type="n5mdk:avskrivningsdato"/>
             <xs:element name="avskrevetAv" type="n5mdk:saksbehandler"/>
             <xs:element name="avskrivningsmaate" type="n5mdk:avskrivningsmaate"/>
-            <xs:element name="referanseAvskrivesAvJournalpost" type="n5mdk:referanseAvskrivesAvJournalpost"
-                        minOccurs="0"/>
+            <xs:element name="referanseAvskrivesAvJournalpost" type="n5mdk:referanseTilJournalpost" minOccurs="0"/>
+            <xs:element name="referanseAvskriverJournalpost" type="n5mdk:referanseTilJournalpost" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
