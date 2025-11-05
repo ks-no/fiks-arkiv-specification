@@ -17,13 +17,13 @@
             Example: klasse.klassifikasjonssystem/FE, klasse.klasseID/123 will return cases with klasse FE/123, but not cases with klasse FE/2 and FA/123)
         </xs:documentation>
     </xs:annotation>
-    
+
     <xs:element name="sok" type="sok"/>
 
     <xs:complexType name="sok">
         <xs:annotation>
             <xs:documentation>
-                The optional "spraak" value must be a ISO 639-1 code. If "spraak" is not set, default language is a configuration choice in the archive. 
+                The optional "spraak" value must be a ISO 639-1 code. If "spraak" is not set, default language is a configuration choice in the archive.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -321,11 +321,12 @@
 
             <xs:enumeration value="mappePartOrganisasjonsid"/>
             <xs:enumeration value="mappePartPersonid"/>
-    
+
             <xs:enumeration value="mappeSkjermingTilgangsrestriksjon"/>
             <xs:enumeration value="mappeSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="mappeSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="mappeSkjermingSkjermingOpphoererDato"/>
+            <xs:enumeration value="mappeTilgangsgruppeNavn"/>
         </xs:restriction>
     </xs:simpleType>
 
@@ -418,9 +419,10 @@
             <xs:enumeration value="registreringKorrespondansepartDeresReferanse"/>
             <xs:enumeration value="registreringKorrespondansepartAdministrativEnhet"/>
             <xs:enumeration value="registreringKorrespondansepartSaksbehandler"/>
+            <xs:enumeration value="registreringTilgangsgruppeNavn"/>
         </xs:restriction>
-    </xs:simpleType>    
-    
+    </xs:simpleType>
+
     <xs:simpleType name="journalpostSokefelt">
         <xs:restriction base="xs:string">
             <xs:enumeration value="registreringEksternId"/>
@@ -441,7 +443,7 @@
             <xs:enumeration value="registreringSkjermingSkjermingshjemmel"/>
             <xs:enumeration value="registreringSkjermingSkjermingsvarighet"/>
             <xs:enumeration value="registreringSkjermingSkjermingOpphoererDato"/>
-            
+
             <xs:enumeration value="journalpostJournalaar"/>
             <xs:enumeration value="journalpostJournalsekvensnummer"/>
             <xs:enumeration value="journalpostSaksaar"/>
