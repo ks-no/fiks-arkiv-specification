@@ -188,6 +188,7 @@
                 <xs:element name="registrering" type="registrering" minOccurs="0" maxOccurs="unbounded"/>
             </xs:choice>
             <xs:element name="mappetype" type="n5mdk:kode" minOccurs="0"/>
+            <xs:element name="tilgangsgruppeNavn" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -345,6 +346,7 @@
             <xs:element name="korrespondansepart" type="korrespondansepart" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="klassifikasjon" type="klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0" />
+            <xs:element name="tilgangsgruppeNavn" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -621,7 +623,7 @@
             <xs:enumeration value="utvidet"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
     <xs:complexType name="adresse">
         <xs:sequence>
             <xs:element name="adresse" type="n5mdk:postadresse" />
@@ -687,5 +689,5 @@
             <xs:pattern value="[A-Z]{2}"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
 </xs:schema>

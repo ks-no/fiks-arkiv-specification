@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/oppdater/v1"
+<xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/oppdater/v2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1"
-           xmlns:arkivmelding="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/opprett/v1"
-           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/oppdater/v1"
+           xmlns:n5mdk="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2"
+           xmlns:arkivmelding="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/opprett/v2"
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/oppdater/v2"
            elementFormDefault="qualified">
-    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v1" schemaLocation="./metadatakatalog.xsd"/>
-    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/opprett/v1" schemaLocation="./no.ks.fiks.arkiv.v1.arkivering.arkivmelding.opprett.xsd"/>
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/metadatakatalog/v2" schemaLocation="./metadatakatalog.xsd"/>
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivmelding/opprett/v2" schemaLocation="./no.ks.fiks.arkiv.v2.arkivering.arkivmelding.opprett.xsd"/>
 
     <xs:annotation>
         <xs:documentation>
-            This is connected to the 'no.ks.fiks.arkiv.v1.arkivering.arkivmelding.oppdater' message. Use this messagetype for updates. 
+            This is connected to the 'no.ks.fiks.arkiv.v2.arkivering.arkivmelding.oppdater' message. Use this messagetype for updates.
         </xs:documentation>
     </xs:annotation>
-    
+
     <xs:element name="arkivmeldingOppdatering" type="arkivmeldingOppdatering"/>
 
     <xs:complexType name="arkivmeldingOppdatering">
@@ -70,6 +70,7 @@
             <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
             <xs:element name="mappetype" type="n5mdk:kode" minOccurs="0"/>
+            <xs:element name="tilgangsgruppeNavn" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -99,7 +100,7 @@
             <xs:element name="ny" type="arkivmelding:kryssreferanse" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="kryssreferanseOppdatering">
         <xs:sequence>
             <xs:element name="kryssreferanseID" type="n5mdk:kryssreferanseID"/>
@@ -109,7 +110,7 @@
                         minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="kryssreferanseSlett">
         <xs:sequence>
             <xs:element name="kryssreferanseID" type="n5mdk:kryssreferanseID"/>
@@ -198,6 +199,7 @@
             <xs:element name="korrespondansepartOppdateringer" type="korrespondansepartOppdateringer" minOccurs="0"/>
             <xs:element name="klassifikasjonOppdateringer" type="klassifikasjonOppdateringer" minOccurs="0"/>
             <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
+            <xs:element name="tilgangsgruppeNavn" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -221,7 +223,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="korrespondansepartOppdateringer">
         <xs:sequence>
             <xs:element name="oppdatering" type="korrespondansepartOppdatering" minOccurs="0" maxOccurs="unbounded"/>
@@ -260,7 +262,7 @@
             <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="merknadOppdateringer">
         <xs:sequence>
             <xs:element name="oppdatering" type="merknadOppdatering" minOccurs="0" maxOccurs="unbounded"/>
@@ -289,8 +291,8 @@
     <xs:complexType name="skjermingOppdateringer">
         <xs:annotation>
             <xs:documentation>
-                Deleting this object is done by using the "slett" elment and setting it to true. 
-                Use "oppdatering" for update. 
+                Deleting this object is done by using the "slett" elment and setting it to true.
+                Use "oppdatering" for update.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -355,7 +357,7 @@
             <xs:element name="oppdatering" type="n5mdk:beskrivelse" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
 
     <xs:complexType name="adresseOppdateringer">
         <xs:annotation>
@@ -388,7 +390,7 @@
             <xs:element name="ny" type="arkivmelding:klassifikasjon" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="klassifikasjonOppdatering">
         <xs:sequence>
             <xs:element name="referanseTilKlassifikasjon" type="n5mdk:referanseTilKlassifikasjon"/>
@@ -419,7 +421,7 @@
             <xs:element name="seksjonsnummer" type="n5mdk:seksjonsnummer" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="byggidentOppdateringer">
         <xs:sequence>
             <xs:element name="Oppdatering" type="byggidentOppdatering" minOccurs="0" maxOccurs="unbounded"/> <!-- er det naturlig å endre dette? -->
@@ -441,7 +443,7 @@
             <xs:element name="bygningsnummer" type="n5mdk:bygningsnummer"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="planidentOppdateringer">
         <xs:sequence>
             <xs:element name="oppdatering" type="planidentOppdatering" minOccurs="0" maxOccurs="unbounded"/>
@@ -499,7 +501,7 @@
             <xs:element name="representerer" type="n5mdk:representerer" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="moetedeltakerSlett">
         <xs:sequence>
             <xs:element name="personid" type="n5mdk:personid"/>
@@ -521,7 +523,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-    
+
     <xs:complexType name="utredningOppdatering">
         <xs:sequence>
             <xs:element name="oppdateringstype" type="n5mdk:slettEllerOppdater"/>
@@ -530,7 +532,7 @@
             <xs:element name="utredningsdokumenter" type="arkivmelding:dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
-    
+
     <xs:complexType name="innstillingOppdatering">
         <xs:sequence>
             <xs:choice>
@@ -548,7 +550,7 @@
                 <xs:element name="votering" type="arkivmelding:votering" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="behandlingsprotokoll" type="n5mdk:behandlingsprotokoll" minOccurs="0"/>
                 <xs:element name="vedtaksdokumenter" type="arkivmelding:dokumentbeskrivelse" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element name="dato" type="n5mdk:vedtaksdato" minOccurs="0"/>            
+                <xs:element name="dato" type="n5mdk:vedtaksdato" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
