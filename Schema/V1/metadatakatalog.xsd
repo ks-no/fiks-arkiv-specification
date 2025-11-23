@@ -1376,9 +1376,7 @@
       <xs:documentation>M586</xs:documentation>
       <xs:documentation>Opprettet: GI Arkiv 2.0</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="1"/>
-    </xs:restriction>
+    <xs:restriction base="xs:boolean"/>
   </xs:simpleType>
 
   <!-- M600-M659: Logging av hendelser -->
