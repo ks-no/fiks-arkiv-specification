@@ -252,6 +252,11 @@
             <xs:element name="erPersonnavn" type="n5mdk:erPersonnavn" minOccurs="0"/>
             <xs:element name="forsendelsesmaate" type="n5mdk:forsendelsesmaate" minOccurs="0"/>
             <xs:element name="deresReferanse" type="xs:string" minOccurs="0"/>
+            <xs:element name="erBehandlingsansvarlig" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Default verdi skal være false for erBehandlingsansvarlig</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
