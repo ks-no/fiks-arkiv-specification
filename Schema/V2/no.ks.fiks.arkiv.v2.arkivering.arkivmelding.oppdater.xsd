@@ -236,6 +236,11 @@
         <xs:sequence>
             <xs:element name="korrespondansepartID" type="n5mdk:korrespondansepartID"/>
             <xs:element name="korrespondanseparttype" type="n5mdk:korrespondanseparttype" minOccurs="0"/>
+            <xs:element name="erBehandlingsansvarlig" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Default verdi skal være false for erBehandlingsansvarlig</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="korrespondansepartNavn" type="n5mdk:korrespondansepartNavn" minOccurs="0"/>
             <xs:choice minOccurs="0">
                 <xs:element name="organisasjonid" minOccurs="0" type="n5mdk:organisasjonid"/>
