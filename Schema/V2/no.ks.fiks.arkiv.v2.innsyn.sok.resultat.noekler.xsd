@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/noekler/v2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/noekler/v1"
-           xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v1" elementFormDefault="qualified">
-    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v1" schemaLocation="arkivstrukturNoekler.xsd"/>
+           targetNamespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/sokeresultat/noekler/v2"
+           xmlns:arkivstruktur="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v2" elementFormDefault="qualified">
+    <xs:import namespace="https://ks-no.github.io/standarder/fiks-protokoll/fiks-arkiv/arkivstruktur/noekler/v2" schemaLocation="arkivstrukturNoekler.xsd"/>
 
     <xs:annotation>
         <xs:documentation>
-            This is connected to the 'no.ks.fiks.arkiv.v1.innsyn.sok.resultat.noekler' message.
-            Use this messagetype for response to the search-message 'no.ks.fiks.arkiv.v1.innsyn.sok' where the request was with 'responsetype' = 'noekler'.
+            This is connected to the 'no.ks.fiks.arkiv.v2.innsyn.sok.resultat.noekler' message.
+            Use this messagetype for response to the search-message 'no.ks.fiks.arkiv.v2.innsyn.sok' where the request was with 'responsetype' = 'noekler'.
         </xs:documentation>
     </xs:annotation>
 
