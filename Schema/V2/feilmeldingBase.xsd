@@ -10,7 +10,7 @@
 
 	<xs:complexType name="feilmeldingBase">
 		<xs:sequence>
-			<xs:element name="feilId" type="n5mdk:ID">
+			<xs:element name="feilId" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>En påkrevd unik id for denne feilmeldingen som mottaker kan bruke som referanse</xs:documentation>
 				</xs:annotation>
