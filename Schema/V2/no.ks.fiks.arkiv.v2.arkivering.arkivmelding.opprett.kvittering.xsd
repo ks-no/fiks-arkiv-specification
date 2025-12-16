@@ -94,6 +94,7 @@
             <xs:element name="opprettetAv" type="n5mdk:opprettetAv" minOccurs="0"/>
             <xs:element name="dokumentnummer" type="n5mdk:dokumentnummer" minOccurs="0"/>
             <xs:element name="dokumentobjekt" type="dokumentobjektKvittering" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="referanseEksternNoekkel" type="n5mdk:eksternNoekkel" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
 
