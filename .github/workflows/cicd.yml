@@ -3,7 +3,7 @@ name: Trigger downstream builds
 on:
   push:
     branches:
-      - github-actions
+      - main
 
 permissions:
   id-token: write
