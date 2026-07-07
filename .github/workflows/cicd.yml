@@ -1,0 +1,205 @@
+name: Trigger downstream builds
+
+on:
+  push:
+    branches:
+      - github-actions
+
+permissions:
+  id-token: write
+  contents: read
+  checks: write
+
+# Serializes across all branches (not just per-ref) because every push dispatches
+# Without this, two dispatches in flight at once would make run identification ambiguous.
+concurrency:
+  group: trigger-fiks-arkiv-downstream-builds
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - targetRepo: fiks-arkiv-client-java
+            checkName: 'Fiks Arkiv Client Java Build'
+            triggerBranchInput: ''
+          - targetRepo: fiks-arkiv-models-dotnet
+            checkName: 'Fiks Arkiv Models Dotnet Build'
+            triggerBranchInput: 'triggerbranch'
+    steps:
+      - name: 'Set up GitHub App'
+        id: app_token
+        uses: ks-no/github-actions-public/setup-github-app@main
+        with:
+          ks_github_app_id: ${{ secrets.KS_RUNNER_APP_ID }}
+          ks_github_app_private_key: ${{ secrets.KS_RUNNER_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: ks-no/github-actions-public/checkout@main
+        with:
+          token: ${{ steps.app_token.outputs.app_token }}
+
+      - name: Trigger ${{ matrix.targetRepo }} build
+        id: trigger_build
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ steps.app_token.outputs.app_token }}
+          script: |
+            const targetOwner = 'ks-no';
+            const targetRepo  = '${{ matrix.targetRepo }}';
+            const workflowId  = 'build.yml';
+            const dispatchRef = 'main';
+            const checkName   = '${{ matrix.checkName }}';
+            const triggerBranchInput = '${{ matrix.triggerBranchInput }}';
+            const clientOwner = context.repo.owner;
+            const clientRepo  = context.repo.repo;
+            const clientSha   = context.sha;
+            const triggerBranch = '${{ github.ref_name }}';
+
+            const { data: checkRun } = await github.rest.checks.create({
+              owner: clientOwner,
+              repo:  clientRepo,
+              name:  checkName,
+              head_sha:   clientSha,
+              status:     'in_progress',
+              started_at: new Date().toISOString(),
+              output: {
+                title:   checkName,
+                summary: `Triggering ${targetRepo} build for branch ${triggerBranch}`
+              }
+            });
+            core.setOutput('check-run-id', String(checkRun.id));
+
+            // Snapshot existing run IDs before dispatching so the triggered run can be
+            // identified by set difference instead of a timestamp heuristic (createWorkflowDispatch
+            // does not return a run ID). The concurrency group above guarantees this snapshot
+            // can't go stale from one of our own overlapping dispatches.
+            const { data: before } = await github.rest.actions.listWorkflowRuns({
+              owner: targetOwner,
+              repo:  targetRepo,
+              workflow_id: workflowId,
+              branch: dispatchRef,
+              event: 'workflow_dispatch',
+              per_page: 100
+            });
+            const knownRunIds = new Set(before.workflow_runs.map(r => r.id));
+
+            const inputs = triggerBranchInput ? { [triggerBranchInput]: triggerBranch } : {};
+
+            await github.rest.actions.createWorkflowDispatch({
+              owner: targetOwner,
+              repo:  targetRepo,
+              workflow_id: workflowId,
+              ref: dispatchRef,
+              inputs
+            });
+
+            console.log(`Dispatched ${targetRepo}/${workflowId} on ${dispatchRef} with inputs=${JSON.stringify(inputs)}`);
+
+            const newRuns = new Map();
+            for (let attempt = 0; attempt < 8; attempt++) {
+              await new Promise(resolve => setTimeout(resolve, 5_000));
+              const { data } = await github.rest.actions.listWorkflowRuns({
+                owner: targetOwner,
+                repo:  targetRepo,
+                workflow_id: workflowId,
+                branch: dispatchRef,
+                event: 'workflow_dispatch',
+                per_page: 100
+              });
+              for (const r of data.workflow_runs) {
+                if (!knownRunIds.has(r.id)) newRuns.set(r.id, r);
+              }
+            }
+
+            if (newRuns.size === 0) {
+              await github.rest.checks.update({
+                owner: clientOwner,
+                repo:  clientRepo,
+                check_run_id: checkRun.id,
+                status: 'completed',
+                conclusion: 'failure',
+                completed_at: new Date().toISOString(),
+                output: {
+                  title:   checkName,
+                  summary: `Could not find the dispatched ${targetRepo} run`
+                }
+              });
+              core.setFailed(`Could not find the dispatched ${targetRepo} run`);
+            } else if (newRuns.size > 1) {
+              const ids = [...newRuns.keys()].join(', ');
+              await github.rest.checks.update({
+                owner: clientOwner,
+                repo:  clientRepo,
+                check_run_id: checkRun.id,
+                status: 'completed',
+                conclusion: 'failure',
+                completed_at: new Date().toISOString(),
+                output: {
+                  title:   checkName,
+                  summary: `Ambiguous: ${newRuns.size} concurrent runs appeared on ${targetRepo}@${dispatchRef} (${ids}) — cannot verify which one is ours`
+                }
+              });
+              core.setFailed(`Ambiguous dispatch: multiple new runs detected (${ids})`);
+            } else {
+              const run = [...newRuns.values()][0];
+              console.log(`Found run ${run.id}: ${run.html_url}`);
+              core.setOutput('run-id', String(run.id));
+              await github.rest.checks.update({
+                owner: clientOwner,
+                repo:  clientRepo,
+                check_run_id: checkRun.id,
+                details_url: run.html_url
+              });
+            }
+
+      - name: Wait for ${{ matrix.targetRepo }} build
+        if: steps.trigger_build.outputs.run-id
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ steps.app_token.outputs.app_token }}
+          script: |
+            const targetOwner = 'ks-no';
+            const targetRepo  = '${{ matrix.targetRepo }}';
+            const checkName   = '${{ matrix.checkName }}';
+            const clientOwner = context.repo.owner;
+            const clientRepo  = context.repo.repo;
+            const runId       = Number('${{ steps.trigger_build.outputs.run-id }}');
+            const checkRunId  = Number('${{ steps.trigger_build.outputs.check-run-id }}');
+            const pollIntervalMs = 30_000;
+            const maxAttempts = 60;
+            let attempts = 0;
+            let conclusion = null;
+            let htmlUrl = null;
+            while (attempts < maxAttempts) {
+              await new Promise(resolve => setTimeout(resolve, pollIntervalMs));
+              const { data: run } = await github.rest.actions.getWorkflowRun({ owner: targetOwner, repo: targetRepo, run_id: runId });
+              console.log(`[${++attempts}] status: ${run.status}, conclusion: ${run.conclusion}`);
+              htmlUrl = run.html_url;
+              if (run.status === 'completed') {
+                conclusion = run.conclusion;
+                break;
+              }
+            }
+
+            await github.rest.checks.update({
+              owner: clientOwner,
+              repo:  clientRepo,
+              check_run_id: checkRunId,
+              status: 'completed',
+              conclusion: conclusion || 'timed_out',
+              completed_at: new Date().toISOString(),
+              details_url: htmlUrl,
+              output: {
+                title:   checkName,
+                summary: `${targetRepo} build finished with conclusion: ${conclusion || 'timed_out'}`
+              }
+            });
+
+            if (conclusion !== 'success') {
+              core.setFailed(`${targetRepo} build did not pass (conclusion: ${conclusion})`);
+            }
